@@ -11,14 +11,12 @@
 //Constructores
 
 Cadena::Cadena(const int tam, char c):
-tam_{tam}, s_{}
+tam_{tam}, s_{new char[tam+1]}
 {
     if (tam < 0)
         throw std::out_of_range((const char*)"Fuera de rango");
 
     int i;
-
-    s_ = new char[tam_ + 1];
 
     for(i = 0; i < tam_; ++i)
         s_[i] = c;
@@ -27,14 +25,12 @@ tam_{tam}, s_{}
 }
 
 Cadena::Cadena(const int tam):
-tam_{tam}, s_{}
+tam_{tam}, s_{new char[tam+1]}
 {
     if (tam < 0)
         throw std::out_of_range((const char*)"Fuera de rango");
 
     int i;
-
-    s_ = new char[tam_ +1];
 
     for(i = 0; i < tam_; ++i)
         s_[i] = ' ';
@@ -43,25 +39,20 @@ tam_{tam}, s_{}
 }
 
 Cadena::Cadena(const char* c):
-tam_{(int)strlen(c)}, s_{}
+tam_{(int)strlen(c)}, s_{new char[(int)strlen(c)+1]}
 {
-    s_ = new char[tam_ + 1];
-
     strcpy(this -> s_, c);
 }
 
 Cadena::Cadena():
-tam_{0}, s_{}
+tam_{0}, s_{new char[1]}
 {
-    s_ = new char[tam_ + 1];
     s_[tam_] = '\0';
 }
 
 Cadena::Cadena(const Cadena &c):
-tam_{c.tam_}, s_{}
+tam_{c.tam_}, s_{new char[c.tam_+1]}
 {
-    s_ = new char[this -> tam_ + 1];
-
     strcpy(this -> s_, c.s_);
 }
 
@@ -73,9 +64,8 @@ tam_{c.tam_}, s_{c.s_}
 }
 
 Cadena::Cadena(const char* c, const int t):
-tam_{t}, s_{}
+tam_{t}, s_{new char[t+1]}
 {
-    s_ = new char[tam_ + 1];
     int i;
 
     i = 0;
@@ -85,9 +75,8 @@ tam_{t}, s_{}
 }
 
 Cadena::Cadena(const Cadena &c, int i, const int t):
-tam_{t}, s_{}
+tam_{t}, s_{new char[t+1]}
 {
-    s_ = new char[this -> tam_ + 1];
     int ristra;
     int j;
 
