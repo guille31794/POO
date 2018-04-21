@@ -9,6 +9,12 @@
 
   class Tarjeta
   {
+    private:
+      Tipo tipo_;
+      Numero numero_;
+      Usuario* titular_;
+      Fecha caducidad_;
+      Cadena titular_facial_;
 
     public:
 

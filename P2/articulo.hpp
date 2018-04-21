@@ -9,6 +9,14 @@
 
 class Articulo
 {
+  private:
+
+  Cadena referencia_;
+  Cadena titulo_;
+  Fecha f_publi_;
+  double precio_;
+  unsigned stock_;
+
   public:
 
   Cadena referencia() const;

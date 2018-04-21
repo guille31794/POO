@@ -9,7 +9,7 @@
   class Clave
   {
     private:
-
+      Cadena clave_;
 
     public:
       Cadena clave() const;

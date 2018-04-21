@@ -6,7 +6,7 @@
 
   class Numero {
   private:
-
+    Cadena numero_;
 
   public:
     operator const char*() const;
