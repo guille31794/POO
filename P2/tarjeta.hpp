@@ -6,18 +6,23 @@
 
   #include "fecha.hpp"
   #include "cadena.hpp"
+  #include "numero.hpp"
+  #include "usuario.hpp"
 
   class Tarjeta
   {
     private:
-      Tipo tipo_;
       Numero numero_;
       Usuario* titular_;
       Fecha caducidad_;
       Cadena titular_facial_;
 
     public:
-
+      typedef Tipo
+      {
+        enum tipo_ {VISA, Mastercard, Maestro, JCB,
+           AmericanExpress};
+      };
       Tipo tipo() const;
       Numero numero() const;
       Fecha caducidad() const;

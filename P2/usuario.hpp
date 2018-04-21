@@ -5,6 +5,8 @@
   21/04/2018, GPL Licensed, all rights reserved */
 
   #include "cadena.hpp"
+  #include "tarjeta.hpp"
+  #include "articulo.hpp"
 
   using namespace std;
 
