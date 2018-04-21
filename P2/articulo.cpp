@@ -12,4 +12,11 @@
   precio_{precio}, stock_{stock}
   {}
 
-  
+  std::basic_ostream<char>& operator <<
+  (std::basic_ostream<char>& os, const Articulo& ar)
+  {
+    os << '[' << ar.referencia() << "] " << '"' << ar.titulo() << '"' << ", "
+    << ar.f_publi().anno() << ". " << ar.precio() << " €";
+
+    return os; 
+  }

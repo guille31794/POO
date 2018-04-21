@@ -30,3 +30,6 @@ class Articulo
   inline unsigned stock() const  { return this -> stock_;}
   inline unsigned& stock() { return this -> stock_;}
 };
+
+std::basic_ostream<char>& operator <<
+(std::basic_ostream<char>&, const Articulo&);
