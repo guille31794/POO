@@ -12,6 +12,18 @@
       Cadena clave_;
 
     public:
+      Clave(const char*);
+
+      class Incorrecta
+      {
+        private:
+          const enum Razon { CORTA, ERROR_CRYPT};
+
+        public:
+          inline const char* razon()  { return Razon;}
+
+      };
+
       Cadena clave() const;
       bool verifica(const char *);
   };
