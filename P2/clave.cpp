@@ -3,13 +3,15 @@
   POO de la UCA.
 
   21/04/2018, GPL Licensed, all rights reserved */
-
+//TODO
   Cadena clave() const
   {
     //Variable necesaria para la llamada a crypt
 
     char* salt = new char[12];
     int n_aleatorio;
+
+    salt = "1$1........";
 
     //Semilla con un valor aleatorio real
 
