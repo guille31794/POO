@@ -21,3 +21,20 @@
       if (!b)
         throw Id_duplicado(this -> id_);
     }
+
+    void es_titular_de(Tarjeta &t)
+    {
+      bool bolean;
+      std::pair <auto, bool> par;
+
+      par = tarjetas_.insert(t);
+      boolean = par.second;
+
+      if (!b)
+        throw //TODO algun tipo de excepcion ;
+    }
+
+    void no_es_titular_de(Tarjeta &t)
+    {
+      //TODO
+    }

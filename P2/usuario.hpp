@@ -9,6 +9,7 @@
   #include "articulo.hpp"
   #include <unordered_set>
   #include "utility"
+  #include <map>
 
   using namespace std;
 
