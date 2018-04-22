@@ -22,8 +22,7 @@
       unordered_map<Articulo*, unsigned int> articulos_;
 
       /*
-        TODO
-        ¿Funcionaría con char* en lugar de Cadena?
+        TODO ¿Funcionaría con char* en lugar de Cadena?
       */
 
       static unordered_set<Cadena*> comprobador;
@@ -46,7 +45,7 @@
           { return this -> idd_;}
       }
       /*
-        TODO
+        TODO dudas descritas abajo
         ¿Que hacer con el cosntructor de copia y asignacion?
         ¿Prohibirlos? ¿Declararlos con excepcion unicamente?
       */
@@ -74,13 +73,14 @@
       { return this -> direccion_;}
 
       /*
-        TODO
-        Aqui hay fallo seguro. Aprender a manejar mapas.
+        TODO Aqui hay fallo seguro. Aprender a manejar mapas.
       */
 
       inline const Tarjeta& tarjetas() const
       { return this -> tarjetas_;}
-      void compra(Articulo&, unsigned);
+      void compra(Articulo&, unsigned cant = 1);
       const Articulo& compra() const;
       size_t n_articulos() const;
+
+      ~Usuario();
   }

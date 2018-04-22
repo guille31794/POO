@@ -29,7 +29,7 @@
           //¿Necesario r?
           //¿r tiene valor por defecto al declararlo?
           //¿Necesaria asignacion?
-          //TODO:
+          //TODO dudas descritas arriba
 
           const enum class Razon :char* { CORTA, ERROR_CRYPT};
           Razon r;

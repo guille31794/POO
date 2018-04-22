@@ -36,5 +36,32 @@
 
     void no_es_titular_de(Tarjeta &t)
     {
-      //TODO
+      //TODO ¿Borrar por referencia?
+
+      this -> tarjetas_.erase(t);
+    }
+
+    void compra(Articulo& ar, unsigned cant /*= 1*/)
+    {
+      if(!cant)
+        articulos_.erase(ar);
+      else
+      {
+        articulos_.erase(ar);
+        articulos_.insert(ar, cant);
+      }
+    }
+
+    Usuario::~Usuario()
+    {
+      id_.~Cadena();
+      nombre_.~Cadena();
+      apellidos_.~Cadena();
+      direccion_.~Cadena();
+      for (auto i = tarjetas_.begin(); i < tarjetas_.end();
+      i++)
+      {
+        //TODO ¿Como eliminar todas las tarjetas?
+        tarjetas_[i].Tarjeta::anular_titular();
+      }
     }

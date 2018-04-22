@@ -3,7 +3,7 @@
   POO de la UCA.
 
   21/04/2018, GPL Licensed, all rights reserved */
-//TODO
+//TODO Algoritmo de llenado de salt
   Cadena clave() const
   {
     //Variable necesaria para la llamada a crypt
