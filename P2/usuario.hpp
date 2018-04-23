@@ -3,10 +3,12 @@
   POO de la UCA.
 
   21/04/2018, GPL Licensed, all rights reserved */
-
+  #ifndef Usuario_hpp
+  #define Usuario_hpp
   #include "cadena.hpp"
   #include "tarjeta.hpp"
   #include "articulo.hpp"
+  #include "clave.hpp"
   #include <unordered_map>
   #include "utility"
   #include <map>
@@ -17,7 +19,7 @@
   {
     private:
       Cadena id_, nombre_, apellidos_, direccion_;
-      Clave contraseña_;
+      const Clave contraseña_;
       Tarjetas tarjetas_;
       unordered_map<Articulo*, unsigned int> articulos_;
 
@@ -44,7 +46,7 @@
           {}
           inline char* const idd() const
           { return this -> idd_;}
-      }
+      };
       /*
         TODO dudas descritas abajo
         ¿Que hacer con el cosntructor de copia y asignacion?
@@ -84,4 +86,6 @@
       size_t n_articulos() const;
 
       ~Usuario();
-  }
+  };
+
+#endif

@@ -31,8 +31,12 @@
     */
 
     std::poisson_distribution<int> poisson_dist(0, 9);
-    n_aleatorio = poisson_dist(el);
 
+    for(int i = 3; i < 11; ++i )
+    {
+      n_aleatorio = poisson_dist(el);
+      salt[i] = n_aleatorio;
+    }
     // ¿Que hago ha continuación? :'(
 
     return crypt(this -> clave_.c_str(), salt);

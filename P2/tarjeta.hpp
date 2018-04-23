@@ -18,13 +18,11 @@
       const Usuario* titular_; //Enlace con titular
       Fecha caducidad_;
       Cadena titular_facial_;
+      //Tipo tipo_;
 
     public:
-      typedef Tipo
-      {
-        enum tipo_ {VISA, Mastercard, Maestro, JCB,
-           AmericanExpress};
-      };
+
+      enum Tipo {VISA, Mastercard, Maestro, JCB, AmericanExpress};
       Tipo tipo() const;
       Numero numero() const;
       Fecha caducidad() const;
