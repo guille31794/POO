@@ -48,7 +48,7 @@
       else
       {
         articulos_.erase(ar);
-        articulos_.insert(ar, cant);
+        articulos_.insert(make_pair(ar, cant));
       }
     }
 

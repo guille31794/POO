@@ -7,7 +7,7 @@
   #include "cadena.hpp"
   #include "tarjeta.hpp"
   #include "articulo.hpp"
-  #include <unordered_set>
+  #include <unordered_map>
   #include "utility"
   #include <map>
 
@@ -18,7 +18,7 @@
     private:
       Cadena id_, nombre_, apellidos_, direccion_;
       Clave contraseña_;
-      map<Numero, Tarjeta*> tarjetas_;
+      Tarjetas tarjetas_;
       unordered_map<Articulo*, unsigned int> articulos_;
 
       /*
@@ -29,6 +29,7 @@
 
     public:
 
+      map<Numero, Tarjeta*> Tarjetas;
       explicit Usuario(const Cadena&, const Cadena&,
       const Cadena&, const Cadena&, const Clave& );
 

@@ -4,6 +4,8 @@
 
   21/04/2018, GPL Licensed, all rights reserved */
 
+  #ifndef Tarjeta_hpp
+  #define Tarjeta_hpp
   #include "fecha.hpp"
   #include "cadena.hpp"
   #include "numero.hpp"
@@ -13,7 +15,7 @@
   {
     private:
       Numero numero_;
-      Usuario* titular_;
+      const Usuario* titular_; //Enlace con titular
       Fecha caducidad_;
       Cadena titular_facial_;
 
@@ -28,4 +30,6 @@
       Fecha caducidad() const;
       Cadena titular_facial() const;
       const Usuario* titular() const;
-  }
+  };
+
+  #endif

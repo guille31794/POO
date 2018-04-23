@@ -3,7 +3,8 @@
   POO de la UCA.
 
   21/04/2018, GPL Licensed, all rights reserved */
-
+#ifndef Articulo_hpp
+#define Articulo_hpp
 #include "fecha.hpp"
 #include "cadena.cpp"
 
@@ -33,3 +34,5 @@ class Articulo
 
 std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>&, const Articulo&);
+
+#endif

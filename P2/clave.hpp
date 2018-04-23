@@ -3,7 +3,8 @@
   POO de la UCA.
 
   21/04/2018, GPL Licensed, all rights reserved */
-
+  #ifndef Clave_hpp
+  #define Clave_hpp
   #include "cadena.hpp"
   #include "unistd.h"
   #include <ctime>
@@ -21,7 +22,6 @@
       {
         private:
 
-          //Consultar con Pedro o Jose Fidel
           //¿Necesario el const en la enumeracion?
           //¿Necesaria la clase?
           //¿Necesario el tipo?
@@ -31,15 +31,17 @@
           //¿Necesaria asignacion?
           //TODO dudas descritas arriba
 
-          const enum class Razon :char* { CORTA, ERROR_CRYPT};
+          enum class Razon { CORTA, ERROR_CRYPT};
           Razon r;
 
         public:
-          inline const char* razon() const
-          { return this -> r; }
+          Incorrecta();
+          inline Razon razon() const  { return this -> r; }
 
       };
 
       Cadena clave() const;
       bool verifica(const char *);
   };
+
+#endif
