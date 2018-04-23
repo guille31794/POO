@@ -10,10 +10,26 @@
 
   class Numero {
   private:
+
     Cadena numero_;
 
   public:
+
+    enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
+    Numero(const Cadena&);
     operator const char*() const;
+
+    class Incorrecto
+    {
+      private:
+
+        Razon r;
+
+      public:
+
+        inline Incorrecto(const Razon r_): r{r_} {}
+        inline Razon razon() const { return this -> r;}
+    };
   };
 
 #endif
