@@ -17,75 +17,60 @@
 
   class Usuario
   {
-    private:
-      Cadena id_, nombre_, apellidos_, direccion_;
-      const Clave contraseña_;
-      Tarjetas tarjetas_;
-      unordered_map<Articulo*, unsigned int> articulos_;
-
-      /*
-        TODO ¿Funcionaría con char* en lugar de Cadena?
-      */
-
-      static unordered_set<Cadena*> comprobador;
-
     public:
 
-      map<Numero, Tarjeta*> Tarjetas;
+      typedef map<Numero, Tarjeta*> Tarjetas;
+      typedef map<Articulo*, unsigned int> Articulos;
       explicit Usuario(const Cadena&, const Cadena&,
       const Cadena&, const Cadena&, const Clave& );
+
+      Usuario(const Usuario&) = delete;
+      Usuario operator =(const Usuario&) = delete;
 
       class Id_duplicado
       {
         private:
+
           char* idd_;
 
         public:
+
           inline Id_duplicado(const Cadena& id):
-          idd{id.c_str()}
+          idd_{id.c_str()}
           {}
-          inline char* const idd() const
-          { return this -> idd_;}
+          inline char* const idd() const  { return this -> idd_;}
       };
-      /*
-        TODO dudas descritas abajo
-        ¿Que hacer con el cosntructor de copia y asignacion?
-        ¿Prohibirlos? ¿Declararlos con excepcion unicamente?
-      */
-
-      inline explicit Usuario(const Usuario&):
-      {
-        throw Id_duplicado((const char*)
-        "Error. No puede duplicar un usuario.\n");
-      }
-
-      inline Usuario operator =(const Usuario&)
-      {
-        throw Id_duplicado((const char*)
-        "Error. No puede duplicar un usuario.\n");
-      }
 
       void es_titular_de(Tarjeta &);
       void no_es_titular_de(Tarjeta &);
 
       inline Cadena id() const  { return this -> id_;}
       inline Cadena nombre() const  { return this -> nombre_;}
-      inline Cadena apellidos() const
-      { return this -> apellidos_;}
-      inline Cadena direccion() const
-      { return this -> direccion_;}
+      inline Cadena apellidos() const { return this -> apellidos_;}
+      inline Cadena direccion() const { return this -> direccion_;}
+      inline const Cadena clave() const
+      { return this -> clave_.clave();}
 
-      /*
-        TODO Aqui hay fallo seguro. Aprender a manejar mapas.
-      */
-
-      inline const Tarjeta& tarjetas() const
-      { return this -> tarjetas_;}
+      inline const Tarjetas& tarjetas() const { return this -> tarjetas_;}
       void compra(Articulo&, unsigned cant = 1);
-      const Articulo& compra() const;
-      size_t n_articulos() const;
+      inline const Articulos& compra() const { return this -> articulos_;}
+      inline size_t n_articulos() const { return this -> articulos_.size();}
 
       ~Usuario();
+
+    private:
+      Cadena id_, nombre_, apellidos_, direccion_;
+      const Clave clave_;
+      Tarjetas tarjetas_;
+      Articulos articulos_;
+
+      /*
+        TODO ¿Funcionaría con char* en lugar de Cadena?
+      */
+
+      static unordered_set<Cadena*> comprobador;
   };
+
+  std::basic_ostream<char*> <<(std::basic_ostream& os, const Usuario& u);
 
 #endif

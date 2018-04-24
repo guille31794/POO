@@ -14,7 +14,7 @@ bool operator <(const Numero& n1, const Numero &n2)
 {
   bool v;
 
-  v = <static_cast>n1 < <static_cast>n2;
+  v = static_cast<char*>n1 < static_cast<char*>n2;
 
   return v;
 }
