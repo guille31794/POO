@@ -62,11 +62,25 @@
       }
     }
 
-    std::basic_ostream<char*> <<(std::basic_ostream& os, const Usuario& u)
+    std::basic_ostream<char>& operator <<
+    (std::basic_ostream<char>& os, const Usuario& u)
     {
       os << u.id() << " [" << u.clave() << "] " << u.nombre() << ' ' <<
       u.apellidos() << '\n' << u.direccion() << '\n' << "Tarjetas:" <<
-      '\n' << u.tarjetas();
+      '\n' << u.tarjetas() << endl;
+
+      return os;
+    }
+
+    std::basic_ostream<char>& mostrar_carro
+      (std::basic_ostream<char>& os, const Usuario& u)
+    {
+      os << "Carrito de la compra de " << u.id() << " [Articulos: " <<
+      u.compra().size() << ']' << '\n' << ;
+      for (auto i = u.compra().cbegin(); i < u.compra().cend(); i++)
+      {
+        os <<
+      }
 
       return os;
     }

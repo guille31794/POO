@@ -10,6 +10,7 @@
   #include "articulo.hpp"
   #include "clave.hpp"
   #include <unordered_map>
+  #include <unordered_set>
   #include "utility"
   #include <map>
 
@@ -20,7 +21,7 @@
     public:
 
       typedef map<Numero, Tarjeta*> Tarjetas;
-      typedef map<Articulo*, unsigned int> Articulos;
+      typedef unordered_map<Articulo*, unsigned int> Articulos;
       explicit Usuario(const Cadena&, const Cadena&,
       const Cadena&, const Cadena&, const Clave& );
 
@@ -71,6 +72,9 @@
       static unordered_set<Cadena*> comprobador;
   };
 
-  std::basic_ostream<char*> <<(std::basic_ostream& os, const Usuario& u);
+  std::basic_ostream<char>& operator <<
+    (std::basic_ostream<char>& os, const Usuario&);
+  std::basic_ostream<char>& mostrar_carro(std::basic_ostream<char>&,
+    const Usuario&);
 
 #endif
