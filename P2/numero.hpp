@@ -17,7 +17,7 @@
 
     enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
     Numero(const Cadena&);
-    operator const char*() const;
+    inline operator const char*() const { return this -> numero_.c_str();}
 
     class Incorrecto
     {
@@ -31,5 +31,7 @@
         inline Razon razon() const { return this -> r;}
     };
   };
+
+  bool operator <(const Numero&, const Numero &);
 
 #endif
