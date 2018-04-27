@@ -6,7 +6,9 @@
 
 #ifndef Numero_hpp
 #define Numero_hpp
+#include <cctype>
 #include "cadena.hpp"
+#include "luhn.cpp"
 
   class Numero {
   private:

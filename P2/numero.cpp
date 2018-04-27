@@ -7,7 +7,27 @@
 Numero(const Cadena& c):
 numero_{c}
 {
-  //TODO comprobar excepciones etc..
+  for(auto i = numero_.begin(); i < numero_.end() < ++i)
+  {
+    if(isalpha(numero_[i]))
+      throw Incorrecto(DIGITOS);
+
+    if(isspace(numero_[i]))
+    {
+      for(auto cont = i; cont < numero_.end(); ++cont)
+      {
+        numero_[cont - 1] = numero_[cont];
+      }
+
+      numero_.reducir_tam();
+    }
+  }
+
+  if(numero_.length() >= 19 || numero_.length() <= 13)
+    throw Incorrecto(LONGITUD);
+
+  if(!luhn(numero_))
+    throw Incorrecto(NO_VALIDO);
 }
 
 bool operator <(const Numero& n1, const Numero &n2)

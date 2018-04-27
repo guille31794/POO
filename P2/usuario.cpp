@@ -75,11 +75,26 @@
     std::basic_ostream<char>& mostrar_carro
       (std::basic_ostream<char>& os, const Usuario& u)
     {
+      char prev;
+      int cont;
+
+      prev = std::cout.fill('=');
+
       os << "Carrito de la compra de " << u.id() << " [Articulos: " <<
-      u.compra().size() << ']' << '\n' << ;
+      u.compra().size() << ']' << '\n' << "\tCant. Artículo\n" //<<
+      //"===========================================================";
+
+      //TODO sustituir esta funcion por la linea comentada
+      std::cout.fill(prev);
+
+      cont = 1;
+
       for (auto i = u.compra().cbegin(); i < u.compra().cend(); i++)
       {
-        os <<
+        os << cont << '\t' << '[' << u.articulos_[i].first().referencia()
+        << "] " << '"' << u.articulos_[i].first().titulo() << '"' <<
+        ", " << u.articulos_[i].first().f_publi().anno() ". " <<
+        u.articulos_[i].first().precio() << " €\n";
       }
 
       return os;
