@@ -13,21 +13,39 @@
 
   class Tarjeta
   {
+    public:
+      enum Tipo {VISA, Mastercard, Maestro, JCB, AmericanExpress};
+      explicit Tarjeta
+      (const Tipo, const Numero&, Usuario&, const Fecha&);
+      Tarjeta(const Tarjeta&) = delete;
+      Tarjeta operator =(const Tarjeta&) = delete;
+      inline Tipo tipo() const { return this -> tipo_;}
+      inline Numero numero() const { return this -> numero_;}
+      inline Fecha caducidad() const  { return this -> caducidad_;}
+      inline Cadena titular_facial() const  { return this -> titular_facial_;}
+      inline const Usuario* titular() const  { return this -> titular_;}
+      inline void anula_titular()  { this -> titular_ = nullptr;}
+      ~Tarjeta();
+
+      class Caducada
+      {
+        public:
+          inline Caducada(const Fecha& f):  caducada_{f}
+          {}
+          inline Fecha cuando() { return this -> caducada_;}
+
+        private:
+          Fecha caducada_;
+      }
+
     private:
       Numero numero_;
       const Usuario* titular_; //Enlace con titular
       Fecha caducidad_;
       Cadena titular_facial_;
-      //Tipo tipo_;
-
-    public:
-
-      enum Tipo {VISA, Mastercard, Maestro, JCB, AmericanExpress};
-      Tipo tipo() const;
-      Numero numero() const;
-      Fecha caducidad() const;
-      Cadena titular_facial() const;
-      const Usuario* titular() const;
+      Tipo tipo_;
   };
+
+ostream& operator << (ostream& os, const Tarjeta& t);
 
   #endif
