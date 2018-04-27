@@ -3,13 +3,18 @@
   POO de la UCA.
 
   21/04/2018, GPL Licensed, all rights reserved */
+
 //TODO Algoritmo de llenado de salt
+
   Cadena clave() const
   {
     //Variable necesaria para la llamada a crypt
 
     char* salt = new char[12];
     int n_aleatorio;
+    const char *const seedchars =
+    "./0123456789ABCDEFGHIJKLMNOPQRST"
+    "UVWXYZabcdefghijklmnopqrstuvwxyz";
 
     salt = "1$1........";
 
@@ -35,9 +40,8 @@
     for(int i = 3; i < 11; ++i )
     {
       n_aleatorio = poisson_dist(el);
-      salt[i] = n_aleatorio;
+      salt[i] = seedchars[n_aleatorio];
     }
-    // ¿Que hago ha continuación? :'(
 
     return crypt(this -> clave_.c_str(), salt);
   }

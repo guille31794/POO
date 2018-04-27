@@ -24,6 +24,7 @@
 
     void es_titular_de(Tarjeta &t)
     {
+      /*
       bool bolean;
       std::pair <auto, bool> par;
 
@@ -31,13 +32,14 @@
       boolean = par.second;
 
       if (!b)
-        throw //TODO algun tipo de excepcion ;
+        throw algun tipo de excepcion ;
+      */
+
+      tarjetas_.insert(t);
     }
 
     void no_es_titular_de(Tarjeta &t)
     {
-      //TODO ¿Borrar por referencia?
-
       this -> tarjetas_.erase(t);
     }
 
@@ -54,14 +56,31 @@
 
     Usuario::~Usuario()
     {
-      id_.~Cadena();
-      nombre_.~Cadena();
-      apellidos_.~Cadena();
-      direccion_.~Cadena();
-      for (auto i = tarjetas_.begin(); i < tarjetas_.end();
-      i++)
+      for (auto i = tarjetas_.begin(); i < tarjetas_.end(); i++)
       {
-        //TODO ¿Como eliminar todas las tarjetas?
-        tarjetas_[i].Tarjeta::anular_titular();
+        tarjetas_[i] -> Tarjeta::anular_titular();
       }
+    }
+
+    std::basic_ostream<char>& operator <<
+    (std::basic_ostream<char>& os, const Usuario& u)
+    {
+      os << u.id() << " [" << u.clave() << "] " << u.nombre() << ' ' <<
+      u.apellidos() << '\n' << u.direccion() << '\n' << "Tarjetas:" <<
+      '\n' << u.tarjetas() << endl;
+
+      return os;
+    }
+
+    std::basic_ostream<char>& mostrar_carro
+      (std::basic_ostream<char>& os, const Usuario& u)
+    {
+      os << "Carrito de la compra de " << u.id() << " [Articulos: " <<
+      u.compra().size() << ']' << '\n' << ;
+      for (auto i = u.compra().cbegin(); i < u.compra().cend(); i++)
+      {
+        os <<
+      }
+
+      return os;
     }
