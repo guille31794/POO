@@ -24,6 +24,7 @@
       inline Fecha caducidad() const  { return this -> caducidad_;}
       inline Cadena titular_facial() const  { return this -> titular_facial_;}
       inline const Usuario* titular() const  { return this -> titular_;}
+      //TODO linea 28, posible corrección sobre el puntero constante
       inline void anula_titular()  { this -> titular_ = nullptr;}
       ~Tarjeta();
 

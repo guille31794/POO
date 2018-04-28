@@ -40,7 +40,7 @@
 
       };
 
-      Cadena clave() const;
+      inline Cadena clave() const { return this -> clave_;}
       bool verifica(const char *);
   };
 

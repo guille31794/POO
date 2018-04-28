@@ -4,7 +4,7 @@
 
   21/04/2018, GPL Licensed, all rights reserved */
 
-Numero(const Cadena& c):
+Numero::Numero(const Cadena& c):
 numero_{c}
 {
   for(auto i = numero_.begin(); i < numero_.end() < ++i)

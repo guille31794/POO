@@ -22,7 +22,7 @@
         throw Id_duplicado(this -> id_);
     }
 
-    void es_titular_de(Tarjeta &t)
+    void Usuario::es_titular_de(Tarjeta &t)
     {
       /*
       bool bolean;
@@ -38,12 +38,12 @@
       tarjetas_.insert(t);
     }
 
-    void no_es_titular_de(Tarjeta &t)
+    void Usuario::no_es_titular_de(Tarjeta &t)
     {
       this -> tarjetas_.erase(t);
     }
 
-    void compra(Articulo& ar, unsigned cant /*= 1*/)
+    void Usuario::compra(Articulo& ar, unsigned cant /*= 1*/)
     {
       if(!cant)
         articulos_.erase(ar);
