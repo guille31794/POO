@@ -48,5 +48,7 @@
   };
 
 ostream& operator << (ostream& os, const Tarjeta& t);
+inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
+{ return t1.numero() < t2.numero(); }
 
   #endif

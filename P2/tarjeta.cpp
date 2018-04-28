@@ -4,7 +4,7 @@
 
   21/04/2018, GPL Licensed, all rights reserved */
 
-  Tarjeta(const Tipo t, const Numero& n, Usuario& u, const Fecha& f):
+  Tarjeta::Tarjeta(const Tipo t, const Numero& n, Usuario& u, const Fecha& f):
   numero_{n}, titular_{u}, caducidad_{f}, tipo_{t}
   {
     Fecha hoy;
@@ -15,7 +15,7 @@
     u.es_titular_de(*this);
   }
 
-  ~Tarjeta()
+  Tarjeta::~Tarjeta()
   {
     this -> titular_.no_es_titular_de(*this);
   }
@@ -23,8 +23,8 @@
 ostream& operator << (ostream& os, const Tarjeta& t)
 {
   os << t.tipo() << '\n' << t.numero() << '\n' << t.titular_facial()
-  << '\n' << "Caduca: " << t.caducidad().mes() << '/'
-  << t.caducidad().anno();
+  << '\n' << "Caduca: " << setprecision(2) << t.caducidad().mes() <<
+   '/' << setprecision(2) << t.caducidad().anno();
 
   return os;
 }
