@@ -56,9 +56,9 @@
 
     Usuario::~Usuario()
     {
-      for (auto i = tarjetas_.begin(); i < tarjetas_.end(); i++)
+      for (auto i = tarjetas_.begin(); /*TODO i < tarjetas_.end()*/; i++)
       {
-        tarjetas_[i] -> Tarjeta::anular_titular();
+        i -> second -> anula_titular();
       }
     }
 
@@ -67,7 +67,10 @@
     {
       os << u.id() << " [" << u.clave() << "] " << u.nombre() << ' ' <<
       u.apellidos() << '\n' << u.direccion() << '\n' << "Tarjetas:" <<
-      '\n' << u.tarjetas() << endl;
+      '\n';
+
+      for(auto i = u.tarjetas().begin(); /*TODO i < u.tarjetas().end()*/; ++i)
+        os << i -> second << '\n';
 
       return os;
     }
@@ -81,7 +84,7 @@
       prev = std::cout.fill('=');
 
       os << "Carrito de la compra de " << u.id() << " [Articulos: " <<
-      u.compra().size() << ']' << '\n' << "\tCant. Artículo\n" //<<
+      u.compra().size() << ']' << '\n' << "\tCant. Artículo\n"; //<<
       //"===========================================================";
 
       //TODO sustituir esta funcion por la linea comentada
@@ -89,12 +92,12 @@
 
       cont = 1;
 
-      for (auto i = u.compra().cbegin(); i < u.compra().cend(); i++)
+      for (auto i = u.compra().begin(); /*TODO i < u.compra().end()*/; i++)
       {
-        os << cont << '\t' << '[' << u.articulos_[i].first().referencia()
-        << "] " << '"' << u.articulos_[i].first().titulo() << '"' <<
-        ", " << u.articulos_[i].first().f_publi().anno() ". " <<
-        u.articulos_[i].first().precio() << " €\n";
+        os << cont << '\t' << '[' << i -> first -> referencia()
+        << "] " << '"' << i -> first -> titulo() << '"' <<
+        ", " << i -> first -> f_publi().anno() << ". " <<
+        i -> first -> precio() << " €\n";
       }
 
       return os;

@@ -50,8 +50,12 @@ Cadena Clave::cifrado(Cadena& c)
     salt[i] = seedchars[n_aleatorio];
   }
 
-  if(!(c = crypt(c.c_str(), salt)))
+  cifrada = crypt(c.c_str(), salt);
+
+  if(c.c_str() == cifrada)
     throw Incorrecta(ERROR_CRYPT);
+  else
+    c = cifrada;
 
   return c;
 }
