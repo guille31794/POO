@@ -7,7 +7,7 @@
   #include "articulo.hpp"
 
   Articulo::Articulo(const Cadena& referencia, const Cadena& titulo,
-  const Fecha& f_publi, const double precio, const double stock):
+  const Fecha& f_publi, const double precio, const unsigned stock):
   referencia_{referencia}, titulo_{titulo}, f_publi_{f_publi},
   precio_{precio}, stock_{stock}
   {}
@@ -18,5 +18,5 @@
     os << '[' << ar.referencia() << "] " << '"' << ar.titulo() << '"' << ", "
     << ar.f_publi().anno() << ". " << ar.precio() << " €";
 
-    return os; 
+    return os;
   }

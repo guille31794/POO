@@ -4,6 +4,8 @@
 
   21/04/2018, GPL Licensed, all rights reserved */
 
+  #include "clave.hpp"
+
   Clave::Clave(const char* clave):
   clave_{clave}
   {
@@ -13,7 +15,7 @@
     this -> clave_ = cifrado(this -> clave_);
   }
 
-bool Clave::cifrado(Cadena& c)
+Cadena Clave::cifrado(Cadena& c)
 {
   //Variable necesaria para la llamada a crypt
 
@@ -30,11 +32,9 @@ bool Clave::cifrado(Cadena& c)
 
   /*
     Elijo motor de generación pseudo aleatoria
-    mersene_random_engine es el mas lento, pero el
-    que menos se repite y menos memoria consume
   */
 
-  std::mersene_random_engine el(r());
+  std::default_random_engine el(r());
 
   /*
     Distribuyo mi numero pseudoaleatorio de acuerdo

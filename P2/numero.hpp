@@ -10,28 +10,29 @@
 #include "cadena.hpp"
 #include "luhn.cpp"
 
-  class Numero {
-  private:
+  class Numero
+  {
+    private:
 
-    Cadena numero_;
+      Cadena numero_;
 
-  public:
+    public:
 
-    enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
-    Numero(const Cadena&);
-    inline operator const char*() const { return this -> numero_.c_str();}
+      enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
+      Numero(const Cadena&);
+      inline operator const char*() const { return this -> numero_.c_str();}
 
-    class Incorrecto
-    {
-      private:
+      class Incorrecto
+      {
+        private:
 
-        Razon r;
+          Razon r;
 
-      public:
+        public:
 
-        inline Incorrecto(const Razon r_): r{r_} {}
-        inline Razon razon() const { return this -> r;}
-    };
+          inline Incorrecto(const Razon r_): r{r_} {}
+          inline Razon razon() const { return this -> r;}
+      };
   };
 
   bool operator <(const Numero&, const Numero &);
