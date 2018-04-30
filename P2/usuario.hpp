@@ -22,6 +22,7 @@
 
       typedef map<Numero, Tarjeta*> Tarjetas;
       typedef unordered_map<Articulo*, unsigned int> Articulos;
+      typedef unordered_set<Cadena*> Comprobador;
       explicit Usuario(const Cadena&, const Cadena&,
       const Cadena&, const Cadena&, const Clave& );
 
@@ -69,7 +70,7 @@
         TODO ¿Funcionaría con char* en lugar de Cadena?
       */
 
-      static unordered_set<Cadena*> comprobador;
+      static Comprobador comprobador;
   };
 
   std::basic_ostream<char>& operator <<

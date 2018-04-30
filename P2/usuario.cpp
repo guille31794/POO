@@ -10,15 +10,15 @@
     const Cadena& apellidos, const Cadena& direccion,
     const Clave& clave):
     id_{id}, nombre_{nombre}, apellidos_{apellidos},
-    direccion_{dirección}, contraseña_{clave}
+    direccion_{direccion}, clave_{clave}
     {
-      bool bolean;
-      std::pair <auto, bool> par;
+      bool boolean;
+      std::pair <Cadena*, bool> par;
 
       par = comprobador.insert(id);
       boolean = par.second;
 
-      if (!b)
+      if (!boolean)
         throw Id_duplicado(this -> id_);
     }
 

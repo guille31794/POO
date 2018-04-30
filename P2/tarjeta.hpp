@@ -39,7 +39,7 @@
 
         private:
           Fecha caducada_;
-      }
+      };
 
     private:
       Numero numero_;
