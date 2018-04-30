@@ -15,7 +15,7 @@
       bool boolean;
       std::pair <Cadena*, bool> par;
 
-      par = comprobador.insert(id);
+      par = comprobador.insert(&id);
       boolean = par.second;
 
       if (!boolean)
@@ -24,33 +24,22 @@
 
     void Usuario::es_titular_de(Tarjeta &t)
     {
-      /*
-      bool bolean;
-      std::pair <auto, bool> par;
-
-      par = tarjetas_.insert(t);
-      boolean = par.second;
-
-      if (!b)
-        throw algun tipo de excepcion ;
-      */
-
-      tarjetas_.insert(t);
+      tarjetas_.insert(make_pair(t.numero(), &t));
     }
 
     void Usuario::no_es_titular_de(Tarjeta &t)
     {
-      this -> tarjetas_.erase(t);
+      this -> tarjetas_.erase(t.numero());
     }
 
     void Usuario::compra(Articulo& ar, unsigned cant /*= 1*/)
     {
       if(!cant)
-        articulos_.erase(ar);
+        articulos_.erase(&ar);
       else
       {
-        articulos_.erase(ar);
-        articulos_.insert(make_pair(ar, cant));
+        articulos_.erase(&ar);
+        articulos_.insert(make_pair(&ar, cant));
       }
     }
 

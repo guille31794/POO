@@ -9,14 +9,14 @@
 Numero::Numero(const Cadena& c):
 numero_{c}
 {
-  for(auto i = numero_.begin(); i < numero_.end() < ++i)
+  for(int i = 0; i < numero_.length(); ++i)
   {
     if(isalpha(numero_[i]))
       throw Incorrecto(DIGITOS);
 
     if(isspace(numero_[i]))
     {
-      for(auto cont = i; cont < numero_.end(); ++cont)
+      for(auto cont = i; cont < numero_.length(); ++cont)
       {
         numero_[cont - 1] = numero_[cont];
       }
@@ -36,7 +36,7 @@ bool operator <(const Numero& n1, const Numero &n2)
 {
   bool v;
 
-  v = static_cast<char*>n1 < static_cast<char*>n2;
+  v = /*static_cast<char*>(*/n1 < /*static_cast<char*>(*/n2;
 
   return v;
 }
