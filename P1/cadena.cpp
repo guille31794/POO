@@ -235,6 +235,7 @@ Cadena::~Cadena()
     delete[] s_;
 }
 
+//Relleno para hacer commit
 namespace std
 {
   // Estaremos dentro del espacio de nombres std
