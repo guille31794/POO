@@ -12,13 +12,13 @@
     id_{id}, nombre_{nombre}, apellidos_{apellidos},
     direccion_{direccion}, clave_{clave}
     {
-      bool boolean;
-      std::pair <Cadena*, bool> par;
+      bool insertado;
+      std::pair <Comprobador::iterator, bool> par;
 
-      par = comprobador.insert(&id);
-      boolean = par.second;
+      par = comprobador.insert(id);
+      insertado = par.second;
 
-      if (!boolean)
+      if (!insertado)
         throw Id_duplicado(this -> id_);
     }
 
@@ -45,10 +45,13 @@
 
     Usuario::~Usuario()
     {
-      for (auto i = tarjetas_.begin(); /*TODO i < tarjetas_.end()*/; i++)
+      for (auto i = tarjetas_.begin(); i != tarjetas_.end(); i++)
       {
         i -> second -> anula_titular();
       }
+
+      this -> comprobador.erase(this -> id());
+
     }
 
     std::basic_ostream<char>& operator <<
@@ -58,7 +61,7 @@
       u.apellidos() << '\n' << u.direccion() << '\n' << "Tarjetas:" <<
       '\n';
 
-      for(auto i = u.tarjetas().begin(); /*TODO i < u.tarjetas().end()*/; ++i)
+      for(auto i = u.tarjetas().begin(); i != u.tarjetas().end(); ++i)
         os << i -> second << '\n';
 
       return os;
@@ -73,15 +76,17 @@
       prev = std::cout.fill('=');
 
       os << "Carrito de la compra de " << u.id() << " [Articulos: " <<
-      u.compra().size() << ']' << '\n' << "\tCant. Artículo\n"; //<<
-      //"===========================================================";
+      u.compra().size() << ']' << '\n' << "\tCant. Artículo\n" <<
+      "===========================================================";
 
-      //TODO sustituir esta funcion por la linea comentada
+      /*
+      TODO sustituir esta funcion por la linea comentada
       std::cout.fill(prev);
+      */
 
       cont = 1;
 
-      for (auto i = u.compra().begin(); /*TODO i < u.compra().end()*/; i++)
+      for (auto i = u.compra().begin(); i != u.compra().end(); i++)
       {
         os << cont << '\t' << '[' << i -> first -> referencia()
         << "] " << '"' << i -> first -> titulo() << '"' <<

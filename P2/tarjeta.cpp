@@ -19,7 +19,7 @@
 
   Tarjeta::~Tarjeta()
   {
-    this -> titular_ -> no_es_titular_de(*this);
+    const_cast<Usuario*>(titular_) -> no_es_titular_de(*this);
   }
 
 std::basic_ostream<char>& operator <<

@@ -13,6 +13,8 @@
   #include <iomanip>
   #include <iostream>
 
+  class Usuario;
+
   class Tarjeta
   {
     public:

@@ -16,13 +16,15 @@
 
   using namespace std;
 
+  class Tarjeta;
+
   class Usuario
   {
     public:
 
       typedef map<Numero, Tarjeta*> Tarjetas;
       typedef unordered_map<Articulo*, unsigned int> Articulos;
-      typedef unordered_set<Cadena*> Comprobador;
+      typedef unordered_set<Cadena> Comprobador;
       explicit Usuario(const Cadena&, const Cadena&,
       const Cadena&, const Cadena&, const Clave& );
 
@@ -65,10 +67,6 @@
       const Clave clave_;
       Tarjetas tarjetas_;
       Articulos articulos_;
-
-      /*
-        TODO ¿Funcionaría con char* en lugar de Cadena?
-      */
 
       static Comprobador comprobador;
   };
