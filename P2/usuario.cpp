@@ -19,7 +19,7 @@
       insertado = par.second;
 
       if (!insertado)
-        throw Id_duplicado(this -> id_);
+        throw Id_duplicado(this -> id());
     }
 
     void Usuario::es_titular_de(Tarjeta &t)
@@ -50,7 +50,7 @@
         i -> second -> anula_titular();
       }
 
-      this -> comprobador.erase(this -> id_/*id()*/);
+      this -> comprobador.erase(this -> id());
 
     }
 
