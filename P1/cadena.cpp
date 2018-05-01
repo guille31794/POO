@@ -144,7 +144,6 @@ Cadena& Cadena::operator += (const Cadena &c)
     strcpy(string.s_, this -> s_);
     strcat(string.s_, c.s_);
 
-    //delete[] this -> s_;
     this -> s_ = new char[this -> tam_ + 1];
 
     strcpy(this -> s_, string.s_);
@@ -234,4 +233,21 @@ Cadena::~Cadena()
 {
     tam_ = 0;
     delete[] s_;
+}
+
+namespace std
+{
+  // Estaremos dentro del espacio de nombres std
+  template <> // Es una especialización de una plantilla para Cadena
+  struct hash<Cadena> // Es una clase con solo un operador publico
+  {
+    size_t operator() (const Cadena& cad) const // el operador función
+    {
+      hash<string> hs;
+      const char* p = cad.c_str();
+      string s(p);
+      size_t res = hs(s);
+      return res;
+    }
+  };
 }
