@@ -10,6 +10,8 @@
 #include "cadena.hpp"
 #include "luhn.cpp"
 
+bool luhn(const Cadena&);
+
   class Numero
   {
     private:
