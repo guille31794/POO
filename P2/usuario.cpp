@@ -50,7 +50,7 @@
         i -> second -> anula_titular();
       }
 
-      this -> comprobador.erase(this -> id());
+      this -> comprobador.erase(this -> id_/*id()*/);
 
     }
 

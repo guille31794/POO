@@ -36,7 +36,7 @@ bool operator <(const Numero& n1, const Numero &n2)
 {
   bool v;
 
-  v = /*static_cast<char*>(*/n1 < /*static_cast<char*>(*/n2;
+  v = n1 < n2;
 
   return v;
 }
