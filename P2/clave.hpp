@@ -10,6 +10,8 @@
   #include <ctime>
   #include <random>
 
+  class Cadena;
+
   class Clave
   {
     private:

@@ -8,6 +8,9 @@
 #include "fecha.hpp"
 #include "cadena.cpp"
 
+class Fecha;
+class Cadena;
+
 class Articulo
 {
   private:

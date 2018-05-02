@@ -6,19 +6,20 @@
   #ifndef Usuario_hpp
   #define Usuario_hpp
   #include "cadena.hpp"
-  #include "tarjeta.hpp"
-  #include "articulo.hpp"
-  #include "clave.hpp"
+  //#include "tarjeta.hpp"
+  //#include "articulo.hpp"
+  //#include "clave.hpp"
   #include <unordered_map>
   #include <unordered_set>
   #include "utility"
   #include <map>
 
   using namespace std;
-  
+
   class Clave;
   class Articulo;
   class Tarjeta;
+  class Cadena;
 
   class Usuario
   {
