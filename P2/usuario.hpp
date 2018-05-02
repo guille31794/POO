@@ -9,6 +9,7 @@
   //#include "tarjeta.hpp"
   //#include "articulo.hpp"
   //#include "clave.hpp"
+  #include "numero.hpp"
   #include <unordered_map>
   #include <unordered_set>
   #include "utility"
