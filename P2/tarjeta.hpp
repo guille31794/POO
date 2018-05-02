@@ -9,7 +9,7 @@
   #include "fecha.hpp"
   #include "cadena.hpp"
   #include "numero.hpp"
-  //#include "usuario.hpp"
+  #include "usuario.hpp"
   #include <iomanip>
   #include <iostream>
 
