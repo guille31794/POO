@@ -6,7 +6,7 @@
   #ifndef Usuario_hpp
   #define Usuario_hpp
   #include "cadena.hpp"
-  //#include "tarjeta.hpp"
+  #include "tarjeta.hpp"
   //#include "articulo.hpp"
   #include "clave.hpp"
   #include "numero.hpp"
