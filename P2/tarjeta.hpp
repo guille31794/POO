@@ -13,6 +13,7 @@
   #include <iomanip>
   #include <iostream>
 
+  class Numero;
   class Usuario;
 
   class Tarjeta

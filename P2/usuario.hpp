@@ -15,7 +15,9 @@
   #include <map>
 
   using namespace std;
-
+  
+  class Clave;
+  class Articulo;
   class Tarjeta;
 
   class Usuario
