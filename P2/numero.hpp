@@ -8,7 +8,7 @@
 #define Numero_hpp
 #include <cctype>
 #include "cadena.hpp"
-#include "luhn.cpp"
+
 
 bool luhn(const Cadena&);
 
