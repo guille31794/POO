@@ -7,7 +7,7 @@
   #define Usuario_hpp
   #include "cadena.hpp"
   #include "tarjeta.hpp"
-  //#include "articulo.hpp"
+  #include "articulo.hpp"
   #include "clave.hpp"
   #include "numero.hpp"
   #include <unordered_map>
