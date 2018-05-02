@@ -20,6 +20,7 @@
   class Articulo;
   class Tarjeta;
   class Cadena;
+  class Numero;
 
   class Usuario
   {
