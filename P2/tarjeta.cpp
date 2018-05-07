@@ -6,7 +6,7 @@
 
   #include "tarjeta.hpp"
 
-  Numero::Numero(const Cadena& c):
+  Tarjeta::Numero::Numero(const Cadena& c):
   numero_{c}
   {
     for(int i = 0; i < numero_.length(); ++i)

@@ -49,8 +49,6 @@
             };
         };
 
-        bool operator <(const Numero&, const Numero &);
-
       enum Tipo {VISA, Mastercard, Maestro, JCB, AmericanExpress};
       explicit Tarjeta
       (const Tipo, const Numero&, Usuario&, const Fecha&);
@@ -88,5 +86,7 @@ std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>& os, const Tarjeta& t);
 inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }
+
+bool operator <(const Numero&, const Numero &);
 
   #endif
