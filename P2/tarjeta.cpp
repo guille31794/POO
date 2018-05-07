@@ -32,7 +32,7 @@
       throw Incorrecto(NO_VALIDO);
   }
 
-  bool operator <(const Numero& n1, const Numero &n2)
+  bool operator <(const Tarjeta::Numero& n1, const Tarjeta::Numero &n2)
   {
     bool v;
 

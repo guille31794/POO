@@ -86,6 +86,6 @@ std::basic_ostream<char>& operator <<
 inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }
 
-bool operator <(const Numero&, const Numero &);
+bool operator <(const Tarjeta::Numero&, const Tarjeta::Numero &);
 
   #endif
