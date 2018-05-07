@@ -44,8 +44,8 @@
 
               public:
 
-                inline Numero::Incorrecto(const Razon r_): r{r_} {}
-                inline Numero::Razon razon() const { return this -> r;}
+                Incorrecto(const Razon r_): r{r_} {}
+                Razon razon() const { return this -> r;}
             };
         };
 
