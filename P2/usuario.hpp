@@ -13,7 +13,7 @@
   #include "utility"
   #include <map>
   #include <random>
-
+  #include "unistd.h"
   using namespace std;
 
   class Articulo;
