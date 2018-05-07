@@ -17,36 +17,37 @@
   class Cadena;
   class Usuario;
 
+  bool luhn(const Cadena&);
+
+  class Numero
+  {
+    private:
+
+      Cadena numero_;
+
+    public:
+
+      enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
+      Numero(const Cadena&);
+      inline operator const char*() const { return this -> numero_.c_str();}
+
+      class Incorrecto
+      {
+        private:
+
+          Razon r;
+
+        public:
+
+          Incorrecto(const Razon r_): r{r_} {}
+          Razon razon() const { return this -> r;}
+      };
+  };
+
+
   class Tarjeta
   {
     public:
-
-      bool luhn(const Cadena&);
-
-        class Numero
-        {
-          private:
-
-            Cadena numero_;
-
-          public:
-
-            enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
-            Numero(const Cadena&);
-            inline operator const char*() const { return this -> numero_.c_str();}
-
-            class Incorrecto
-            {
-              private:
-
-                Razon r;
-
-              public:
-
-                Incorrecto(const Razon r_): r{r_} {}
-                Razon razon() const { return this -> r;}
-            };
-        };
 
       enum Tipo {VISA, Mastercard, Maestro, JCB, AmericanExpress};
       explicit Tarjeta
@@ -86,6 +87,6 @@ std::basic_ostream<char>& operator <<
 inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }
 
-bool operator <(const Tarjeta::Numero&, const Tarjeta::Numero &);
+bool operator <(const Numero&, const Numero &);
 
   #endif

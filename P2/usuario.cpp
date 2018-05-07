@@ -6,7 +6,7 @@
 
   #include "usuario.hpp"
 
-  Usuario::Clave::Clave(const char* clave):
+  Clave::Clave(const char* clave):
   clave_{clave}
   {
     if(this -> clave_.length() < 5)
@@ -15,7 +15,7 @@
     this -> clave_ = cifrado(this -> clave_);
   }
 
-Cadena Usuario::Clave::cifrado(Cadena& c)
+Cadena Clave::cifrado(Cadena& c)
 {
   //Variable necesaria para la llamada a crypt
 
@@ -60,7 +60,7 @@ Cadena Usuario::Clave::cifrado(Cadena& c)
   return c;
 }
 
-  bool Usuario::Clave::verifica(const char *string)
+  bool Clave::verifica(const char *string)
   {
     bool boolean;
 
