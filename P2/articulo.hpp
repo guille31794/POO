@@ -8,8 +8,6 @@
 #include "fecha.hpp"
 #include "cadena.hpp"
 
-class Fecha;
-class Cadena;
 
 class Articulo
 {

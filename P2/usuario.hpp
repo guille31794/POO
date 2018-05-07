@@ -16,9 +16,6 @@
   #include "unistd.h"
   using namespace std;
 
-  class Articulo;
-  class Tarjeta;
-  class Cadena;
   class Tarjeta;
   class Numero;
 

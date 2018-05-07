@@ -13,8 +13,6 @@
   #include <iostream>
   #include <cctype>
 
-  class Fecha;
-  class Cadena;
   class Usuario;
 
   bool luhn(const Cadena&);
