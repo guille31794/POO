@@ -20,6 +20,7 @@
   class Tarjeta;
   class Cadena;
   class Tarjeta;
+  class Numero;
 
   class Clave
   {
@@ -46,13 +47,13 @@
           Razon r_;
 
         public:
-          inline Incorrecta(Razon r): r_{r}
+           Incorrecta(Razon r): r_{r}
           {}
-          inline Razon razon() const  { return this -> r_; }
+           Razon razon() const  { return this -> r_; }
 
       };
 
-      inline Cadena clave() const { return this -> clave_;}
+       Cadena clave() const { return this -> clave_;}
       bool verifica(const char *);
       Cadena cifrado(Cadena& );
   };
@@ -79,26 +80,26 @@
 
         public:
 
-          inline Id_duplicado(const Cadena& id):
+           Id_duplicado(const Cadena& id):
           idd_{id.c_str()}
           {}
-          inline char* const idd() const  { return this -> idd_;}
+           char* const idd() const  { return this -> idd_;}
       };
 
       void es_titular_de(Tarjeta &);
       void no_es_titular_de(Tarjeta &);
 
-      inline Cadena id() const  { return this -> id_;}
-      inline Cadena nombre() const  { return this -> nombre_;}
-      inline Cadena apellidos() const { return this -> apellidos_;}
-      inline Cadena direccion() const { return this -> direccion_;}
-      inline const Cadena clave() const
+       Cadena id() const  { return this -> id_;}
+       Cadena nombre() const  { return this -> nombre_;}
+       Cadena apellidos() const { return this -> apellidos_;}
+       Cadena direccion() const { return this -> direccion_;}
+       const Cadena clave() const
       { return this -> clave_.clave();}
 
-      inline const Tarjetas& tarjetas() const { return this -> tarjetas_;}
+       const Tarjetas& tarjetas() const { return this -> tarjetas_;}
       void compra(Articulo&, unsigned cant = 1);
-      inline const Articulos& compra() const { return this -> articulos_;}
-      inline size_t n_articulos() const { return this -> articulos_.size();}
+       const Articulos& compra() const { return this -> articulos_;}
+       size_t n_articulos() const { return this -> articulos_.size();}
 
       ~Usuario();
 

@@ -6,7 +6,7 @@
 
   #include "tarjeta.hpp"
 
-  Numero(const Cadena& c):
+  Numero::Numero(const Cadena& c):
   numero_{c}
   {
     for(int i = 0; i < numero_.length(); ++i)
@@ -36,7 +36,7 @@
   {
     bool v;
 
-    v = n1 < n2;
+    v = (const char*)n1 < (const char*)n2;
 
     return v;
   }
