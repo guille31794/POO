@@ -60,7 +60,7 @@
           Cadena cifrado(Cadena& );
       };
 
-      typedef map<Numero, Tarjeta*> Tarjetas;
+      typedef map<Tarjeta::Numero, Tarjeta*> Tarjetas;
       typedef unordered_map<Articulo*, unsigned int> Articulos;
       typedef unordered_set<Cadena> Comprobador;
       explicit Usuario(const Cadena&, const Cadena&,
