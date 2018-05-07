@@ -15,7 +15,7 @@
 
   class Fecha;
   class Cadena;
-  class Numero;
+  class Tarjeta::Numero;
   class Usuario;
 
   class Tarjeta

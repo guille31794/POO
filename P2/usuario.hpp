@@ -15,11 +15,11 @@
 
   using namespace std;
 
-  class Clave;
+  class Usuario::Clave;
   class Articulo;
   class Tarjeta;
   class Cadena;
-  class Numero;
+  class Tarjeta::Numero;
 
   class Usuario
   {
