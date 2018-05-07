@@ -6,7 +6,7 @@
 #ifndef Articulo_hpp
 #define Articulo_hpp
 #include "fecha.hpp"
-#include "cadena.cpp"
+#include "cadena.hpp"
 
 class Fecha;
 class Cadena;
