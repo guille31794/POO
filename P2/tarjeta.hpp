@@ -12,6 +12,7 @@
   #include "usuario.hpp"
   #include <iomanip>
   #include <iostream>
+  #include <cctype>
 
   class Fecha;
   class Cadena;
@@ -21,6 +22,36 @@
   class Tarjeta
   {
     public:
+
+      bool luhn(const Cadena&);
+
+        class Numero
+        {
+          private:
+
+            Cadena numero_;
+
+          public:
+
+            enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
+            Numero(const Cadena&);
+            inline operator const char*() const { return this -> numero_.c_str();}
+
+            class Incorrecto
+            {
+              private:
+
+                Razon r;
+
+              public:
+
+                inline Incorrecto(const Razon r_): r{r_} {}
+                inline Razon razon() const { return this -> r;}
+            };
+        };
+
+        bool operator <(const Numero&, const Numero &);
+
       enum Tipo {VISA, Mastercard, Maestro, JCB, AmericanExpress};
       explicit Tarjeta
       (const Tipo, const Numero&, Usuario&, const Fecha&);
