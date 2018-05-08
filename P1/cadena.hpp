@@ -64,36 +64,37 @@ class Cadena
     Cadena& operator =(const char*);     //original
     Cadena& operator =(Cadena &&);
     Cadena& operator +=(const Cadena &);
-    inline Cadena operator +(const Cadena &c) const
+     Cadena operator +(const Cadena &c) const
     {Cadena t(*this); t += c;   return t;}
+    void reducir_tam()  { this -> tam_--;} //Prueba
 
     //Sobrecarga de operadores logicos
 
-    friend inline bool operator ==(const Cadena &c1, const Cadena &c2)
+    friend bool operator ==(const Cadena &c1, const Cadena &c2)
     {   return (strcmp (c1.s_, c2.s_) == 0);}
-    friend inline bool operator <(const Cadena &c1, const Cadena &c2)
+    friend bool operator <(const Cadena &c1, const Cadena &c2)
     {   return (strcmp(c1.s_, c2.s_) < 0);}
-    friend inline bool operator !=(const Cadena &c1, const Cadena &c2)
+    friend bool operator !=(const Cadena &c1, const Cadena &c2)
     {   return !(c1 == c2);}
-    friend inline bool operator >(const Cadena &c1, const Cadena &c2)
+    friend bool operator >(const Cadena &c1, const Cadena &c2)
     { return (strcmp(c1.s_, c2.s_) > 0); }
-    friend inline bool operator <=(const Cadena &c1, const Cadena &c2)
+    friend bool operator <=(const Cadena &c1, const Cadena &c2)
     { return (strcmp(c1.s_, c2.s_) <= 0);}
-    friend inline bool operator >=(const Cadena &c1, const Cadena &c2)
+    friend bool operator >=(const Cadena &c1, const Cadena &c2)
     {  return (strcmp(c1.s_, c2.s_) >= 0);}
 
     //Sobrecarga de indice
 
-    inline char& operator [](const int n)    {return s_[n];}
-    inline char& operator [](const int n) const    {return s_[n];}
+     char& operator [](const int n)    {return s_[n];}
+     char& operator [](const int n) const    {return s_[n];}
     char& at(const int );
     const char& at(const int ) const;
 
     //Observador
 
-    inline const char* puts() const { return s_;}
-    inline const int length() const { return tam_;}
-    inline char* c_str() const {  return this -> s_; }
+     const char* puts() const { return s_;}
+     const int length() const { return tam_;}
+     char* c_str() const {  return this -> s_; }
 
     Cadena substr(unsigned, const int) const;
 
@@ -106,28 +107,28 @@ class Cadena
 
     //Semantica de movimiento
 
-    inline iterator begin()   {   return this -> s_;}
-    inline iterator end()   {   return this -> s_ + this -> tam_;}
+     iterator begin()   {   return this -> s_;}
+     iterator end()   {   return this -> s_ + this -> tam_;}
 
-    inline const_iterator begin() const   {   return this -> s_;}
-    inline const_iterator end() const
+     const_iterator begin() const   {   return this -> s_;}
+     const_iterator end() const
     {   return this -> s_ + this -> tam_;}
-    inline const_iterator cbegin() const   {   return this -> s_;}
-    inline const_iterator cend()  const
+     const_iterator cbegin() const   {   return this -> s_;}
+     const_iterator cend()  const
     {   return this -> s_ + this -> tam_ ;}
 
-    inline reverse_iterator rbegin() noexcept
+     reverse_iterator rbegin() noexcept
     {   return reverse_iterator(end());}
-    inline reverse_iterator rend() noexcept
+     reverse_iterator rend() noexcept
     {   return reverse_iterator(begin());}
 
-    inline const_reverse_iterator rbegin() const noexcept
+     const_reverse_iterator rbegin() const noexcept
     {   return const_reverse_iterator(end());}
-    inline const_reverse_iterator rend() const noexcept
+     const_reverse_iterator rend() const noexcept
     {   return const_reverse_iterator(begin());}
-    inline const_reverse_iterator crbegin() const noexcept
+     const_reverse_iterator crbegin() const noexcept
     {   return const_reverse_iterator(cend());}
-    inline const_reverse_iterator crend() const noexcept
+     const_reverse_iterator crend() const noexcept
     {   return const_reverse_iterator(cbegin());}
 
     //Destructor

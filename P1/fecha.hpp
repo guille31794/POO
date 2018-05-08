@@ -48,33 +48,33 @@ public:
 
         //Observador de excepciones
 
-        inline const char* por_que() const { return string; }
+         const char* por_que() const { return string; }
     };
 
     //Observadoras-Consultoras
 
-    inline const int dia() const { return this -> day; }
-    inline const int mes() const { return this -> month; }
-    inline const int anno() const { return this -> year; }
+     const int dia() const { return this -> day; }
+     const int mes() const { return this -> month; }
+     const int anno() const { return this -> year; }
 
     //Sobrecarga de operadores aritmeticos
 
     Fecha& operator +=(const int);
-    inline Fecha& operator -=(int n)   { n *= (-1); return *this += n; }
+     Fecha& operator -=(int n)   { n *= (-1); return *this += n; }
 
     //Predecremento/Preincremento
 
-    inline Fecha& operator ++()  {  return *this += 1;   }
-    inline Fecha& operator --()  {  return *this += -1;  }
+     Fecha& operator ++()  {  return *this += 1;   }
+     Fecha& operator --()  {  return *this += -1;  }
 
     //Postdecremento/Postincremento
 
-    inline Fecha operator ++(const int n)  { Fecha f(*this); *this += 1;
+     Fecha operator ++(const int n)  { Fecha f(*this); *this += 1;
         return f;}
-    inline Fecha operator --(const int n)   {   Fecha f(*this); *this += -1;
+     Fecha operator --(const int n)   {   Fecha f(*this); *this += -1;
         return f;}
-    inline Fecha& operator +(const int n) const {  Fecha f(*this); return f += n;  }
-    inline Fecha& operator -(int n) const   {  Fecha f(*this); n *= (-1);
+     Fecha& operator +(const int n) const {  Fecha f(*this); return f += n;  }
+     Fecha& operator -(int n) const   {  Fecha f(*this); n *= (-1);
         return f += n; }
 
     //Constantes de construcción publicas
@@ -98,13 +98,13 @@ public:
 
 bool operator ==(const Fecha &, const Fecha &);
 bool operator <(const Fecha &, const Fecha &);
-inline bool operator !=(const Fecha &f1, const Fecha &f2)
+ bool operator !=(const Fecha &f1, const Fecha &f2)
 { return !(f1 == f2);   }
-inline bool operator >(const Fecha &f1, const Fecha &f2)
+ bool operator >(const Fecha &f1, const Fecha &f2)
 { return f2 < f1;   }
-inline bool operator <=(const Fecha &f1, const Fecha &f2)
+ bool operator <=(const Fecha &f1, const Fecha &f2)
 { return  !(f1 > f2); }
-inline bool operator >=(const Fecha &f1, const Fecha &f2)
+ bool operator >=(const Fecha &f1, const Fecha &f2)
 { return !(f1 < f2);   }
 
 #endif
