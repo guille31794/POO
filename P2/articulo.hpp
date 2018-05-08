@@ -24,13 +24,13 @@ class Articulo
   explicit Articulo(const Cadena&, const Cadena&, const Fecha&, const double,
   const unsigned);
 
-  inline Cadena referencia() const  { return this -> referencia_;}
-  inline Cadena titulo() const  { return this -> titulo_;}
-  inline Fecha f_publi() const  { return this -> f_publi_;}
-  inline double precio() const { return this -> precio_;}
-  inline double& precio()  { return this -> precio_;}
-  inline unsigned stock() const  { return this -> stock_;}
-  inline unsigned& stock() { return this -> stock_;}
+   Cadena referencia() const  { return this -> referencia_;}
+   Cadena titulo() const  { return this -> titulo_;}
+   Fecha f_publi() const  { return this -> f_publi_;}
+   double precio() const { return this -> precio_;}
+   double& precio()  { return this -> precio_;}
+   unsigned stock() const  { return this -> stock_;}
+   unsigned& stock() { return this -> stock_;}
 };
 
 std::basic_ostream<char>& operator <<

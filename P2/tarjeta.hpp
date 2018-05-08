@@ -9,13 +9,13 @@
   #include "fecha.hpp"
   #include "cadena.hpp"
   #include "usuario.hpp"
+  #include "../luhn.hpp"
+
   #include <iomanip>
   #include <iostream>
   #include <cctype>
 
   class Usuario;
-
-  bool luhn(const Cadena&);
 
   class Numero
   {
@@ -82,7 +82,7 @@
 
 std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>& os, const Tarjeta& t);
- bool operator < (const Tarjeta& t1, const Tarjeta& t2)
+inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }
 
 bool operator <(const Numero&, const Numero &);

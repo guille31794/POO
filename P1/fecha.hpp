@@ -6,7 +6,6 @@
 #include <cstdio>
 #include <clocale>
 
-
 using namespace std;
 
 class Fecha
@@ -98,13 +97,13 @@ public:
 
 bool operator ==(const Fecha &, const Fecha &);
 bool operator <(const Fecha &, const Fecha &);
- bool operator !=(const Fecha &f1, const Fecha &f2)
+inline bool operator !=(const Fecha &f1, const Fecha &f2)
 { return !(f1 == f2);   }
- bool operator >(const Fecha &f1, const Fecha &f2)
+inline bool operator >(const Fecha &f1, const Fecha &f2)
 { return f2 < f1;   }
- bool operator <=(const Fecha &f1, const Fecha &f2)
+inline bool operator <=(const Fecha &f1, const Fecha &f2)
 { return  !(f1 > f2); }
- bool operator >=(const Fecha &f1, const Fecha &f2)
+inline bool operator >=(const Fecha &f1, const Fecha &f2)
 { return !(f1 < f2);   }
 
 #endif

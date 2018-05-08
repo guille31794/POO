@@ -6,6 +6,8 @@
 
   #include "usuario.hpp"
 
+  Usuario::Comprobador comprobador;
+
   Clave::Clave(const char* clave):
   clave_{clave}
   {
@@ -122,7 +124,7 @@ Cadena Clave::cifrado(Cadena& c)
         i -> second -> anula_titular();
       }
 
-      this -> comprobador.erase(this -> id());
+      comprobador.erase(this -> id());
 
     }
 

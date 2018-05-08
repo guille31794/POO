@@ -85,8 +85,8 @@ class Cadena
 
     //Sobrecarga de indice
 
-     char& operator [](const int n)    {return s_[n];}
-     char& operator [](const int n) const    {return s_[n];}
+    inline char& operator [](const int n)    {return s_[n];}
+    inline char& operator [](const int n) const    {return s_[n];}
     char& at(const int );
     const char& at(const int ) const;
 

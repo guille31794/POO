@@ -8,12 +8,13 @@
   #include "cadena.hpp"
   #include "tarjeta.hpp"
   #include "articulo.hpp"
+
   #include <unordered_map>
   #include <unordered_set>
-  #include "utility"
   #include <map>
   #include <random>
   #include "unistd.h"
+
   using namespace std;
 
   class Tarjeta;
@@ -50,7 +51,7 @@
 
       };
 
-       Cadena clave() const { return this -> clave_;}
+      Cadena clave() const { return this -> clave_;}
       bool verifica(const char *);
       Cadena cifrado(Cadena& );
   };
@@ -105,8 +106,6 @@
       const Clave clave_;
       Tarjetas tarjetas_;
       Articulos articulos_;
-
-      static Comprobador comprobador;
   };
 
   std::basic_ostream<char>& operator <<
