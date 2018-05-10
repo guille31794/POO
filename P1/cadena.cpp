@@ -215,8 +215,9 @@ std::basic_istream<char>& operator >>
 (std::basic_istream<char>& is, Cadena &c)
 {
   char* string = new char[c.tamMax];
+  string[0] = '\0';
 
-  is.width(33);
+  is.width(c.tamMax + 1);
 
   is >> string;
   delete[] c.s_;
