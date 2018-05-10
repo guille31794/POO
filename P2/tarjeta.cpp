@@ -18,7 +18,7 @@
       {
         for(auto cont = i; cont < numero_.length(); ++cont)
         {
-          numero_[cont - 1] = numero_[cont];
+          numero_[cont] = numero_[cont + 1];
         }
 
         numero_.reducir_tam();
