@@ -52,7 +52,7 @@
       };
 
       Cadena clave() const { return this -> clave_;}
-      bool verifica(const char *);
+      bool verifica(const char *) const;
       Cadena cifrado(Cadena& );
   };
 

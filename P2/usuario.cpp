@@ -62,7 +62,7 @@ Cadena Clave::cifrado(Cadena& c)
   return c;
 }
 
-  bool Clave::verifica(const char *string)
+  bool Clave::verifica(const char *string) const
   {
     bool boolean;
 

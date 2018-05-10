@@ -66,7 +66,7 @@
         public:
            Caducada(const Fecha& f):  caducada_{f}
           {}
-           Fecha cuando() { return this -> caducada_;}
+           Fecha cuando() const { return this -> caducada_;}
 
         private:
           Fecha caducada_;
