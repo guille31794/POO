@@ -55,7 +55,8 @@
 
   Tarjeta::~Tarjeta()
   {
-    const_cast<Usuario*>(titular_) -> no_es_titular_de(*this);
+      if(titular_ != nullptr)
+        const_cast<Usuario*>(titular_) -> no_es_titular_de(*this);
   }
 
 std::basic_ostream<char>& operator <<
