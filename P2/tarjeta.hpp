@@ -51,7 +51,7 @@
       explicit Tarjeta
       (const Tipo, const Numero&, Usuario&, const Fecha&);
       Tarjeta(const Tarjeta&) = delete;
-      Tarjeta operator =(const Tarjeta&) = delete;
+      Tarjeta& operator =(const Tarjeta&) = delete;
        Tipo tipo() const { return this -> tipo_;}
        Numero numero() const { return this -> numero_;}
        Fecha caducidad() const  { return this -> caducidad_;}

@@ -18,7 +18,7 @@
       {
         for(auto cont = i; cont < numero_.length(); ++cont)
         {
-          numero_[cont - 1] = numero_[cont];
+          numero_[cont] = numero_[cont + 1];
         }
 
         numero_.reducir_tam();
@@ -55,7 +55,8 @@
 
   Tarjeta::~Tarjeta()
   {
-    const_cast<Usuario*>(titular_) -> no_es_titular_de(*this);
+      if(titular_ != nullptr)
+        const_cast<Usuario*>(titular_) -> no_es_titular_de(*this);
   }
 
 std::basic_ostream<char>& operator <<
