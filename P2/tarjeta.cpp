@@ -7,22 +7,31 @@
   #include "tarjeta.hpp"
 
   Numero::Numero(const Cadena& c):
-  numero_{c}
+  numero_{}
   {
-    for(int i = 0; i < numero_.length(); ++i)
+    numero_ = c;
+
+    for(int i = 0; i < numero_.length() && numero_[i] != '\0';
+    ++i)
     {
       if(isalpha(numero_[i]))
         throw Incorrecto(DIGITOS);
 
-      if(isspace(numero_[i]))
+      while(isspace(numero_[i]))
       {
-        for(auto cont = i; cont < numero_.length(); ++cont)
+        for(auto cont = i; cont < numero_.length() && numero_[cont] != '\0';
+        ++cont)
         {
           numero_[cont] = numero_[cont + 1];
         }
 
         numero_.reducir_tam();
+        numero_[numero_.length() + 1] = '\0';
       }
+
+      if(numero_.length() < 13)
+        throw Incorrecto(LONGITUD);
+
     }
 
     if(numero_.length() >= 19 || numero_.length() <= 13)
@@ -30,15 +39,6 @@
 
     if(!luhn(numero_))
       throw Incorrecto(NO_VALIDO);
-  }
-
-  bool operator <(const Numero& n1, const Numero &n2)
-  {
-    bool v;
-
-    v = (const char*)n1 < (const char*)n2;
-
-    return v;
   }
 
 

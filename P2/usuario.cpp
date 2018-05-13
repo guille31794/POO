@@ -21,7 +21,7 @@ Cadena Clave::cifrado(Cadena& c)
 {
   //Variable necesaria para la llamada a crypt
 
-  char* cifrada = new char[20];
+  Cadena cifrada(13);
   char* salt = new char[2];
   int n_aleatorio;
   const char *const seedchars =

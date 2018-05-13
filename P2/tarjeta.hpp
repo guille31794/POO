@@ -27,7 +27,7 @@
 
       enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
       Numero(const Cadena&);
-       operator const char*() const { return this -> numero_.c_str();}
+      operator const char*() const { return this -> numero_.c_str();}
 
       class Incorrecto
       {
@@ -82,9 +82,15 @@
 
 std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>& os, const Tarjeta& t);
+
+inline bool operator <(const Numero& n1, const Numero& n2)
+{
+  return (const char*)n1 < (const char*)n2;
+}
+
 inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }
 
-bool operator <(const Numero&, const Numero &);
+
 
   #endif
