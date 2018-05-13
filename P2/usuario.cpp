@@ -98,7 +98,8 @@ Cadena Clave::cifrado(Cadena& c)
 
     void Usuario::es_titular_de(Tarjeta &t)
     {
-      tarjetas_.insert(make_pair(t.numero(), &t));
+      if( this -> id() == t.titular() -> id())
+        this -> tarjetas_.insert(make_pair(t.numero(), &t));
     }
 
     void Usuario::no_es_titular_de(Tarjeta &t)

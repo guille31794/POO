@@ -90,17 +90,17 @@
       void es_titular_de(Tarjeta &);
       void no_es_titular_de(Tarjeta &);
 
-       Cadena id() const  { return this -> id_;}
-       Cadena nombre() const  { return this -> nombre_;}
-       Cadena apellidos() const { return this -> apellidos_;}
-       Cadena direccion() const { return this -> direccion_;}
-       const Cadena clave() const
+      Cadena id() const  { return this -> id_;}
+      Cadena nombre() const  { return this -> nombre_;}
+      Cadena apellidos() const { return this -> apellidos_;}
+      Cadena direccion() const { return this -> direccion_;}
+      const Cadena clave() const
       { return this -> clave_.clave();}
 
-       const Tarjetas& tarjetas() const { return this -> tarjetas_;}
+      const Tarjetas& tarjetas() const { return this -> tarjetas_;}
       void compra(Articulo&, unsigned cant = 1);
-       const Articulos& compra() const { return this -> articulos_;}
-       size_t n_articulos() const { return this -> articulos_.size();}
+      const Articulos& compra() const { return this -> articulos_;}
+      size_t n_articulos() const { return this -> articulos_.size();}
 
       ~Usuario();
 
