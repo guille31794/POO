@@ -93,7 +93,7 @@ Cadena Clave::cifrado(Cadena& c)
       insertado = par.second;
 
       if (!insertado)
-        throw Id_duplicado(this -> id());
+        throw Id_duplicado(id.c_str());
     }
 
     void Usuario::es_titular_de(Tarjeta &t)

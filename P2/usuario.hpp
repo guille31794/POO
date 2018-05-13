@@ -79,8 +79,11 @@
         public:
 
            Id_duplicado(const Cadena& id):
-          idd_{id.c_str()}
-          {}
+           idd_{}
+           {
+             idd_ = new char[id.length()];
+             strcpy(idd_, id.c_str());
+           }
            char* const idd() const  { return this -> idd_;}
       };
 
