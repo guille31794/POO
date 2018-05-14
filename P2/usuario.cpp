@@ -112,9 +112,7 @@ Cadena Clave::cifrado(Cadena& c)
       if(!cant)
         articulos_.erase(&ar);
       else
-      {
         articulos_[&ar] = cant;
-      }
     }
 
     Usuario::~Usuario()
@@ -132,26 +130,27 @@ Cadena Clave::cifrado(Cadena& c)
     (std::basic_ostream<char>& os, const Usuario& u)
     {
       os << u.id() << " [" << u.clave() << "] " << u.nombre() << ' ' <<
-      u.apellidos() << '\n' << u.direccion() << '\n' << "Tarjetas:" <<
-      '\n';
+      u.apellidos() << endl;
+      os << u.direccion() << endl;
+      os << "Tarjetas:" << endl;
 
       for(auto i = u.tarjetas().begin(); i != u.tarjetas().end(); ++i)
-        os << *i -> second << '\n';
+        os << *i -> second << endl;
 
       return os;
     }
 
-    std::basic_ostream<char>& mostrar_carro
-      (std::basic_ostream<char>& os, const Usuario& u)
+    void mostrar_carro(std::basic_ostream<char>& os, const Usuario& u)
     {
-      int cont;
-
       os << "Carrito de la compra de " << u.id() << " [Artículos: " <<
-      u.n_articulos() << ']' << '\n' << "\tCant. Artículo\n" <<
+      u.n_articulos() << ']' << endl;
+
+      os << "\tCant. Artículo" << endl;
+      os <<
       "==========================================================="
       << endl;
 
-      cont = 1;
+      int cont = 1;
 
       for (auto i = u.compra().begin(); i != u.compra().end(); i++)
       {
@@ -162,6 +161,4 @@ Cadena Clave::cifrado(Cadena& c)
 
         ++cont;
       }
-
-      return os;
     }

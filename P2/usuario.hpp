@@ -113,7 +113,6 @@
 
   std::basic_ostream<char>& operator <<
     (std::basic_ostream<char>& os, const Usuario&);
-  std::basic_ostream<char>& mostrar_carro(std::basic_ostream<char>&,
-    const Usuario&);
+  void mostrar_carro(std::basic_ostream<char>&, const Usuario&);
 
 #endif
