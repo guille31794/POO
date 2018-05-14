@@ -107,14 +107,13 @@ Cadena Clave::cifrado(Cadena& c)
       this -> tarjetas_.erase(t.numero());
     }
 
-    void Usuario::compra(Articulo& ar, unsigned cant /*= 1*/)
+    void Usuario::compra(Articulo& ar, unsigned cant )
     {
       if(!cant)
         articulos_.erase(&ar);
       else
       {
-        articulos_.erase(&ar);
-        articulos_.insert(make_pair(&ar, cant));
+        articulos_[&ar] = cant;
       }
     }
 
@@ -145,28 +144,23 @@ Cadena Clave::cifrado(Cadena& c)
     std::basic_ostream<char>& mostrar_carro
       (std::basic_ostream<char>& os, const Usuario& u)
     {
-      char prev;
       int cont;
 
-      prev = std::cout.fill('=');
-
       os << "Carrito de la compra de " << u.id() << " [Artículos: " <<
-      u.compra().size() << ']' << '\n' << "\tCant. Artículo\n" <<
-      "===========================================================";
-
-      /*
-      TODO sustituir esta funcion por la linea comentada
-      std::cout.fill(prev);
-      */
+      u.n_articulos() << ']' << '\n' << "\tCant. Artículo\n" <<
+      "==========================================================="
+      << endl;
 
       cont = 1;
 
       for (auto i = u.compra().begin(); i != u.compra().end(); i++)
       {
         os << cont << '\t' << '[' << i -> first -> referencia()
-        << "] " << '"' << i -> first -> titulo() << '"' <<
+        << "] " << '\"' << i -> first -> titulo() << '\"' <<
         ", " << i -> first -> f_publi().anno() << ". " <<
-        i -> first -> precio() << " €\n";
+        i -> first -> precio() << " €" << endl;
+
+        ++cont;
       }
 
       return os;
