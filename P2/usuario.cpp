@@ -137,7 +137,7 @@ Cadena Clave::cifrado(Cadena& c)
       '\n';
 
       for(auto i = u.tarjetas().begin(); i != u.tarjetas().end(); ++i)
-        os << i -> second << '\n';
+        os << *i -> second << '\n';
 
       return os;
     }
@@ -150,7 +150,7 @@ Cadena Clave::cifrado(Cadena& c)
 
       prev = std::cout.fill('=');
 
-      os << "Carrito de la compra de " << u.id() << " [Articulos: " <<
+      os << "Carrito de la compra de " << u.id() << " [Artículos: " <<
       u.compra().size() << ']' << '\n' << "\tCant. Artículo\n" <<
       "===========================================================";
 

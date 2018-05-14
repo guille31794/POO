@@ -102,8 +102,8 @@ std::basic_ostream<char>& operator <<
   }
 
   os << '\n' << t.numero() << '\n' << t.titular_facial()
-  << '\n' << "Caduca: " << setprecision(2) << t.caducidad().mes() <<
-   '/' << setprecision(2) << t.caducidad().anno() << endl;
+  << '\n' << "Caduca: " << setprecision(2) << ((t.caducidad().mes() < 10) ? '0' : ' ') <<
+  t.caducidad().mes() << '/' << (t.caducidad().anno() % 100) << endl;
 
   return os;
 }
