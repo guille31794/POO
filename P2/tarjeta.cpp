@@ -6,8 +6,7 @@
 
   #include "tarjeta.hpp"
 
-  Numero::Numero(const Cadena& c):
-  numero_{}
+  Numero::Numero(const Cadena& c)
   {
     numero_ = c;
 
@@ -29,12 +28,12 @@
         numero_[numero_.length() + 1] = '\0';
       }
 
-      if(numero_.length() < 13)
+      if(numero_.length() < 13 || numero_.length() > 19  )
         throw Incorrecto(LONGITUD);
 
     }
 
-    if(numero_.length() >= 19 || numero_.length() <= 13)
+    if( numero_.length() < 13)
       throw Incorrecto(LONGITUD);
 
     if(!luhn(numero_))

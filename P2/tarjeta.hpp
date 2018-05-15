@@ -84,15 +84,10 @@
       Cadena titular_facial_;
   };
 
-/*std::basic_ostream<char>& operator <<
-(std::basic_ostream<char>& os, const Tarjeta::Tipo& t);*/
-
 std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>& os, const Tarjeta& t);
 
 inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }
 
-
-
-  #endif
+#endif

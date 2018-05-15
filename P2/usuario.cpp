@@ -129,7 +129,6 @@
 
       for(auto i = u.tarjetas().begin(); i != u.tarjetas().end(); ++i)
         os << *i -> second << endl;
-
       return os;
     }
 
@@ -149,10 +148,7 @@
 
       for (auto i : u.compra())
       {
-        os << cont << '\t' << '[' << i. first -> referencia()
-        << "] " << '\"' << i.first -> titulo() << "\", " <<
-        i.first -> f_publi().anno() << ". " <<
-        i.first -> precio() << "€" << endl;
+        os << cont << *i.first << endl;
 
         ++cont;
       }

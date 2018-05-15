@@ -28,14 +28,10 @@
 
     public:
       Clave(const char*);
-      //¿Necesario el const en la enumeracion?
+
       //¿Necesaria la clase?
-      //¿Necesario el tipo?
-      //Metodo sin argumentos ¿Que valor toma r?
-      //¿Necesario r?
-      //¿r tiene valor por defecto al declararlo?
-      //¿Necesaria asignacion?
-      //TODO dudas descritas arriba
+
+      //TODO
 
       enum Razon { CORTA, ERROR_CRYPT};
 
@@ -46,16 +42,16 @@
           Razon r_;
 
         public:
-           Incorrecta(Razon r): r_{r}
+          Incorrecta(Razon r): r_{r}
           {}
-           Razon razon() const  { return this -> r_; }
+          Razon razon() const  { return this -> r_; }
 
       };
 
       Cadena clave() const { return this -> clave_;}
       bool verifica(const char *) const;
       Cadena cifrado(Cadena& );
-  };
+    };
 
 
   class Usuario
