@@ -9,6 +9,7 @@
   #include "tarjeta.hpp"
   #include "articulo.hpp"
 
+  #include <locale>
   #include <unordered_map>
   #include <unordered_set>
   #include <map>

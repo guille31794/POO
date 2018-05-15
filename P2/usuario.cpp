@@ -8,59 +8,52 @@
 
   Usuario::Comprobador comprobador;
 
-  Clave::Clave(const char* clave):
-  clave_{clave}
+  Clave::Clave(const char* clave)
   {
-    if(this -> clave_.length() < 5)
+    if(strlen(clave) < 5)
       throw Incorrecta(CORTA);
 
-    this -> clave_ = cifrado(this -> clave_);
+    //Variable necesaria para la llamada a crypt
+
+    char* salt = new char[2];
+    int n_aleatorio;
+    const char *const seedchars =
+    "./0123456789ABCDEFGHIJKLMNOPQRST"
+    "UVWXYZabcdefghijklmnopqrstuvwxyz";
+
+    //Semilla con un valor aleatorio real
+
+    std::random_device r;
+
+    /*
+      Elijo motor de generación pseudo aleatoria
+    */
+
+    std::default_random_engine el(r());
+
+    /*
+      Distribuyo mi numero pseudoaleatorio de acuerdo
+      a una Distribucion uniforme de enteros de parametros (0, 64)
+      que es nuestro rango de valores
+    */
+
+    std::uniform_int_distribution<int> u_dist(0, (strlen(seedchars) -1));
+
+    for(int i = 0; i < 2; ++i )
+    {
+      n_aleatorio = u_dist(el);
+      salt[i] = seedchars[n_aleatorio];
+    }
+
+    char* cifrada = crypt(clave, salt);
+
+    if(clave == cifrada)
+      throw Incorrecta(ERROR_CRYPT);
+    else
+      clave_ = cifrada;
+
   }
 
-Cadena Clave::cifrado(Cadena& c)
-{
-  //Variable necesaria para la llamada a crypt
-
-  Cadena cifrada(13);
-  char* salt = new char[2];
-  int n_aleatorio;
-  const char *const seedchars =
-  "./0123456789ABCDEFGHIJKLMNOPQRST"
-  "UVWXYZabcdefghijklmnopqrstuvwxyz";
-
-  //Semilla con un valor aleatorio real
-
-  std::random_device r;
-
-  /*
-    Elijo motor de generación pseudo aleatoria
-  */
-
-  std::default_random_engine el(r());
-
-  /*
-    Distribuyo mi numero pseudoaleatorio de acuerdo
-    a una Distribucion uniforme de enteros de parametros (0, 64)
-    que es nuestro rango de valores
-  */
-
-  std::uniform_int_distribution<int> u_dist(0, 64);
-
-  for(int i = 0; i < 2; ++i )
-  {
-    n_aleatorio = u_dist(el);
-    salt[i] = seedchars[n_aleatorio];
-  }
-
-  cifrada = crypt(c.c_str(), salt);
-
-  if(c.c_str() == cifrada)
-    throw Incorrecta(ERROR_CRYPT);
-  else
-    c = cifrada;
-
-  return c;
-}
 
   bool Clave::verifica(const char *string) const
   {
@@ -142,6 +135,8 @@ Cadena Clave::cifrado(Cadena& c)
 
     void mostrar_carro(std::basic_ostream<char>& os, const Usuario& u)
     {
+      setlocale(LC_ALL, "es_ES");
+
       os << "Carrito de la compra de " << u.id() << " [Artículos: " <<
       u.n_articulos() << ']' << endl;
 
@@ -152,12 +147,12 @@ Cadena Clave::cifrado(Cadena& c)
 
       int cont = 1;
 
-      for (auto i = u.compra().begin(); i != u.compra().end(); i++)
+      for (auto i : u.compra())
       {
-        os << cont << '\t' << '[' << i -> first -> referencia()
-        << "] " << '\"' << i -> first -> titulo() << '\"' <<
-        ", " << i -> first -> f_publi().anno() << ". " <<
-        i -> first -> precio() << " €" << endl;
+        os << cont << '\t' << '[' << i. first -> referencia()
+        << "] " << '\"' << i.first -> titulo() << "\", " <<
+        i.first -> f_publi().anno() << ". " <<
+        i.first -> precio() << "€" << endl;
 
         ++cont;
       }
