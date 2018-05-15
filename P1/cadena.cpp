@@ -131,6 +131,7 @@ Cadena& Cadena::operator=(const char* s)
     {
         this -> s_ = new char[this -> tam_ + 1];
         strcpy(this -> s_, s);
+        this -> tam_ = strlen(s);
     }
 
     return *this;
@@ -206,7 +207,7 @@ Cadena Cadena::substr(unsigned i, const int tam) const
 std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>& os, const Cadena &c)
 {
-  os << c.s_;
+  os << c.c_str();
 
   return os;
 }

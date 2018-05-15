@@ -59,21 +59,21 @@ public:
     //Sobrecarga de operadores aritmeticos
 
     Fecha& operator +=(const int);
-     Fecha& operator -=(int n)   { n *= (-1); return *this += n; }
+    Fecha& operator -=(int n)   { n *= (-1); return *this += n; }
 
     //Predecremento/Preincremento
 
-     Fecha& operator ++()  {  return *this += 1;   }
-     Fecha& operator --()  {  return *this += -1;  }
+    Fecha& operator ++()  {  return *this += 1;   }
+    Fecha& operator --()  {  return *this += -1;  }
 
     //Postdecremento/Postincremento
 
-     Fecha operator ++(const int n)  { Fecha f(*this); *this += 1;
+    Fecha operator ++(const int n)  { Fecha f(*this); *this += 1;
         return f;}
-     Fecha operator --(const int n)   {   Fecha f(*this); *this += -1;
+    Fecha operator --(const int n)   {   Fecha f(*this); *this += -1;
         return f;}
-     Fecha& operator +(const int n) const {  Fecha f(*this); return f += n;  }
-     Fecha& operator -(int n) const   {  Fecha f(*this); n *= (-1);
+    Fecha& operator +(const int n) const {  Fecha f(*this); return f += n;  }
+    Fecha& operator -(int n) const   {  Fecha f(*this); n *= (-1);
         return f += n; }
 
     //Constantes de construcción publicas

@@ -98,10 +98,7 @@ class Cadena
 
     Cadena substr(unsigned, const int) const;
 
-    //Operadores de flujo
 
-    friend std::basic_ostream<char>& operator <<
-    (std::basic_ostream<char>&, const Cadena &);
     friend std::basic_istream<char>& operator >>
     (std::basic_istream<char>&, Cadena &);
 
@@ -153,5 +150,10 @@ namespace std
     }
   };
 }
+
+//Operadores de flujo
+
+std::basic_ostream<char>& operator <<
+(std::basic_ostream<char>&, const Cadena &);
 
 #endif /* Cadena_hpp */
