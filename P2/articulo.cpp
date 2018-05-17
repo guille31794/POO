@@ -15,11 +15,9 @@
   std::basic_ostream<char>& operator <<
   (std::basic_ostream<char>& os, const Articulo& ar)
   {
-    char* precio_str = new char[3];
-    sprintf(precio_str, "%.2f", ar.precio());
-
     os << '[' << ar.referencia() << "] " << '"' << ar.titulo() << '"' << ", "
-    << ar.f_publi().anno() << ". " << precio_str << " €";
+    << ar.f_publi().anno() << ". " << setiosflags(ios::fixed) << setprecision(2)
+    << ar.precio() << " €";
 
     return os;
   }

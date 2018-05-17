@@ -7,6 +7,8 @@
 #define Articulo_hpp
 #include "fecha.hpp"
 #include "cadena.hpp"
+#include <iostream>
+#include <iomanip>
 
 
 class Articulo
