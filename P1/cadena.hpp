@@ -133,7 +133,6 @@ class Cadena
     ~Cadena();
 };
 
-//Relleno para hacer commit
 namespace std
 {
   // Estaremos dentro del espacio de nombres std

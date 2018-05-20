@@ -29,10 +29,6 @@
     public:
       Clave(const char*);
 
-      //¿Necesaria la clase?
-
-      //TODO
-
       enum Razon { CORTA, ERROR_CRYPT};
 
       class Incorrecta
@@ -61,6 +57,7 @@
       typedef map<Numero, Tarjeta*> Tarjetas;
       typedef unordered_map<Articulo*, unsigned int> Articulos;
       typedef unordered_set<Cadena> Comprobador;
+
       explicit Usuario(const Cadena&, const Cadena&,
       const Cadena&, const Cadena&, const Clave& );
 

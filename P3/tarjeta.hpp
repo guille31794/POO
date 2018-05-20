@@ -10,10 +10,12 @@
   #include "cadena.hpp"
   #include "usuario.hpp"
   #include "../luhn.hpp"
-
+  #include <functional>
   #include <iomanip>
   #include <iostream>
   #include <cctype>
+
+  using namespace std;
 
   class Usuario;
 
@@ -26,7 +28,7 @@
     public:
 
       enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
-      Numero(const Cadena&);
+      Numero(Cadena&);
       operator const char*() const { return this -> numero_.c_str();}
       friend inline bool operator <(const Numero& n1, const Numero& n2)
       {
@@ -52,17 +54,18 @@
     public:
 
       enum Tipo {VISA, Mastercard, Maestro, JCB, AmericanExpress};
+
       explicit Tarjeta
       (const Tipo, const Numero&, Usuario&, const Fecha&);
       Tarjeta(const Tarjeta&) = delete;
       Tarjeta& operator =(const Tarjeta&) = delete;
+
       Tipo tipo() const { return this -> tipo_;}
       Numero numero() const { return this -> numero_;}
       Fecha caducidad() const  { return this -> caducidad_;}
       Cadena titular_facial() const  { return this -> titular_facial_;}
-       const Usuario* titular() const  { return this -> titular_;}
-      //TODO linea 28, posible corrección sobre el puntero constante
-       void anula_titular()  { this -> titular_ = nullptr;}
+      const Usuario* titular() const  { return this -> titular_;}
+      void anula_titular()  { this -> titular_ = nullptr;}
       ~Tarjeta();
 
       class Caducada
@@ -89,5 +92,8 @@ std::basic_ostream<char>& operator <<
 
 inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }
+
+inline bool EsBlanco(char c)  { return isspace(c);}
+inline bool EsDigito(char c)  { return !issalpha(c);}
 
 #endif

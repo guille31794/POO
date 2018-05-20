@@ -6,38 +6,23 @@
 
   #include "tarjeta.hpp"
 
-  Numero::Numero(const Cadena& c)
+  Numero::Numero(Cadena& c)
   {
-    numero_ = c;
+    auto charEliminados = remove_if(c.begin(), c.end(), EsBlanco,
+     c.end());
 
-    for(int i = 0; i < numero_.length() && numero_[i] != '\0';
-    ++i)
-    {
-      if(isalpha(numero_[i]))
-        throw Incorrecto(DIGITOS);
+    c = c.substr(0, (c.length() - strlen(charEliminados)));
 
-      while(isspace(numero_[i]))
-      {
-        for(auto cont = i; cont < numero_.length() && numero_[cont] != '\0';
-        ++cont)
-        {
-          numero_[cont] = numero_[cont + 1];
-        }
-
-        numero_.reducir_tam();
-        numero_[numero_.length() + 1] = '\0';
-      }
-
-      if(numero_.length() < 13 || numero_.length() > 19  )
-        throw Incorrecto(LONGITUD);
-
-    }
-
-    if( numero_.length() < 13)
+    if(c.length() < 13 || c.length() > 19  )
       throw Incorrecto(LONGITUD);
 
-    if(!luhn(numero_))
+    if(c.end() != find_if_not(c.begin(), c.end(), EsDigito))
+      throw Incorrecto(DIGITOS);
+
+    if(!luhn(c))
       throw Incorrecto(NO_VALIDO);
+
+    numero_ = c;
   }
 
 
