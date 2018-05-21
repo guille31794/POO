@@ -2,7 +2,7 @@
   Creado por Guillermo Girón García para la asignatura
   POO de la UCA.
 
-  /21/05/2018, GPL Licensed, all rights reserved */
+  21/05/2018, GPL Licensed, all rights reserved */
 
   #ifndef Pedido_hpp
   #define Pedido_hpp
@@ -72,6 +72,21 @@
       double total_;
   };
 
+  class LineaPedido
+  {
+    public:
+      explicit LineaPedido(double pv, unsigned cant = 1): precio_venta{pv},
+      cantidad{cant}
+      {}
+      double precio_venta() const { return precio_venta;  }
+      unsigned cantidad const { return cantidad;  }
+
+    private:
+      double precio_venta;
+      unsigned cantidad;
+  };
+
 basic_ostream<char>& <<(basic_ostream<char>&, const Pedido&);
+basic_ostream<char>& <<(basic_ostream<char>&, const LineaPedido&);
 
   #endif

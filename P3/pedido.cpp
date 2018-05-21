@@ -1,3 +1,9 @@
+/*
+  Creado por Guillermo Girón García para la asignatura
+  POO de la UCA.
+
+  /21/05/2018, GPL Licensed, all rights reserved */
+
 #include "pedido.hpp"
 
 Pedido::Pedido(Usuario_pedido& up, Pedido_Articulo& pa, Usuario& u,
@@ -16,6 +22,18 @@ basic_ostream<char>& <<(basic_ostream<char>& os, const Pedido& p)
   << p.tarjeta().numero() << '\n';
   os << "Importe:\t\t" << setiosflags(ios::fixed) <<
   setprecision(2) << p.total() << " €" << endl;
+
+  return os;
+}
+
+basic_ostream<char>& <<(basic_ostream<char>& os, const LineaPedido& lp)
+{
+  setlocale(LC_ALL, "es_ES");
+
+  //TODO si hay fallo, es en el tabular, que deja dos espacios en lugar de 3
+
+  os << setiosflags(ios::fixed) << setprecision(2) << lp.precio_venta() <<
+  " €\t" << lp.cantidad();
 
   return os;
 }
