@@ -45,27 +45,6 @@
         const_cast<Usuario*>(titular_) -> no_es_titular_de(*this);
   }
 
-/*std::basic_ostream<char>& operator <<
-(std::basic_ostream<char>& os, const Tarjeta::Tipo& t)
-{
-  switch (t)
-  {
-    case Tarjeta::Tipo::VISA: os << "VISA";
-              break;
-    case Tarjeta::Tipo::Mastercard: os << "Mastercard";
-              break;
-    case Tarjeta::Tipo::Maestro: os << "Maestro";
-              break;
-    case Tarjeta::Tipo::AmericanExpress: os << "American Expres";
-              break;
-    case Tarjeta::Tipo::JCB: os << "JCB";
-              break;
-    default: os << "Error, ninguna tarjeta conocida" << endl;
-  }
-
-  return os;
-}*/
-
 std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>& os, const Tarjeta& t)
 {
@@ -88,6 +67,27 @@ std::basic_ostream<char>& operator <<
   os << '\n' << t.numero() << '\n' << t.titular_facial()
   << '\n' << "Caduca: " << setprecision(2) << ((t.caducidad().mes() < 10) ? '0' : ' ') <<
   t.caducidad().mes() << '/' << (t.caducidad().anno() % 100) << endl;
+
+  return os;
+}
+
+std::basic_ostream<char>& operator <<
+(std::basic_ostream<char>& os, const Tarjeta::Tipo t)
+{
+  switch (t)
+  {
+    case Tarjeta::Tipo::VISA: os << "VISA";
+              break;
+    case Tarjeta::Tipo::Mastercard: os << "Mastercard";
+              break;
+    case Tarjeta::Tipo::Maestro: os << "Maestro";
+              break;
+    case Tarjeta::Tipo::AmericanExpress: os << "American Expres";
+              break;
+    case Tarjeta::Tipo::JCB: os << "JCB";
+              break;
+    default: os << "Error, ninguna tarjeta conocida" << endl;
+  }
 
   return os;
 }
