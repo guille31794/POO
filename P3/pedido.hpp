@@ -14,13 +14,14 @@
   #include "cadena.hpp"
   #include "fecha.hpp"
   #include "usuario.hpp"
-  #include "usuario.hpp"
+  #include "pedido_articulo.hpp"
 
   using namespace std;
 
   class Usuario;
   class Tarjeta;
   class LineaPedido;
+  class Pedido_Articulo;
 
   class Pedido
   {
