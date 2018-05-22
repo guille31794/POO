@@ -10,6 +10,7 @@
   #include "pedido.hpp"
   #include "articulo.hpp"
   #include <map>
+  #include <locale>
 
   using namespace std;
 
@@ -27,7 +28,7 @@
       Articulo detalle(const ItemsPedido&) const;
       Pedidos ventas();
 
-      void mostrarDetallePedidos();
+      basic_ostream<char&> mostrarDetallePedidos(basic_ostream<char>&);
       void mostrarVentasArticulos();
 
     private:
@@ -35,7 +36,7 @@
       map<Articulo*, Pedidos, OrdenaArticulos> AI;
   }
 
-  basic_ostream<char>& <<(basic_ostream<char>&, Pedido_Articulo::ItemsPedido&);
-  basic_ostream<char>& <<(basic_ostream<char>&, Pedido_Articulo::Pedidos&);
+    basic_ostream<char>& <<(basic_ostream<char>&, Pedido_Articulo::ItemsPedido&);
+    basic_ostream<char>& <<(basic_ostream<char>&, Pedido_Articulo::Pedidos&);
 
   #endif

@@ -14,7 +14,7 @@
   #include "cadena.hpp"
   #include "fecha.hpp"
   #include "usuario.hpp"
-  #include "pedido_articulo.hpp"
+  #include "pedido-articulo.hpp"
 
   using namespace std;
 
@@ -80,7 +80,7 @@
       cantidad{cant}
       {}
       double precio_venta() const { return precio_venta;  }
-      unsigned cantidad const { return cantidad;  }
+      unsigned cantidad() const { return cantidad;  }
 
     private:
       double precio_venta;
