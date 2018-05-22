@@ -7,19 +7,27 @@
   #ifndef Usuario_Pedido_hpp
   #define Usuario_Pedido_hpp
 
+  #include <utility>
+
   using namespace std;
+
+  class Usuario;
+  class Pedido;
 
   class Usuario_Pedido
   {
     public:
       typedef set<Pedido*> Pedidos;
+      typedef map<Usuario*, Pedidos> Usuarios;
 
       void asocia(const Usuario&, const Pedido&);
       void asocia(const Pedido&, const Usuario&);
+      Pedidos pedidos(const Usuario&) { return usuarios_.find(&u) -> second;  }
+      Usuario& cliente(const Pedido&);
 
     private:
-      map<Usuario*, Pedidos> usuario_pedido;
-      map<Pedido*, Usuario*> pedido_usuario;
+      Pedidos pedidos_;
+      Usuarios usuarios_;
   };
 
   #endif
