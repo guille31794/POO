@@ -7,15 +7,24 @@
   #include "pedido-articulo.hpp"
 
   void Pedido_Articulo::pedir
-  (Pedido& p, Articulo& ar, double precio, unsigned cant)
+  (Pedido& p, Articulo& ar, double precio, unsigned cant
   {
+    auto i = pedidosArticulos_.find(&p);
 
+    if (i != pedidosArticulos_.end())
+      i -> second.insert(make_pair(&a, LineaPedido(precio, cant)));
+    else
+      {
+        ItemsPedido itemspedido;
+        itemspedido.insert(make_pair(&a, LineaPedido(precio, cant)));
+        pedidosArticulos_.insert(make_pair(&p, itemspedido));
+      }
   }
 
   void Pedido_Articulo::pedir
   (Articulo& ar, Pedido& p, double precio, unsigned cant)
   {
-
+    pedir(p, ar, precio, cant);
   }
 
   //TODO: probablemente pida un set de articulos

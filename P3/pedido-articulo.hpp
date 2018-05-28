@@ -22,6 +22,8 @@
     public:
       typedef map<Articulo*, LineaPedido, OrdenaArticulos> ItemsPedido;
       typedef map<Pedido*, LineaPedido, OrdenaPedidos> Pedidos;
+      typedef map<Pedido*, ItemsPedido, OrdenaPedidos> PedidosArticulos;
+      typedef map<Articulo*, Pedidos, OrdenaArticulos> ArticulosPedidos;
 
       void pedir(Pedido&, Articulo&, double, unsigned = 1);
       void pedir(Articulo&, Pedido&, double, unsigned = 1);
@@ -32,8 +34,8 @@
       void mostrarVentasArticulos();
 
     private:
-      map<Pedido*, ItemsPedido, OrdenaPedidos> AD;
-      map<Articulo*, Pedidos, OrdenaArticulos> AI;
+      PedidosArticulos pedidosArticulos_;
+      ArticulosPedidos articulosPedidos_;
   }
 
     basic_ostream<char>& <<(basic_ostream<char>&, Pedido_Articulo::ItemsPedido&);
