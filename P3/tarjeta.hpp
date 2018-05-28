@@ -21,6 +21,18 @@
 
   class Usuario;
 
+  class EsBlanco
+  {
+    public:
+      bool operator ()(char c)  { return isspace(c); }
+  };
+
+  class EsDigito
+  {
+    public:
+      bool operator()(char c) { return !isalpha(c); }
+  };
+
   class Numero
   {
     private:
@@ -94,8 +106,5 @@ std::basic_ostream<char>& operator <<
 
 inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }
-
-inline bool EsBlanco(char c)  { return isspace(c); }
-inline bool EsDigito(char c)  { return !isalpha(c); }
 
 #endif
