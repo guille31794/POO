@@ -22,8 +22,13 @@
 
     auto it = articulosPedidos_.find(&a);
 
-    if (i != articulosPedidos_.end()) {
-      /* code */
+    if (it != articulosPedidos_.end())
+      it -> second.insert(make_pair(&p, LineaPedido(precio, cant)));
+    else
+    {
+      Pedidos pedidos;
+      pedidos.insert(make_pair(&p, LineaPedido(precio, cant)));
+      articulosPedidos_.insert(&a, pedidos);
     }
   }
 
@@ -33,16 +38,14 @@
     pedir(p, ar, precio, cant);
   }
 
-  //TODO: probablemente pida un set de articulos
-
-  Articulo Pedido_Articulo::detalle(const ItemsPedido& ip) const
+  const ItemsPedido& Pedido_Articulo::detalle(const Pedido& p) const
   {
-    return ip
+    return pedidosArticulos_.second.find(&p);
   }
 
-  Pedidos Pedido_Articulo::ventas()
+  Pedidos Pedido_Articulo::ventas(const Articulo& ar) const
   {
-
+    return articulosPedidos_.second.find(&ar);
   }
 
   basic_ostream<char>& mostrarDetallePedidos(basic_ostream<char>& os)

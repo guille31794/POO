@@ -34,8 +34,8 @@
 
       void pedir(Pedido&, Articulo&, double, unsigned = 1);
       void pedir(Articulo&, Pedido&, double, unsigned = 1);
-      Articulo detalle(const ItemsPedido&) const;
-      Pedidos ventas();
+      const ItemsPedido& detalle(const Pedido&) const;
+      Pedidos ventas(const Articulo&) const;
 
       basic_ostream<char>& mostrarDetallePedidos(basic_ostream<char>&);
       basic_ostream<char>& mostrarVentasArticulos(basic_ostream<char>&);
