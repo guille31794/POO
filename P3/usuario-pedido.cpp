@@ -29,6 +29,10 @@
   {
     this -> asocia(u, p);
   }
+  
+  Usuario_Pedido::Pedidos Usuario_Pedido::pedidos(const Usuario& u) { 
+      return usuarios_.find(&u) -> second;
+  }
 
   Usuario& cliente(const Pedido& p)
   {

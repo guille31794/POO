@@ -14,6 +14,8 @@
   #include <iomanip>
   #include <iostream>
   #include <cctype>
+  #include <utility>
+  #include <algorithm>
 
   using namespace std;
 
@@ -28,7 +30,7 @@
     public:
 
       enum Razon {LONGITUD, DIGITOS, NO_VALIDO};
-      Numero(Cadena&);
+      Numero(Cadena);
       operator const char*() const { return this -> numero_.c_str();}
       friend inline bool operator <(const Numero& n1, const Numero& n2)
       {
@@ -93,7 +95,7 @@ std::basic_ostream<char>& operator <<
 inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }
 
-inline bool EsBlanco(char c)  { return isspace(c);}
-inline bool EsDigito(char c)  { return !issalpha(c);}
+inline bool EsBlanco(char c)  { return isspace(c); }
+inline bool EsDigito(char c)  { return !isalpha(c); }
 
 #endif

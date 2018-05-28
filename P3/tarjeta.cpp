@@ -6,10 +6,9 @@
 
   #include "tarjeta.hpp"
 
-  Numero::Numero(Cadena& c)
+  Numero::Numero(Cadena c)
   {
-    auto charEliminados = remove_if(c.begin(), c.end(), EsBlanco,
-     c.end());
+    auto charEliminados = remove_if(c.begin(), c.end(), EsBlanco);
 
     c = c.substr(0, (c.length() - strlen(charEliminados)));
 
