@@ -41,7 +41,7 @@ class Cadena
 
     Cadena(const int , const char);
     Cadena(const int );
-    Cadena(const char* ); //Conversion explicita
+    Cadena(const char* ); //Conversion implicita
 
     //De copia
 

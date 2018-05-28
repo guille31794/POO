@@ -7,16 +7,16 @@
   #include "pedido-articulo.hpp"
 
   void Pedido_Articulo::pedir
-  (Pedido& p, Articulo& ar, double precio, unsigned cant
+  (Pedido& p, Articulo& ar, double precio, unsigned cant)
   {
     auto i = pedidosArticulos_.find(&p);
 
     if (i != pedidosArticulos_.end())
-      i -> second.insert(make_pair(&a, LineaPedido(precio, cant)));
+      i -> second.insert(make_pair(&ar, LineaPedido(precio, cant)));
     else
       {
         ItemsPedido itemspedido;
-        itemspedido.insert(make_pair(&a, LineaPedido(precio, cant)));
+        itemspedido.insert(make_pair(&ar, LineaPedido(precio, cant)));
         pedidosArticulos_.insert(make_pair(&p, itemspedido));
       }
   }
@@ -34,7 +34,7 @@
 
   }
 
-  Pedidos Pedido_Articulo::ventas()
+  Pedido_Articulo::Pedidos Pedido_Articulo::ventas()
   {
 
   }
@@ -43,33 +43,30 @@
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << ;
+    return os;
+  }
+
+  basic_ostream<char>& mostrarVentasArticulos(basic_ostream<char>& os)
+  {
+    setlocale(LC_ALL, "es_ES");
 
     return os;
   }
 
-  void mostrarVentasArticulos()
-  {
-
-  }
-
-  basic_ostream<char>& <<
+  basic_ostream<char>& operator <<
   (basic_ostream<char>& os, Pedido_Articulo::ItemsPedido& ip)
   {
     setlocale(LC_ALL, "es_ES");
     os << "PVP\tCantidad\t\tArtículo\n" <<
-    "==================================================================\n" <<
-
+    "==================================================================\n";
 
     return os;
   }
 
-  basic_ostream<char>& <<
+  basic_ostream<char>& operator <<
   (basic_ostream<char>& os, Pedido_Articulo::Pedidos& p)
   {
     setlocale(LC_ALL, "es_ES");
-
-    os << ;
 
     return os;
   }

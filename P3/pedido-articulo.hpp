@@ -16,6 +16,13 @@
 
   class Pedido;
   class Articulo;
+  class LineaPedido;
+  struct OrdenaArticulos {
+    bool operator() (Articulo* a1, Articulo* a2);
+  };
+  struct OrdenaPedidos {
+    bool operator() (Pedido* p1, Pedido* p2);
+  };
 
   class Pedido_Articulo
   {
@@ -30,15 +37,15 @@
       Articulo detalle(const ItemsPedido&) const;
       Pedidos ventas();
 
-      basic_ostream<char&> mostrarDetallePedidos(basic_ostream<char>&);
-      void mostrarVentasArticulos();
+      basic_ostream<char>& mostrarDetallePedidos(basic_ostream<char>&);
+      basic_ostream<char>& mostrarVentasArticulos(basic_ostream<char>&);
 
     private:
       PedidosArticulos pedidosArticulos_;
       ArticulosPedidos articulosPedidos_;
-  }
+  };
 
-    basic_ostream<char>& <<(basic_ostream<char>&, Pedido_Articulo::ItemsPedido&);
-    basic_ostream<char>& <<(basic_ostream<char>&, Pedido_Articulo::Pedidos&);
+    basic_ostream<char>& operator <<(basic_ostream<char>&, Pedido_Articulo::ItemsPedido&);
+    basic_ostream<char>& operator <<(basic_ostream<char>&, Pedido_Articulo::Pedidos&);
 
   #endif

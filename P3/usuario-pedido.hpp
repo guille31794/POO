@@ -8,6 +8,8 @@
   #define Usuario_Pedido_hpp
 
   #include <utility>
+  #include <set>
+  #include <map>
 
   using namespace std;
 
@@ -22,7 +24,7 @@
 
       void asocia(const Usuario&, const Pedido&);
       void asocia(const Pedido&, const Usuario&);
-      Pedidos pedidos(const Usuario&) { return usuarios_.find(&u) -> second;  }
+      Pedidos pedidos(const Usuario& u);
       Usuario& cliente(const Pedido&);
 
     private:
