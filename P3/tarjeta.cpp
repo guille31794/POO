@@ -8,14 +8,14 @@
 
   Numero::Numero(Cadena c)
   {
-    auto charEliminados = remove_if(c.begin(), c.end(), EsBlanco);
+    auto charEliminados = remove_if(c.begin(), c.end(), EsBlanco());
 
     c = c.substr(0, (c.length() - strlen(charEliminados)));
 
     if(c.length() < 13 || c.length() > 19  )
       throw Incorrecto(LONGITUD);
 
-    if(c.end() != find_if_not(c.begin(), c.end(), EsDigito))
+    if(c.end() != find_if_not(c.begin(), c.end(), EsDigito()))
       throw Incorrecto(DIGITOS);
 
     if(!luhn(c))

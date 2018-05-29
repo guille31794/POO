@@ -11,6 +11,7 @@
   #include "articulo.hpp"
   #include <map>
   #include <locale>
+  #include <iostream>
 
   using namespace std;
 
@@ -34,8 +35,8 @@
 
       void pedir(Pedido&, Articulo&, double, unsigned = 1);
       void pedir(Articulo&, Pedido&, double, unsigned = 1);
-      const ItemsPedido& detalle(const Pedido&) const;
-      Pedidos ventas(const Articulo&) const;
+      const ItemsPedido& detalle(Pedido&);
+      const Pedidos ventas(Articulo&);
 
       basic_ostream<char>& mostrarDetallePedidos(basic_ostream<char>&);
       basic_ostream<char>& mostrarVentasArticulos(basic_ostream<char>&);
@@ -45,7 +46,9 @@
       ArticulosPedidos articulosPedidos_;
   };
 
-    basic_ostream<char>& operator <<(basic_ostream<char>&, Pedido_Articulo::ItemsPedido&);
-    basic_ostream<char>& operator <<(basic_ostream<char>&, Pedido_Articulo::Pedidos&);
+    basic_ostream<char>& operator <<
+    (basic_ostream<char>&, Pedido_Articulo::PedidosArticulos&);
+    basic_ostream<char>& operator <<
+    (basic_ostream<char>&, Pedido_Articulo::ArticulosPedidos&);
 
   #endif

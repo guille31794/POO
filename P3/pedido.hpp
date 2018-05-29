@@ -35,7 +35,7 @@
       const Tarjeta* tarjeta() const  { return this -> tarjeta_; }
       Fecha fecha() const { return this -> fecha_; }
       double total() const  { return this -> total_;  }
-      static int const n_total_pedidos() { return Pedido::N_pedidos; }
+      static int const n_total_pedidos() { return N_pedidos; }
 
       class Vacio
       {
@@ -64,7 +64,6 @@
           Articulo& ar_;
       };
 
-    protected:
       static int N_pedidos;
 
     private:

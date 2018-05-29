@@ -7,20 +7,20 @@
   #include "pedido-articulo.hpp"
 
   void Pedido_Articulo::pedir
-  (Pedido& p, Articulo& ar, double precio, unsigned cant
+  (Pedido& p, Articulo& ar, double precio, unsigned cant)
   {
     auto i = pedidosArticulos_.find(&p);
 
     if (i != pedidosArticulos_.end())
-      i -> second.insert(make_pair(&a, LineaPedido(precio, cant)));
+      i -> second.insert(make_pair(&ar, LineaPedido(precio, cant)));
     else
       {
         ItemsPedido itemspedido;
-        itemspedido.insert(make_pair(&a, LineaPedido(precio, cant)));
+        itemspedido.insert(make_pair(&ar, LineaPedido(precio, cant)));
         pedidosArticulos_.insert(make_pair(&p, itemspedido));
       }
 
-    auto it = articulosPedidos_.find(&a);
+    auto it = articulosPedidos_.find(&ar);
 
     if (it != articulosPedidos_.end())
       it -> second.insert(make_pair(&p, LineaPedido(precio, cant)));
@@ -28,7 +28,7 @@
     {
       Pedidos pedidos;
       pedidos.insert(make_pair(&p, LineaPedido(precio, cant)));
-      articulosPedidos_.insert(&a, pedidos);
+      articulosPedidos_.insert(make_pair(&ar, pedidos));
     }
   }
 
@@ -38,47 +38,93 @@
     pedir(p, ar, precio, cant);
   }
 
-  const ItemsPedido& Pedido_Articulo::detalle(const Pedido& p) const
+  const Pedido_Articulo::ItemsPedido& Pedido_Articulo::detalle(Pedido& p)
   {
-    return pedidosArticulos_.second.find(&p);
+    return pedidosArticulos_.find(&p) -> second;
   }
 
-  Pedidos Pedido_Articulo::ventas(const Articulo& ar) const
+  const Pedido_Articulo::Pedidos Pedido_Articulo::ventas(Articulo& ar)
   {
-    return articulosPedidos_.second.find(&ar);
+    return articulosPedidos_.find(&ar) -> second;
   }
 
-  basic_ostream<char>& mostrarDetallePedidos(basic_ostream<char>& os)
+  basic_ostream<char>&
+  Pedido_Articulo::mostrarDetallePedidos(basic_ostream<char>& os)
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << ;
+    for(auto ap : articulosPedidos_)
+      for(auto pedidos : ap.second)
+      os << "Pedido núm. "  << pedidos.first -> numero() << " Cliente: " <<
+      pedidos.first -> tarjeta() -> titular() << "\t\tFecha: " <<
+      pedidos.first -> fecha();
 
     return os;
   }
 
-  void mostrarVentasArticulos()
+  basic_ostream<char>&
+  Pedido_Articulo::mostrarVentasArticulos(basic_ostream<char>& os)
   {
 
+    return os;
   }
 
-  basic_ostream<char>& <<
-  (basic_ostream<char>& os, Pedido_Articulo::ItemsPedido& ip)
+  basic_ostream<char>& operator <<
+  (basic_ostream<char>& os, Pedido_Articulo::PedidosArticulos& pa)
   {
     setlocale(LC_ALL, "es_ES");
     os << "PVP\tCantidad\t\tArtículo\n" <<
-    "==================================================================\n" <<
+    "==================================================================\n";
 
+    /*
+      bucle for mejorado. Equivale a for each
+    */
+
+    double total = 0;
+
+    for(auto itpa : pa) //Reocorro PedidosArticulos
+      for(auto itemspedido_ : itpa.second) //Recorro ItemsPedido
+      {
+        os << setiosflags(ios::fixed) << setprecision(2) <<
+        itemspedido_.second.precio_venta() << " € " <<
+        itemspedido_.second.cantidad() << "\t\t\t\t\t [" <<
+        itemspedido_.first -> referencia() << "] \"" <<
+        itemspedido_.first -> titulo() << "\"\n";
+        total += itemspedido_.second.precio_venta();
+      }
+
+    os <<
+    "==================================================================\n" <<
+    "Total\t" << setprecision(2) << total << " €" << endl;
 
     return os;
   }
 
-  basic_ostream<char>& <<
-  (basic_ostream<char>& os, Pedido_Articulo::Pedidos& p)
+  basic_ostream<char>& operator <<
+  (basic_ostream<char>& os, Pedido_Articulo::ArticulosPedidos& ap)
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << ;
+    os << "[Pedidos: " << ap.size() << "]\n" <<
+    "==================================================================\n" <<
+    "PVP\t Cantidad\t\t\t  Fecha de venta\n" <<
+    "==================================================================\n";
+
+    double total = 0;
+    unsigned cant = 0;
+
+    for( auto itap : ap)
+      for(auto pedidos_ : itap.second)
+      {
+        os << setiosflags(ios::fixed) << setprecision(2) <<
+        pedidos_.second.precio_venta() << " € " << pedidos_.second.cantidad() <<
+        "\t\t\t " << pedidos_.first -> fecha();
+        total += pedidos_.second.precio_venta();
+        cant += pedidos_.second.cantidad();
+      }
+
+    os << "==================================================================\n"
+    << setprecision(2) << total << " €\t\t\t" << cant << endl;
 
     return os;
   }
