@@ -6,10 +6,12 @@
 
   #ifndef Tarjeta_hpp
   #define Tarjeta_hpp
+  
   #include "fecha.hpp"
   #include "cadena.hpp"
   #include "usuario.hpp"
   #include "../luhn.hpp"
+
   #include <functional>
   #include <iomanip>
   #include <iostream>

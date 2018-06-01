@@ -5,6 +5,8 @@
   21/04/2018, GPL Licensed, all rights reserved */
   #ifndef Usuario_hpp
   #define Usuario_hpp
+
+  #include "fecha.hpp"
   #include "cadena.hpp"
   #include "tarjeta.hpp"
   #include "articulo.hpp"

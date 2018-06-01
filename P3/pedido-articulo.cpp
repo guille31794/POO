@@ -6,6 +6,11 @@
 
   #include "pedido-articulo.hpp"
 
+  inline bool OrdenaPedidos::operator() (Pedido* p1, Pedido* p2) const
+  {
+    return p1 -> numero() < p2 -> numero();
+  }
+
   void Pedido_Articulo::pedir
   (Pedido& p, Articulo& ar, double precio, unsigned cant)
   {
@@ -48,29 +53,42 @@
     return articulosPedidos_.find(&ar) -> second;
   }
 
-  basic_ostream<char>&
-  Pedido_Articulo::mostrarDetallePedidos(basic_ostream<char>& os)
+  std::basic_ostream<char>&
+  Pedido_Articulo::mostrarDetallePedidos(std::basic_ostream<char>& os)
   {
     setlocale(LC_ALL, "es_ES");
 
+    double total = 0;
+
     for(auto ap : articulosPedidos_)
       for(auto pedidos : ap.second)
-      os << "Pedido núm. "  << pedidos.first -> numero() << " Cliente: " <<
-      pedidos.first -> tarjeta() -> titular() << "\t\tFecha: " <<
-      pedidos.first -> fecha();
+      {
+        os << "Pedido núm. "  << pedidos.first -> numero() << " Cliente: " <<
+        pedidos.first -> tarjeta() -> titular() << "\t\tFecha: " <<
+        pedidos.first -> fecha() << '\n';
+        total += pedidos.second.precio_venta();
+      }
+
+    os << "\nTOTAL VENTAS\t\t"<< setprecision(2) << total << " €" << endl;
 
     return os;
   }
 
-  basic_ostream<char>&
-  Pedido_Articulo::mostrarVentasArticulos(basic_ostream<char>& os)
+  std::basic_ostream<char>&
+  Pedido_Articulo::mostrarVentasArticulos(std::basic_ostream<char>& os)
   {
+    setlocale(LC_ALL, "es_ES");
+
+    for(auto i : articulosPedidos_)
+    {
+      os << "Ventas de " << *i.first << i.second << endl;
+    }
 
     return os;
   }
 
-  basic_ostream<char>& operator <<
-  (basic_ostream<char>& os, Pedido_Articulo::PedidosArticulos& pa)
+  std::basic_ostream<char>& operator <<
+  (std::basic_ostream<char>& os, Pedido_Articulo::PedidosArticulos& pa)
   {
     setlocale(LC_ALL, "es_ES");
     os << "PVP\tCantidad\t\tArtículo\n" <<
@@ -100,8 +118,8 @@
     return os;
   }
 
-  basic_ostream<char>& operator <<
-  (basic_ostream<char>& os, Pedido_Articulo::ArticulosPedidos& ap)
+  std::basic_ostream<char>& operator <<
+  (std::basic_ostream<char>& os, Pedido_Articulo::ArticulosPedidos& ap)
   {
     setlocale(LC_ALL, "es_ES");
 

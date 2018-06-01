@@ -7,6 +7,8 @@
   #ifndef Usuario_Pedido_hpp
   #define Usuario_Pedido_hpp
 
+  #include "pedido.hpp"
+  #include "usuario.hpp"
   #include <utility>
   #include <set>
   #include <map>

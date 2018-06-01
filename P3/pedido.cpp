@@ -6,13 +6,15 @@
 
 #include "pedido.hpp"
 
+int Pedido::N_pedidos = 0;
+
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa, Usuario& u,
 Tarjeta& t, const Fecha& f)
 {
 
 }
 
-basic_ostream<char>& operator <<(basic_ostream<char>& os, const Pedido& p)
+std::basic_ostream<char>& operator <<(std::basic_ostream<char>& os, const Pedido& p)
 {
   setlocale(LC_ALL, "es_ES");
 
@@ -26,7 +28,7 @@ basic_ostream<char>& operator <<(basic_ostream<char>& os, const Pedido& p)
   return os;
 }
 
-basic_ostream<char>& operator <<(basic_ostream<char>& os, const LineaPedido& lp)
+std::basic_ostream<char>& operator <<(std::basic_ostream<char>& os, const LineaPedido& lp)
 {
   setlocale(LC_ALL, "es_ES");
 

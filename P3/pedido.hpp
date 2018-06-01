@@ -20,9 +20,6 @@
 
   using namespace std;
 
-  class Usuario;
-  class Tarjeta;
-  class Articulo;
   class Pedido_Articulo;
   class Usuario_Pedido;
 
@@ -35,7 +32,7 @@
       const Tarjeta* tarjeta() const  { return this -> tarjeta_; }
       Fecha fecha() const { return this -> fecha_; }
       double total() const  { return this -> total_;  }
-      static int const n_total_pedidos() { return N_pedidos; }
+      static int n_total_pedidos() { return N_pedidos; }
 
       class Vacio
       {
@@ -64,14 +61,13 @@
           Articulo& ar_;
       };
 
-      static int N_pedidos;
-
     private:
 
       int num_;
       Tarjeta* tarjeta_;
       Fecha fecha_;
       double total_;
+      static int N_pedidos;
   };
 
   class LineaPedido
@@ -86,7 +82,7 @@
       unsigned cantidad_;
   };
 
-basic_ostream<char>& operator <<(basic_ostream<char>&, const Pedido&);
-basic_ostream<char>& operator <<(basic_ostream<char>&, const LineaPedido&);
+std::basic_ostream<char>& operator <<(std::basic_ostream<char>&, const Pedido&);
+std::basic_ostream<char>& operator <<(std::basic_ostream<char>&, const LineaPedido&);
 
   #endif
