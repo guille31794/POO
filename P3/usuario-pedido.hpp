@@ -24,8 +24,8 @@
       typedef set<Pedido*> Pedidos;
       typedef map<Usuario*, Pedidos> Usuarios;
 
-      void asocia(const Usuario&, const Pedido&);
-      void asocia(const Pedido&, const Usuario&);
+      void asocia(Usuario&, Pedido&);
+      void asocia(Pedido&, Usuario&);
       Pedidos pedidos(const Usuario& u);
       Usuario& cliente(const Pedido&);
 

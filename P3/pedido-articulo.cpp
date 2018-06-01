@@ -88,7 +88,7 @@
   }
 
   std::basic_ostream<char>& operator <<
-  (std::basic_ostream<char>& os, Pedido_Articulo::PedidosArticulos& pa)
+  (std::basic_ostream<char>& os, const Pedido_Articulo::ItemsPedido& ip)
   {
     setlocale(LC_ALL, "es_ES");
     os << "PVP\tCantidad\t\tArtículo\n" <<
@@ -100,8 +100,7 @@
 
     double total = 0;
 
-    for(auto itpa : pa) //Reocorro PedidosArticulos
-      for(auto itemspedido_ : itpa.second) //Recorro ItemsPedido
+    for(auto itemspedido_ : ip) //Reocorro ItemsPedido
       {
         os << setiosflags(ios::fixed) << setprecision(2) <<
         itemspedido_.second.precio_venta() << " € " <<
@@ -119,11 +118,11 @@
   }
 
   std::basic_ostream<char>& operator <<
-  (std::basic_ostream<char>& os, Pedido_Articulo::ArticulosPedidos& ap)
+  (std::basic_ostream<char>& os, const Pedido_Articulo::Pedidos& p)
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << "[Pedidos: " << ap.size() << "]\n" <<
+    os << "[Pedidos: " << p.size() << "]\n" <<
     "==================================================================\n" <<
     "PVP\t Cantidad\t\t\t  Fecha de venta\n" <<
     "==================================================================\n";
@@ -131,8 +130,7 @@
     double total = 0;
     unsigned cant = 0;
 
-    for( auto itap : ap)
-      for(auto pedidos_ : itap.second)
+    for( auto pedidos_ : p)
       {
         os << setiosflags(ios::fixed) << setprecision(2) <<
         pedidos_.second.precio_venta() << " € " << pedidos_.second.cantidad() <<

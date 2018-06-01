@@ -6,7 +6,7 @@
 
   #include "usuario-pedido.hpp"
 
-  void Usuario_Pedido::asocia(const Usuario& u, const Pedido& p)
+  void Usuario_Pedido::asocia(Usuario& u, Pedido& p)
   {
     pedidos_.insert(&p);
 
@@ -25,12 +25,12 @@
     }
   }
 
-  void Usuario_Pedido::asocia(const Pedido& p, const Usuario& u)
+  void Usuario_Pedido::asocia(Pedido& p, Usuario& u)
   {
     this -> asocia(u, p);
   }
-  
-  Usuario_Pedido::Pedidos Usuario_Pedido::pedidos(const Usuario& u) { 
+
+  Usuario_Pedido::Pedidos Usuario_Pedido::pedidos(const Usuario& u) {
       return usuarios_.find(&u) -> second;
   }
 

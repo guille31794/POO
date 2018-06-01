@@ -52,8 +52,8 @@
   };
 
     std::basic_ostream<char>& operator <<
-    (std::basic_ostream<char>&, Pedido_Articulo::PedidosArticulos&);
+    (std::basic_ostream<char>&, const Pedido_Articulo::ItemsPedido&);
     std::basic_ostream<char>& operator <<
-    (std::basic_ostream<char>&, Pedido_Articulo::ArticulosPedidos&);
+    (std::basic_ostream<char>&, const Pedido_Articulo::Pedidos&);
 
   #endif

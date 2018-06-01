@@ -11,7 +11,39 @@ int Pedido::N_pedidos = 0;
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa, Usuario& u,
 Tarjeta& t, const Fecha& f)
 {
+  if(!u.n_articulos())
+    throw Vacio(u);
 
+  if (&u != t.titular())
+    throw Impostor(u);
+
+  if(t.caducidad() < f)
+    throw Tarjeta::Caducada(f);
+
+  for(auto compra_ : u.compra())
+    if (compra_.first -> stock() < compra_.second)
+    {
+      const_cast<Usuario::Articulos&> (u.compra()).clear();
+      throw SinStock(*compra_.first);
+    }
+
+  Usuario::Articulos carrito = u.compra();
+
+  for(auto carro_ : carrito)
+  {
+      Articulo* p_a = carro_.first;
+      unsigned int cantidad = carro_.second;
+      double precio = p_a->precio();
+
+      p_a->stock() -= cantidad;
+      pa.pedir(*this, *p_a, precio, cantidad);
+      total_ += precio * cantidad;
+      u.compra(*p_a, 0);
+  }
+
+  up.asocia(u, *this);
+
+  ++N_pedidos;
 }
 
 std::basic_ostream<char>& operator <<(std::basic_ostream<char>& os, const Pedido& p)
