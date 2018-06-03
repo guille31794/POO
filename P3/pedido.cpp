@@ -9,16 +9,16 @@
 int Pedido::N_pedidos = 0;
 
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa, Usuario& u,
-Tarjeta& t, const Fecha& f)
+const Tarjeta& t, const Fecha& f) : tarjeta_(&t), fecha_(f), total_(0)
 {
   if(!u.n_articulos())
     throw Vacio(u);
 
   if (&u != t.titular())
     throw Impostor(u);
-
+    
   if(t.caducidad() < f)
-    throw Tarjeta::Caducada(f);
+    throw Tarjeta::Caducada(t.caducidad());
 
   for(auto compra_ : u.compra())
     if (compra_.first -> stock() < compra_.second)
@@ -43,7 +43,7 @@ Tarjeta& t, const Fecha& f)
 
   up.asocia(u, *this);
 
-  ++N_pedidos;
+  num_ = ++N_pedidos;
 }
 
 std::basic_ostream<char>& operator <<(std::basic_ostream<char>& os, const Pedido& p)
@@ -52,10 +52,8 @@ std::basic_ostream<char>& operator <<(std::basic_ostream<char>& os, const Pedido
 
   os << "Num. pedido: " << p.numero() << '\n';
   os << "Fecha: \t\t " << p.fecha() << '\n';
-  os << "Pagado con:\t" << p.tarjeta()->tipo() << "n.º: "
-  << p.tarjeta()->numero() << '\n';
-  os << "Importe:\t\t" << setiosflags(ios::fixed) <<
-  setprecision(2) << p.total() << " €" << endl;
+  os << "Pagado con:\t" << p.tarjeta()->tipo() << "n.º: " << p.tarjeta()->numero() << '\n';
+  os << "Importe:\t\t" << setiosflags(ios::fixed) << setprecision(2) << p.total() << " €" << endl;
 
   return os;
 }

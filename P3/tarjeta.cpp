@@ -25,16 +25,15 @@
   }
 
 
-  Tarjeta::Tarjeta(const Tipo t, const Numero& n, Usuario& u, const Fecha& f):
-  tipo_{t}, numero_{n}, titular_{&u}, caducidad_{f}
+  Tarjeta::Tarjeta(Tipo t, Numero n, Usuario& u, const Fecha& f): tipo_{t}, numero_{n}, titular_{&u}, caducidad_(f)
   {
     Fecha hoy;
-
+    
     if(caducidad_ < hoy)
       throw Caducada(caducidad_);
-
+    
     u.es_titular_de(*this);
-
+    
     this -> titular_facial_ = u.nombre() + " " + u.apellidos();
   }
 

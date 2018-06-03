@@ -30,12 +30,11 @@
     this -> asocia(u, p);
   }
 
-  Usuario_Pedido::Pedidos Usuario_Pedido::pedidos(const Usuario& u) {
+  Usuario_Pedido::Pedidos Usuario_Pedido::pedidos(Usuario& u) {
       return usuarios_.find(&u) -> second;
   }
 
-  Usuario& cliente(const Pedido& p)
+  const Usuario* Usuario_Pedido::cliente(Pedido& p)
   {
-    if(pedidos_.find(&p) != pedidos_.end())
       return p.tarjeta() -> titular();
   }

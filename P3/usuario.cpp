@@ -73,11 +73,8 @@
   }
 
 
-  Usuario::Usuario(const Cadena& id, const Cadena& nombre,
-    const Cadena& apellidos, const Cadena& direccion,
-    const Clave& clave):
-    id_{id}, nombre_{nombre}, apellidos_{apellidos},
-    direccion_{direccion}, clave_{clave}
+  Usuario::Usuario(const Cadena& id, const Cadena& nombre, const Cadena& apellidos, const Cadena& direccion,
+    const Clave& clave): id_{id}, nombre_{nombre}, apellidos_{apellidos}, direccion_{direccion}, clave_{clave}
     {
       bool insertado;
       std::pair <Comprobador::iterator, bool> par;

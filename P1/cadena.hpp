@@ -45,8 +45,8 @@ class Cadena
 
     //De copia
 
-    Cadena(const Cadena &);
-    Cadena(Cadena &&);
+    Cadena(const Cadena&);
+    Cadena(Cadena&&);
 
     //Predeterminado
 
@@ -93,7 +93,7 @@ class Cadena
     //Observador
 
      const char* puts() const { return s_;}
-     const int length() const { return tam_;}
+     int length() const { return tam_;}
      char* c_str() const {  return this -> s_; }
 
     Cadena substr(unsigned, const int) const;

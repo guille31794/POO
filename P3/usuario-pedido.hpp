@@ -26,8 +26,8 @@
 
       void asocia(Usuario&, Pedido&);
       void asocia(Pedido&, Usuario&);
-      Pedidos pedidos(const Usuario& u);
-      Usuario& cliente(const Pedido&);
+      Pedidos pedidos(Usuario&);
+      const Usuario* cliente(Pedido&);
 
     private:
       Pedidos pedidos_;

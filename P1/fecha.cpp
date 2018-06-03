@@ -11,14 +11,12 @@
 
 //Constructores
 
-Fecha::Fecha(const unsigned d, const unsigned m, const unsigned a):
-day{d}, month{m}, year{a}
+Fecha::Fecha(int d, int m, int a): day(d), month(m), year(a)
 {
     time_t tiempo_calendario = time(nullptr);
     tm* tiempo_descompuesto = localtime(&tiempo_calendario);
 
     mktime(tiempo_descompuesto);
-
     if(year == 0)
         year = tiempo_descompuesto -> tm_year + 1900;
 
@@ -32,8 +30,7 @@ day{d}, month{m}, year{a}
 };
 
 
-Fecha::Fecha(unsigned d, unsigned m):
-day{d}, month{m}, year{}
+Fecha::Fecha(int d, int m): day{d}, month{m}, year{}
 {
     time_t tiempo_calendario = time(nullptr);
     tm* tiempo_descompuesto = localtime(&tiempo_calendario);
@@ -52,8 +49,7 @@ day{d}, month{m}, year{}
 };
 
 
-Fecha::Fecha(unsigned d):
-day{d}, month{}, year{}
+Fecha::Fecha(int d): day{d}, month{}, year{}
 {
     time_t tiempo_calendario = time(nullptr);
     tm* tiempo_descompuesto = localtime(&tiempo_calendario);
@@ -70,8 +66,7 @@ day{d}, month{}, year{}
 }
 
 
-Fecha::Fecha():
-day{}, month{}, year{}
+Fecha::Fecha(): day{}, month{}, year{}
 {
     time_t tiempo_calendario = time(nullptr);
     tm* tiempo_descompuesto = localtime(&tiempo_calendario);
@@ -86,7 +81,7 @@ day{}, month{}, year{}
 Fecha::Fecha(const char *s):
 day{}, month{}, year{}
 {
-    unsigned d, m, a, formato;
+    int d, m, a, formato;
     time_t tiempo_calendario;
     tm* tiempo_descompuesto;
 
@@ -122,7 +117,7 @@ day{}, month{}, year{}
 
 //Sobrecarga de operadores aritmeticos
 
-Fecha& Fecha::operator+=(int n)
+Fecha& Fecha::operator +=(int n)
 {
     tm tiempoInfo = {0};
 
@@ -138,7 +133,6 @@ Fecha& Fecha::operator+=(int n)
     this -> year = tiempoInfo.tm_year + 1900;
 
     compruebaFecha();
-
     return *this;
 }
 
@@ -215,7 +209,7 @@ void Fecha::compruebaFecha()
 
 void Fecha::bisiesto()
 {
-    unsigned a;
+    int a;
 
     a = this -> year;
 
