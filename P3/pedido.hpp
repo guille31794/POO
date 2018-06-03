@@ -26,8 +26,7 @@
   class Pedido
   {
     public:
-      Pedido(Usuario_Pedido&, Pedido_Articulo&, Usuario&,
-        Tarjeta&, const Fecha& = Fecha());
+      Pedido(Usuario_Pedido&, Pedido_Articulo&, Usuario&, const Tarjeta&, const Fecha& = Fecha());
 
       int numero() const {  return this -> num_;  }
       const Tarjeta* tarjeta() const  { return this -> tarjeta_; }
@@ -63,9 +62,8 @@
       };
 
     private:
-
       int num_;
-      Tarjeta* tarjeta_;
+      const Tarjeta* tarjeta_;
       Fecha fecha_;
       double total_;
       static int N_pedidos;

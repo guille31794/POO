@@ -50,10 +50,9 @@ tam_{0}, s_{new char[1]}
     s_[tam_] = '\0';
 }
 
-Cadena::Cadena(const Cadena &c):
-tam_{c.tam_}, s_{new char[c.tam_+1]}
+Cadena::Cadena(const Cadena& c): tam_{c.tam_}, s_{new char[c.tam_ + 1]}
 {
-    strcpy(this -> s_, c.s_);
+    strcpy(s_, c.s_);
 }
 
 Cadena::Cadena(Cadena &&c):
@@ -173,7 +172,7 @@ Cadena Cadena::substr(unsigned i, const int tam) const
     if (tam < 0)
         throw std::out_of_range((const char*)"Fuera de rango");
 
-    if(tam >= this -> tam_)
+    if(tam > this -> tam_)
         throw std::out_of_range((const char*)"Fuera de rango");
 
     Cadena c(tam);
@@ -188,8 +187,7 @@ Cadena Cadena::substr(unsigned i, const int tam) const
             throw std::out_of_range((const char*)"tam fuera de rango");
 
         k = 0;
-
-        while (i <= j)
+        while (i <= j && j >= 0)
         {
             c.s_[k] = this -> s_[i];
             ++i;
@@ -208,7 +206,6 @@ std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>& os, const Cadena &c)
 {
   os << c.c_str();
-
   return os;
 }
 
@@ -233,6 +230,9 @@ std::basic_istream<char>& operator >>
 
 Cadena::~Cadena()
 {
-    tam_ = 0;
-    delete[] s_;
+    if(tam_ != 0) {
+        tam_ = 0;
+        delete[] s_;
+        s_ = nullptr;
+    }
 }

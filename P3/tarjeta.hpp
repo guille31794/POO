@@ -15,7 +15,6 @@
   #include <functional>
   #include <iomanip>
   #include <iostream>
-  #include <cctype>
   #include <utility>
   #include <algorithm>
 
@@ -72,7 +71,7 @@
       enum Tipo {VISA, Mastercard, Maestro, JCB, AmericanExpress};
 
       explicit Tarjeta
-      (const Tipo, const Numero&, Usuario&, const Fecha&);
+      (Tipo, Numero, Usuario&, const Fecha& = Fecha());
       Tarjeta(const Tarjeta&) = delete;
       Tarjeta& operator =(const Tarjeta&) = delete;
 
