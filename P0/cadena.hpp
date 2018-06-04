@@ -22,9 +22,9 @@ class Cadena
 
     //Constructores
 
-    Cadena(const int , const char);
-    Cadena(const int );
-    Cadena(const char* ); //Conversion explicita
+    explicit Cadena(const int , const char);
+    explicit Cadena(const int );
+    explicit Cadena(const char* ); //Conversion explicita
 
     //De copia
 
@@ -34,11 +34,11 @@ class Cadena
 
     Cadena();
 
-    Cadena(const char* , const int );
+    explicit Cadena(const char* , const int );
 
     //Con otra cadena como parametro -> Similar a substr
 
-    Cadena(const Cadena &, int , const int);
+    explicit Cadena(const Cadena &, int , const int);
 
     //Sobrecarga de operadores aritmeticos
 
@@ -71,8 +71,8 @@ class Cadena
 
     //Observador
 
-    inline const char* puts() const { return s_;}
-    inline const int length() const { return tam_;}
+    inline const char* puts() const noexcept { return s_;}
+    inline const int length() const noexcept { return tam_;}
     inline operator const char*() const {  return this -> s_; }
 
     Cadena substr(unsigned, const int) const;

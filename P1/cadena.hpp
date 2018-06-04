@@ -28,7 +28,7 @@ class Cadena
 
     public:
 
-    static const int tamMax {32};
+    static const int tamMax;
 
     //Iteradores
 
@@ -39,8 +39,8 @@ class Cadena
 
     //Constructores
 
-    Cadena(const int , const char);
-    Cadena(const int );
+    explicit Cadena(const int , const char);
+    explicit Cadena(const int );
     Cadena(const char* ); //Conversion implicita
 
     //De copia
@@ -92,12 +92,11 @@ class Cadena
 
     //Observador
 
-     const char* puts() const { return s_;}
-     int length() const { return tam_;}
-     char* c_str() const {  return this -> s_; }
+     const char* puts() const noexcept { return s_;}
+     int length() const noexcept{ return tam_;}
+     char* c_str() const noexcept {  return this -> s_; }
 
     Cadena substr(unsigned, const int) const;
-
 
     friend std::basic_istream<char>& operator >>
     (std::basic_istream<char>&, Cadena &);

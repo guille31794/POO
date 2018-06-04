@@ -9,6 +9,9 @@
 
 #include "fecha.hpp"
 
+const unsigned Fecha::AnnoMinimo = 1902;
+const unsigned Fecha::AnnoMaximo = 2037;
+
 //Constructores
 
 Fecha::Fecha(const unsigned d, const unsigned m, const unsigned a):

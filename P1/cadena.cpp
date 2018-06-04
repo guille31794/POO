@@ -8,6 +8,8 @@
 
 #include "cadena.hpp"
 
+const int Cadena::tamMax = 32;
+
 //Constructores
 
 Cadena::Cadena(const int tam, char c):

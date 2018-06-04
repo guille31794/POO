@@ -9,6 +9,9 @@
 
 #include "fecha.hpp"
 
+const int Fecha::AnnoMinimo = 1902;
+const int Fecha::AnnoMaximo = 2037;
+
 //Constructores
 
 Fecha::Fecha(int d, int m, int a): day(d), month(m), year(a)
@@ -148,10 +151,70 @@ bool operator ==(const Fecha &f1, const Fecha &f2)
 
     return v;
 }
+bool operator ==(const Fecha &f1, const char* string)
+{
+  bool iguales;
+  Fecha f2(string);
+
+  iguales = (f1.dia() == f2.dia()) &&
+  (f1.mes() == f2.mes()) &&
+  (f1.anno() == f2.anno());
+
+  return iguales;
+}
+
+bool operator ==(const char* string, const Fecha &f1)
+{
+  bool iguales;
+  Fecha f2(string);
+
+  iguales = (f1.dia() == f2.dia()) &&
+  (f1.mes() == f2.mes()) &&
+  (f1.anno() == f2.anno());
+
+  return iguales;
+}
 
 bool operator <(const Fecha &f1, const Fecha &f2)
 {
     bool v;
+
+    v = (f1.anno() < f2.anno());
+
+    if(!v)
+        v = (f1.mes() < f2.mes()) &&
+        (f1.anno() <= f2.anno());
+
+    if(!v)
+        v = (f1.dia() < f2.dia()) &&
+        (f1.mes() <= f2.mes()) &&
+        (f1.anno() <= f2.anno());
+
+    return v;
+}
+
+bool operator <(const Fecha &f1, const char* string)
+{
+    bool v;
+    Fecha f2(string);
+
+    v = (f1.anno() < f2.anno());
+
+    if(!v)
+        v = (f1.mes() < f2.mes()) &&
+        (f1.anno() <= f2.anno());
+
+    if(!v)
+        v = (f1.dia() < f2.dia()) &&
+        (f1.mes() <= f2.mes()) &&
+        (f1.anno() <= f2.anno());
+
+    return v;
+}
+bool operator <(const char* string, const Fecha&f2)
+{
+    bool v;
+    Fecha f1(string);
 
     v = (f1.anno() < f2.anno());
 
@@ -263,7 +326,7 @@ istream& operator >> (istream& is, Fecha& f)
     char* string = new char[11];
 
     is.getline(string, 11);
-    
+
     try
     {
         f = Fecha(string);
@@ -276,7 +339,7 @@ istream& operator >> (istream& is, Fecha& f)
     return is;
 }
 
-char* const Fecha::cadena() const
+char* const Fecha::cadena() const noexcept
 {
   setlocale(LC_ALL, "es_ES");
 

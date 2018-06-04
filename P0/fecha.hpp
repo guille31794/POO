@@ -11,17 +11,7 @@ using namespace std;
 
 class Fecha
 {
-private:
-
-    unsigned day, month, year;
-
-    //Comprobador de excepciones
-
-    void bisiesto();
-    void compruebaFecha();
-    void CompruebadaysDelmonth();
-
-public:
+  public:
 
     //Constructores
 
@@ -38,8 +28,6 @@ public:
 
     class Invalida
     {
-        const char *string;
-
         public:
 
         //Constructor de excepciones
@@ -49,18 +37,22 @@ public:
         //Observador de excepciones
 
         inline const char* por_que() const { return string; }
+
+        private:
+
+        const char *string;
     };
 
     //Observadoras-Consultoras
 
-    inline const int dia() const { return this -> day; }
-    inline const int mes() const { return this -> month; }
-    inline const int anno() const { return this -> year; }
+    inline const int dia() const noexcept { return this -> day; }
+    inline const int mes() const noexcept { return this -> month; }
+    inline const int anno() const noexcept { return this -> year; }
 
     //Sobrecarga de operadores aritmeticos
 
     Fecha& operator +=(const int);
-    inline Fecha& operator -=(int n)   { n *= (-1); return *this += n; }
+    inline Fecha& operator -=(int n)   { return *this += (n * (-1)); }
 
     //Predecremento/Preincremento
 
@@ -79,8 +71,8 @@ public:
 
     //Constantes de construcción publicas
 
-    static const unsigned AnnoMinimo {1902};
-    static const unsigned AnnoMaximo {2037};
+    static const unsigned AnnoMinimo;
+    static const unsigned AnnoMaximo;
 
     //Sobrecarga de operadores de comparacion
 
@@ -91,7 +83,19 @@ public:
     inline bool operator <=(const Fecha &f) const  { return  !(f < *this); }
     inline bool operator >=(const Fecha &f) const  { return !(*this < f);   }
     operator const char*() const;
+
+    private:
+
+      unsigned day, month, year;
+
+      //Comprobador de excepciones
+
+      void bisiesto();
+      void compruebaFecha();
+      void CompruebadaysDelmonth();
+
 };
+
 
 
 #endif
