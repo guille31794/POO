@@ -9,14 +9,15 @@
 int Pedido::N_pedidos = 0;
 
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa, Usuario& u,
-const Tarjeta& t, const Fecha& f) : tarjeta_(&t), fecha_(f), total_(0)
+const Tarjeta& t, const Fecha& f) :num_{++N_pedidos}, tarjeta_{&t}, fecha_{f},
+total_{0}
 {
   if(!u.n_articulos())
     throw Vacio(u);
 
   if (&u != t.titular())
     throw Impostor(u);
-    
+
   if(t.caducidad() < f)
     throw Tarjeta::Caducada(t.caducidad());
 
@@ -42,8 +43,7 @@ const Tarjeta& t, const Fecha& f) : tarjeta_(&t), fecha_(f), total_(0)
   }
 
   up.asocia(u, *this);
-
-  num_ = ++N_pedidos;
+  ++N_pedidos;
 }
 
 std::basic_ostream<char>& operator <<(std::basic_ostream<char>& os, const Pedido& p)

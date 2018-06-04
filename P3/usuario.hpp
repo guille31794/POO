@@ -97,6 +97,8 @@
       void compra(Articulo&, unsigned cant = 1);
       const Articulos& compra() const { return this -> articulos_;}
       size_t n_articulos() const { return this -> articulos_.size();}
+      friend std::basic_ostream<char>& operator <<
+        (std::basic_ostream<char>& os, const Usuario&);
 
       ~Usuario();
 
@@ -107,8 +109,6 @@
       Articulos articulos_;
   };
 
-  std::basic_ostream<char>& operator <<
-    (std::basic_ostream<char>& os, const Usuario&);
   void mostrar_carro(std::basic_ostream<char>&, const Usuario&);
 
 #endif
