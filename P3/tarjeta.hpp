@@ -6,7 +6,7 @@
 
   #ifndef Tarjeta_hpp
   #define Tarjeta_hpp
-  
+
   #include "fecha.hpp"
   #include "cadena.hpp"
   #include "usuario.hpp"
@@ -104,6 +104,9 @@
 
 std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>& os, const Tarjeta& t);
+
+std::basic_ostream<char>& operator <<
+(std::basic_ostream<char>& os, const Tarjeta::Tipo& t);
 
 inline bool operator < (const Tarjeta& t1, const Tarjeta& t2)
 { return t1.numero() < t2.numero(); }

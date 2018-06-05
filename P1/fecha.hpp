@@ -5,6 +5,7 @@
 #include <ctime>
 #include <cstdio>
 #include <clocale>
+#include <cstring>
 
 using namespace std;
 
@@ -80,9 +81,7 @@ public:
 
     //Operador de Conversion
 
-     operator const char*() const;
-
-    char* const cadena() const noexcept;
+    const char* cadena() const noexcept;
 
     //Operador de flujos de salida
 

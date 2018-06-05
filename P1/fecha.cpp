@@ -236,25 +236,6 @@ Fecha::Invalida::Invalida(const char *e):
 string{e}
 {}
 
-Fecha::operator const char*() const
-{
-    setlocale(LC_ALL, "es_ES");
-
-    tm tiempo_descompuesto = {0};
-    char *fecha = new char[250];
-
-    tiempo_descompuesto.tm_mday = this -> day;
-    tiempo_descompuesto.tm_mon = this -> month - 1;
-    tiempo_descompuesto.tm_year = this -> year - 1900;
-    tiempo_descompuesto.tm_isdst --;
-
-    mktime(&tiempo_descompuesto);
-
-    strftime(fecha, 100, "%A %d de %B de %Y", &tiempo_descompuesto);
-
-    return fecha;
-}
-
 //Comprobador de excepciones
 
 void Fecha::compruebaFecha()
@@ -318,6 +299,7 @@ void Fecha::CompruebadaysDelmonth()
 
  ostream& operator << (ostream& os, const Fecha& f)
 {
+    setlocale(LC_ALL, "es_ES");
     return os << f.cadena();
 }
 
@@ -339,12 +321,12 @@ istream& operator >> (istream& is, Fecha& f)
     return is;
 }
 
-char* const Fecha::cadena() const noexcept
+const char* Fecha::cadena() const noexcept
 {
   setlocale(LC_ALL, "es_ES");
 
   tm tiempo_descompuesto = {0};
-  char *fecha = new char[250];
+  static char *fecha = new char[250];
 
   tiempo_descompuesto.tm_mday = this -> day;
   tiempo_descompuesto.tm_mon = this -> month - 1;
@@ -353,7 +335,7 @@ char* const Fecha::cadena() const noexcept
 
   mktime(&tiempo_descompuesto);
 
-  strftime(fecha, 100, "%A %d de %B de %Y", &tiempo_descompuesto);
+  strftime(fecha, 100, "%A %e de %B de %Y", &tiempo_descompuesto);
 
   return fecha;
 }

@@ -28,12 +28,12 @@
   Tarjeta::Tarjeta(Tipo t, Numero n, Usuario& u, const Fecha& f): tipo_{t}, numero_{n}, titular_{&u}, caducidad_(f)
   {
     Fecha hoy;
-    
+
     if(caducidad_ < hoy)
       throw Caducada(caducidad_);
-    
+
     u.es_titular_de(*this);
-    
+
     this -> titular_facial_ = u.nombre() + " " + u.apellidos();
   }
 
@@ -47,7 +47,7 @@ std::basic_ostream<char>& operator <<
 (std::basic_ostream<char>& os, const Tarjeta& t)
 {
 
-  switch (t.tipo())
+  /*switch (t.tipo())
   {
     case Tarjeta::Tipo::VISA: os << "VISA";
               break;
@@ -60,9 +60,9 @@ std::basic_ostream<char>& operator <<
     case Tarjeta::Tipo::JCB: os << "JCB";
               break;
     default: os << "Error, ninguna tarjeta conocida" << endl;
-  }
+  }*/
 
-  os << '\n' << t.numero() << '\n' << t.titular_facial()
+  os << t.tipo() << '\n' << t.numero() << '\n' << t.titular_facial()
   << '\n' << "Caduca: " << setprecision(2) << ((t.caducidad().mes() < 10) ? '0' : ' ') <<
   t.caducidad().mes() << '/' << (t.caducidad().anno() % 100) << endl;
 
@@ -70,7 +70,7 @@ std::basic_ostream<char>& operator <<
 }
 
 std::basic_ostream<char>& operator <<
-(std::basic_ostream<char>& os, const Tarjeta::Tipo t)
+(std::basic_ostream<char>& os, const Tarjeta::Tipo& t)
 {
   switch (t)
   {

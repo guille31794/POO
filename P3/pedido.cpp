@@ -9,7 +9,7 @@
 int Pedido::N_pedidos = 0;
 
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa, Usuario& u,
-const Tarjeta& t, const Fecha& f) :num_{++N_pedidos}, tarjeta_{&t}, fecha_{f},
+const Tarjeta& t, const Fecha& f) :num_{N_pedidos+1}, tarjeta_{&t}, fecha_{f},
 total_{0}
 {
   if(!u.n_articulos())
@@ -50,9 +50,9 @@ std::basic_ostream<char>& operator <<(std::basic_ostream<char>& os, const Pedido
 {
   setlocale(LC_ALL, "es_ES");
 
-  os << "Num. pedido: " << p.numero() << '\n';
+  os << "Núm. pedido: " << p.numero() << '\n';
   os << "Fecha: \t\t " << p.fecha() << '\n';
-  os << "Pagado con:\t" << p.tarjeta()->tipo() << "n.º: " << p.tarjeta()->numero() << '\n';
+  os << "Pagado con:\t" << p.tarjeta()->tipo() << " n.º: " << p.tarjeta()->numero() << '\n';
   os << "Importe:\t\t" << setiosflags(ios::fixed) << setprecision(2) << p.total() << " €" << endl;
 
   return os;
