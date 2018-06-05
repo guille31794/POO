@@ -9,11 +9,7 @@
 int Pedido::N_pedidos = 0;
 
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa, Usuario& u,
-<<<<<<< HEAD
 const Tarjeta& t, const Fecha& f) :num_{N_pedidos+1}, tarjeta_{&t}, fecha_{f},
-=======
-const Tarjeta& t, const Fecha& f) :num_{N_pedidos + 1}, tarjeta_{&t}, fecha_{f},
->>>>>>> cee262f3cef285e665373cfe0a45d00b38ae9bf6
 total_{0}
 {
   if(!u.n_articulos())

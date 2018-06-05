@@ -63,14 +63,13 @@
 
     double total = 0;
 
-    for(auto ap : articulosPedidos_)
-      for(auto pedidos : ap.second)
-      {
-        os << "Pedido núm. "  << pedidos.first -> numero() << " Cliente: " <<
-        pedidos.first -> tarjeta() -> titular() << "\t\tFecha: " <<
-        pedidos.first -> fecha() << '\n';
-        total += pedidos.second.precio_venta();
-      }
+    for(auto pedidos : pedidosArticulos_)
+    {
+      os << "Pedido núm. "  << pedidos.first -> numero() << " Cliente: " <<
+      pedidos.first -> tarjeta() -> titular() -> nombre() << "\t\tFecha: " <<
+      pedidos.first -> fecha() << '\n' << pedidos.second << '\n';
+      total += pedidos.first -> total();
+    }
 
     os << "\nTOTAL VENTAS\t\t"<< setprecision(2) << total << " €" << endl;
 
@@ -137,8 +136,8 @@
       {
         os << setiosflags(ios::fixed) << setprecision(2) <<
         pedidos_.second.precio_venta() << " € " << pedidos_.second.cantidad() <<
-        "\t\t\t " << pedidos_.first -> fecha();
-        total += pedidos_.second.precio_venta();
+        "\t\t\t " << pedidos_.first -> fecha() << '\n';
+        total += pedidos_.second.precio_venta() * pedidos_.second.cantidad();
         cant += pedidos_.second.cantidad();
       }
 
