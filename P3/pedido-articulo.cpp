@@ -50,7 +50,10 @@
 
   const Pedido_Articulo::Pedidos Pedido_Articulo::ventas(Articulo& ar)
   {
-    return articulosPedidos_.find(&ar) -> second;
+      if(articulosPedidos_.find(&ar) != articulosPedidos_.end())
+          return articulosPedidos_.find(&ar) -> second;
+      else
+          return Pedidos();
   }
 
   std::basic_ostream<char>&
