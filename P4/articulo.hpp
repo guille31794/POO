@@ -17,8 +17,8 @@ class Articulo
 {
   public:
 
-  virtual explicit Articulo(const Cadena&, const Cadena&, const Fecha&, const double,
-  const unsigned) = 0;
+  explicit Articulo(const Cadena&, const Cadena&, const Fecha&, const double,
+  const unsigned);
 
    virtual Cadena referencia() const noexcept = 0;
    virtual Cadena titulo() const noexcept = 0;
@@ -30,7 +30,7 @@ class Articulo
 
  private:
 
- Autores autores_
+ Autores autores_;
  Cadena referencia_;
  Cadena titulo_;
  Fecha f_publi_;
@@ -44,12 +44,12 @@ std::basic_ostream<char>& operator <<
 class ArticuloAlmacenable: public Articulo
 {
   public:
-    virtual ArticuloAlmacenable(const Cadena&, const Cadena&, const Fecha&, const double,
-    const unsigned = 0) = 0;
+    ArticuloAlmacenable(const Cadena&, const Cadena&, const Fecha&, const double,
+    const unsigned = 0);
     virtual unsigned stock() const noexcept = 0;
   private:
     unsigned stock_;
-}
+};
 
 class Libro: public ArticuloAlmacenable
 {
@@ -60,6 +60,28 @@ class Libro: public ArticuloAlmacenable
 
   private:
     const size_t n_pag_;
-}
+};
+
+class Cederron: public ArticuloAlmacenable
+{
+  private:
+    Cederron(const Cadena&, const Cadena&, const Fecha&, const double,
+    const size_t, const unsigned = 0);
+    const size_t tam() const noexcept { return this -> tam_;}
+
+  public:
+    const size_t tam_;
+};
+
+class LibroDigital: public Articulo
+{
+  public:
+    LibroDigital(const Cadena&, const Cadena&, const Fecha&, const double,
+    const unsigned, const Fecha&);
+    const Fecha f_expir() const noexcept  { return this -> f_expir_;  }
+
+  private:
+    const Fecha f_expir_;
+};
 
 #endif

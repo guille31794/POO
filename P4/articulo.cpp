@@ -37,9 +37,23 @@
 
   inline unsigned ArticuloAlmacenable::stock()  { return this -> stock_; }
 
-  Libro::Libro(const Autores& a,
-  const Cadena& referencia, const Cadena& titulo, const Fecha& f_publi,
-  const double precio, const size_t n_pag, const unsigned stock ): //stock = 0
+  Libro::Libro(const Autores& a, const Cadena& referencia,
+  const Cadena& titulo, const Fecha& f_publi, const double precio,
+  const size_t n_pag, const unsigned stock ): //stock = 0
   referencia_{referencia}, titulo_{titulo}, f_publi_{f_publi},
   precio_{precio}, n_pag_{n_pag}, stock_{stock}
+  {}
+
+  Cederron::Cederron(const Autores& a, const Cadena& referencia,
+  const Cadena& titulo, const Fecha& f_publi, const double precio,
+  const size_t tam, const unsigned stock): //stock = 0
+  referencia_{referencia}, titulo_{titulo}, f_publi_{f_publi},
+  precio_{precio}, tam_{tam}, stock_{stock}
+  {}
+
+  LibroDigital::LibroDigital(const Autores& a,
+  const Cadena& referencia, const Cadena& titulo, const Fecha& f_publi,
+  const double precio, const Fecha& f_expir):
+  referencia_{referencia}, titulo_{titulo}, f_publi_{f_publi},
+  precio_{precio}, stock_{stock}
   {}

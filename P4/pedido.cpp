@@ -14,6 +14,18 @@ total_{0}
 {
   if(!u.n_articulos())
     throw Vacio(u);
+  else
+    int n_articulos = u.n_articulos();
+
+  for(auto compruebaF_expir : u.compra())
+    if(compruebaF_expir.first -> f_expir() < f)
+    {
+      --n_articulos;
+      const_cast<Usuario::Articulos&> (u.compra()).erase(compruebaF_expir);
+    }
+
+  if(!n_articulos)
+    throw Vacio(u);
 
   if (&u != t.titular())
     throw Impostor(u);
