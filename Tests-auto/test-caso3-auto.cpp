@@ -367,7 +367,7 @@ FCTMF_FIXTURE_SUITE_BGN(test_p3_informes) {
     ostringstream os;
     pAsocPedidoArticulo->mostrarDetallePedidos(os);
     const string sDetalle { os.str() };
-
+    
     const double totalEsperado =
       (cantidad_A1_P1 + cantidad_A1_P2) * articulo1.precio()
       + cantidad_A2_P2 * articulo2.precio();
