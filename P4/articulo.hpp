@@ -11,22 +11,50 @@
 #include "cadena.hpp"
 #include <iostream>
 #include <iomanip>
+#include <unordered_set>
 
+class Autor
+{
+  public:
+
+    Autor(const Cadena&, const Cadena&, const Cadena&) noexcept;
+    const Cadena nombre() const noexcept { return this -> nombre_;  }
+    const Cadena apellidos() const noexcept { return this -> apellidos_;  }
+    const Cadena direccion() const noexcept { return this -> direccion_;  }
+
+  private:
+    const Cadena nombre_;
+    const Cadena apellidos_;
+    const Cadena direccion_;
+};
 
 class Articulo
 {
   public:
 
+  class Autores_vacios
+  {
+    private:
+      //Vacia
+    public:
+      Vacio
+      ();
+      virtual ~Vacio
+      ();
+  };
+
+  typedef unordered_set<Autor*> Autores;
+
   explicit Articulo(const Cadena&, const Cadena&, const Fecha&, const double,
   const unsigned);
 
-   virtual Cadena referencia() const noexcept = 0;
-   virtual Cadena titulo() const noexcept = 0;
-   virtual Fecha f_publi() const noexcept = 0;
-   virtual double precio() const noexcept = 0;
-   virtual double& precio() noexcept = 0;
+  virtual Cadena referencia() const noexcept = 0;
+  virtual Cadena titulo() const noexcept = 0;
+  virtual Fecha f_publi() const noexcept = 0;
+  virtual double precio() const noexcept = 0;
+  virtual double& precio() noexcept = 0;
    //TODO
-   virtual void impresion_especifica(ostream&) = 0;
+  virtual void impresion_especifica(ostream&) = 0;
 
  private:
 
