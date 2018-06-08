@@ -14,18 +14,6 @@ total_{0}
 {
   if(!u.n_articulos())
     throw Vacio(u);
-  else
-    int n_articulos = u.n_articulos();
-
-  for(auto compruebaF_expir : u.compra())
-    if(compruebaF_expir.first -> f_expir() < f)
-    {
-      --n_articulos;
-      const_cast<Usuario::Articulos&> (u.compra()).erase(compruebaF_expir);
-    }
-
-  if(!n_articulos)
-    throw Vacio(u);
 
   if (&u != t.titular())
     throw Impostor(u);
@@ -34,25 +22,50 @@ total_{0}
     throw Tarjeta::Caducada(t.caducidad());
 
   for(auto compra_ : u.compra())
-    if (compra_.first -> stock() < compra_.second)
-    {
-      const_cast<Usuario::Articulos&> (u.compra()).clear();
-      throw SinStock(*compra_.first);
-    }
+    if(ArticuloAlmacenable* articuloAlmacenable =
+    dynamic_cast<ArticuloAlmacenable*> (compra_.first))
+      if (articuloAlmacenable -> stock() < compra_.second)
+      {
+        const_cast<Usuario::Articulos&> (u.compra()).clear();
+        throw SinStock(*compra_.first);
+      }
 
+  unsigned articulosStock = 0;
+  unsigned expirados = 0;
+  unsigned n_ebooks = 0;
   Usuario::Articulos carrito = u.compra();
 
   for(auto carro_ : carrito)
   {
       Articulo* p_a = carro_.first;
       unsigned int cantidad = carro_.second;
-      double precio = p_a->precio();
+      double precio = p_a -> precio();
 
-      p_a->stock() -= cantidad;
-      pa.pedir(*this, *p_a, precio, cantidad);
-      total_ += precio * cantidad;
-      u.compra(*p_a, 0);
+      if(ArticuloAlmacenable *artAlmacenable =
+      dynamic_cast<ArticuloAlmacenable*>(carro_.first))
+      {
+        artAlmacenable -> stock() -= cantidad;
+        pa.pedir(*this, *p_a, precio, cantidad);
+        u.compra(*p_a, 0);
+        ++articulosStock;
+      }
+      else if(LibroDigital *libroD = dynamic_cast<LibroDigital*>(carro_.first))
+      {
+        ++n_ebooks;
+        u.compra(*libroD, 0);
+        if(libroD -> f_expir() < f)
+        {
+          ++expirados;
+          continue;
+        }
+        pa.pedir(*this, *libroD, precio, cantidad);
+      }
+
+      this -> total_ += precio * cantidad;
   }
+
+  if(!articulosStock && expirados > 0 && n_ebooks == expirados)
+    throw Vacio(u);
 
   up.asocia(u, *this);
   ++N_pedidos;
