@@ -7,6 +7,11 @@
 
   #include "articulo.hpp"
 
+  Autor::Autor(const Cadena& nombre, const Cadena& apellidos,
+  const Cadena& direccion): nombre_{nombre}, apellidos_{apellidos},
+  direccion_{direccion}
+  {}
+
   Articulo::Articulo(const Autores& a, const Cadena& referencia,
   const Cadena& titulo, const Fecha& f_publi, const double precio):
   referencia_{referencia}, titulo_{titulo}, f_publi_{f_publi},

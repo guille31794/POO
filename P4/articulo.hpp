@@ -20,7 +20,7 @@ class Autor
 {
   public:
 
-    Autor(const Cadena&, const Cadena&, const Cadena&) noexcept;
+    Autor(const Cadena&, const Cadena&, const Cadena&);
     const Cadena nombre() const noexcept { return this -> nombre_;  }
     const Cadena apellidos() const noexcept { return this -> apellidos_;  }
     const Cadena direccion() const noexcept { return this -> direccion_;  }
