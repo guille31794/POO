@@ -26,12 +26,6 @@
 
   Articulo::~Articulo() {}
 
-  inline Cadena Articulo::referencia() const noexcept  { return this -> referencia_;}
-  inline Cadena Articulo::titulo() const noexcept { return this -> titulo_;}
-  inline Fecha Articulo::f_publi() const noexcept { return this -> f_publi_;}
-  inline double Articulo::precio() const noexcept{ return this -> precio_;}
-  inline double& Articulo::precio() noexcept { return this -> precio_;}
-
   std::basic_ostream<char>& operator <<
   (std::basic_ostream<char>& os, const Articulo& ar)
   {
@@ -57,10 +51,6 @@
   {}
 
   ArticuloAlmacenable::~ArticuloAlmacenable() {}
-
-  inline const unsigned ArticuloAlmacenable::stock() const noexcept
-  { return this -> stock_; }
-  inline unsigned& ArticuloAlmacenable::stock() noexcept { return this -> stock_;  }
 
   Libro::Libro(const Autores& a, const Cadena& referencia,
   const Cadena& titulo, const Fecha& f_publi, const double precio,

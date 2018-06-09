@@ -42,11 +42,11 @@ class Articulo
   explicit Articulo(const Autores&, const Cadena&, const Cadena&, const Fecha&,
   const double);
 
-  Cadena referencia() const noexcept;
-  Cadena titulo() const noexcept;
-  Fecha f_publi() const noexcept;
-  double precio() const noexcept;
-  double& precio() noexcept;
+  Cadena referencia() const noexcept  { return this -> referencia_;}
+  Cadena titulo() const noexcept { return this -> titulo_;}
+  Fecha f_publi() const noexcept { return this -> f_publi_;}
+  double precio() const noexcept{ return this -> precio_;}
+  double& precio() noexcept { return this -> precio_;}
   Autores autores() const noexcept  { return this -> autores_;  }
 
   virtual void impresion_especifica(basic_ostream<char>&) const noexcept = 0;
@@ -71,8 +71,8 @@ class ArticuloAlmacenable: public Articulo
   public:
     ArticuloAlmacenable(const Autores&, const Cadena&, const Cadena&, const Fecha&, const double,
     const unsigned = 0);
-    const unsigned stock() const noexcept;
-    unsigned& stock() noexcept;
+    unsigned stock() const noexcept { return this -> stock_;  }
+    unsigned& stock() noexcept  { return this -> stock_;  }
 
     virtual void impresion_especifica(basic_ostream<char>&) const noexcept = 0;
 

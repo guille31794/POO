@@ -20,6 +20,8 @@
 
   using namespace std;
 
+  class Articulo;
+  class ArticuloAlmacenable;
   class Usuario_Pedido;
   class Pedido_Articulo;
 
