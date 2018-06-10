@@ -71,7 +71,7 @@
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << this -> n_pag() << " págs., " << this -> stock() << " unidades.";
+    os << this -> n_pag_ << " págs., " << this -> stock_ << " unidades.";
   }
 
   Cederron::Cederron(const Autores& a, const Cadena& referencia,
@@ -84,7 +84,7 @@
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << this -> tam() << " MB, " << this -> stock() << " unidades.";
+    os << this -> tam_ << " MB, " << this -> stock_ << " unidades.";
   }
 
   LibroDigital::LibroDigital(const Autores& a,
@@ -97,5 +97,5 @@
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << "A la venta hasta el " << this -> f_expir() << '.';
+    os << "A la venta hasta el " << this -> f_expir_ << ".";
   }
