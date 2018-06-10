@@ -146,7 +146,7 @@
       for (auto i : u.compra())
       {
         os << cont << " [" << i.first -> referencia() << "] \"" <<
-        i.first -> titulo() << "\", " << i.first -> f_publi() << ". " <<
+        i.first -> titulo() << "\", " << i.first -> f_publi().anno() << ". " <<
         setiosflags(ios::fixed)<<  setprecision(2) << i.first -> precio() <<
         " €." << endl;
 
