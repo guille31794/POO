@@ -31,10 +31,19 @@
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << '[' << ar.referencia() << "] " << '"' << ar.titulo() << '"' << ", de";
+    size_t cont = 0;
+
+    os << '[' << ar.referencia() << "] " << '"' << ar.titulo() << '"' << ", de ";
 
     for(auto autores : ar.autores())
-      os << ' ' << autores -> apellidos() << ", " << autores -> nombre();
+    {
+      os << autores -> apellidos();
+
+      if(cont < (ar.autores().size() - 1))
+        os << ", ";
+
+      ++cont;
+    }
 
     os << ". " << ar.f_publi().anno() << ". " << setiosflags(ios::fixed) << setprecision(2)
     << ar.precio() << " €" << "\n\t";
@@ -62,8 +71,7 @@
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << this -> n_pag() << " págs., " << this -> stock() << " unidades." <<
-    endl;
+    os << this -> n_pag() << " págs., " << this -> stock() << " unidades.";
   }
 
   Cederron::Cederron(const Autores& a, const Cadena& referencia,
@@ -76,8 +84,7 @@
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << this -> tam() << " MB, " << this -> stock() << " unidades." <<
-    endl;
+    os << this -> tam() << " MB, " << this -> stock() << " unidades.";
   }
 
   LibroDigital::LibroDigital(const Autores& a,
@@ -90,5 +97,5 @@
   {
     setlocale(LC_ALL, "es_ES");
 
-    os << "A la venta hasta el " << this -> f_expir() << '.' << endl;
+    os << "A la venta hasta el " << this -> f_expir() << '.';
   }

@@ -11,7 +11,7 @@
 #include "cadena.hpp"
 #include <iostream>
 #include <iomanip>
-#include <unordered_set>
+#include <set>
 #include <locale>
 
 using namespace std;
@@ -37,7 +37,7 @@ class Articulo
 
   class Autores_vacios{};
 
-  typedef unordered_set<Autor*> Autores;
+  typedef set<Autor*> Autores;
 
   explicit Articulo(const Autores&, const Cadena&, const Cadena&, const Fecha&,
   const double);
