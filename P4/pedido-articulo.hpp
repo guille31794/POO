@@ -55,5 +55,7 @@
   (std::basic_ostream<char>&, const Pedido_Articulo::ItemsPedido&);
   std::basic_ostream<char>& operator <<
   (std::basic_ostream<char>&, const Pedido_Articulo::Pedidos&);
+  std::basic_ostream<char>& operator <<
+  (std::basic_ostream<char>&, const LineaPedido&);
 
   #endif

@@ -78,7 +78,7 @@ class ArticuloAlmacenable: public Articulo
 
     virtual ~ArticuloAlmacenable() = 0;
 
-  private:
+  protected:
     unsigned stock_;
 };
 

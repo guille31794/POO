@@ -84,6 +84,5 @@
   };
 
 std::basic_ostream<char>& operator <<(std::basic_ostream<char>&, const Pedido&);
-std::basic_ostream<char>& operator <<(std::basic_ostream<char>&, const LineaPedido&);
 
   #endif

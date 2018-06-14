@@ -82,15 +82,3 @@ std::basic_ostream<char>& operator <<(std::basic_ostream<char>& os, const Pedido
 
   return os;
 }
-
-std::basic_ostream<char>& operator <<(std::basic_ostream<char>& os, const LineaPedido& lp)
-{
-  setlocale(LC_ALL, "es_ES");
-
-  //TODO si hay fallo, es en el tabular, que deja dos espacios en lugar de 3
-
-  os << setiosflags(ios::fixed) << setprecision(2) << lp.precio_venta() <<
-  " €\t" << lp.cantidad();
-
-  return os;
-}
