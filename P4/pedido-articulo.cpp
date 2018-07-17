@@ -109,7 +109,7 @@
         itemspedido_.second.cantidad() << "\t\t\t\t\t [" <<
         itemspedido_.first -> referencia() << "] \"" <<
         itemspedido_.first -> titulo() << "\"\n";
-        total += itemspedido_.second.precio_venta();
+        total += itemspedido_.second.precio_venta() * itemspedido_.second.cantidad();
       }
 
     os <<
