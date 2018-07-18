@@ -93,7 +93,7 @@
   (std::basic_ostream<char>& os, const Pedido_Articulo::ItemsPedido& ip)
   {
     setlocale(LC_ALL, "es_ES");
-    os << "PVP\tCantidad\t\tArtículo\n" <<
+    os << "PVP\t Cantidad\t\tArtículo\n" <<
     "==================================================================\n";
 
     /*
@@ -105,7 +105,7 @@
     for(auto itemspedido_ : ip) //Reocorro ItemsPedido
       {
         os << setiosflags(ios::fixed) << setprecision(2) <<
-        itemspedido_.second.precio_venta() << " € " <<
+        itemspedido_.second.precio_venta() << " €\t\t" <<
         itemspedido_.second.cantidad() << "\t\t\t\t\t [" <<
         itemspedido_.first -> referencia() << "] \"" <<
         itemspedido_.first -> titulo() << "\"\n";
@@ -135,14 +135,19 @@
     for( auto pedidos_ : p)
       {
         os << setiosflags(ios::fixed) << setprecision(2) <<
-        pedidos_.second.precio_venta() << " € " << pedidos_.second.cantidad() <<
+        pedidos_.second.precio_venta() << " €\t\t" << pedidos_.second.cantidad() <<
         "\t\t\t " << pedidos_.first -> fecha() << '\n';
         total += pedidos_.second.precio_venta() * pedidos_.second.cantidad();
         cant += pedidos_.second.cantidad();
       }
 
     os << "==================================================================\n"
-    << setprecision(2) << total << " €\t\t\t" << cant << endl;
+    << setprecision(2) << total;
+
+    if(total > 99)
+      os << " €\t" << cant << endl;
+    else
+      os << " €\t\t" << cant << endl;
 
     return os;
   }
