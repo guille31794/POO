@@ -51,7 +51,7 @@ class Articulo
 
   virtual void impresion_especifica(basic_ostream<char>&) const noexcept = 0;
 
-  virtual ~Articulo() = 0;
+  virtual ~Articulo();
 
  private:
 
@@ -76,7 +76,7 @@ class ArticuloAlmacenable: public Articulo
 
     virtual void impresion_especifica(basic_ostream<char>&) const noexcept = 0;
 
-    virtual ~ArticuloAlmacenable() = 0;
+    virtual ~ArticuloAlmacenable();
 
   protected:
     unsigned stock_;
