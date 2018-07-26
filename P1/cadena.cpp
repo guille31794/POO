@@ -12,7 +12,7 @@ const int Cadena::tamMax = 32;
 
 //Constructores
 
-Cadena::Cadena(const int tam, char c):
+Cadena::Cadena(const unsigned tam, char c):
 tam_{tam}, s_{new char[tam+1]}
 {
     if (tam < 0)
@@ -26,7 +26,7 @@ tam_{tam}, s_{new char[tam+1]}
     s_[tam_] = '\0';
 }
 
-Cadena::Cadena(const int tam):
+Cadena::Cadena(const unsigned tam):
 tam_{tam}, s_{new char[tam+1]}
 {
     if (tam < 0)
@@ -41,7 +41,7 @@ tam_{tam}, s_{new char[tam+1]}
 }
 
 Cadena::Cadena(const char* c):
-tam_{(int)strlen(c)}, s_{new char[(int)strlen(c)+1]}
+tam_{(unsigned)strlen(c)}, s_{new char[(strlen(c)+1)]}
 {
     strcpy(this -> s_, c);
 }
@@ -49,7 +49,7 @@ tam_{(int)strlen(c)}, s_{new char[(int)strlen(c)+1]}
 Cadena::Cadena():
 tam_{0}, s_{new char[1]}
 {
-    s_[tam_] = '\0';
+  s_[tam_] = '\0';
 }
 
 Cadena::Cadena(const Cadena& c): tam_{c.tam_}, s_{new char[c.tam_ + 1]}
@@ -60,11 +60,11 @@ Cadena::Cadena(const Cadena& c): tam_{c.tam_}, s_{new char[c.tam_ + 1]}
 Cadena::Cadena(Cadena &&c):
 tam_{c.tam_}, s_{c.s_}
 {
-  c.s_ = new char[0];
+  c.s_ = nullptr;
   c.tam_ = 0;
 }
 
-Cadena::Cadena(const char* c, const int t):
+Cadena::Cadena(const char* c, const unsigned t):
 tam_{t}, s_{new char[t+1]}
 {
     int i;
@@ -75,7 +75,7 @@ tam_{t}, s_{new char[t+1]}
         this -> s_[i] = c[i];
 }
 
-Cadena::Cadena(const Cadena &c, int i, const int t):
+Cadena::Cadena(const Cadena &c, unsigned i, const unsigned t):
 tam_{t}, s_{new char[t+1]}
 {
     int ristra;
@@ -101,6 +101,7 @@ Cadena& Cadena::operator=(const Cadena &c)
     if (*this != c)
     {
         this -> tam_ = c.length();
+        delete[] this -> s_;
         this -> s_ = new char[this -> tam_ + 1];
         strcpy(this -> s_, c.s_);
     }
@@ -117,7 +118,7 @@ Cadena& Cadena::operator=(Cadena &&c)
       this -> tam_ = c.length();
       this -> s_ = c.s_;
 
-      c.s_ = new char[0];
+      c.s_ = nullptr;
       c.tam_ = 0;
   }
 
@@ -130,9 +131,10 @@ Cadena& Cadena::operator=(const char* s)
 
     if(strcmp(this -> s_, s))
     {
+        this -> tam_ = strlen(s);
+        delete[] this -> s_;
         this -> s_ = new char[this -> tam_ + 1];
         strcpy(this -> s_, s);
-        this -> tam_ = strlen(s);
     }
 
     return *this;
@@ -174,7 +176,10 @@ Cadena Cadena::substr(unsigned i, const int tam) const
     if (tam < 0)
         throw std::out_of_range((const char*)"Fuera de rango");
 
-    if(tam > this -> tam_)
+    if(i < 0)
+    throw std::out_of_range((const char*)"Fuera de rango");
+
+    if(tam + i > this -> tam_)
         throw std::out_of_range((const char*)"Fuera de rango");
 
     Cadena c(tam);

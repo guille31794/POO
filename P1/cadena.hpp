@@ -23,7 +23,7 @@ using namespace std;
 
 class Cadena
 {
-    int tam_;
+    unsigned tam_;
     char* s_;
 
     public:
@@ -39,8 +39,8 @@ class Cadena
 
     //Constructores
 
-    explicit Cadena(const int , const char);
-    explicit Cadena(const int );
+    explicit Cadena(const unsigned , const char);
+    explicit Cadena(const unsigned );
     Cadena(const char* ); //Conversion implicita
 
     //De copia
@@ -52,11 +52,11 @@ class Cadena
 
     Cadena();
 
-    Cadena(const char* , const int );
+    Cadena(const char* , const unsigned );
 
     //Con otra cadena como parametro -> Similar a substr
 
-    Cadena(const Cadena &, int , const int);
+    Cadena(const Cadena &, unsigned , const unsigned);
 
     //Sobrecarga de operadores aritmeticos
 
@@ -93,7 +93,7 @@ class Cadena
     //Observador
 
      const char* puts() const noexcept { return s_;}
-     int length() const noexcept{ return tam_;}
+     unsigned length() const noexcept{ return tam_;}
      char* c_str() const noexcept {  return this -> s_; }
 
     Cadena substr(unsigned, const int) const;
