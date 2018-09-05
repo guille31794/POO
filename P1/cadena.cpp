@@ -219,14 +219,14 @@ std::basic_ostream<char>& operator <<
 std::basic_istream<char>& operator >>
 (std::basic_istream<char>& is, Cadena &c)
 {
-  char* string = new char[c.tamMax];
+  char* string = new char[c.tamMax+1];
   string[0] = '\0';
 
   is.width(c.tamMax + 1);
 
   is >> string;
   delete[] c.s_;
-  c.s_ = new char[c.tamMax];
+  c.s_ = new char[c.tamMax+1];
 
   strcpy(c.s_, string);
 

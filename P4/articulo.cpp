@@ -20,7 +20,6 @@
     if(a.empty())
       throw Autores_vacios();
     else
-      //this -> autores_.swap(a);
       this -> autores_ = a;
   }
 
