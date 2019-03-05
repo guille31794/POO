@@ -1,101 +1,96 @@
-#ifndef Fecha_hpp
-#define Fecha_hpp
+#ifndef FECHA_HPP_
+#define FECHA_HPP_
 
-#include <iostream>
 #include <ctime>
-#include <cstdio>
-#include <clocale>
-
 
 using namespace std;
 
-class Fecha
-{
-  public:
+class fecha
+{    
+    public:
+        //Consts.
+        const unsigned AnnoMinimo;
+        const unsigned AnnoMaximo;
 
-    //Constructores
+        //Constructors
+        fecha(const unsigned day, const unsigned month, const unsigned year);
+        fecha(const unsigned day, const unsigned month);
+        explicit fecha(const unsigned day);
+        fecha();
+        //fecha(const fecha& f);
+        //fecha(fecha&& f);
+        fecha(char* s);
 
-    explicit Fecha(const unsigned, const unsigned, const unsigned);
-    explicit Fecha(const unsigned, const unsigned);
-    explicit Fecha(const unsigned);
-    explicit Fecha();
+        //Exception class
+        class Invalida
+        {
+            public:
+                //Constructor
+                Invalida(const char* s);
+                //Destructor
+                //~Invalida();
+                //Observer
+                const char* por_que() const;
+            private:
+                char* error;
+        };
 
-    //A partir de una cadena
+        //Operators
+        fecha operator ++();
+        fecha operator ++(const unsigned n);
+        fecha operator --();
+        fecha operator --(const unsigned n);
+        void operator +=(unsigned n);
+        void operator -=(unsigned n);
+        char* ();
+        //fecha operator =(const fecha& f);
+        //fecha operator =(const fecha&& f);
 
-    Fecha(const char * );
-
-    //Excepciones
-
-    class Invalida
-    {
-        public:
-
-        //Constructor de excepciones
-
-        Invalida(const char *);
-
-        //Observador de excepciones
-
-        inline const char* por_que() const { return string; }
-
-        private:
-
-        const char *string;
-    };
-
-    //Observadoras-Consultoras
-
-    inline const int dia() const noexcept { return this -> day; }
-    inline const int mes() const noexcept { return this -> month; }
-    inline const int anno() const noexcept { return this -> year; }
-
-    //Sobrecarga de operadores aritmeticos
-
-    Fecha& operator +=(const int);
-    inline Fecha& operator -=(int n)   { return *this += (n * (-1)); }
-
-    //Predecremento/Preincremento
-
-    inline Fecha& operator ++()  {  return *this += 1;   }
-    inline Fecha& operator --()  {  return *this += -1;  }
-
-    //Postdecremento/Postincremento
-
-    inline Fecha operator ++(const int n)  { Fecha f(*this); *this += 1;
-        return f;}
-    inline Fecha operator --(const int n)   {   Fecha f(*this); *this += -1;
-        return f;}
-    inline Fecha& operator +(const int n) const {  Fecha f(*this); return f += n;  }
-    inline Fecha& operator -(int n) const   {  Fecha f(*this); n *= (-1);
-        return f += n; }
-
-    //Constantes de construcción publicas
-
-    static const unsigned AnnoMinimo;
-    static const unsigned AnnoMaximo;
-
-    //Sobrecarga de operadores de comparacion
-
-    bool operator ==(const Fecha &) const;
-    bool operator <(const Fecha &) const;
-    inline bool operator !=(const Fecha &f) const  { return !(*this == f);   }
-    inline bool operator >(const Fecha &f)  const  { return f < *this;   }
-    inline bool operator <=(const Fecha &f) const  { return  !(f < *this); }
-    inline bool operator >=(const Fecha &f) const  { return !(*this < f);   }
-    operator const char*() const;
+        //Observers
+        const int dia();
+        const int mes();
+        const int anno();
+        
+        //Destructor
+        //~fecha();
 
     private:
-
-      unsigned day, month, year;
-
-      //Comprobador de excepciones
-
-      void bisiesto();
-      void compruebaFecha();
-      void CompruebadaysDelmonth();
-
+        unsigned day_, month_, year_;
 };
 
+//External Operators
+fecha operator +(const fecha& f, unsigned n);
+fecha operator -(const fecha& f, unsigned n);
+bool operator <(const fecha& f1, const fecha& f2);
+bool operator >(const fecha& f1, const fecha& f2);
+bool operator <=(const fecha& f1, const fecha& f2);
+bool operator >=(const fecha& f1, const fecha& f2);
+bool operator ==(const fecha& f1, const fecha& f2);
+bool operator !=(const fecha& f1, const fecha& f2);
 
+//Const deffinitions
+const unsigned fecha::AnnoMaximo{1902};
+const unsigned fecha::AnnoMinimo{2037};
+
+//Inline deffinitions
+inline const int fecha::dia()
+{
+    return day_;
+}
+
+inline const int fecha::mes()
+{
+    return month_;
+}
+
+inline const int fecha::anno()
+{
+    return year_;
+}
+
+inline const char* fecha::Invalida::por_que()
+{
+    return error;
+}
 
 #endif
