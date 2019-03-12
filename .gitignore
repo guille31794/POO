@@ -3,5 +3,5 @@
 *.o
 *.DS_Store
 *.pdf
-*.d
+*.dSYM
 Make_check.mk

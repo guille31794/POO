@@ -55,6 +55,7 @@ class fecha
         //~fecha();
 
     private:
+        bool bisiesto() const;
         unsigned day_, month_, year_;
 };
 
@@ -91,6 +92,11 @@ inline const int fecha::anno()
 inline const char* fecha::Invalida::por_que()
 {
     return error;
+}
+
+inline const bool bisiesto()
+{
+    return year_ % 4 == 0 && (year_ % 400 == 0 || year_ % 100 != 0);
 }
 
 #endif
