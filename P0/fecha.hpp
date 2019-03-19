@@ -1,11 +1,11 @@
-#ifndef FECHA_HPP_
-#define FECHA_HPP_
+#ifndef Fecha_HPP_
+#define Fecha_HPP_
 
 #include <ctime>
 
 using namespace std;
 
-class fecha
+class Fecha
 {    
     public:
         //Consts.
@@ -13,13 +13,11 @@ class fecha
         const unsigned AnnoMaximo;
 
         //Constructors
-        fecha(const unsigned day, const unsigned month, const unsigned year);
-        fecha(const unsigned day, const unsigned month);
-        explicit fecha(const unsigned day);
-        fecha();
-        //fecha(const fecha& f);
-        //fecha(fecha&& f);
-        fecha(char* s);
+        explicit Fecha(const unsigned day, const unsigned month = localtime(time(nullptr))->tm_mon + 1, 
+        const unsigned year = localtime(time(nullptr))->tm_year + 1900);
+        //explicit Fecha(const unsigned day);
+        Fecha();
+        Fecha(char* s);
 
         //Exception class
         class Invalida
@@ -27,8 +25,6 @@ class fecha
             public:
                 //Constructor
                 Invalida(const char* s);
-                //Destructor
-                //~Invalida();
                 //Observer
                 const char* por_que() const;
             private:
@@ -36,65 +32,62 @@ class fecha
         };
 
         //Operators
-        fecha operator ++();
-        fecha operator ++(const unsigned n);
-        fecha operator --();
-        fecha operator --(const unsigned n);
-        void operator +=(unsigned n);
-        void operator -=(unsigned n);
+        Fecha operator ++();
+        Fecha operator ++(const unsigned n = 0);
+        Fecha operator --();
+        Fecha operator --(const unsigned n = 0);
+        Fecha operator +=(unsigned n);
+        Fecha operator -=(unsigned n);
         char* ();
-        //fecha operator =(const fecha& f);
-        //fecha operator =(const fecha&& f);
 
         //Observers
-        const int dia();
-        const int mes();
-        const int anno();
-        
-        //Destructor
-        //~fecha();
+        int dia() const;
+        int mes() const;
+        int anno() const;
 
     private:
-        bool bisiesto() const;
+        const bool bisiesto() const;
         unsigned day_, month_, year_;
 };
 
 //External Operators
-fecha operator +(const fecha& f, unsigned n);
-fecha operator -(const fecha& f, unsigned n);
-bool operator <(const fecha& f1, const fecha& f2);
-bool operator >(const fecha& f1, const fecha& f2);
-bool operator <=(const fecha& f1, const fecha& f2);
-bool operator >=(const fecha& f1, const fecha& f2);
-bool operator ==(const fecha& f1, const fecha& f2);
-bool operator !=(const fecha& f1, const fecha& f2);
+Fecha operator +(const Fecha& f, unsigned n);
+Fecha operator +(unsigned n, const Fecha& f);
+Fecha operator -(const Fecha& f, unsigned n);
+Fecha operator -(unsigned n, const Fecha& f);
+bool operator <(const Fecha& f1, const Fecha& f2);
+bool operator >(const Fecha& f1, const Fecha& f2);
+bool operator <=(const Fecha& f1, const Fecha& f2);
+bool operator >=(const Fecha& f1, const Fecha& f2);
+bool operator ==(const Fecha& f1, const Fecha& f2);
+bool operator !=(const Fecha& f1, const Fecha& f2);
 
 //Const deffinitions
-const unsigned fecha::AnnoMaximo{1902};
-const unsigned fecha::AnnoMinimo{2037};
+const unsigned Fecha::AnnoMaximo{1902};
+const unsigned Fecha::AnnoMinimo{2037};
 
 //Inline deffinitions
-inline const int fecha::dia()
+inline int Fecha::dia() const
 {
     return day_;
 }
 
-inline const int fecha::mes()
+inline int Fecha::mes() const
 {
     return month_;
 }
 
-inline const int fecha::anno()
+inline int Fecha::anno() const
 {
     return year_;
 }
 
-inline const char* fecha::Invalida::por_que()
+inline const char* Fecha::Invalida::por_que() const
 {
     return error;
 }
 
-inline const bool bisiesto()
+inline const bool bisiesto() const
 {
     return year_ % 4 == 0 && (year_ % 400 == 0 || year_ % 100 != 0);
 }
