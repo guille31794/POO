@@ -2,6 +2,8 @@
 #define Fecha_HPP_
 
 #include <ctime>
+#include <clocale>
+#include <cstring>
 
 using namespace std;
 
@@ -9,8 +11,8 @@ class Fecha
 {    
     public:
         //Consts.
-        const unsigned AnnoMinimo;
-        const unsigned AnnoMaximo;
+        static const unsigned AnnoMinimo;
+        static const unsigned AnnoMaximo;
 
         //Constructors
         explicit Fecha(const unsigned day, const unsigned month = localtime(time(nullptr))->tm_mon + 1, 
@@ -33,9 +35,9 @@ class Fecha
 
         //Operators
         Fecha operator ++();
-        Fecha operator ++(const unsigned n = 0);
+        Fecha operator ++(const int n);
         Fecha operator --();
-        Fecha operator --(const unsigned n = 0);
+        Fecha operator --(const int n);
         Fecha operator +=(unsigned n);
         Fecha operator -=(unsigned n);
         char* ();
@@ -51,10 +53,10 @@ class Fecha
 };
 
 //External Operators
-Fecha operator +(const Fecha& f, unsigned n);
-Fecha operator +(unsigned n, const Fecha& f);
-Fecha operator -(const Fecha& f, unsigned n);
-Fecha operator -(unsigned n, const Fecha& f);
+Fecha operator +(Fecha& f, unsigned n);
+Fecha operator +(unsigned n, Fecha& f);
+Fecha operator -(Fecha& f, unsigned n);
+Fecha operator -(unsigned n, Fecha& f);
 bool operator <(const Fecha& f1, const Fecha& f2);
 bool operator >(const Fecha& f1, const Fecha& f2);
 bool operator <=(const Fecha& f1, const Fecha& f2);
@@ -87,7 +89,7 @@ inline const char* Fecha::Invalida::por_que() const
     return error;
 }
 
-inline const bool bisiesto() const
+inline const bool Fecha::bisiesto() const
 {
     return year_ % 4 == 0 && (year_ % 400 == 0 || year_ % 100 != 0);
 }
