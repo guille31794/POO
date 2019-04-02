@@ -17,8 +17,8 @@ const unsigned Fecha::AnnoMaximo = 2037;
 Fecha::Fecha(const unsigned d, const unsigned m, const unsigned a):
 day{d}, month{m}, year{a}
 {
-    time_t tiempo_calendario = time(nullptr);
-    tm* tiempo_descompuesto = localtime(&tiempo_calendario);
+    //time_t tiempo_calendario = time(nullptr);
+    tm* tiempo_descompuesto = localtime(time(nullptr));
 
     mktime(tiempo_descompuesto);
 

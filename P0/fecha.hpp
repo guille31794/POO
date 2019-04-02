@@ -4,6 +4,8 @@
 #include <ctime>
 #include <clocale>
 #include <cstring>
+#include <cstdio>
+#include <iostream>
 
 using namespace std;
 
@@ -15,11 +17,8 @@ class Fecha
         static const unsigned AnnoMaximo;
 
         //Constructors
-        explicit Fecha(const unsigned day, const unsigned month = localtime(time(nullptr))->tm_mon + 1, 
-        const unsigned year = localtime(time(nullptr))->tm_year + 1900);
-        //explicit Fecha(const unsigned day);
-        Fecha();
-        Fecha(char* s);
+        explicit Fecha(const unsigned day = 0, const unsigned month = 0, const unsigned year = 0);
+        Fecha(const char* s);
 
         //Exception class
         class Invalida
@@ -40,7 +39,7 @@ class Fecha
         Fecha operator --(const int n);
         Fecha operator +=(unsigned n);
         Fecha operator -=(unsigned n);
-        char* ();
+        operator char* () const;
 
         //Observers
         int dia() const;
@@ -65,8 +64,8 @@ bool operator ==(const Fecha& f1, const Fecha& f2);
 bool operator !=(const Fecha& f1, const Fecha& f2);
 
 //Const deffinitions
-const unsigned Fecha::AnnoMaximo{1902};
-const unsigned Fecha::AnnoMinimo{2037};
+const unsigned Fecha::AnnoMaximo{2037};
+const unsigned Fecha::AnnoMinimo{1902};
 
 //Inline deffinitions
 inline int Fecha::dia() const
