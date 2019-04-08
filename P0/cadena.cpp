@@ -1,7 +1,5 @@
 #include "cadena.hpp"
 
-using namespace std;
-
 Cadena Cadena::substr(unsigned i, unsigned s) const
 {
     if(i < 0 || i > size_ || i+s > size_)

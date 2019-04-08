@@ -1,4 +1,4 @@
-#include <iostream>
+//#include <iostream>
 #include "cadena.hpp"
 
 int main()
@@ -11,7 +11,7 @@ int main()
     Cadena c{"Hola y "};
     Cadena s{"adios."};
     cout << c+s << endl;
-    c+=s;
+    c+= "adios";
     cout << c << endl;
     cout << s << endl;
     return 0;

@@ -13,7 +13,7 @@ class Cadena
     public:
         //Constructors
         explicit Cadena(unsigned size = 0, char c = ' ');
-        Cadena(char *string);
+        Cadena(char* str);
 
         //Getters
         unsigned length() const;
@@ -26,7 +26,7 @@ class Cadena
         char& at(unsigned n);
 
         //Arithmetical operator
-        void operator +=(Cadena& s);
+        void operator +=(const Cadena& s);
 
         //Other methods
         Cadena substr(unsigned i, unsigned s) const;
@@ -79,14 +79,16 @@ bool operator >=(const Cadena& s1, const Cadena& s2)
     return s1 > s2 || s1 == s2;
 }
 
+//Inline definitions
+
 Cadena::Cadena(unsigned size, char c): string_{new char[size + 1]}, size_{size}
 {
     memset(string_, c, size_);
 }
 
-Cadena::Cadena(char* string): string_{new char[strlen(string) + 1]}, size_{(unsigned)strlen(string)}
+Cadena::Cadena(char* str): string_{new char[strlen(str) + 1]}, size_{(unsigned)strlen(str)}
 {
-    memcpy(string_, string, size_);
+    memcpy(string_, str, size_);
 }
 
 inline unsigned Cadena::length() const
@@ -125,7 +127,7 @@ inline char& Cadena::at(unsigned n)
     return string_[n];
 }
 
-inline void Cadena::operator+=(Cadena& s)
+inline void Cadena::operator+=(const Cadena& s)
 {
     *this = *this + s;
 }
