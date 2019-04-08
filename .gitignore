@@ -5,3 +5,7 @@
 *.pdf
 *.dSYM
 Make_check.mk
+*.bin
+*.tar
+*.tar.gz
+*.ipch

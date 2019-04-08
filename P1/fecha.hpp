@@ -5,6 +5,7 @@
 #include <clocale>
 #include <cstring>
 #include <cstdio>
+#include <iostream>
 #include "cadena.hpp"
 
 using namespace std;
@@ -39,10 +40,9 @@ class Fecha
         Fecha operator ++(const int n);
         Fecha operator --();
         Fecha operator --(const int n);
-        Fecha operator +=(unsigned n);
-        Fecha operator -=(unsigned n);
-        //operator char* () const;
-        operator const char *() const;
+        Fecha operator +=(int n);
+        Fecha operator -=(int n);
+        const char* cadena() const;
 
         //Observers
         int dia() const;
@@ -65,5 +65,7 @@ bool operator <=(const Fecha& f1, const Fecha& f2);
 bool operator >=(const Fecha& f1, const Fecha& f2);
 bool operator ==(const Fecha& f1, const Fecha& f2);
 bool operator !=(const Fecha& f1, const Fecha& f2);
+//ostream& operator <<(ostream& os, Fecha f);
+//istream& operator >>(istream& is, Fecha f);
 
 #endif

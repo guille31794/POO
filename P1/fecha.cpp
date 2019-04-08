@@ -106,27 +106,27 @@ Fecha::Invalida::Invalida(const char* s): error{new char[strlen(s)+1]}
 
 //Operators
 
-Fecha Fecha::operator +=(unsigned n)
+Fecha Fecha::operator +=(int n)
 {
-    tm* local;
+    tm local{0};
 
-    local -> tm_mday = this -> day_ + n;
-    local -> tm_mon = this -> month_ - 1;
-    local -> tm_year = this -> year_ - 1900;
+    local.tm_mday = this -> day_ + n;
+    local.tm_mon = this -> month_ - 1;
+    local.tm_year = this -> year_ - 1900;
 
-    mktime(local);
+    mktime(&local);
 
-    this -> day_ = local -> tm_mday;
-    this -> month_ = local -> tm_mon + 1;
-    this -> year_ = local -> tm_year + 1900;
+    this -> day_ = local.tm_mday;
+    this -> month_ = local.tm_mon + 1;
+    this -> year_ = local.tm_year + 1900;
 
     if(year_ > Fecha::AnnoMaximo || year_ < Fecha::AnnoMinimo)
         throw Fecha::Invalida("Out of range year");
-    else
-        return *this;
+    
+    return *this;
 }
 
-Fecha Fecha::operator -=(unsigned n)
+Fecha Fecha::operator -=(int n)
 {
     return *this += -n;
 }
@@ -216,12 +216,12 @@ bool operator !=(const Fecha& f1, const Fecha& f2)
     return !(f1 == f2);
 }
 
-/*Fecha::operator char*() const
+const char* Fecha::cadena() const
 {
     setlocale(LC_ALL, "es_ES");
 
     tm time{0};
-    char* date = new char[500];
+    static char* date{new char[250]};
 
     time.tm_mday = this -> day_;
     time.tm_mon = this -> month_ - 1;
@@ -229,34 +229,15 @@ bool operator !=(const Fecha& f1, const Fecha& f2)
 
     mktime(&time);
 
-    strftime(date, 500, "%A %d de %B de %Y", &time);
+    strftime(date, 250, "%A %d de %B de %Y", &time);
 
-    Cadena str{date};
-    delete[] date;
+    //Cadena str{date};
+    //delete[] date;
 
-    return str;
-}*/
-
-Fecha::operator const char*() const
-{
-    setlocale(LC_ALL, "es_ES");
-
-    tm time{0};
-    char* date = new char[500];
-
-    time.tm_mday = this -> day_;
-    time.tm_mon = this -> month_ - 1;
-    time.tm_year = this -> year_ - 1900;
-
-    mktime(&time);
-
-    strftime(date, 500, "%A %d de %B de %Y", &time);
-
-    Cadena str{(char*)date};
-    delete[] date;
-    date = nullptr;
-    return str.c_str();
+    return date;
 }
+
+
 
 //Getters
 
