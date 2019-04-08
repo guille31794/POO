@@ -1,7 +1,10 @@
-#ifndef FECHA_CPP_
-#define FECHA_CPP_
-
 #include "fecha.hpp"
+
+//Const deffinitions
+const unsigned Fecha::AnnoMaximo{2037};
+const unsigned Fecha::AnnoMinimo{1902};
+
+//Constructors
 
 Fecha::Fecha(const unsigned d, const unsigned m, const unsigned y):
 day_{d}, month_{m}, year_{y}
@@ -101,6 +104,8 @@ Fecha::Invalida::Invalida(const char* s): error{new char[strlen(s)+1]}
     strcpy(error, s);
 }
 
+//Operators
+
 Fecha Fecha::operator +=(unsigned n)
 {
     tm* local;
@@ -152,12 +157,13 @@ Fecha Fecha::operator --(const int n)
 
 Fecha operator +(Fecha& f, const unsigned n)
 {
-    return f += n;
+    Fecha f2{f};
+    return f2 += n;
 }
 
 Fecha operator +(const unsigned n, Fecha& f)
 {
-    return f += n;
+    return f + n;
 }
 
 Fecha operator -(Fecha& f, const unsigned n)
@@ -231,4 +237,29 @@ Fecha::operator char*() const
     return date;
 }
 
-#endif
+//Getters
+
+int Fecha::dia() const
+{
+    return day_;
+}
+
+int Fecha::mes() const
+{
+    return month_;
+}
+
+int Fecha::anno() const
+{
+    return year_;
+}
+
+const char* Fecha::Invalida::por_que() const
+{
+    return error;
+}
+
+const bool Fecha::bisiesto() const
+{
+    return year_ % 4 == 0 && (year_ % 400 == 0 || year_ % 100 != 0);
+}

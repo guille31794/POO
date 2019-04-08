@@ -1,5 +1,5 @@
-#include "cadena.hpp"
 #include "fecha.hpp"
+#include "cadena.hpp"
 
 #include <iostream>
 
@@ -11,12 +11,18 @@ int main()
 
     cout << f << "\n" << f1 << "\n" << f2 << "\n" << endl;
     
+    f += 7;
+    cout << f << endl;
+
+    f = f + 7;
+    cout << f << endl;
+    
     Cadena c{"Hola y "};
     Cadena s{"adios."};
-    cout << c+s << endl;
+    cout << (c+s).c_str() << endl;
     c+= "adios";
-    cout << c << endl;
-    cout << s << endl;
+    cout << c.c_str() << endl;
+    cout << s.c_str() << endl;
 
     return 0;
 }
