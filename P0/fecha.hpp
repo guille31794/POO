@@ -1,13 +1,14 @@
-#ifndef Fecha_HPP_
-#define Fecha_HPP_
+#ifndef FECHA_HPP_
+#define FECHA_HPP_
 
 #include <ctime>
 #include <clocale>
 #include <cstring>
 #include <cstdio>
-#include <iostream>
 
 using namespace std;
+
+//class Cadena;
 
 class Fecha
 {    

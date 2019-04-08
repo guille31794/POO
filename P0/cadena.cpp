@@ -1,3 +1,6 @@
+#ifndef CADENA_CPP_
+#define CADENA_CPP_
+
 #include "cadena.hpp"
 
 Cadena Cadena::substr(unsigned i, unsigned s) const
@@ -14,5 +17,10 @@ Cadena Cadena::substr(unsigned i, unsigned s) const
         ++n;
     }
 
-    return str;
+    Cadena st{str};
+    delete[] str;
+
+    return st;
 }
+
+#endif

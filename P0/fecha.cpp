@@ -1,3 +1,6 @@
+#ifndef FECHA_CPP_
+#define FECHA_CPP_
+
 #include "fecha.hpp"
 
 Fecha::Fecha(const unsigned d, const unsigned m, const unsigned y):
@@ -212,39 +215,20 @@ Fecha::operator char*() const
     setlocale(LC_ALL, "es_ES");
 
     tm time{0};
-    char *date = new char[100];
+    static char date[100]; //= new char[100];
 
     time.tm_mday = this -> day_;
     time.tm_mon = this -> month_ - 1;
     time.tm_year = this -> year_ - 1900;
-    time.tm_isdst --; //Not really needed
 
     mktime(&time);
 
     strftime(date, 100, "%A %d de %B de %Y", &time);
 
+    //Cadena str{date};
+    //delete[] date;
+
     return date;
 }
 
-int main()
-{
-    try
-    {
-        Fecha f;
-        //Fecha f{1,3, 1994};
-        //Fecha f{1, 2};
-        //Fecha f{1};
-        //Fecha f2{1};
-
-        /*if(f == f2)
-            cout << "Equals" << endl;
-        else
-            cout << "Dinstict" << endl;*/
-        cout << f << endl;
-    }
-    catch(Fecha::Invalida e)
-    {
-        std::cerr << e.por_que() << '\n';
-    }
-    return 0;
-}
+#endif

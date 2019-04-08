@@ -1,9 +1,8 @@
-#ifndef Cadena_HPP_
-#define Cadena_HPP_
+#ifndef CADENA_HPP_
+#define CADENA_HPP_
 
 #include <cstring>
 #include <stdexcept>
-#include <iostream>
 #include <cstdlib>
 
 using namespace std;
@@ -12,8 +11,8 @@ class Cadena
 {
     public:
         //Constructors
-        explicit Cadena(unsigned size = 0, char c = ' ');
-        Cadena(char* str);
+        explicit Cadena(const unsigned size = 0, const char c = ' ');
+        Cadena(const char* str);
 
         //Getters
         unsigned length() const;
@@ -81,12 +80,12 @@ bool operator >=(const Cadena& s1, const Cadena& s2)
 
 //Inline definitions
 
-Cadena::Cadena(unsigned size, char c): string_{new char[size + 1]}, size_{size}
+Cadena::Cadena(const unsigned size, const char c): string_{new char[size + 1]}, size_{size}
 {
     memset(string_, c, size_);
 }
 
-Cadena::Cadena(char* str): string_{new char[strlen(str) + 1]}, size_{(unsigned)strlen(str)}
+Cadena::Cadena(const char* str): string_{new char[strlen(str) + 1]}, size_{(unsigned)strlen(str)}
 {
     memcpy(string_, str, size_);
 }
