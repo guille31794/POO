@@ -51,14 +51,33 @@ Cadena operator +(const Cadena& s1, const Cadena& s2)
 //Logical operators
 bool operator <(const Cadena& s1, const Cadena& s2)
 {
-    
+    return strcmp(s1, s2) < 0;
 }
 
-bool operator >(const Cadena& s1, const Cadena& s2);
-bool operator ==(const Cadena& s1, const Cadena& s2);
-bool operator !=(const Cadena& s1, const Cadena& s2);
-bool operator <=(const Cadena& s1, const Cadena& s2);
-bool operator >=(const Cadena& s1, const Cadena& s2);
+bool operator >(const Cadena& s1, const Cadena& s2)
+{
+    return s2 < s1;
+}
+
+bool operator ==(const Cadena& s1, const Cadena& s2)
+{
+    return strcmp(s1, s2) == 0;
+}
+
+bool operator !=(const Cadena& s1, const Cadena& s2)
+{
+    return !(s1 == s2);
+}
+
+bool operator <=(const Cadena& s1, const Cadena& s2)
+{
+    return s1 < s2 || s1 == s2;
+}
+
+bool operator >=(const Cadena& s1, const Cadena& s2)
+{
+    return s1 > s2 || s1 == s2;
+}
 
 Cadena::Cadena(unsigned size, char c): string_{new char[size + 1]}, size_{size}
 {
