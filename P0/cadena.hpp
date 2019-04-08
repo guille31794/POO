@@ -17,6 +17,9 @@ class Cadena
         //Getters
         unsigned length() const;
         operator char*() const;
+        
+        // improved_by_guilogar
+        operator const char*() const;
         char operator [](unsigned n) const;
         char at(unsigned n) const;
 
@@ -31,6 +34,9 @@ class Cadena
         Cadena substr(unsigned i, unsigned s) const;
 
         //~Cadena();
+        
+        // improved_by_guilogar
+        const char* c_str() const { return string_; }
     private:
         char* string_;
         unsigned size_;
@@ -96,6 +102,12 @@ inline unsigned Cadena::length() const
 }
 
 inline Cadena::operator char *() const
+{
+    return string_;
+}
+
+// improved_by_guilogar
+inline Cadena::operator const char *() const
 {
     return string_;
 }

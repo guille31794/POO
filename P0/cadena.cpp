@@ -11,7 +11,8 @@ Cadena Cadena::substr(unsigned i, unsigned s) const
     char* str = new char[i+s+1];
     unsigned n{0};
 
-    for(int j = i; i < s; ++j)
+    // improved_by_guilogar
+    for(int j = i; j < s; ++j)
     {  
         str[n] = string_[j];
         ++n;
