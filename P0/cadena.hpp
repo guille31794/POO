@@ -42,8 +42,8 @@ Cadena operator +(const Cadena& s1, const Cadena& s2)
 {
     char* str{new char[s1.length() + s2.length() + 1]};
 
-    strcat(str, s1);
-    strcat(str, s2);
+    strncat(str, s1, s1.length());
+    strncat(str, s2, s2.length());
 
     return str;
 }
