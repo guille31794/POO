@@ -258,6 +258,11 @@ Fecha::operator const char*() const
     return str.c_str();
 }
 
+ostream& Fecha::operator <<(ostream& os, const Fecha& f)
+{
+    return os << f.cadena();
+}
+
 //Getters
 
 int Fecha::dia() const

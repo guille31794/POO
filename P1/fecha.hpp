@@ -36,6 +36,7 @@ class Fecha
         };
 
         //Operators
+        Fecha operator =(const Fecha& f);
         Fecha operator ++();
         Fecha operator ++(const int n);
         Fecha operator --();
@@ -65,7 +66,7 @@ bool operator <=(const Fecha& f1, const Fecha& f2);
 bool operator >=(const Fecha& f1, const Fecha& f2);
 bool operator ==(const Fecha& f1, const Fecha& f2);
 bool operator !=(const Fecha& f1, const Fecha& f2);
-//ostream& operator <<(ostream& os, Fecha f);
-//istream& operator >>(istream& is, Fecha f);
+ostream& operator <<(ostream& os, const Fecha& f);
+istream& operator >>(istream& is, Fecha& f);
 
 #endif

@@ -8,22 +8,25 @@ int main()
     Fecha f;
     Fecha f1{31,7, 1994};
     Fecha f2{1, 2};
+    Fecha f3{f};
 
-    cout << f.cadena() << "\n" << f1.cadena() << "\n" 
-    << f2.cadena() << "\n" << endl;
+    cout << f << "\n" << f1 << "\n" << f2 << "\n" << f3 << endl;
     
     f += 7;
-    cout << f.cadena() << endl;
+    cout << f << endl;
 
     f = f + 7;
-    cout << f.cadena() << endl;
+    cout << f << endl;
     
     Cadena c{"Hola y "};
     Cadena s{"adios."};
-    cout << (c+s).c_str() << endl;
-    cout << c.c_str() << endl;
+    cout << c + s << endl;
+    cout << c << endl;
     c += "adios";
     cout << c << endl;
+    Cadena st;
+    cin >> st;
+    cout << st << "y aqui se comprueba el espaciado" << endl;
 
     return 0;
 }

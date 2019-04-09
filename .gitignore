@@ -9,3 +9,5 @@ Make_check.mk
 *.tar
 *.tar.gz
 *.ipch
+*.gz
+*.tar

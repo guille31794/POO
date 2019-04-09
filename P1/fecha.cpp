@@ -221,7 +221,7 @@ const char* Fecha::cadena() const
     setlocale(LC_ALL, "es_ES");
 
     tm time{0};
-    static char* date{new char[250]};
+    char* date{new char[250]};
 
     time.tm_mday = this -> day_;
     time.tm_mon = this -> month_ - 1;
@@ -231,13 +231,45 @@ const char* Fecha::cadena() const
 
     strftime(date, 250, "%A %d de %B de %Y", &time);
 
-    //Cadena str{date};
-    //delete[] date;
+    Cadena str{date};
+    delete[] date;
 
-    return date;
+    return str.c_str();
 }
 
+Fecha Fecha::operator=(const Fecha& f)
+{
+    day_ = f.day_;
+    month_ = f.month_;
+    year_ = f.year_;
 
+    return *this;
+}
+
+ostream& operator <<(ostream& os, const Fecha& f)
+{
+    return os << f.cadena();
+}
+
+istream& operator >>(istream& is, Fecha& f)
+{
+    char* string = new char[11];
+
+    is.getline(string, 11);
+
+    try
+    {
+        f = Fecha{string};
+    }   catch(Fecha::Invalida &f)
+    {
+        is.setstate(std::ios_base::failbit);
+        throw f;
+    }
+
+    delete[] string;
+
+    return is;
+}
 
 //Getters
 
