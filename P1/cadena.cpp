@@ -12,7 +12,7 @@ Cadena::Cadena(const char* str): string_{new char[strlen(str) + 1]}, size_{(unsi
     strcpy(string_, str);
 }
 
-Cadena::Cadena(Cadena&& s): string_{s.string_}, size_{s.size_}
+/*Cadena::Cadena(Cadena&& s): string_{s.string_}, size_{s.size_}
 {
     s.~Cadena();
 }
@@ -29,7 +29,7 @@ Cadena& Cadena::operator=(Cadena&& s)
     }
 
     return *this;
-}
+}*/
 
 //Getters
 
@@ -171,7 +171,60 @@ Cadena::iterator Cadena::begin()
     return string_;
 }
 
+Cadena::iterator Cadena::end()
+{
+    return string_ + size_;
+}
 
+Cadena::const_iterator Cadena::begin() const
+{
+    return string_;
+}
+
+Cadena::const_iterator Cadena::end() const
+{
+    return string_ + size_;
+}
+
+Cadena::const_iterator Cadena::cbegin() const
+{
+    return string_;
+}
+
+Cadena::const_iterator Cadena::cend() const
+{
+    return string_ + size_;
+}
+
+Cadena::reverse_iterator Cadena::rbegin()
+{
+    return reverse_iterator{end()};
+}
+
+Cadena::reverse_iterator Cadena::rend()
+{
+    return reverse_iterator{begin()};
+}
+
+Cadena::const_reverse_iterator Cadena::rbegin() const
+{
+    return const_reverse_iterator{end()};
+}
+
+Cadena::const_reverse_iterator Cadena::rend() const
+{
+    return const_reverse_iterator{begin()};
+}
+
+Cadena::const_reverse_iterator Cadena::crbegin() const
+{
+    return const_reverse_iterator{cend()};
+}
+
+Cadena::const_reverse_iterator Cadena::crend() const
+{
+    return const_reverse_iterator{cbegin()};
+}
 
 //Destructor
 

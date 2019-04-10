@@ -106,7 +106,7 @@ Fecha::Invalida::Invalida(const char* s): error{new char[strlen(s)+1]}
 
 //Operators
 
-Fecha Fecha::operator +=(int n)
+Fecha& Fecha::operator +=(int n)
 {
     tm local{0};
 
@@ -126,17 +126,17 @@ Fecha Fecha::operator +=(int n)
     return *this;
 }
 
-Fecha Fecha::operator -=(int n)
+Fecha& Fecha::operator -=(int n)
 {
     return *this += -n;
 }
 
-Fecha Fecha::operator ++()
+Fecha& Fecha::operator ++()
 {
     return *this += 1;
 }
 
-Fecha Fecha::operator --()
+Fecha& Fecha::operator --()
 {
     return *this += -1; 
 }

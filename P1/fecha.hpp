@@ -37,12 +37,12 @@ class Fecha
 
         //Operators
         Fecha operator =(const Fecha& f);
-        Fecha operator ++();
+        Fecha& operator ++();
         Fecha operator ++(const int n);
-        Fecha operator --();
+        Fecha& operator --();
         Fecha operator --(const int n);
-        Fecha operator +=(int n);
-        Fecha operator -=(int n);
+        Fecha& operator +=(int n);
+        Fecha& operator -=(int n);
         const char* cadena() const;
 
         //Observers
