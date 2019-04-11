@@ -15,11 +15,11 @@ class Cadena
         //Constructors
         explicit Cadena(const unsigned size = 0, const char c = ' ');
         Cadena(const char* str);
-        Cadena(const Cadena& str);
+        Cadena(const Cadena& str) = default;
         Cadena(Cadena&& s) = default;
 
         //Operator
-        //Cadena& operator =(Cadena& s);
+        Cadena& operator =(const Cadena& s) = default;
         Cadena& operator =(Cadena&& s) = default;
 
         //Getters

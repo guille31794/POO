@@ -155,40 +155,39 @@ Fecha Fecha::operator --(const int n)
     return t; 
 }
 
-Fecha operator +(Fecha& f, const unsigned n)
+Fecha operator +(const Fecha& f, const unsigned n)
 {
-    Fecha f2{f};
-    return f2 += n;
+    return Fecha{f} += n;
 }
 
-Fecha operator +(const unsigned n, Fecha& f)
+Fecha operator +(const unsigned n, const Fecha& f)
 {
     return f + n;
 }
 
-Fecha operator -(Fecha& f, const unsigned n)
+Fecha operator -(const Fecha& f, const unsigned n)
 {
-    return f -= n;
+    return Fecha{f} -= n;
 }
 
-Fecha operator -(const unsigned n, Fecha& f)
+Fecha operator -(const unsigned n, const Fecha& f)
 {
-    return f -= n;
+    return f - n;
 }
 
 bool operator <(const Fecha& f1, const Fecha& f2)
 {
-    tm* d1;
-    tm* d2;
+    tm d1{0};
+    tm d2{0};
 
-    d1 -> tm_mday = f1.dia();
-    d1 -> tm_mon = f1.mes() - 1;
-    d1 -> tm_year = f1.anno() - 1900;
-    d2 -> tm_mday = f1.dia();
-    d2 -> tm_mon = f1.mes() - 1;
-    d2 -> tm_year = f1.anno() - 1900;
+    d1.tm_mday = f1.dia();
+    d1.tm_mon = f1.mes() - 1;
+    d1.tm_year = f1.anno() - 1900;
+    d2.tm_mday = f1.dia();
+    d2.tm_mon = f1.mes() - 1;
+    d2.tm_year = f1.anno() - 1900;
         
-    return mktime(d1) < mktime(d2); //mktime returns time_t type that is an alias from primitive c++ types
+    return mktime(&d1) < mktime(&d2); //mktime returns time_t type that is an alias from primitive c++ types
 }
 
 bool operator >(const Fecha& f1, const Fecha& f2)

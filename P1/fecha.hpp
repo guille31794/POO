@@ -56,10 +56,11 @@ class Fecha
 };
 
 //External Operators
-Fecha operator +(Fecha& f, unsigned n);
-Fecha operator +(unsigned n, Fecha& f);
-Fecha operator -(Fecha& f, unsigned n);
-Fecha operator -(unsigned n, Fecha& f);
+//Fecha operator +()
+Fecha operator +(const Fecha& f, const unsigned n);
+Fecha operator +(unsigned n, const Fecha& f);
+Fecha operator -(const Fecha& f, const unsigned n);
+Fecha operator -(const unsigned n, const Fecha& f);
 bool operator <(const Fecha& f1, const Fecha& f2);
 bool operator >(const Fecha& f1, const Fecha& f2);
 bool operator <=(const Fecha& f1, const Fecha& f2);

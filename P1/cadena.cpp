@@ -76,7 +76,7 @@ Cadena Cadena::substr(const unsigned i, const unsigned s) const
     if(i < 0 || i > size_ || i+s > size_)
         throw out_of_range("Index out of range.");
 
-    Cadena str{i+s};
+    Cadena str{s};
     unsigned n{0};
 
     for(int j = i; j < i + s; ++j)
@@ -158,7 +158,7 @@ istream& operator >>(istream& is, Cadena& s)
     is.width(32);
     is >> string;
     
-    s = move(Cadena{string});
+    s = Cadena{string};
 
     delete[] string;
 
