@@ -26,7 +26,7 @@ int main()
     cout << c << endl;
     Cadena st;
     cin >> st;
-    cout << st << "y aqui se comprueba el espaciado" << endl;
+    cout << st << endl;
 
     return 0;
 }
