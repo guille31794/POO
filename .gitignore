@@ -11,3 +11,4 @@ Make_check.mk
 *.ipch
 *.gz
 *.tar
+*.exe
