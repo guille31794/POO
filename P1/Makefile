@@ -3,7 +3,7 @@ DIR=../dsl-comprobaciones/
 CXX = clang++
 CXXFLAGS = -g -Wall -std=c++14 -pedantic
 CPPFLAGS = -DP1 -I ../Tests-auto -I. -I${DIR} #$(shell llvm-config --cppflags)
-LLVMLDFLAGS := $(shell llvm-config --libs) $(LDFLAGS)
+#LLVMLDFLAGS := $(shell llvm-config --libs) $(LDFLAGS)
 COMMONSRCS  := $(DIR)caclibrary.cpp $(DIR)execute.cpp $(DIR)matchers.cpp
 SOURCES     := fecha_check.cpp cadena_check.cpp ${COMMONSRCS}
 COMMONHDRS  := $(COMMONSRCS:.cpp=.h) $(DIR)info.h
@@ -24,13 +24,15 @@ all: test-P0-auto #$(EXES)
 
 fecha_check: fecha_check.o $(COMMONOBJS)
 		@echo "(LINK) fecha_check.o"
-		@$(CXX) -o $@ $^ $(CLANGLIBS) $(LLVMLDFLAGS)
+		@$(CXX) -o $@ $^ $(CLANGLIBS) 
+		#$(LLVMLDFLAGS)
 
 fecha_check.o: $(COMMONHDRS) fecha.hpp fecha.cpp
 
 cadena_check: cadena_check.o $(COMMONOBJS)
 		@echo "(LINK) cadena_check.o"
-		@$(CXX) -o $@ $^ $(CLANGLIBS) $(LLVMLDFLAGS)
+		@$(CXX) -o $@ $^ $(CLANGLIBS) 
+		#$(LLVMLDFLAGS)
 
 cadena_check.o: $(COMMONHDRS) cadena.hpp cadena.cpp
 

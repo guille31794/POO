@@ -30,10 +30,16 @@ day_{d}, month_{m}, year_{y}
             throw Fecha::Invalida("Dia fuera de rango.");       
         if (month_ == 2)
         {
-            if(bisiesto() && day_ > 29) 
-                throw Fecha::Invalida("Dia fuera de rango.");
-            else if(day_ > 28) 
-                {   throw Fecha::Invalida("Dia fuera de rango.");   }
+            if(bisiesto())
+            {
+                if(day_ > 29) 
+                    throw Fecha::Invalida("Dia fuera de rango.");
+            }
+            else 
+            {
+                if(day_ > 28) 
+                    throw Fecha::Invalida("Dia fuera de rango.");
+            }
         }
         else if(month_ <= 7)
             {
@@ -85,10 +91,16 @@ Fecha::Fecha(const char* s)
             throw Fecha::Invalida("Out of range day");       
         if (month_ == 2)
         {
-            if(bisiesto() && day_ > 29) 
-                throw Fecha::Invalida("Dia fuera de rango.");
-            else if(day_ > 28) 
-                {   throw Fecha::Invalida("Dia fuera de rango.");   }
+            if(bisiesto())
+            {
+                if(day_ > 29) 
+                    throw Fecha::Invalida("Dia fuera de rango.");
+            }
+            else 
+            {
+                if(day_ > 28) 
+                        throw Fecha::Invalida("Dia fuera de rango."); 
+            }
         }
         else if(month_ <= 7)
             {
