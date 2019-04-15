@@ -189,17 +189,16 @@ Fecha operator -(const unsigned n, const Fecha& f)
 
 bool operator <(const Fecha& f1, const Fecha& f2)
 {
-    tm d1{0};
-    tm d2{0};
+    bool v = false;
 
-    d1.tm_mday = f1.dia();
-    d1.tm_mon = f1.mes() - 1;
-    d1.tm_year = f1.anno() - 1900;
-    d2.tm_mday = f1.dia();
-    d2.tm_mon = f1.mes() - 1;
-    d2.tm_year = f1.anno() - 1900;
-        
-    return mktime(&d1) < mktime(&d2); //mktime returns time_t type that is an alias from primitive c++ types
+    if(f1.anno() < f2.anno())
+        v = true;
+    else if(f1.mes() < f2.mes())
+        v = true;
+    else if(f1.dia() < f2.dia())
+        v = true;
+
+    return v;
 }
 
 bool operator >(const Fecha& f1, const Fecha& f2)
@@ -246,15 +245,6 @@ const char* Fecha::cadena() const
     delete[] date;
 
     return str.c_str();
-}
-
-Fecha Fecha::operator=(const Fecha& f)
-{
-    day_ = f.day_;
-    month_ = f.month_;
-    year_ = f.year_;
-
-    return *this;
 }
 
 ostream& operator <<(ostream& os, const Fecha& f)

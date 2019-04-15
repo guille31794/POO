@@ -36,7 +36,8 @@ class Fecha
         };
 
         //Operators
-        Fecha operator =(const Fecha& f);
+        
+        Fecha& operator =(const Fecha& f) = default;
         Fecha& operator ++();
         Fecha operator ++(const int n);
         Fecha& operator --();
@@ -56,7 +57,6 @@ class Fecha
 };
 
 //External Operators
-//Fecha operator +()
 Fecha operator +(const Fecha& f, const unsigned n);
 Fecha operator +(unsigned n, const Fecha& f);
 Fecha operator -(const Fecha& f, const unsigned n);

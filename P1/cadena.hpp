@@ -16,16 +16,18 @@ class Cadena
         explicit Cadena(const unsigned size = 0, const char c = ' ');
         Cadena(const char* str);
         Cadena(const Cadena& str) = default;
-        Cadena(Cadena&& s) = default;
+        Cadena(Cadena&& s);
+        //Cadena(char*&& s);
 
         //Operator
         Cadena& operator =(const Cadena& s) = default;
-        Cadena& operator =(Cadena&& s) = default;
+        Cadena& operator =(Cadena&& s);
+        //Cadena& operator =(char*&& s);
 
         //Getters
         unsigned length() const;
         char operator [](unsigned n) const;
-        char at(unsigned n) const;
+        const char at(unsigned n) const;
 
         //Setters
         char& operator [](unsigned n);
@@ -35,7 +37,7 @@ class Cadena
         Cadena& operator +=(const Cadena& s);
 
         //Other methods
-        Cadena substr(const unsigned i, const unsigned s) const;
+        Cadena substr(const unsigned i, const int s) const;
         
         // improved_by_guilogar
         char* c_str() const;
