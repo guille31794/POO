@@ -46,7 +46,7 @@ class Fecha
         Fecha& operator -=(int n);
         const char* cadena() const;
 
-        //Observers
+        //Getters
         int dia() const;
         int mes() const;
         int anno() const;
