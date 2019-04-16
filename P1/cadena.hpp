@@ -15,14 +15,13 @@ class Cadena
         //Constructors
         explicit Cadena(const unsigned size = 0, const char c = ' ');
         Cadena(const char* str);
-        Cadena(const Cadena& str) = default;
+        Cadena(const Cadena& str);
         Cadena(Cadena&& s);
         //Cadena(char*&& s);
 
         //Operator
         Cadena& operator =(const Cadena& s) = default;
         Cadena& operator =(Cadena&& s);
-        //Cadena& operator =(char*&& s);
 
         //Getters
         unsigned length() const;

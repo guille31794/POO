@@ -12,6 +12,11 @@ Cadena::Cadena(const char* str): string_{new char[strlen(str) + 1]}, size_{(unsi
     strcpy(string_, str);
 }
 
+Cadena::Cadena(const Cadena& s): string_{new char[s.size_ + 1]}, size_{s.size_}
+{
+    strcpy(string_, s.string_);
+}
+
 Cadena::Cadena(Cadena&& s): string_{s.string_}, size_{s.size_}
 {
     s.string_ = nullptr;
@@ -177,6 +182,7 @@ Cadena::iterator Cadena::end()
     return string_ + size_;
 }
 
+//Const iterators
 Cadena::const_iterator Cadena::begin() const
 {
     return string_;
@@ -197,6 +203,7 @@ Cadena::const_iterator Cadena::cend() const
     return string_ + size_;
 }
 
+//Reverse iterators
 Cadena::reverse_iterator Cadena::rbegin()
 {
     return reverse_iterator{end()};
@@ -207,6 +214,7 @@ Cadena::reverse_iterator Cadena::rend()
     return reverse_iterator{begin()};
 }
 
+//Const_reverse_iterators
 Cadena::const_reverse_iterator Cadena::rbegin() const
 {
     return const_reverse_iterator{end()};
