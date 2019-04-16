@@ -5,6 +5,7 @@
 #include "clave.hpp"
 #include "tarjeta.hpp"
 #include <map>
+#include <utility>
 #include <unordered_map>
 
 using namespace std;
@@ -33,6 +34,7 @@ class Usuario
         Tarjetas tarjetas() const;
         unsigned n_articulos() const;
         Articulos compra() const;
+        Clave pass() const;
 
         //Setters
 
@@ -59,6 +61,6 @@ class Usuario
 
 //Operator
 ostream& operator <<(ostream& os, const Usuario& u);
-ostream& mostrar_carro(ostream&, const Usuario::Articulos&);
+ostream& mostrar_carro(ostream&, const Usuario&);
 
 #endif
