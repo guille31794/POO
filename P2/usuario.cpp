@@ -5,7 +5,9 @@ Usuario::Usuario(const char* id, const char* n, const char* sn,
 const char* a, const char* k): identifier{id}, name{n},
 surname{sn}, address{a}, password{k} 
 {
-    //TODO conditions
+    if(!pair<unordered_set<Usuario>::iterator, bool>
+    {users.insert(*this)}.second)
+        throw Id_duplicado{identifier};
 }
 
 //Getters

@@ -7,6 +7,7 @@
 #include <map>
 #include <utility>
 #include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
@@ -36,8 +37,6 @@ class Usuario
         Articulos compra() const;
         Clave pass() const;
 
-        //Setters
-
         //Asociative data methods
         void es_titular_de(const Tarjeta&);
         void no_es_titular_de(const Tarjeta&);
@@ -57,6 +56,8 @@ class Usuario
         Clave password;
         Tarjetas cards;
         Articulos shopping_kart;
+        //Repetition control
+        static unordered_set<Usuario> users;
 };
 
 //Operator
