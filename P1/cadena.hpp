@@ -31,6 +31,7 @@ class Cadena
         //Setters
         char& operator [](unsigned n);
         char& at(unsigned n);
+        void adjustSize();
 
         //Arithmetical operator
         Cadena& operator +=(const Cadena& s);

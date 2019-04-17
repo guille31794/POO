@@ -95,6 +95,11 @@ Cadena Cadena::substr(const unsigned i, const int s) const
     return str;
 }
 
+void Cadena::adjustSize()
+{
+    size_ = strlen(string_);
+}
+
 // Operators
 
 Cadena& Cadena::operator+=(const Cadena& s)
