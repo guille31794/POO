@@ -1,12 +1,39 @@
 #ifndef Tarjeta__HPP__
 #define Tarjeta__HPP__
 
-#include "numero.hpp"
 #include "fecha.hpp"
+#include "cadena.hpp"
+#include <cctype>
+#include "../luhn.cpp"
+#include "usuario.hpp"
 
 using namespace std;
 
-class Usuario;
+//class Usuario;
+
+class Numero
+{
+    public:
+        //Constructor
+        Numero(const Cadena&);
+
+        //Operator
+        operator char*() const;
+
+        //Exception stuff
+        enum Razon{LONGITUD, DIGITOS, NO_VALIDO};
+
+        class Incorrecto
+        {
+            public:
+                Incorrecto(const Razon);
+                Razon razon() const;
+            private:
+                Razon r_;
+        };
+    private:
+        Cadena num;
+};
 
 class Tarjeta
 {
@@ -14,7 +41,7 @@ class Tarjeta
         enum Tipo{Otro, VISA, Mastercard, Maestro, JCB, AmericanExpress};
 
         //Constructor
-        Tarjeta(const Numero&, Usuario&, const Fecha&);
+        Tarjeta(const Tipo, const Numero&, Usuario&, const Fecha&);
         Tarjeta(const Tarjeta&) = delete;
         Tarjeta& operator =(const Tarjeta&) = delete;
 

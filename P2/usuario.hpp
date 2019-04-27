@@ -2,14 +2,44 @@
 #define Usuario_HPP_
 
 #include "cadena.hpp"
-#include "clave.hpp"
 #include "tarjeta.hpp"
 #include <map>
 #include <utility>
 #include <unordered_map>
 #include <unordered_set>
+#include "cadena.hpp"
+#include <random>
+#include "unistd.h"
+#include "articulo.hpp"
 
 using namespace std;
+
+//class Articulo;
+
+class Clave
+{
+    public:
+        //Constructor
+        Clave(const char* );
+
+        //Getter
+        Cadena clave() const;
+        bool verifica(const char* ) const;
+
+        //Exception stuff
+        enum Razon{CORTA, ERROR_CRYPT};
+
+        class Incorrecta
+        {
+            public:
+                Incorrecta(Razon);
+                Razon razon() const;
+            private:
+                Razon r_;      
+        };
+    private:
+        Cadena key;
+};
 
 class Usuario
 {
@@ -38,9 +68,9 @@ class Usuario
         Clave pass() const;
 
         //Asociative data methods
-        void es_titular_de(const Tarjeta&);
+        void es_titular_de(Tarjeta&);
         void no_es_titular_de(const Tarjeta&);
-        void compra(const Articulo&, const unsigned = 1);
+        void compra(Articulo&, unsigned = 1);
 
         //Exception stuff
         class Id_duplicado
@@ -57,7 +87,7 @@ class Usuario
         Tarjetas cards;
         Articulos shopping_kart;
         //Repetition control
-        static unordered_set<Usuario> users;
+        static unordered_set<Cadena*> users;
 };
 
 //Operator
