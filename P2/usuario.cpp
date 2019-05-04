@@ -1,5 +1,8 @@
 #include "usuario.hpp"
 
+//Static user checker
+unordered_set<Cadena> Usuario::users;
+
 //Constructor
 Clave::Clave(const char* s): key{}
 {
@@ -74,12 +77,12 @@ Clave::Razon Clave::Incorrecta::razon() const
 }
 
 //Constructor
-Usuario::Usuario(const char* id, const char* n, const char* sn,
-const char* a, const char* k): identifier{id}, name{n},
+Usuario::Usuario(const Cadena& id, const Cadena& n, const Cadena& sn,
+const Cadena& a, const Clave& k): identifier{id}, name{n},
 surname{sn}, address{a}, password{k} 
 {
-    pair<unordered_set<Cadena*>::iterator, bool> p = 
-    users.insert(&identifier);
+    pair<unordered_set<Cadena>::iterator, bool> p = 
+    users.insert(identifier);
 
     if (!p.second)
         throw Id_duplicado{identifier};
@@ -129,11 +132,11 @@ Clave Usuario::pass() const
 //Asociative methods
 void Usuario::es_titular_de(Tarjeta& c)
 {
-    if(identifier == c.titular() -> id())
+    if(identifier == c.titular() -> id() || c.titular() == nullptr)
         cards.insert(make_pair(c.numero(), &c));
 }
 
-void Usuario::no_es_titular_de(const Tarjeta& c)
+void Usuario::no_es_titular_de(Tarjeta& c)
 {
     cards.erase(c.numero());
 }
@@ -149,7 +152,7 @@ void Usuario::compra(Articulo& a, unsigned q)
 //Destructor
 Usuario::~Usuario()
 {
-    users.erase(&identifier);
+    users.erase(identifier);
 
     for(auto it : cards)
     {
@@ -157,6 +160,13 @@ Usuario::~Usuario()
     }
 
     cards.erase(cards.begin(), cards.end());
+}
+
+Usuario::Id_duplicado::Id_duplicado(const Cadena& s): id{s} {}
+
+Cadena Usuario::Id_duplicado::idd() const
+{
+    return id;
 }
 
 //Operators
@@ -172,7 +182,7 @@ ostream& operator <<(ostream& os, const Usuario& u)
     return os;
 }
 
-ostream& mostrar_carro(ostream& os, const Usuario u)
+/*ostream& mostrar_carro(ostream& os, const Usuario u)
 {
     os << "Carrito de la compra de " << u.id() << 
     " [Artículos: " << u.compra().size() << "]\n Cant.  Artículo\n"
@@ -189,4 +199,26 @@ ostream& mostrar_carro(ostream& os, const Usuario u)
     }
 
     return os;
+}*/
+
+void mostrar_carro(ostream& os, const Usuario& u)
+{
+    setlocale(LC_ALL, "es_ES");
+
+    os << "Carrito de la compra de " << u.id() << " [Artículos: " <<
+    u.n_articulos() << ']' << endl;
+
+    os << "\tCant. Artículo" << endl;
+    os <<
+    "==========================================================="
+    << endl;
+
+    int cont = 1;
+
+    for (auto i : u.compra())
+    {
+        os << cont << *i.first << endl;
+
+        ++cont;
+    }
 }

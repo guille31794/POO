@@ -3,13 +3,13 @@
 
 #include "fecha.hpp"
 #include "cadena.hpp"
-#include <cctype>
-#include "../luhn.cpp"
 #include "usuario.hpp"
+#include <cctype>
 
 using namespace std;
 
-//class Usuario;
+bool luhn(const Cadena& numero);
+class Usuario;
 
 class Numero
 {
@@ -18,7 +18,7 @@ class Numero
         Numero(const Cadena&);
 
         //Operator
-        operator char*() const;
+        operator const char*() const;
 
         //Exception stuff
         enum Razon{LONGITUD, DIGITOS, NO_VALIDO};
@@ -35,22 +35,25 @@ class Numero
         Cadena num;
 };
 
+bool operator <(const Numero& n1, const Numero& n2);
+
 class Tarjeta
 {
     public:
         enum Tipo{Otro, VISA, Mastercard, Maestro, JCB, AmericanExpress};
 
         //Constructor
-        Tarjeta(const Tipo, const Numero&, Usuario&, const Fecha&);
+        explicit Tarjeta(const Tipo, const Numero&, Usuario&, const Fecha&);
         Tarjeta(const Tarjeta&) = delete;
         Tarjeta& operator =(const Tarjeta&) = delete;
 
         //Getters
-        Tipo tipo() const;
-        Numero numero() const;
-        Usuario* titular() const;
-        Fecha caducidad() const;
-        bool activa() const;
+        const Tipo tipo() const;
+        const Numero numero() const;
+        const Usuario* titular() const;
+        const Fecha caducidad() const;
+        const Cadena titular_facial() const;
+        const bool activa() const;
 
         //Setters
         bool activa(const bool = true);
@@ -87,6 +90,7 @@ class Tarjeta
         Numero number;
         Usuario* user;
         Fecha date;
+        Cadena titular_facial_;
         bool active;
 };
 

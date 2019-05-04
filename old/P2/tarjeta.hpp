@@ -56,11 +56,14 @@
       (const Tipo, const Numero&, Usuario&, const Fecha&);
       Tarjeta(const Tarjeta&) = delete;
       Tarjeta& operator =(const Tarjeta&) = delete;
+
+      //
       Tipo tipo() const { return this -> tipo_;}
       Numero numero() const { return this -> numero_;}
       Fecha caducidad() const  { return this -> caducidad_;}
       Cadena titular_facial() const  { return this -> titular_facial_;}
-       const Usuario* titular() const  { return this -> titular_;}
+      const Usuario* titular() const  { return this -> titular_;}
+
       //TODO linea 28, posible corrección sobre el puntero constante
        void anula_titular()  { this -> titular_ = nullptr;}
       ~Tarjeta();

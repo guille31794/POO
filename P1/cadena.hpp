@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <iterator>
+#include <functional>
 
 using namespace std;
 
@@ -76,5 +77,21 @@ bool operator <=(const Cadena& s1, const Cadena& s2);
 bool operator >=(const Cadena& s1, const Cadena& s2);
 ostream& operator <<(ostream& os, const Cadena& s);
 istream& operator >>(istream& is, Cadena& s);
+
+// Para P2 y ss.
+// Especialización de la plantilla hash<T>para definir la
+// función hash a utilizar con contenedores desordenados de
+// Cadena, unordered_[set|map|multiset|multimap].
+namespace std 
+{
+    template <> struct hash<Cadena> 
+    {
+        size_t operator()(const Cadena& cad) const
+        { 
+            // conversión const char* ->string
+            return hash<string>{}(cad.c_str());
+        }
+    };
+}
 
 #endif

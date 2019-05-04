@@ -15,6 +15,8 @@
 using namespace std;
 
 //class Articulo;
+class Tarjeta;
+class Numero;
 
 class Clave
 {
@@ -47,10 +49,12 @@ class Usuario
         //Asociative  data types
         typedef map<Numero, Tarjeta*> Tarjetas;
         typedef unordered_map<Articulo*, unsigned> Articulos;
+        //Repetition control
+        static unordered_set<Cadena> users;
     
         //Constructor
-        Usuario(const char*, const char*, const char*, const char*,
-        const char*);
+        Usuario(const Cadena&, const Cadena&, const Cadena&, const Cadena&,
+        const Clave&);
         Usuario(const Usuario&) = delete;
         Usuario& operator =(const Usuario&) = delete;
 
@@ -69,7 +73,7 @@ class Usuario
 
         //Asociative data methods
         void es_titular_de(Tarjeta&);
-        void no_es_titular_de(const Tarjeta&);
+        void no_es_titular_de(Tarjeta&);
         void compra(Articulo&, unsigned = 1);
 
         //Exception stuff
@@ -86,12 +90,10 @@ class Usuario
         Clave password;
         Tarjetas cards;
         Articulos shopping_kart;
-        //Repetition control
-        static unordered_set<Cadena*> users;
 };
 
 //Operator
 ostream& operator <<(ostream& os, const Usuario& u);
-ostream& mostrar_carro(ostream&, const Usuario&);
+void mostrar_carro(ostream&, const Usuario&);
 
 #endif
