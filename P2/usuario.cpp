@@ -146,7 +146,7 @@ void Usuario::compra(Articulo& a, unsigned q)
     if(!q)
         shopping_kart.erase(&a);
     else
-        shopping_kart.insert(make_pair(&a, q));
+        shopping_kart[&a] = q;
 }
 
 //Destructor
@@ -155,9 +155,7 @@ Usuario::~Usuario()
     users.erase(identifier);
 
     for(auto it : cards)
-    {
         it.second -> anula_titular();
-    }
 
     cards.erase(cards.begin(), cards.end());
 }
@@ -177,29 +175,10 @@ ostream& operator <<(ostream& os, const Usuario& u)
     << "\nTarjetas:\n";
 
     for(auto it : u.tarjetas())
-        os << it.second << '\n';
+        os << *it.second << '\n';
     
     return os;
 }
-
-/*ostream& mostrar_carro(ostream& os, const Usuario u)
-{
-    os << "Carrito de la compra de " << u.id() << 
-    " [Artículos: " << u.compra().size() << "]\n Cant.  Artículo\n"
-    <<
-    "===========================================================\n";
-
-    for(auto it : u.compra())
-    {
-        os << "  " << it.second << "   " << '[' <<
-        it.first -> referencia() << '\"' << it.first -> titulo()
-        << "\", " << it.first -> f_publi().anno() << ". " << 
-        setiosflags(ios::fixed) << setprecision(2) << 
-        it.first -> precio() << " €\n"; 
-    }
-
-    return os;
-}*/
 
 void mostrar_carro(ostream& os, const Usuario& u)
 {

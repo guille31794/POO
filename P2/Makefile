@@ -13,7 +13,7 @@ NOMBREALUMNO = Giron_Garcia_Guillermo
 
 # Compilador de C++ preferido: el de LLVM (clang++), el de GNU (g++),
 # el de GNU en la versión 5 (g++-5), el de Intel (icpc)...
-CXX = clang++
+CXX = g++
 
 # ¿Qué estándar seguir?
 # c++98 o c++03 (o -ansi): estándar de 1998, corregido en 2003. NO USAR YA.

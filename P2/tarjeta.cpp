@@ -119,31 +119,6 @@ Tarjeta::~Tarjeta()
 
 ostream& operator <<(ostream& os, const Tarjeta& c)
 {
-    /*os << "____________________\n\'\t\t\t\t\t\'\n| ";
-
-    switch(C.tipo()) 
-    {
-        case Tarjeta::Tipo::AmericanExpress: 
-            os << "American Express";
-            break;
-        case Tarjeta::Tipo::VISA: os << "VISA";
-            break;
-        case Tarjeta::Tipo::Maestro: os << "Maestro";
-            break;
-        case Tarjeta::Tipo::JCB: os << "JCB";
-            break;
-        case Tarjeta::Tipo::Mastercard: os << "Mastercard";
-            break;
-        default: os << "OTROS";
-            break;
-    }
-    
-    os << " |\n| " << C.numero() << " |\n| " << 
-    C.titular() << " |\n| Caduca: " << C.caducidad() << 
-    "\t |\n\\____________________/";
-
-    return os;*/
-
     switch (c.tipo())
     {
         case Tarjeta::Tipo::VISA: os << "VISA";
