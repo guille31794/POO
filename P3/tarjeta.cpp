@@ -2,7 +2,7 @@
 
 Numero::Numero(const Cadena& s): num{s}
 {
-    for(int i = 0; i < num.length() && num[i] != '\0';
+    /*for(int i = 0; i < num.length() && num[i] != '\0';
     ++i)
     {
       if(isalpha(num[i]))
@@ -22,10 +22,14 @@ Numero::Numero(const Cadena& s): num{s}
 
       if(num.length() < 13 || num.length() > 19  )
         throw Incorrecto(LONGITUD);
-    }
+    }*/
 
-    if( num.length() < 13)
-      throw Incorrecto(LONGITUD);
+    find_if(num.begin(), num.end(), [](char c){ if(isalpha(c)) throw Incorrecto(DIGITOS);  })
+    remove_if(num.begin(), num.end(), &isspace);
+    num.adjustSize();
+
+    if (num.length() < 13 || num.length() > 19)
+        throw Incorrecto(LONGITUD);
 
     if(!luhn(num))
       throw Incorrecto(NO_VALIDO);

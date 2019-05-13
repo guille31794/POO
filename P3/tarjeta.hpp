@@ -5,6 +5,7 @@
 #include "cadena.hpp"
 #include "usuario.hpp"
 #include <cctype>
+#include <algorithm>
 
 using namespace std;
 
