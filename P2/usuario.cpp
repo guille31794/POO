@@ -133,7 +133,15 @@ Clave Usuario::pass() const
 void Usuario::es_titular_de(Tarjeta& c)
 {
     if(identifier == c.titular() -> id() || c.titular() == nullptr)
-        cards.insert(make_pair(c.numero(), &c));
+    {    
+        cout << "Se intenta insertar la tarjeta con numero: " << c.numero() << endl;
+        pair<Tarjetas::iterator, bool> p = cards.insert(make_pair(c.numero(), &c));
+
+        if (p.second == false)
+            cout << "No se ha insertado la tarjeta con numero: " << c.numero() << endl;
+    }
+    
+        
 }
 
 void Usuario::no_es_titular_de(Tarjeta& c)

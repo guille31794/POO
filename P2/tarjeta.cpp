@@ -42,6 +42,11 @@ Numero::operator const char *() const
     return num.c_str();
 }
 
+bool operator ==(const Numero& n1, const Numero& n2)
+{
+    return strcmp(n1, n2) == 0;
+}
+
 Numero::Incorrecto::Incorrecto(const Razon r): r_{r} {}
 
 Numero::Razon Numero::Incorrecto::razon() const
@@ -81,7 +86,7 @@ const Fecha& d): number{n}, user{&u}, date{d}, active{true}
 
     pair<set<Numero>::iterator, bool> p = Numbers.insert(number);
 
-    if(p.second == false)
+    if(!p.second)
         throw Num_duplicado(number);
 
     switch (number[0])

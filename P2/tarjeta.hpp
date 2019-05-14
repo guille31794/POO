@@ -100,5 +100,6 @@ class Tarjeta
 //Operators
 ostream& operator <<(ostream&, const Tarjeta&);
 bool operator <(const Tarjeta&, const Tarjeta&);
+bool operator ==(const Numero&, const Numero&);
 
 #endif
