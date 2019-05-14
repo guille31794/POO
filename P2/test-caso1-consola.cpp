@@ -30,23 +30,22 @@ int main()
 	  "Callejón de los negros, s/n (Cádiz)", "ahxo2Aht"),
     rosa("rosa", "Rosita", "de Jericó",
 	 "C/ de Sor Sofía, 345 (2 Hermanas)", "Roh9aa5v");
-  // Constructor de Tarjeta: Tipo, Numero, Usuario, fecha de caducidad
+  // Constructor de Tarjeta: Numero, Usuario, fecha de caducidad
   // Para evitar problemas con las fechas y sus caducidades, ponemos año 0
   // (el actual) y sumamos uno o más años.
-  using Tipo = Tarjeta::Tipo;
   Tarjeta
-    visa1(Tipo::VISA, Numero("4539 4512 0398 7356"),
+    visa1(Numero("4539 4512 0398 7356"),
           lucas, Fecha(31, 12, 0) + 3 * 365),
-    american_express(Tipo::AmericanExpress, Numero("378282246310005"),
+    american_express(Numero("378282246310005"),
                      marchena, Fecha(30, 11, 0) + 4 * 365),
-    dinners_club(Tipo::Mastercard, Numero("30569309025904"),
+    dinners_club(Numero("30569309025904"),
                  rosa, Fecha(31, 7) + 5 * 365),
-    mastercard(Tipo::Mastercard, Numero("555555555555 4444  "),
+    mastercard(Numero("555555555555 4444  "),
                krispin, Fecha(31, 1) + 3 * 365),
-    australian_bank_card(Tipo::Maestro, Numero("5610591081018250"),
+    australian_bank_card(Numero("5610591081018250"),
                krispin, Fecha(28, 2) + 365),
-    jcb(Tipo::VISA, Numero("3530111333300000"), rosa, Fecha("31/7/0") + 2*365),
-    visa2(Tipo::VISA, Numero(" 4222222222222"), lucas, Fecha("28/2/0") + 365);
+    jcb(Numero("3530111333300000"), rosa, Fecha("31/7/0") + 2*365),
+    visa2(Numero(" 4222222222222"), lucas, Fecha("28/2/0") + 365);
 
   rosa.no_es_titular_de(jcb);
   lucas.es_titular_de(jcb); // No hace nada
@@ -81,35 +80,31 @@ int main()
     std::cerr << "Error de verificación de clave: "
 	      << "\"TeDaKuén\" != \"TeDaKuén\". (\?\?\?)" << std::endl;
   try {		 // O938 en vez de 0938 ;-) (era una O, no un cero)
-    Tarjeta falsa(Tipo::AmericanExpress, Numero("4539 4512 O398 7356"), 
-		  lucas, "31/12/2020");
+    Tarjeta falsa(Numero("4539 4512 O398 7356"), lucas, "31/12/2020");
   }
   catch(Numero::Incorrecto& e) {
     numero_incorrecto(e);
   }
   try {
-    Tarjeta judas(Tipo::AmericanExpress, Numero("1234567890123456"), 
-		  lucas, "31/12/2020");
+    Tarjeta judas(Numero("1234567890123456"), lucas, "31/12/2020");
   }
   catch(Numero::Incorrecto& e) {
     numero_incorrecto(e);
   }
   try {
-    Tarjeta mala(Tipo::AmericanExpress, Numero("123"), lucas, "31/12/2021");
+    Tarjeta mala(Numero("123"), lucas, "31/12/2021");
   }
   catch(Numero::Incorrecto& e) {
     numero_incorrecto(e);
   }
   try {
-    Tarjeta caduca(Tipo::AmericanExpress, Numero("4222222222222"), 
-		   lucas, "30/04/2002");
+    Tarjeta caduca(Numero("4222222222222"), lucas, "30/04/2002");
   }
   catch(Tarjeta::Caducada &e) {
     std::cerr << "Error: tarjeta caducada. " << e.cuando() << std::endl;
   }
   try { 			// En la fecha, O = letra O, no cero (O-0)
-    Tarjeta rota(Tipo::AmericanExpress, Numero(" 4222222222222 "), 
-		 lucas, "1O/O4/2O2O");
+    Tarjeta rota(Numero(" 4222222222222 "), lucas, "1O/O4/2O2O");
   }
   catch(Fecha::Invalida &e) {
     std::cerr << "Error: fecha de caducidad inválida. " << e.por_que()

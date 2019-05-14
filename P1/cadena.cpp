@@ -164,7 +164,7 @@ ostream& operator <<(ostream& os, const Cadena& s)
 
 istream& operator >>(istream& is, Cadena& s)
 {
-    char* string = new char[32];
+    char* string = new char[33];
 
     is.width(33);
     is >> string;

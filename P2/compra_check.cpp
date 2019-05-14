@@ -42,16 +42,14 @@ int main(int argc, const char **argv){
 	
 		c2.allPrivateVariableMember("Tarjeta", "Revisa el acceso a los atributos.");
 
-		c2.notFriendMember("Tarjeta", "Revisa por qué es necesario incluir 'friend'.");
-
 		//Constructor copia y de asignación
 		c2.deletedMethod({"Tarjeta", "operator="}, {{"const class Tarjeta &"}, {"const class Tarjeta &"}}, "Tarjeta", {"noconst", "noconst"}, "Revisa el enunciado respecto a la copia de objetos.");
 
 		c2.guardClauses("tarjeta.hpp", "Recuerda añadir las guardas de inclusión.");
 
-                vector<string> methodNames = {"tipo", "numero", "caducidad"};
-                vector<vector<string> > parametersMethods = {{},{},{}};
-                c2.inlineMethod(methodNames, parametersMethods, "Tarjeta", {"const", "const", "const"}, "Sugerencia: incluir marca 'inline' a aquellos métodos con pocas instrucciones, como 'tipo()', 'numero()' o 'caducidad()'.");
+                vector<string> methodNames = {"tipo", "numero", "caducidad", "activa"};
+                vector<vector<string> > parametersMethods = {{},{},{},{}};
+                c2.inlineMethod(methodNames, parametersMethods, "Tarjeta", {"const", "const", "const", "const"}, "Sugerencia: incluir marca 'inline' a aquellos métodos con pocas instrucciones, como 'tipo()', 'numero()', 'caducidad()' o 'activa()'.");
 
                 c2.check();
 
