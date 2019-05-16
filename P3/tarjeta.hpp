@@ -6,6 +6,7 @@
 #include "usuario.hpp"
 #include <cctype>
 #include <algorithm>
+#include <set>
 
 using namespace std;
 
@@ -44,7 +45,7 @@ class Tarjeta
         enum Tipo{Otro, VISA, Mastercard, Maestro, JCB, AmericanExpress};
 
         //Constructor
-        explicit Tarjeta(const Tipo, const Numero&, Usuario&, const Fecha&);
+        explicit Tarjeta(const Numero &, Usuario &, const Fecha &);
         Tarjeta(const Tarjeta&) = delete;
         Tarjeta& operator =(const Tarjeta&) = delete;
 
@@ -73,10 +74,10 @@ class Tarjeta
                 Fecha d;
         };
 
-        class Num_Duplicado
+        class Num_duplicado
         {
             public:
-                Num_Duplicado(const Numero&);
+                Num_duplicado(const Numero &);
                 Numero que() const;
             private:
                 Numero n;
@@ -93,10 +94,12 @@ class Tarjeta
         Fecha date;
         Cadena titular_facial_;
         bool active;
+        static set<Numero> Numbers;
 };
 
 //Operators
 ostream& operator <<(ostream&, const Tarjeta&);
 bool operator <(const Tarjeta&, const Tarjeta&);
+bool operator ==(const Numero&, const Numero&);
 
 #endif

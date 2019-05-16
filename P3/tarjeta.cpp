@@ -1,8 +1,10 @@
 #include "tarjeta.hpp"
 
+set<Numero> Tarjeta::Numbers{};
+
 Numero::Numero(const Cadena& s): num{s}
 {
-    /*for(int i = 0; i < num.length() && num[i] != '\0';
+    for(int i = 0; i < num.length() && num[i] != '\0';
     ++i)
     {
       if(isalpha(num[i]))
@@ -22,11 +24,11 @@ Numero::Numero(const Cadena& s): num{s}
 
       if(num.length() < 13 || num.length() > 19  )
         throw Incorrecto(LONGITUD);
-    }*/
+    }
 
-    find_if(num.begin(), num.end(), [](char c){ if(isalpha(c)) throw Incorrecto(DIGITOS);  })
+    /*find_if(num.begin(), num.end(), [](char c){ if(isalpha(c)) throw Incorrecto(DIGITOS);  })
     remove_if(num.begin(), num.end(), &isspace);
-    num.adjustSize();
+    num.adjustSize();*/
 
     if (num.length() < 13 || num.length() > 19)
         throw Incorrecto(LONGITUD);
@@ -40,11 +42,24 @@ Numero::operator const char *() const
     return num.c_str();
 }
 
+bool operator ==(const Numero& n1, const Numero& n2)
+{
+    return strcmp(n1, n2) == 0;
+}
+
 Numero::Incorrecto::Incorrecto(const Razon r): r_{r} {}
 
 Numero::Razon Numero::Incorrecto::razon() const
 {
     return r_;
+}
+
+Tarjeta::Num_duplicado::Num_duplicado(const Numero &num) : n{num}
+{}
+
+Numero Tarjeta::Num_duplicado::que() const
+{
+    return n;
 }
 
 bool operator <(const Numero& n1, const Numero& n2)
@@ -59,8 +74,8 @@ Fecha Tarjeta::Caducada::cuando() const
     return d;
 }
 
-Tarjeta::Tarjeta(const Tipo t, const Numero& n, Usuario& u, 
-const Fecha& d): type{t}, number{n}, user{&u}, date{d}, active{true}
+Tarjeta::Tarjeta(const Numero& n, Usuario& u, 
+const Fecha& d): number{n}, user{&u}, date{d}, active{true}
 {
     if(date.anno() < Fecha{}.anno())
         throw Caducada(date);
@@ -68,10 +83,40 @@ const Fecha& d): type{t}, number{n}, user{&u}, date{d}, active{true}
         throw Caducada(date);
     if(date.anno() == Fecha{}.anno() && date.mes() == Fecha{}.mes() && date.dia() < Fecha{}.dia())
         throw Caducada(date);
-    
-    u.es_titular_de(*this);
 
-    titular_facial_ = u.nombre() + " " + u.apellidos();
+    pair<set<Numero>::iterator, bool> p = Numbers.insert(number);
+
+    if(!p.second)
+        throw Num_duplicado(number);
+
+    switch (number[0])
+    {
+    case '4': type = VISA;
+        break;
+    case '5': type = Mastercard;
+        break;
+    case '6': type = Maestro;
+        break;
+    case '3': 
+        switch (number[1])
+        {
+        case '4' | '7': type = AmericanExpress;
+            break;
+        default: type = JCB;
+            break;
+        }
+    default: type= Otro;
+        break;
+    }
+
+    Cadena tf{u.nombre() + " " + u.apellidos()};
+
+    for(int i = 0; i < tf.length(); ++i)
+        tf[i] = toupper(tf[i]);
+    
+    titular_facial_ = tf;
+
+    user->es_titular_de(*this);
 }
 
 const Tarjeta::Tipo Tarjeta::tipo() const
@@ -119,6 +164,7 @@ Tarjeta::~Tarjeta()
 {
     if(user != nullptr)
         const_cast<Usuario*>(user) -> no_es_titular_de(*this);
+    Numbers.erase(number);
 }
 
 ostream& operator <<(ostream& os, const Tarjeta& c)
