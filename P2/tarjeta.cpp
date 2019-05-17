@@ -42,11 +42,6 @@ Numero::operator const char *() const
     return num.c_str();
 }
 
-bool operator ==(const Numero& n1, const Numero& n2)
-{
-    return strcmp(n1, n2) == 0;
-}
-
 Numero::Incorrecto::Incorrecto(const Razon r): r_{r} {}
 
 Numero::Razon Numero::Incorrecto::razon() const

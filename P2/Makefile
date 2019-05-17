@@ -49,7 +49,7 @@ DIRLUHN = ..
 # --- Fin parte configurable
 
 LOCALLIBS = cadena.o fecha.o luhn.o
-EXTLIBS   = #-lcrypt
+EXTLIBS   = -lcrypt
 LIBS      = ${LOCALLIBS} ${EXTLIBS}
 VPATH     = .:${DIRTESTS}:${DIRFECHACADENA}:${DIRLUHN}
 
