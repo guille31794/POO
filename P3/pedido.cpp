@@ -26,6 +26,10 @@ const Articulo& Pedido::SinStock::articulo() const
 }
 
 //Constructor
+LineaPedido::LineaPedido(const double p, const unsigned q):
+prize{p}, quantity{q}
+{}
+
 Pedido::Pedido(const Usuario_Pedido& up, const Pedido_Articulo& pa,
 const Usuario& u, const Tarjeta& c, const Fecha& d):
 card{&c}, date{d}
@@ -34,6 +38,16 @@ card{&c}, date{d}
 }
 
 //Getters
+double LineaPedido::precio_venta() const
+{
+    return prize;
+}
+
+unsigned LineaPedido::cantidad() const
+{
+    return quantity;
+}
+
 unsigned Pedido::numero() const
 {
     return num;
@@ -60,12 +74,20 @@ unsigned Pedido::n_total_pedidos() const
 }
 
 //Operator
-ostream& operator <<(ostream& os, Pedido p)
+ostream& operator <<(ostream& os, const Pedido p)
 {
     os << "Núm. pedido: " << p.numero() << "\nFecha:\t\t"
     << p.fecha() << "\nPagado con:  " << p.tarjeta() <<
-    "\nImporte:\t" << setiosflags() << setprecision(2) <<
+    "\nImporte:\t" << setiosflags(ios::fixed) << setprecision(2) <<
     p.total() << " €";
+
+    return os;
+}
+
+ostream& operator <<(ostream& os, const LineaPedido& lp)
+{
+    os << setiosflags(ios::fixed) << setprecision(2) <<
+    lp.precio_venta() << " €\t" << lp.cantidad();
 
     return os;
 }

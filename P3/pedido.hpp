@@ -2,6 +2,19 @@
 #include "tarjeta.hpp"
 #include "usuario.hpp"
 
+class LineaPedido
+{
+    public:
+        //Constructor
+        explicit LineaPedido(const double, const unsigned = 1);
+        //Getters
+        double precio_venta() const;
+        unsigned cantidad() const;
+    private:
+        double prize;
+        unsigned quantity;
+};
+
 class Pedido
 {
     public:
@@ -51,4 +64,6 @@ class Pedido
         Fecha date;
 };
 
+//Operators
 ostream& operator <<(ostream&, const Pedido&);
+ostream& operator <<(ostream&, const LineaPedido&);
