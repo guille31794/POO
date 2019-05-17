@@ -2,39 +2,29 @@
 
 set<Numero> Tarjeta::Numbers{};
 
+bool Esblanco::operator()(char c)
+{
+    return isspace(c);
+}
+
+bool EsDigito::operator()(char c)
+{
+    return isdigit(c);
+}
+
 Numero::Numero(const Cadena& s): num{s}
 {
-    for(int i = 0; i < num.length() && num[i] != '\0';
-    ++i)
-    {
-      if(isalpha(num[i]))
+    if (num.end() != find_if(num.begin(), num.end(), EsDigito))
         throw Incorrecto(DIGITOS);
 
-      while(isspace(num[i]))
-      {
-        for(auto cont = i; cont < num.length() && num[cont] != '\0';
-        ++cont)
-        {
-          num[cont] = num[cont + 1];
-        }
-
-        num[num.length()] = '\0';
-        num.adjustSize();
-      }
-
-      if(num.length() < 13 || num.length() > 19  )
-        throw Incorrecto(LONGITUD);
-    }
-
-    /*find_if(num.begin(), num.end(), [](char c){ if(isalpha(c)) throw Incorrecto(DIGITOS);  })
-    remove_if(num.begin(), num.end(), &isspace);
-    num.adjustSize();*/
+    auto pEnd = remove_if(num.begin(), num.end(), EsBlanco());
+    num.adjustSize();
 
     if (num.length() < 13 || num.length() > 19)
         throw Incorrecto(LONGITUD);
 
     if(!luhn(num))
-      throw Incorrecto(NO_VALIDO);
+        throw Incorrecto(NO_VALIDO);
 }
 
 Numero::operator const char *() const

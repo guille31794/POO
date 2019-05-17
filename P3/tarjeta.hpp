@@ -13,6 +13,18 @@ using namespace std;
 bool luhn(const Cadena& numero);
 class Usuario;
 
+class EsBlanco
+{
+    public:
+    bool operator ()(char c);
+};
+
+class EsDigito
+{
+    public:
+    bool operator ()(char c);
+};
+
 class Numero
 {
     public:
