@@ -1,3 +1,5 @@
+#ifndef Pedido_hpp
+#define Pedido_hpp
 #include "fecha.hpp"
 #include "tarjeta.hpp"
 #include "usuario.hpp"
@@ -67,3 +69,5 @@ class Pedido
 //Operators
 ostream& operator <<(ostream&, const Pedido&);
 ostream& operator <<(ostream&, const LineaPedido&);
+
+#endif
