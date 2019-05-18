@@ -14,7 +14,7 @@ class OrdenaArticulos
 
 class OrdenaPedidos
 {
-    void operator()();
+    bool operator()(Pedido*, Pedido*) const;
 };
 
 class Pedido_Articulo
@@ -22,18 +22,20 @@ class Pedido_Articulo
     public:
         typedef map<Articulo*, LineaPedido, OrdenaArticulos> ItemsPedido;
         typedef map<Pedido*, LineaPedido, OrdenaPedidos> Pedidos;
+        typedef map<Pedido*, ItemsPedido, OrdenaPedidos> PedidosArticulos;
+        typedef map<Articulo*, Pedidos, OrdenaArticulos> ArticulosPedido;
 
-        void pedir(const Pedido&, const Articulo&, const double, unsigned = 1);
-        void pedir(const Articulo&, const Pedido&, const double, unsigned = 1);
+        void pedir(Pedido&, Articulo&, const double, unsigned = 1);
+        void pedir(Articulo&, Pedido&, const double, unsigned = 1);
 
-        ItemsPedido detalle(const Pedido&) const;
-        Pedidos ventas(const Articulo&) const;
+        ItemsPedido detalle(Pedido&) const;
+        Pedidos ventas(Articulo&) const;
 
         ostream& mostrarDetallePedidos() const;
         ostream& mostrarVentasArticulos() const;
     private:
-        map<Pedido*, ItemsPedido, OrdenaPedidos> DA;
-        map<Articulo*, Pedidos, OrdenaArticulos> IA;
+        PedidosArticulos pedidosArticulos;
+        ArticulosPedido articulosPedido;
 };
 
 ostream& operator <<(ostream&, const Pedido_Articulo::ItemsPedido&);
