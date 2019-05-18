@@ -3,6 +3,8 @@
 #include "fecha.hpp"
 #include "tarjeta.hpp"
 #include "usuario.hpp"
+#include "usuario-pedido.hpp"
+#include "pedido-articulo.hpp"
 
 class LineaPedido
 {
@@ -26,7 +28,7 @@ class Pedido
 
         //Getters
         unsigned numero() const;
-        const Tarjeta& tarjeta() const;
+        const Tarjeta* tarjeta() const;
         Fecha fecha() const;
         double total() const;
         unsigned n_total_pedidos() const;
@@ -60,7 +62,7 @@ class Pedido
         };
         
     private:
-        unsigned num, lastBuyNumber, buysQuantity;
+        unsigned num, buysQuantity;
         double totalPrize;
         const Tarjeta* card;
         Fecha date;

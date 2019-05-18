@@ -53,9 +53,9 @@ unsigned Pedido::numero() const
     return num;
 }
 
-const Tarjeta& Pedido::tarjeta() const
+const Tarjeta* Pedido::tarjeta() const
 {
-    return *card;
+    return card;
 }
 
 Fecha Pedido::fecha() const
