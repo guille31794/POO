@@ -46,3 +46,77 @@ Pedido_Articulo::Pedidos Pedido_Articulo::ventas(Articulo& a) const
 {
     return articulosPedido.find(&a) -> second;
 }
+
+ostream& operator <<(ostream& os, Pedido_Articulo::ItemsPedido& items)
+{
+    setlocale(LC_ALL, "es_ES");
+    double total{0};
+
+    os << "  PVP   Cantidad       Articulo\n" <<
+    "==================================================================\n";
+
+    for(auto it : items)
+    {
+        os << setiosflags(ios::fixed) << setprecision(2) <<
+         it.second.precio_venta() << " € " << it.second.cantidad() <<
+        setw(15-(it.second.cantidad()/10)) << "[" << 
+        it.first -> referencia() << "] \"" << it.first -> titulo() << "\n";
+
+        total += it.second.precio_venta();  
+    }
+
+    os <<
+    "==================================================================\n"
+    << "Total\t" << setiosflags(ios::fixed) << setprecision(2) <<
+    total << " €";
+
+    return os;
+}
+
+ostream& operator <<(ostream& os, Pedido_Articulo::Pedidos p)
+{
+    setlocale(LC_ALL, "es_ES");
+    double total{0};
+
+    os << "[Pedidos: " << p.size() << "\n" <<
+    "==================================================================\n"
+    << "  PVP   Cantidad"  << setw(11) << "Fecha de venta\n"
+    <<
+    "==================================================================\n";
+
+    for(auto it : p)
+    {
+        os << setiosflags(ios::fixed) << setprecision(2) << 
+        it.second.precio_venta() << " € " << it.second.cantidad() <<
+        setw(10) << it.first -> fecha() << "\n";
+
+        total += it.second.precio_venta();
+    }
+
+    os <<
+    "==================================================================\n"
+    << setiosflags(ios::fixed) << setprecision(2) << total << " €\t\t\t"
+    << p.size();
+
+    return os;
+}
+
+ostream& Pedido_Articulo::mostrarDetallePedidos(ostream& os) const
+{
+    setlocale(LC_ALL, "es_ES");
+    double total{0};
+
+    for(auto it : pedidosArticulos)
+    {
+        os << "Pedido num. " << it.first -> numero() << "\nCliente: "
+        << it.first -> tarjeta() -> titular() << "\t\t" << 
+        it.first -> fecha() << "\n";
+
+        total += it.first -> total();
+    }
+
+    os << "TOTAL VENTAS\t\t" << setiosflags(ios::fixed) << setprecision(2)
+    << total << " €";
+
+    return os;
+}

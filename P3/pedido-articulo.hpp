@@ -1,6 +1,8 @@
 #ifndef Pedido_Articulo_hpp
 #define Pedido_Articulo_hpp
 
+#include <locale>
+#include <iomanip>
 #include <map>
 #include "pedido.hpp"
 #include "articulo.hpp"
@@ -31,8 +33,8 @@ class Pedido_Articulo
         ItemsPedido detalle(Pedido&) const;
         Pedidos ventas(Articulo&) const;
 
-        ostream& mostrarDetallePedidos() const;
-        ostream& mostrarVentasArticulos() const;
+        ostream& mostrarDetallePedidos(ostream&) const;
+        ostream& mostrarVentasArticulos(ostream&) const;
     private:
         PedidosArticulos pedidosArticulos;
         ArticulosPedido articulosPedido;
