@@ -120,3 +120,15 @@ ostream& Pedido_Articulo::mostrarDetallePedidos(ostream& os) const
 
     return os;
 }
+
+ostream& Pedido_Articulo::mostrarVentasArticulos(ostream& os) const
+{
+    setlocale(LC_ALL, "es_ES");
+
+    unsigned sales{0};
+
+    for(auto it : articulosPedido)
+        os << "Ventas de " << *it.first << it.second;
+
+    return os;
+}
