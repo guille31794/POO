@@ -1,10 +1,20 @@
 #ifndef Pedido_hpp
 #define Pedido_hpp
+
+#include <iostream>
+#include <locale>
 #include "fecha.hpp"
-#include "tarjeta.hpp"
+#include "cadena.hpp"
 #include "usuario.hpp"
-#include "usuario-pedido.hpp"
+#include "tarjeta.hpp"
+#include "articulo.hpp"
 #include "pedido-articulo.hpp"
+#include "usuario-pedido.hpp"
+
+using namespace std;
+
+class Usuario_Pedido;
+class Pedido_Articulo;
 
 class LineaPedido
 {
@@ -24,7 +34,7 @@ class Pedido
     public:
         //Constructor
         Pedido(const Usuario_Pedido&, const Pedido_Articulo&, 
-        const Usuario&, const Tarjeta&, const Fecha&);
+        const Usuario&, const Tarjeta&, const Fecha& );
 
         //Getters
         unsigned numero() const;

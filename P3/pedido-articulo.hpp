@@ -4,10 +4,13 @@
 #include <locale>
 #include <iomanip>
 #include <map>
+#include <iostream>
 #include "pedido.hpp"
 #include "articulo.hpp"
 
 using namespace std;
+
+class Pedido;
 
 class OrdenaArticulos
 {

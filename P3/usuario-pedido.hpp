@@ -2,11 +2,15 @@
 #define Usuario_Pedido_hpp
 
 #include <map>
-#include "pedido.hpp"
-#include "usuario.hpp"
+#include <set>
 #include <utility>
+#include "usuario.hpp"
+#include "pedido.hpp"
 
 using namespace std;
+
+class Pedido;
+class Usuario;
 
 class Usuario_Pedido
 {
