@@ -109,7 +109,7 @@ Cadena Usuario::direccion() const
     return address;
 }
 
-Usuario::Tarjetas Usuario::tarjetas() const
+const Usuario::Tarjetas &Usuario::tarjetas() const
 {
     return cards;
 }

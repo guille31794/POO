@@ -26,10 +26,6 @@ Numero::Numero(const Cadena& s): num{s}
         throw Incorrecto(LONGITUD);
     }
 
-    /*find_if(num.begin(), num.end(), [](char c){ if(isalpha(c)) throw Incorrecto(DIGITOS);  })
-    remove_if(num.begin(), num.end(), &isspace);
-    num.adjustSize();*/
-
     if (num.length() < 13 || num.length() > 19)
         throw Incorrecto(LONGITUD);
 
@@ -112,7 +108,6 @@ const Fecha& d): number{n}, user{&u}, date{d}, active{true}
     titular_facial_ = tf;
 
     user->es_titular_de(*this);
-    //std::cout << user->tarjetas().size() << std::endl;
 }
 
 const Tarjeta::Tipo Tarjeta::tipo() const
