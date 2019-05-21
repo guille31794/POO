@@ -109,10 +109,20 @@ Cadena Usuario::direccion() const
     return address;
 }
 
-Usuario::Tarjetas Usuario::tarjetas() const
+// ---------------------------------------------
+// No se pone esto. Improved by @guilogar
+/*
+ *Usuario::Tarjetas Usuario::tarjetas() const
+ *{
+ *    return cards;
+ *}
+ */
+
+const Usuario::Tarjetas& Usuario::tarjetas() const
 {
     return cards;
 }
+// ---------------------------------------------
 
 Usuario::Articulos Usuario::compra() const
 {
