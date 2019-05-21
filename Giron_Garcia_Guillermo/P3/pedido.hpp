@@ -33,15 +33,15 @@ class Pedido
 {
     public:
         //Constructor
-        Pedido(const Usuario_Pedido&, const Pedido_Articulo&, 
-        const Usuario&, const Tarjeta&, const Fecha& );
+        Pedido(Usuario_Pedido&, Pedido_Articulo&, Usuario&, const Tarjeta&, 
+        const Fecha& = Fecha{});
 
         //Getters
         unsigned numero() const;
         const Tarjeta* tarjeta() const;
         Fecha fecha() const;
         double total() const;
-        unsigned n_total_pedidos() const;
+        static unsigned n_total_pedidos();
 
         //Exception Stuff
         class Vacio
@@ -72,7 +72,8 @@ class Pedido
         };
         
     private:
-        unsigned num, buysQuantity;
+        unsigned num; 
+        static unsigned buysQuantity;
         double totalPrize;
         const Tarjeta* card;
         Fecha date;
