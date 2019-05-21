@@ -112,6 +112,7 @@ const Fecha& d): number{n}, user{&u}, date{d}, active{true}
     titular_facial_ = tf;
 
     user->es_titular_de(*this);
+    //std::cout << user->tarjetas().size() << std::endl;
 }
 
 const Tarjeta::Tipo Tarjeta::tipo() const

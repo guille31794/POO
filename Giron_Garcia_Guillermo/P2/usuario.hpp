@@ -66,7 +66,13 @@ class Usuario
         Cadena nombre() const;
         Cadena apellidos() const;
         Cadena direccion() const;
-        Tarjetas tarjetas() const;
+        
+        // --------------------------------------
+        // No se pone esto. Improved by @guilogar
+        //Tarjetas tarjetas() const;
+        
+        const Tarjetas& tarjetas() const;
+        // --------------------------------------
         unsigned n_articulos() const;
         Articulos compra() const;
         Clave pass() const;
