@@ -11,7 +11,7 @@
 # NOMBREALUMNO debería ser de la forma: Ap1_Ap2_NP
 # (Véanse las instrucciones de entrega).
 NA = $(shell dirname ${PWD})
-NOMBREALUMNO = $(notdir ${NA})
+NOMBREALUMNO = Giron_Garcia_Guillermo#$(notdir ${NA})
 
 # DIRFECHACADENA es el directorio donde están las cabeceras, fuentes o módulos
 # objeto de Cadena y Fecha, y su Makefile.
