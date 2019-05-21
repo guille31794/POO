@@ -10,16 +10,19 @@
 
 using namespace std;
 
+class LineaPedido;
 class Pedido;
 
 class OrdenaArticulos
 {
-    void operator()();
+    public:
+        bool operator()(Articulo*, Articulo*) const;
 };
 
 class OrdenaPedidos
 {
-    bool operator()(Pedido*, Pedido*) const;
+    public:
+        bool operator()(Pedido*, Pedido*) const;
 };
 
 class Pedido_Articulo
@@ -39,8 +42,8 @@ class Pedido_Articulo
         ostream& mostrarDetallePedidos(ostream&) const;
         ostream& mostrarVentasArticulos(ostream&) const;
     private:
-        PedidosArticulos pedidosArticulos;
-        ArticulosPedido articulosPedido;
+        PedidosArticulos pedidosArticulos_;
+        ArticulosPedido articulosPedido_;
 };
 
 ostream& operator <<(ostream&, const Pedido_Articulo::ItemsPedido&);

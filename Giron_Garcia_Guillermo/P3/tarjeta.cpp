@@ -2,7 +2,7 @@
 
 set<Numero> Tarjeta::Numbers{};
 
-bool Esblanco::operator()(char c)
+bool EsBlanco::operator()(char c)
 {
     return isspace(c);
 }
@@ -14,10 +14,11 @@ bool EsDigito::operator()(char c)
 
 Numero::Numero(const Cadena& s): num{s}
 {
-    if (num.end() != find_if(num.begin(), num.end(), EsDigito))
+    if (num.end() != find_if_not(num.begin(), num.end(), EsDigito()))
         throw Incorrecto(DIGITOS);
 
-    auto pEnd = remove_if(num.begin(), num.end(), EsBlanco());
+    //auto pEnd = 
+    remove_if(num.begin(), num.end(), EsBlanco());
     num.adjustSize();
 
     if (num.length() < 13 || num.length() > 19)

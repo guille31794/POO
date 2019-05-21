@@ -1,5 +1,7 @@
 #include "pedido.hpp"
 
+unsigned Pedido::buysQuantity{0};
+
 //Exceptio Stuff
 Pedido::Vacio::Vacio(const Usuario& u): uP{&u} 
 {}
@@ -30,11 +32,11 @@ LineaPedido::LineaPedido(const double p, const unsigned q):
 prize{p}, quantity{q}
 {}
 
-Pedido::Pedido(const Usuario_Pedido& up, const Pedido_Articulo& pa,
-const Usuario& u, const Tarjeta& c, const Fecha& d):
+Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa,
+Usuario& u, const Tarjeta& c, const Fecha& d):
 card{&c}, date{d}
 {
-    
+    buysQuantity++;
 }
 
 //Getters
@@ -68,7 +70,7 @@ double Pedido::total() const
     return totalPrize;
 }
 
-unsigned Pedido::n_total_pedidos() const
+unsigned Pedido::n_total_pedidos()
 {
     return buysQuantity;
 }

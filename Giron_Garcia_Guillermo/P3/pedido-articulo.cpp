@@ -5,29 +5,34 @@ bool OrdenaPedidos::operator() (Pedido* p1, Pedido* p2) const
     return p1 -> numero() < p2 -> numero();
 }
 
+bool OrdenaArticulos::operator() (Articulo* a1, Articulo* a2) const
+{
+    return a1 > a2;
+}
+
 void Pedido_Articulo::pedir(Pedido& p, Articulo& a,
 const double prize, unsigned q)
 {
-    PedidosArticulos::iterator i = pedidosArticulos.find(&p);
+    PedidosArticulos::iterator i = pedidosArticulos_.find(&p);
     
-    if(i != pedidosArticulos.end())
+    if(i != pedidosArticulos_.end())
         i -> second.insert(make_pair(&a, LineaPedido(prize, q)));
     else
     {
         ItemsPedido items;
         items.insert(make_pair(&a, LineaPedido(prize, q)));
-        pedidosArticulos.insert(make_pair(&p, items));
+        pedidosArticulos_.insert(pair<Pedido*, Pedido_Articulo::ItemsPedido>(&p, items));
     }
 
-    ArticulosPedido::iterator it = articulosPedido.find(&a);
+    ArticulosPedido::iterator it = articulosPedido_.find(&a);
 
-    if (it != articulosPedido.end())
-        i -> second.insert(make_pair(&p, LineaPedido(prize, q)));
+    if (it != articulosPedido_.end())
+        i -> second.insert(pair<Pedido*, LineaPedido>(&p, LineaPedido(prize, q)));
     else
     {
         Pedidos pedidos_;
         pedidos_.insert(make_pair(&p, LineaPedido(prize, q)));
-        articulosPedido.insert(make_pair(&a, pedidos_));
+        articulosPedido_.insert(make_pair(&a, pedidos_));
     }  
 }
 
@@ -39,12 +44,12 @@ const double prize, const unsigned q)
 
 Pedido_Articulo::ItemsPedido Pedido_Articulo::detalle(Pedido& p) const
 {
-    return pedidosArticulos.find(&p) -> second;
+    return pedidosArticulos_.find(&p) -> second;
 }
 
 Pedido_Articulo::Pedidos Pedido_Articulo::ventas(Articulo& a) const
 {
-    return articulosPedido.find(&a) -> second;
+    return articulosPedido_.find(&a) -> second;
 }
 
 ostream& operator <<(ostream& os, Pedido_Articulo::ItemsPedido& items)
@@ -106,7 +111,7 @@ ostream& Pedido_Articulo::mostrarDetallePedidos(ostream& os) const
     setlocale(LC_ALL, "es_ES");
     double total{0};
 
-    for(auto it : pedidosArticulos)
+    for(auto it : pedidosArticulos_)
     {
         os << "Pedido num. " << it.first -> numero() << "\nCliente: "
         << it.first -> tarjeta() -> titular() << "\t\t" << 
@@ -127,7 +132,7 @@ ostream& Pedido_Articulo::mostrarVentasArticulos(ostream& os) const
 
     unsigned sales{0};
 
-    for(auto it : articulosPedido)
+    for(auto it : articulosPedido_)
         os << "Ventas de " << *it.first << it.second;
 
     return os;
