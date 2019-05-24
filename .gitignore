@@ -11,3 +11,7 @@
 *.gz
 *.tar
 *.exe
+*.zip
+*.d
+core
+vgcore*
