@@ -51,7 +51,7 @@ Pedido_Articulo::Pedidos Pedido_Articulo::ventas(Articulo& a) const
     return articulosPedido_.find(&a) -> second;
 }
 
-ostream& operator <<(ostream& os, Pedido_Articulo::ItemsPedido& items)
+ostream& operator <<(ostream& os, const Pedido_Articulo::ItemsPedido& items)
 {
     setlocale(LC_ALL, "es_ES");
     double total{0};

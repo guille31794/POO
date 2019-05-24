@@ -52,7 +52,7 @@ CPPFLAGS = ${INCLUDES} -D${NOMBREPRACTICA}
 # --- Fin parte configurable
 
 LOCALLIBS = cadena.o fecha.o luhn.o
-EXTLIBS   = -lcrypt
+EXTLIBS   = #-lcrypt
 LIBS      = ${LOCALLIBS} ${EXTLIBS}
 VPATH     = .:${DIRFECHACADENA}:${DIRLUHN}:${DIRTESTS}
 
