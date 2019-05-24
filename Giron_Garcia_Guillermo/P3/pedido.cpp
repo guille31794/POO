@@ -76,7 +76,7 @@ unsigned Pedido::n_total_pedidos()
 }
 
 //Operator
-ostream& operator <<(ostream& os, const Pedido p)
+ostream& operator <<(ostream& os, const Pedido& p)
 {
     os << "Núm. pedido: " << p.numero() << "\nFecha:\t\t"
     << p.fecha() << "\nPagado con:  " << p.tarjeta() <<

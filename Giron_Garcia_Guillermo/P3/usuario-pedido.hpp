@@ -19,8 +19,11 @@ class Usuario_Pedido
         typedef map<Usuario*, Pedidos> Usuarios;
         void asocia(Usuario&, Pedido&);
         void asocia(Pedido&, Usuario&);
-        Pedidos pedidos(Usuario&) const;
-        const Usuario* cliente(const Pedido&) const;
+        Pedidos pedidos(Usuario&);
+        const Usuario* cliente(Pedido&);
+        const Usuario* cliente(const Pedido &);
+        const Usuario* cliente(const Pedido &) const;
+        //const Usuario& cliente(const Pedido&) const;
     private:
         Pedidos pedidos_;
         Usuarios usuarios;

@@ -10,8 +10,7 @@ bool OrdenaArticulos::operator() (Articulo* a1, Articulo* a2) const
     return a1 > a2;
 }
 
-void Pedido_Articulo::pedir(Pedido& p, Articulo& a,
-const double prize, unsigned q)
+void Pedido_Articulo::pedir(Pedido& p, Articulo& a, double prize, unsigned q)
 {
     PedidosArticulos::iterator i = pedidosArticulos_.find(&p);
     
@@ -27,7 +26,7 @@ const double prize, unsigned q)
     ArticulosPedido::iterator it = articulosPedido_.find(&a);
 
     if (it != articulosPedido_.end())
-        i -> second.insert(pair<Pedido*, LineaPedido>(&p, LineaPedido(prize, q)));
+        it -> second.insert(pair<Pedido*, LineaPedido>(&p, LineaPedido{prize, q}));
     else
     {
         Pedidos pedidos_;
@@ -130,7 +129,7 @@ ostream& Pedido_Articulo::mostrarVentasArticulos(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES");
 
-    unsigned sales{0};
+    //unsigned sales{0};
 
     for(auto it : articulosPedido_)
         os << "Ventas de " << *it.first << it.second;

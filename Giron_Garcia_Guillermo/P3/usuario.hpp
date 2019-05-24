@@ -7,7 +7,6 @@
 #include <utility>
 #include <unordered_map>
 #include <unordered_set>
-#include "cadena.hpp"
 #include <random>
 #include "unistd.h"
 #include "articulo.hpp"

@@ -61,7 +61,7 @@ VPATH     = .:${DIRFECHACADENA}:${DIRLUHN}:${DIRTESTS}
 # de Usuario_Pedido inline, pero si se definen normales en usuario-pedido.cpp, 
 # añádase a OWN_SRCS y quítese usuario-pedido.hpp de OWN_HDRS.
 OWN_SRCS  = usuario.cpp tarjeta.cpp articulo.cpp pedido-articulo.cpp pedido.cpp
-OWN_HDRS  = $(OWN_SRCS:.cpp=.hpp) usuario-pedido.hpp
+OWN_HDRS  = usuario-pedido.cpp #$(OWN_SRCS:.cpp=.hpp) usuario-pedido.hpp
 
 OWN_OBJS  = $(OWN_SRCS:.cpp=.o)
 
@@ -165,7 +165,7 @@ else
 		$D/tarjeta.cpp  $D/tarjeta.hpp  \
 		$D/pedido.cpp   $D/pedido.hpp   \
 		$D/pedido-articulo.cpp $D/pedido-articulo.hpp \
-		$D/usuario-pedido.hpp \
+		$D/usuario-pedido.hpp $D/usuario-pedido.cpp\
 		${NOMBREALUMNO}/${DFC}/cadena.hpp \
 		${NOMBREALUMNO}/${DFC}/cadena.cpp \
 		${NOMBREALUMNO}/${DFC}/fecha.hpp  \

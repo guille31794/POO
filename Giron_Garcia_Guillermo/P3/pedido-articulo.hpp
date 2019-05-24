@@ -12,6 +12,7 @@ using namespace std;
 
 class LineaPedido;
 class Pedido;
+class Pedido;
 
 class OrdenaArticulos
 {

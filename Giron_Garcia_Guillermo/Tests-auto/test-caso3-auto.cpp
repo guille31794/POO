@@ -183,8 +183,7 @@ FCTMF_FIXTURE_SUITE_BGN(test_p3_clases) {
     fct_chk_eq_int(articulo2.stock(), 49);
     
     // Asociación Usuario-Pedido
-    fct_chk(pAsocUsuarioPedido->cliente(*const_cast<Pedido*>(pPed.get()))
-	    == pU);
+    fct_chk(pAsocUsuarioPedido->cliente(*const_cast<Pedido*>(pPed.get())) == pU);
     if (pAsocUsuarioPedido->pedidos(*pU).size() == 1) {
       fct_chk(*pAsocUsuarioPedido->pedidos(*pU).begin() == pPed.get());
     }

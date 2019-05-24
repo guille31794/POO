@@ -20,12 +20,28 @@ void Usuario_Pedido::asocia(Pedido& p, Usuario& u)
     asocia(u, p);
 }
 
-Usuario_Pedido::Pedidos Usuario_Pedido::pedidos(Usuario& u) const
+//Getters
+Usuario_Pedido::Pedidos Usuario_Pedido::pedidos(Usuario& u)
 {   
     return usuarios.find(&u)->second;
 }
 
-const Usuario* Usuario_Pedido::cliente(const Pedido& p) const
+const Usuario* Usuario_Pedido::cliente(Pedido& p)
 {
     return p.tarjeta() -> titular();
 }
+
+const Usuario* Usuario_Pedido::cliente(const Pedido &p)
+{
+    return p.tarjeta()->titular();
+}
+
+const Usuario *Usuario_Pedido::cliente(const Pedido &p) const
+{
+    return p.tarjeta()->titular();
+}
+
+/*const Usuario& Usuario_Pedido::cliente(const Pedido& p) const
+{
+    return p.tarjeta() -> titular();
+}*/
