@@ -67,7 +67,7 @@ class Usuario
         Cadena direccion() const;
         const Tarjetas &tarjetas() const;
         unsigned n_articulos() const;
-        Articulos compra() const;
+        const Articulos& compra() const;
         Clave pass() const;
 
         //Asociative data methods

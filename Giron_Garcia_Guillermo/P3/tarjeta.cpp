@@ -106,7 +106,7 @@ const Fecha& d): number{n}, user{&u}, date{d}, active{true}
 
     Cadena tf{u.nombre() + " " + u.apellidos()};
 
-    for(int i = 0; i < tf.length(); ++i)
+    for(unsigned i = 0; i < tf.length(); ++i)
         tf[i] = toupper(tf[i]);
     
     titular_facial_ = tf;

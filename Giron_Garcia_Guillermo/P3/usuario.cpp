@@ -114,7 +114,7 @@ const Usuario::Tarjetas &Usuario::tarjetas() const
     return cards;
 }
 
-Usuario::Articulos Usuario::compra() const
+const Usuario::Articulos& Usuario::compra() const
 {
     return shopping_kart;
 }
@@ -133,16 +133,7 @@ Clave Usuario::pass() const
 void Usuario::es_titular_de(Tarjeta& c)
 {
     if(identifier == c.titular() -> id() || c.titular() == nullptr)
-    {    
-        pair<Tarjetas::iterator, bool> p = cards.insert(pair(c.numero(), &c));
-
-        if (p.second == false)
-            cout << "No se ha insertado la tarjeta con numero: " << c.numero() << endl;
-    }
-    else
-        cout << "Algo falla con el titular." << endl;
-    
-        
+        cards.insert(pair(c.numero(), &c));        
 }
 
 void Usuario::no_es_titular_de(Tarjeta& c)

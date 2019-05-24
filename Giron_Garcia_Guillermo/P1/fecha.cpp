@@ -56,7 +56,7 @@ Fecha::Fecha(const char* s)
     time_t date;
     tm* tim;
 
-    format = sscanf(s, "%d/%d/%d", &d, &m, &a);
+    format = sscanf(s, "%u/%u/%u", &d, &m, &a);
 
     if(format != 3)
         throw Invalida((char*)"Incorrect date format");

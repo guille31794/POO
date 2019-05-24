@@ -65,10 +65,10 @@ class Pedido
         class SinStock
         {
             public:
-                SinStock(const Articulo&);
-                const Articulo& articulo() const;
+                SinStock(Articulo&);
+                Articulo& articulo() const;
             private:
-                const Articulo* a;
+                Articulo* a;
         };
         
     private:

@@ -19,10 +19,10 @@ const Usuario& Pedido::Impostor::usuario() const
     return *uP;
 }
 
-Pedido::SinStock::SinStock(const Articulo& ar): a{&ar}
+Pedido::SinStock::SinStock(Articulo& ar): a{&ar}
 {}
 
-const Articulo& Pedido::SinStock::articulo() const
+Articulo& Pedido::SinStock::articulo() const
 {
     return *a;
 }
@@ -36,6 +36,32 @@ Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa,
 Usuario& u, const Tarjeta& c, const Fecha& d):
 card{&c}, date{d}
 {
+    if(!u.n_articulos())
+        throw Vacio(u);
+
+    if(c.caducidad() < d)
+        throw Tarjeta::Caducada(c.caducidad());
+
+    if(!c.activa())
+        throw Tarjeta::Desactivada{};
+
+    if(u.id() != c.titular() -> id())
+        throw Impostor(u);
+
+    for(auto it : u.compra())
+        if(it.first -> stock() < it.second)
+        {
+            const_cast<Usuario::Articulos&> (u.compra()).clear();
+            throw SinStock(*it.first);
+        }
+            
+    Usuario::Articulos shoppingKart{u.compra()};
+
+    for(auto kart : shoppingKart)
+    {
+        pa -> stock() -= kart.second;
+    }
+    
     buysQuantity++;
 }
 

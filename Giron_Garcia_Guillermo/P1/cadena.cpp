@@ -86,7 +86,7 @@ Cadena Cadena::substr(const unsigned i, const int s) const
     Cadena str{(unsigned)s};
     unsigned n{0};
 
-    for(int j = i; j < i + s; ++j)
+    for(unsigned j = i; j < i + s; ++j)
     {  
         str[n] = string_[j];
         ++n;

@@ -95,10 +95,7 @@ class Tarjeta
                 Numero n;
         };
 
-        class Desactivada
-        {
-
-        };
+        class Desactivada{};
     private:
         Tipo type;
         Numero number;

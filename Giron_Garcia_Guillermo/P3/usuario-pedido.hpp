@@ -23,7 +23,6 @@ class Usuario_Pedido
         const Usuario* cliente(Pedido&);
         const Usuario* cliente(const Pedido &);
         const Usuario* cliente(const Pedido &) const;
-        //const Usuario& cliente(const Pedido&) const;
     private:
         Pedidos pedidos_;
         Usuarios usuarios;

@@ -18,9 +18,7 @@ tam_{tam}, s_{new char[tam+1]}
     if (tam < 0)
         throw std::out_of_range((const char*)"Fuera de rango");
 
-    int i;
-
-    for(i = 0; i < tam_; ++i)
+    for(unsignedi = 0; i < tam_; ++i)
         s_[i] = c;
 
     s_[tam_] = '\0';
