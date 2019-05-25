@@ -185,19 +185,17 @@ void mostrar_carro(ostream& os, const Usuario& u)
     setlocale(LC_ALL, "es_ES");
 
     os << "Carrito de la compra de " << u.id() << " [Artículos: " <<
-    u.n_articulos() << ']' << endl;
+    u.n_articulos() << "]\n";
 
-    os << "\tCant. Artículo" << endl;
+    os << "Cant. Artículo\n";
     os <<
-    "==========================================================="
-    << endl;
+    "===========================================================\n";
 
     int cont = 1;
 
     for (auto i : u.compra())
     {
-        os << cont << *i.first << endl;
-
+        os << cont << "    " << *i.first << "\n";
         ++cont;
     }
 }

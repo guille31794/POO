@@ -162,9 +162,9 @@ Tarjeta::~Tarjeta()
     Numbers.erase(number);
 }
 
-ostream& operator <<(ostream& os, const Tarjeta& c)
+ostream& operator <<(ostream& os, Tarjeta::Tipo t)
 {
-    switch (c.tipo())
+    switch (t)
     {
         case Tarjeta::Tipo::VISA: os << "VISA";
                 break;
@@ -176,10 +176,15 @@ ostream& operator <<(ostream& os, const Tarjeta& c)
                 break;
         case Tarjeta::Tipo::JCB: os << "JCB";
                 break;
-        default: os << "Error, ninguna tarjeta conocida" << endl;
+        default: os << "Tipo indeterminado";
     }
 
-    os << '\n' << c.numero() << '\n' << c.titular_facial()
+    return os;
+}
+
+ostream& operator <<(ostream& os, const Tarjeta& c)
+{
+    os << c.tipo() << '\n' << c.numero() << '\n' << c.titular_facial()
     << '\n' << "Caduca: " << setprecision(2) << ((c.caducidad().mes() < 10) ? '0' : ' ') <<
     c.caducidad().mes() << '/' << (c.caducidad().anno() % 100) << endl;
 

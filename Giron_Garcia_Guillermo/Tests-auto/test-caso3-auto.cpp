@@ -147,7 +147,7 @@ FCTMF_FIXTURE_SUITE_BGN(test_p3_clases) {
   FCT_TEST_END();
   
   FCT_TEST_BGN(Pedido - tarjeta caducada) {
-    pU->compra(articulo1, 4649);
+    pU->compra(articulo1, 4);
     try {
       Pedido { *pAsocUsuarioPedido, *pAsocPedidoArticulo,
 	  *pU, *pTarjetaU, fHoy + 30 };
@@ -160,7 +160,7 @@ FCTMF_FIXTURE_SUITE_BGN(test_p3_clases) {
   FCT_TEST_END();
 
   FCT_TEST_BGN(Pedido - tarjeta desactivada) {
-    pU->compra(articulo1, 4649);
+    pU->compra(articulo1, 4);
     pTarjetaU->activa(false);
     fct_chk_ex(Tarjeta::Desactivada,
 	       Pedido(*pAsocUsuarioPedido, *pAsocPedidoArticulo,
@@ -352,7 +352,7 @@ FCTMF_FIXTURE_SUITE_BGN(test_p3_informes) {
   FCT_TEST_BGN(Articulo---Pedido - insercion en flujo de Pedidos) {
     const auto& pedArticulo1 = pAsocPedidoArticulo->ventas(articulo1);
     const string sPedidos { toString(pedArticulo1) };
-    
+  
     chk_incl_str(sPedidos,  toString(articulo1.precio()));
     chk_incl_str(sPedidos,  toString(cantidad_A1_P1));
     chk_incl_cstr(sPedidos, pPed1->fecha().cadena());

@@ -48,7 +48,12 @@ Pedido_Articulo::ItemsPedido Pedido_Articulo::detalle(Pedido& p) const
 
 Pedido_Articulo::Pedidos Pedido_Articulo::ventas(Articulo& a) const
 {
-    return articulosPedido_.find(&a) -> second;
+    
+    auto it = articulosPedido_.find(&a);
+    if(it != articulosPedido_.end())
+        return it -> second;
+    else
+        return Pedidos{};
 }
 
 ostream& operator <<(ostream& os, const Pedido_Articulo::ItemsPedido& items)
@@ -72,7 +77,7 @@ ostream& operator <<(ostream& os, const Pedido_Articulo::ItemsPedido& items)
     os <<
     "==================================================================\n"
     << "Total\t" << setiosflags(ios::fixed) << setprecision(2) <<
-    total << " €";
+    total << " €\n";
 
     return os;
 }
@@ -82,9 +87,9 @@ ostream& operator <<(ostream& os, Pedido_Articulo::Pedidos p)
     setlocale(LC_ALL, "es_ES");
     double total{0};
 
-    os << "[Pedidos: " << p.size() << "\n" <<
+    os << "[Pedidos: " << p.size() << "]\n" <<
     "==================================================================\n"
-    << "  PVP   Cantidad"  << setw(11) << "Fecha de venta\n"
+    << "  PVP   Cantidad\t\t"  << "Fecha de venta\n"
     <<
     "==================================================================\n";
 
@@ -92,9 +97,9 @@ ostream& operator <<(ostream& os, Pedido_Articulo::Pedidos p)
     {
         os << setiosflags(ios::fixed) << setprecision(2) << 
         it.second.precio_venta() << " € " << it.second.cantidad() <<
-        setw(10) << it.first -> fecha() << "\n";
+        "\t\t" << it.first -> fecha() << "\n";
 
-        total += it.second.precio_venta();
+        total += it.second.precio_venta() * it.second.cantidad();
     }
 
     os <<
@@ -113,8 +118,8 @@ ostream& Pedido_Articulo::mostrarDetallePedidos(ostream& os) const
     for(auto it : pedidosArticulos_)
     {
         os << "Pedido num. " << it.first -> numero() << "\nCliente: "
-        << it.first -> tarjeta() -> titular() << "\t\t" << 
-        it.first -> fecha() << "\n";
+        << it.first -> tarjeta() -> titular() -> nombre() << "\t\t" << 
+        it.first -> fecha() << "\n" << it.second << "\n";
 
         total += it.first -> total();
     }
@@ -129,10 +134,9 @@ ostream& Pedido_Articulo::mostrarVentasArticulos(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES");
 
-    //unsigned sales{0};
-
     for(auto it : articulosPedido_)
-        os << "Ventas de " << *it.first << it.second;
+        os << "Ventas de " << *it.first << "\n" <<
+        it.second << "\n\n";
 
     return os;
 }

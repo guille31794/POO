@@ -33,17 +33,11 @@ prize{p}, quantity{q}
 {}
 
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa,
-Usuario& u, const Tarjeta& c, const Fecha& d):
-card{&c}, date{d}
+Usuario& u, const Tarjeta& c, const Fecha& d): num{buysQuantity + 1},
+totalPrize{0.0}, card{&c}, date{d}
 {
     if(!u.n_articulos())
         throw Vacio(u);
-
-    if(c.caducidad() < d)
-        throw Tarjeta::Caducada(c.caducidad());
-
-    if(!c.activa())
-        throw Tarjeta::Desactivada{};
 
     if(u.id() != c.titular() -> id())
         throw Impostor(u);
@@ -54,13 +48,26 @@ card{&c}, date{d}
             const_cast<Usuario::Articulos&> (u.compra()).clear();
             throw SinStock(*it.first);
         }
+
+    if(c.caducidad().anno() <= date.anno() && 
+    c.caducidad().mes() <= date.mes())
+        if(c.caducidad().dia() < date.dia())
+            throw Tarjeta::Caducada(c.caducidad());
+    
+    if(!c.activa())
+        throw Tarjeta::Desactivada{};   
             
     Usuario::Articulos shoppingKart{u.compra()};
 
     for(auto kart : shoppingKart)
     {
-        pa -> stock() -= kart.second;
+        kart.first -> stock() -= kart.second;
+        pa.pedir(*this, *kart.first, kart.first -> precio(), kart.second);
+        totalPrize += kart.first -> precio() * kart.second;
+        u.compra(*kart.first, 0);
     }
+
+    up.asocia(u, *this);
     
     buysQuantity++;
 }
@@ -104,10 +111,10 @@ unsigned Pedido::n_total_pedidos()
 //Operator
 ostream& operator <<(ostream& os, const Pedido& p)
 {
-    os << "Núm. pedido: " << p.numero() << "\nFecha:\t\t"
-    << p.fecha() << "\nPagado con:  " << p.tarjeta() <<
-    "\nImporte:\t" << setiosflags(ios::fixed) << setprecision(2) <<
-    p.total() << " €";
+    os << "Núm. pedido:\t" << p.numero() << "\nFecha:\t\t"
+    << p.fecha() << "\nPagado con:\t" << p.tarjeta() -> tipo() <<
+    " n.º: " << p.tarjeta() -> numero() << "\nImporte:\t" << 
+    setiosflags(ios::fixed) << setprecision(2) << p.total() << " €";
 
     return os;
 }
