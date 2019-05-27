@@ -105,7 +105,7 @@ ostream& operator <<(ostream& os, Pedido_Articulo::Pedidos p)
     os <<
     "==================================================================\n"
     << setiosflags(ios::fixed) << setprecision(2) << total << " €\t\t\t"
-    << p.size();
+    << p.size() << '\n';
 
     return os;
 }
@@ -125,7 +125,7 @@ ostream& Pedido_Articulo::mostrarDetallePedidos(ostream& os) const
     }
 
     os << "TOTAL VENTAS\t\t" << setiosflags(ios::fixed) << setprecision(2)
-    << total << " €";
+    << total << " €\n";
 
     return os;
 }

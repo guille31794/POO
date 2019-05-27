@@ -40,8 +40,3 @@ const Usuario *Usuario_Pedido::cliente(const Pedido &p) const
 {
     return p.tarjeta()->titular();
 }
-
-/*const Usuario& Usuario_Pedido::cliente(const Pedido& p) const
-{
-    return p.tarjeta() -> titular();
-}*/
