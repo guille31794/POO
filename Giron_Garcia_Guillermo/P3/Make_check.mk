@@ -8,12 +8,12 @@ DIR=../dsl-comprobaciones/
 # Obligatorio Clang, versión 3.9 al menos
 CXX         := clang++
 CPPFLAGS    := -I${DIR} $(shell llvm-config --cppflags)
-CXXFLAGS    := -std=c++14
+CXXFLAGS    := -std=c++17
 # Descomentar la siguiente línea para obtener un ejecutable enlazado 
 # estáticamente muy grande y pesado pero que se puede distribuir al 
 # alumnado para que no tengan que instalarse todos los paquetes de 
 # desarrollo de LLVM/CLang.
-LDFLAGS     := # -static
+LDFLAGS     := #-static
 LLVMLDFLAGS := $(shell llvm-config --libs) $(LDFLAGS)
 COMMONSRCS  := $(DIR)caclibrary.cpp $(DIR)execute.cpp $(DIR)matchers.cpp
 SOURCES     := pedido_check.cpp ${COMMONSRCS}
