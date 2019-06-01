@@ -26,11 +26,12 @@ Cadena::Cadena(Cadena&& s): string_{s.string_}, size_{s.size_}
 //Operator
 Cadena& Cadena::operator=(Cadena&& s)
 {
-    if(*this != s)
+    if(this != &s)
     {
+        delete[] string_;
         size_ = s.size_;
         string_ = new char[size_ + 1];
-        strcpy(string_, s.string_);
+        string_ = s.string_;
         s.string_ = nullptr;
         s.size_ = 0;
     }

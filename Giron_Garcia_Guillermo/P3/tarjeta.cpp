@@ -16,14 +16,11 @@ Numero::Numero(const Cadena& s): num{s}
 {
     // ###############################################################
     auto res = remove_if(num.begin(), num.end(), EsBlanco());
-    num.adjustSize();
     num = num.substr(0, num.length() - strlen(res));
     // ###############################################################
     
     if (num.end() != find_if_not(num.begin(), num.end(), EsDigito()))
         throw Incorrecto(DIGITOS);
-    
-    //auto pEnd = 
     
     if (num.length() < 13 || num.length() > 19)
         throw Incorrecto(LONGITUD);

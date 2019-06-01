@@ -18,7 +18,6 @@ class Cadena
         Cadena(const char* str);
         Cadena(const Cadena& str);
         Cadena(Cadena&& s);
-        //Cadena(char*&& s);
 
         //Operator
         Cadena& operator =(const Cadena& s) = default;

@@ -151,6 +151,8 @@ FCTMF_FIXTURE_SUITE_BGN(test_p3_clases) {
     try {
       Pedido { *pAsocUsuarioPedido, *pAsocPedidoArticulo,
 	  *pU, *pTarjetaU, fHoy + 30 };
+      cout << fHoy << endl;
+      cout << fHoy + 30 << endl;
       fct_chk(!"Se esperaba una excepción Tarjeta::Caducada");
     }
     catch (const Tarjeta::Caducada& ex) {

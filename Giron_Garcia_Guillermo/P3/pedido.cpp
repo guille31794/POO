@@ -49,11 +49,9 @@ totalPrize{0.0}, card{&c}, date{d}
             throw SinStock(*it.first);
         }
 
-    if(c.caducidad().anno() <= date.anno() && 
-    c.caducidad().mes() <= date.mes())
-        if(c.caducidad().dia() < date.dia())
-            throw Tarjeta::Caducada(c.caducidad());
-    
+    if(c.caducidad() <= date)
+        throw Tarjeta::Caducada(c.caducidad());
+
     if(!c.activa())
         throw Tarjeta::Desactivada{};   
             

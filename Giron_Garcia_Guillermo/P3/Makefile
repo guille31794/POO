@@ -114,7 +114,7 @@ check:  ${OWN_SRCS}
 
 # Ejecuta los tests comprobando que no haya fugas de memoria
 valgrind: ${MAIN_EXE} ${TEST_EXE}
-	valgrind --quiet ./${TEST_EXE} --logger=minimal
+	valgrind --quiet ./${TEST_EXE} --logger=minimal --track-origins=yes
 	valgrind --quiet ./${MAIN_EXE}
 
 # Construye el programa de prueba de consola

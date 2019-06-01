@@ -189,14 +189,18 @@ Fecha operator -(const unsigned n, const Fecha& f)
 
 bool operator <(const Fecha& f1, const Fecha& f2)
 {
-    bool v = false;
+    bool v;
 
-    if(f1.anno() < f2.anno())
-        v = true;
-    else if(f1.mes() < f2.mes())
-        v = true;
-    else if(f1.dia() < f2.dia())
-        v = true;
+    v = (f1.anno() < f2.anno());
+
+    if(!v)
+        v = (f1.mes() < f2.mes()) &&
+        (f1.anno() <= f2.anno());
+
+    if(!v)
+        v = (f1.dia() < f2.dia()) &&
+        (f1.mes() <= f2.mes()) &&
+        (f1.anno() <= f2.anno());
 
     return v;
 }
