@@ -65,9 +65,23 @@ double& Articulo::precio()
 //Operators
 ostream& operator <<(ostream& os, const Articulo& a)
 {
-    os << '[' << a.referencia() << "] \"" << a.titulo() << "\", " << 
-    a.f_publi().anno() << ". " << setiosflags(ios::fixed) << setprecision(2)
-    << a.precio() << " €";
+    unsigned cont{0};
+    os << '[' << a.referencia() << "] \"" << a.titulo() << "\", ";
+
+    for(auto authors : a.autores())
+    {
+        os << authors -> apellidos();
+
+        if(cont < a.autores().size() - 1)
+            os << ", ";
+        
+        ++cont;
+    }
+
+    os << ". " << a.f_publi().anno() << ". " << setiosflags(ios::fixed) << setprecision(2)
+    << a.precio() << " €\n\t";
+
+    a.impresion_especifica(os);
 
     return os;
 }
