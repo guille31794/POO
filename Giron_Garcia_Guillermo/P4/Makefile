@@ -46,7 +46,7 @@ CXX = clang++
 # c++14: estándar de 2014 - Recomendado si su compilador lo admite.
 # c++17: estándar de 2017 - Se puede usar si su compilador lo admite.
 # c++2y: estándar previsto para 2020. Experimental, no recomendado.
-STD = c++14
+STD = c++17
 
 # Opciones para el compilador. Añada o quite las que prefiera pero deje
 # al menos la primera. Recomendado: no quite ninguna.
@@ -64,7 +64,9 @@ CPPFLAGS = ${INCLUDES} -D${NOMBREPRACTICA}
 # --- Fin parte configurable
 
 LOCALLIBS = cadena.o fecha.o luhn.o
+ifeq ($(UNAME), Linux)
 EXTLIBS   = -lcrypt
+endif
 LIBS      = ${LOCALLIBS} ${EXTLIBS}
 VPATH     = .:${DIRTESTS}:${DIRFECHACADENA}:${DIRLUHN}
 
@@ -123,7 +125,7 @@ check:  ${OWN_SRCS}
 # Ejecuta los tests comprobando que no haya fugas de memoria
 # - valgrind: http://valgrind.org
 valgrind: ${MAIN_EXE} ${TEST_EXE}
-	valgrind --quiet ./${TEST_EXE} --logger=minimal
+	valgrind --quiet ./${TEST_EXE} --logger=minimal --track-origins=yes
 	valgrind --quiet ./${MAIN_EXE}
 
 ## Compilación ## 
