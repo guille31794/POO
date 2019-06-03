@@ -4,6 +4,7 @@
 
 Cadena::Cadena(const unsigned size, const char c): string_{new char[size + 1]}, size_{size}
 {
+    memset(string_, '\0', size_+1);
     memset(string_, c, size_);
 }
 

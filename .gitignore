@@ -15,3 +15,6 @@
 *.d
 core
 vgcore*
+*.gcda
+*.gcno
+*.gcov

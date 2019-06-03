@@ -64,6 +64,7 @@ CPPFLAGS = ${INCLUDES} -D${NOMBREPRACTICA}
 # --- Fin parte configurable
 
 LOCALLIBS = cadena.o fecha.o luhn.o
+UNAME := $(shell uname)
 ifeq ($(UNAME), Linux)
 EXTLIBS   = -lcrypt
 endif
@@ -176,8 +177,8 @@ ${TESTS_OBJS}: ${TESTS_SRCS} ${TESTS_HDRS}
 #
 # para ver qué líneas se han ejecutado y cuáles no en fichero.cpp.gcov.
 
-#CXXFLAGS = -pg -g -fprofile-arcs -ftest-coverage -std=${STD} -pedantic -Wall
-#LDFLAGS  = -pg -fprofile-arcs
+CXXFLAGS = -pg -g -fprofile-arcs -ftest-coverage -std=${STD} -pedantic -Wall
+LDFLAGS  = -pg -fprofile-arcs
 
 ## Limpieza
 #  normal...
