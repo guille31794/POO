@@ -20,7 +20,7 @@ class Autor
         const Cadena& apellidos() const;
         const Cadena& direccion() const;
     private:
-        Cadena name, surnames, address;
+        const Cadena name, surnames, address;
 };
 
 class Articulo
@@ -28,7 +28,7 @@ class Articulo
     public:
         //Constructors
         typedef set<Autor*> Autores;
-        explicit Articulo(Autores&, const Cadena&, const Cadena&, const Fecha& , 
+        explicit Articulo(const Autores&, const Cadena&, const Cadena&, const Fecha& , 
         const double);
 
         //Getters
@@ -54,7 +54,6 @@ class Articulo
         Fecha date;
         Autores authors;
         double prize;
-        unsigned stock_;
 };
 
 ostream& operator <<(ostream&, const Articulo&);
@@ -73,7 +72,7 @@ class ArticuloAlmacenable: public Articulo
 
         //Abstract class
         virtual void impresion_especifica(ostream&) const = 0;
-        virtual ~ArticuloAlmacenable();
+        virtual ~ArticuloAlmacenable() = default;
     protected:
         unsigned stock_;
 };
@@ -85,21 +84,23 @@ class Libro: public ArticuloAlmacenable
         const double, const unsigned, const unsigned = 0);
         //Getters
         unsigned n_paginas() const;
-
         void impresion_especifica(ostream&) const;
+        //Destructor
+        ~Libro() = default;
     private:
         unsigned pages;
 };
 
-class Cederrom: public ArticuloAlmacenable
+class Cederron: public ArticuloAlmacenable
 {
     public:
-        Cederrom(Autores&, const Cadena&, const Cadena&, const Fecha&,
+        Cederron(Autores&, const Cadena&, const Cadena&, const Fecha&,
         const double, const unsigned, const unsigned = 0);
         //Getters
         unsigned tam() const;
-
         void impresion_especifica(ostream&) const;
+        //Destructor
+        ~Cederron() = default;
     private:
         unsigned size_;
 };
@@ -112,8 +113,9 @@ class LibroDigital: public Articulo
         const double, const Fecha&);
         //Getters
         const Fecha& f_expir() const;
-
         void impresion_especifica(ostream&) const;
+        //Destructor
+        ~LibroDigital() = default;
     private:
         Fecha expiration;
 };

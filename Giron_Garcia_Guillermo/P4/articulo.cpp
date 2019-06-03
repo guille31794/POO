@@ -26,9 +26,14 @@ const Cadena& Autor::direccion() const
 //Class Articulo
 //########################################################
 //Constructor
-Articulo::Articulo(Autores& au, const Cadena& cod, const Cadena& t, const Fecha& f,
-double p): authors{au}, cod_{cod}, title{t}, date{f}, prize{p}
-{}
+Articulo::Articulo(const Autores& au, const Cadena& cod, const Cadena& t, const Fecha& f,
+double p): cod_{cod}, title{t}, date{f}, prize{p}
+{
+    if(au.empty())
+        throw Autores_vacios();
+    else
+        authors = au;
+}
 
 //Getters
 Cadena Articulo::referencia() const
@@ -132,19 +137,19 @@ void Libro::impresion_especifica(ostream& os) const
 //Class CD
 //##############################################################
 //Constructor
-Cederrom::Cederrom(Autores& au, const Cadena& ref, const Cadena& ti, 
+Cederron::Cederron(Autores& au, const Cadena& ref, const Cadena& ti, 
 const Fecha& d, const double pr, const unsigned si,
 const unsigned s):
 ArticuloAlmacenable{au, ref, ti, d, pr, s}, size_{si}
 {}
 
 //Getters
-unsigned Cederrom::tam() const
+unsigned Cederron::tam() const
 {
     return size_;
 }
 
-void Cederrom::impresion_especifica(ostream& os) const
+void Cederron::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES");
     os << size_ << "MB, " << stock_ << " unidades.\n";
