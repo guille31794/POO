@@ -9,11 +9,13 @@ Cadena::Cadena(const unsigned size, const char c): string_{new char[size + 1]}, 
 
 Cadena::Cadena(const char* str): string_{new char[strlen(str) + 1]}, size_{(unsigned)strlen(str)}
 {
+    memset(string_, '\0', size_+1);
     strcpy(string_, str);
 }
 
 Cadena::Cadena(const Cadena& s): string_{new char[s.size_ + 1]}, size_{s.size_}
 {
+    memset(string_, '\0', size_+1);
     strcpy(string_, s.string_);
 }
 

@@ -4,7 +4,7 @@
 //########################################################
 //Constructor
 Autor::Autor(const Cadena& n, const Cadena& sn, const Cadena& ad): 
-name{n}, surnames{sn}, address{ad}
+name{n}, surname{sn}, address{ad}
 {}
 
 //Getters
@@ -15,7 +15,7 @@ const Cadena& Autor::nombre() const
 
 const Cadena& Autor::apellidos() const
 {
-    return surnames;
+    return surname;
 }
 
 const Cadena& Autor::direccion() const
@@ -26,13 +26,11 @@ const Cadena& Autor::direccion() const
 //Class Articulo
 //########################################################
 //Constructor
-Articulo::Articulo(const Autores& au, const Cadena& cod, const Cadena& t, const Fecha& f,
-double p): cod_{cod}, title{t}, date{f}, prize{p}
+Articulo::Articulo(const Autores &au, const Cadena &cod, const Cadena &t, const Fecha &f,
+double p) : cod_{cod}, title{t}, date{f}, authors{au}, prize{p}
 {
     if(au.empty())
         throw Autores_vacios();
-    else
-        authors = au;
 }
 
 //Getters
@@ -94,7 +92,7 @@ ostream& operator <<(ostream& os, const Articulo& a)
 //Class ArticuloAlmacenable
 //#############################################################
 //Constructor
-ArticuloAlmacenable::ArticuloAlmacenable(Autores& au, 
+ArticuloAlmacenable::ArticuloAlmacenable(const Autores& au, 
 const Cadena& ref, const Cadena& ti, const Fecha& d, const double pr,
 const unsigned s):
 Articulo{au, ref, ti, d, pr}, stock_{s}
@@ -115,14 +113,14 @@ unsigned& ArticuloAlmacenable::stock()
 //Class Libro
 //###############################################################
 //Constructor
-Libro::Libro(Autores& au, const Cadena& ref, const Cadena& ti, 
+Libro::Libro(const Autores& au, const Cadena& ref, const Cadena& ti, 
 const Fecha& d, const double pr, const unsigned p,
 const unsigned s):
 ArticuloAlmacenable{au, ref, ti, d, pr, s}, pages{p}
 {}
 
 //Getters
-unsigned Libro::n_paginas() const
+unsigned Libro::n_pag() const
 {
     return pages;
 }
@@ -137,7 +135,7 @@ void Libro::impresion_especifica(ostream& os) const
 //Class CD
 //##############################################################
 //Constructor
-Cederron::Cederron(Autores& au, const Cadena& ref, const Cadena& ti, 
+Cederron::Cederron(const Autores& au, const Cadena& ref, const Cadena& ti, 
 const Fecha& d, const double pr, const unsigned si,
 const unsigned s):
 ArticuloAlmacenable{au, ref, ti, d, pr, s}, size_{si}
@@ -158,7 +156,7 @@ void Cederron::impresion_especifica(ostream& os) const
 //Class LibroDigital
 //##############################################################
 //Constructor
-LibroDigital::LibroDigital(Autores& au, const Cadena& ref, 
+LibroDigital::LibroDigital(const Autores& au, const Cadena& ref, 
 const Cadena& ti, const Fecha& d, const double pr, const Fecha& ex):
 Articulo{au, ref, ti, d, pr}, expiration{ex}
 {}

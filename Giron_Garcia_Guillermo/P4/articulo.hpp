@@ -1,5 +1,5 @@
-#ifndef Articulo_HPP_
-#define Articulo_HPP_
+#ifndef ARTICULO_HPP
+#define ARTICULO_HPP
 
 #include "fecha.hpp"
 #include "cadena.hpp"
@@ -20,23 +20,27 @@ class Autor
         const Cadena& apellidos() const;
         const Cadena& direccion() const;
     private:
-        const Cadena name, surnames, address;
+        const Cadena name, surname, address;
 };
 
 class Articulo
 {
     public:
-        //Constructors
+        //Exception stuff
+        class Autores_vacios{};
+
+        //Definition types
         typedef set<Autor*> Autores;
-        explicit Articulo(const Autores&, const Cadena&, const Cadena&, const Fecha& , 
-        const double);
+
+        //Constructor
+        explicit Articulo(const Autores&, const Cadena&, const Cadena&,
+        const Fecha&, const double);
 
         //Getters
         Cadena referencia() const;
         Cadena titulo() const;
         Fecha f_publi() const;
         double precio() const;
-        
         const Autores& autores() const;
 
         //Setters
@@ -45,28 +49,26 @@ class Articulo
         //Abstract class
         virtual void impresion_especifica(ostream&) const = 0;
         virtual ~Articulo() = default;
-
-        //Exception stuff
-        class Autores_vacios{}; 
     private:
-        Cadena cod_;
-        Cadena title;
+        Cadena cod_, title;
         Fecha date;
         Autores authors;
         double prize;
 };
 
+//Operator
 ostream& operator <<(ostream&, const Articulo&);
 
 class ArticuloAlmacenable: public Articulo
 {
     public:
         //Constructor
-        ArticuloAlmacenable(Autores&, const Cadena&, const Cadena&, const Fecha& , 
-        const double, const unsigned = 0);
+        ArticuloAlmacenable(const Autores&, const Cadena&, const Cadena&,
+        const Fecha&, const double, const unsigned = 0);
 
         //Getters
         unsigned stock() const;
+
         //Setters
         unsigned& stock();
 
@@ -80,11 +82,15 @@ class ArticuloAlmacenable: public Articulo
 class Libro: public ArticuloAlmacenable
 {
     public:
-        Libro(Autores&, const Cadena&, const Cadena&, const Fecha& , 
-        const double, const unsigned, const unsigned = 0);
+        //Constructor
+        Libro(const Autores&, const Cadena&, const Cadena&,
+        const Fecha&, const double, const unsigned, 
+        const unsigned = 0);
+
         //Getters
-        unsigned n_paginas() const;
+        unsigned n_pag() const;
         void impresion_especifica(ostream&) const;
+
         //Destructor
         ~Libro() = default;
     private:
@@ -94,11 +100,15 @@ class Libro: public ArticuloAlmacenable
 class Cederron: public ArticuloAlmacenable
 {
     public:
-        Cederron(Autores&, const Cadena&, const Cadena&, const Fecha&,
-        const double, const unsigned, const unsigned = 0);
+        //Constructor
+        Cederron(const Autores&, const Cadena&, const Cadena&,
+        const Fecha&, const double, const unsigned, 
+        const unsigned = 0);
+
         //Getters
         unsigned tam() const;
         void impresion_especifica(ostream&) const;
+
         //Destructor
         ~Cederron() = default;
     private:
@@ -109,11 +119,13 @@ class LibroDigital: public Articulo
 {
     public:
         //Constructor
-        LibroDigital(Autores&, const Cadena&, const Cadena&, const Fecha& , 
-        const double, const Fecha&);
+        LibroDigital(const Autores&, const Cadena&, const Cadena&,
+        const Fecha&,const double, const Fecha&);
+
         //Getters
         const Fecha& f_expir() const;
         void impresion_especifica(ostream&) const;
+
         //Destructor
         ~LibroDigital() = default;
     private:
