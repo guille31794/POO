@@ -69,7 +69,7 @@ double& Articulo::precio()
 ostream& operator <<(ostream& os, const Articulo& a)
 {
     unsigned cont{0};
-    os << '[' << a.referencia() << "] \"" << a.titulo() << "\", ";
+    os << '[' << a.referencia() << "] \"" << a.titulo() << "\", de ";
 
     for(auto authors : a.autores())
     {
@@ -129,7 +129,7 @@ void Libro::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES");
     os << pages << " págs., " << stock_;
-    stock_ == 1 ? os << " unidad.\n" : os << " unidades.\n";
+    stock_ == 1 ? os << " unidad.\n" : os << " unidades.";
 }
 
 //Class CD
@@ -150,7 +150,7 @@ unsigned Cederron::tam() const
 void Cederron::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES");
-    os << size_ << "MB, " << stock_ << " unidades.\n";
+    os << size_ << " MB, " << stock_ << " unidades.";
 }
 
 //Class LibroDigital
@@ -170,6 +170,6 @@ const Fecha& LibroDigital::f_expir() const
 void LibroDigital::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES");
-    os << "A la venta hasta el " << expiration << ".\n";
+    os << "A la venta hasta el " << expiration << ".";
 }
 

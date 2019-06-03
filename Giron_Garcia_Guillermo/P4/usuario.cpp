@@ -195,7 +195,12 @@ void mostrar_carro(ostream& os, const Usuario& u)
 
     for (auto i : u.compra())
     {
-        os << cont << "    " << *i.first << "\n";
+        os << cont << " [" << i.first->referencia() 
+        << "] \"" << i.first->titulo() << "\", " 
+        << i.first->f_publi().anno() << ". " << 
+        setiosflags(ios::fixed) << setprecision(2) << 
+        i.first->precio() << " €." << endl;
+        
         ++cont;
     }
 }

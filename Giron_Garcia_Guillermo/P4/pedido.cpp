@@ -67,7 +67,6 @@ totalPrize{0.0}, card{&c}, date{d}
         {
             art -> stock() -= kart.second;
             pa.pedir(*this, *kart.first, kart.first -> precio(), kart.second);
-            totalPrize += kart.first -> precio() * kart.second;
             u.compra(*kart.first, 0);
             availableStock++;
         }
@@ -76,13 +75,19 @@ totalPrize{0.0}, card{&c}, date{d}
             ++n_ebooks;
             u.compra(*ebook, 0);
             if (ebook -> f_expir() < d)
+            {
                 ++expired;
-
+                continue;
+            }
+            
             pa.pedir(*this, *ebook, kart.first -> precio(), kart.second);
         }
 
-        totalPrize += kart.first -> precio() * kart.second;
+        totalPrize += kart.first->precio() * kart.second;
     }
+
+    if(!availableStock && expired > 0 && n_ebooks == expired)
+        throw Vacio(u);
 
     up.asocia(u, *this);
     
@@ -131,7 +136,7 @@ ostream& operator <<(ostream& os, const Pedido& p)
     os << "Núm. pedido:\t" << p.numero() << "\nFecha:\t\t"
     << p.fecha() << "\nPagado con:\t" << p.tarjeta() -> tipo() <<
     " n.º: " << p.tarjeta() -> numero() << "\nImporte:\t" << 
-    setiosflags(ios::fixed) << setprecision(2) << p.total() << " €";
+    setiosflags(ios::fixed) << setprecision(2) << p.total() << " €\n";
 
     return os;
 }
