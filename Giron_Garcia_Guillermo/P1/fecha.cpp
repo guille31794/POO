@@ -235,7 +235,7 @@ const char* Fecha::cadena() const
     setlocale(LC_ALL, "es_ES");
 
     tm time{0};
-    char* date{new char[250]};
+    char date[100] = "";
 
     time.tm_mday = this -> day_;
     time.tm_mon = this -> month_ - 1;
@@ -243,12 +243,13 @@ const char* Fecha::cadena() const
 
     mktime(&time);
 
-    strftime(date, 250, "%A %d de %B de %Y", &time);
+    strftime(date, 99, "%A %d de %B de %Y", &time);
 
-    Cadena str{date};
-    delete[] date;
+    //Cadena str{date};
+    //delete[] date;
 
-    return str.c_str();
+    //return str.c_str();
+    return date;
 }
 
 ostream& operator <<(ostream& os, const Fecha& f)
