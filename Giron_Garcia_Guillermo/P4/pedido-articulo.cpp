@@ -36,7 +36,7 @@ void Pedido_Articulo::pedir(Pedido& p, Articulo& a, double prize, unsigned q)
 }
 
 void Pedido_Articulo::pedir(Articulo& a, Pedido& p,
-const double prize, const unsigned q)
+double prize, unsigned q)
 {
     pedir(p, a, prize, q);
 }

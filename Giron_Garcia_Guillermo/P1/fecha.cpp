@@ -6,7 +6,7 @@ const unsigned Fecha::AnnoMinimo{1902};
 
 //Constructors
 
-Fecha::Fecha(const unsigned d, const unsigned m, const unsigned y):
+Fecha::Fecha(unsigned d, unsigned m, unsigned y):
 day_{d}, month_{m}, year_{y}
 {
         time_t ti = time(nullptr);
@@ -153,36 +153,36 @@ Fecha& Fecha::operator --()
     return *this += -1; 
 }
 
-Fecha Fecha::operator ++(const int n)
+Fecha Fecha::operator ++(int n)
 {
     Fecha t(*this);
     *this += 1;
     return t; 
 }
 
-Fecha Fecha::operator --(const int n)
+Fecha Fecha::operator --(int n)
 {
     Fecha t(*this);
     *this += -1;
     return t; 
 }
 
-Fecha operator +(const Fecha& f, const unsigned n)
+Fecha operator +(const Fecha& f, unsigned n)
 {
     return Fecha{f} += n;
 }
 
-Fecha operator +(const unsigned n, const Fecha& f)
+Fecha operator +(unsigned n,  Fecha& f)
 {
     return f + n;
 }
 
-Fecha operator -(const Fecha& f, const unsigned n)
+Fecha operator -(const Fecha& f, unsigned n)
 {
     return Fecha{f} -= n;
 }
 
-Fecha operator -(const unsigned n, const Fecha& f)
+Fecha operator -(unsigned n, const Fecha& f)
 {
     return f - n;
 }

@@ -14,7 +14,7 @@ class Cadena
 {
     public:
         //Constructors
-        explicit Cadena(const unsigned size = 0, const char c = ' ');
+        explicit Cadena(unsigned size = 0, char c = ' ');
         Cadena(const char* str);
         Cadena(const Cadena& str);
         Cadena(Cadena&& s);
@@ -37,7 +37,7 @@ class Cadena
         Cadena& operator +=(const Cadena& s);
 
         //Other methods
-        Cadena substr(const unsigned i, const int s) const;
+        Cadena substr(unsigned i, int s) const;
         
         // improved_by_guilogar
         char* c_str() const;

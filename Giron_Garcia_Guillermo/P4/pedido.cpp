@@ -28,7 +28,7 @@ Articulo& Pedido::SinStock::articulo() const
 }
 
 //Constructor
-LineaPedido::LineaPedido(const double p, const unsigned q):
+LineaPedido::LineaPedido(double p, unsigned q):
 prize{p}, quantity{q}
 {}
 

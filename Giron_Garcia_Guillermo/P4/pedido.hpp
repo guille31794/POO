@@ -20,7 +20,7 @@ class LineaPedido
 {
     public:
         //Constructor
-        explicit LineaPedido(const double, const unsigned = 1);
+        explicit LineaPedido(double, unsigned = 1);
         //Getters
         double precio_venta() const;
         unsigned cantidad() const;

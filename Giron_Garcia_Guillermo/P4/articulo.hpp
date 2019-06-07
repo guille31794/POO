@@ -34,7 +34,7 @@ class Articulo
 
         //Constructor
         explicit Articulo(const Autores&, const Cadena&, const Cadena&,
-        const Fecha&, const double);
+        const Fecha&, double);
 
         //Getters
         Cadena referencia() const;
@@ -64,7 +64,7 @@ class ArticuloAlmacenable: public Articulo
     public:
         //Constructor
         ArticuloAlmacenable(const Autores&, const Cadena&, const Cadena&,
-        const Fecha&, const double, const unsigned = 0);
+        const Fecha&, double, unsigned = 0);
 
         //Getters
         unsigned stock() const;
@@ -84,8 +84,7 @@ class Libro: public ArticuloAlmacenable
     public:
         //Constructor
         Libro(const Autores&, const Cadena&, const Cadena&,
-        const Fecha&, const double, const unsigned, 
-        const unsigned = 0);
+        const Fecha&, double, unsigned, unsigned = 0);
 
         //Getters
         unsigned n_pag() const;
@@ -102,8 +101,7 @@ class Cederron: public ArticuloAlmacenable
     public:
         //Constructor
         Cederron(const Autores&, const Cadena&, const Cadena&,
-        const Fecha&, const double, const unsigned, 
-        const unsigned = 0);
+        const Fecha&, double, unsigned, unsigned = 0);
 
         //Getters
         unsigned tam() const;
@@ -120,7 +118,7 @@ class LibroDigital: public Articulo
     public:
         //Constructor
         LibroDigital(const Autores&, const Cadena&, const Cadena&,
-        const Fecha&,const double, const Fecha&);
+        const Fecha&, double, const Fecha&);
 
         //Getters
         const Fecha& f_expir() const;

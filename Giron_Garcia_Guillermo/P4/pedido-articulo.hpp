@@ -34,8 +34,8 @@ class Pedido_Articulo
         typedef map<Pedido*, ItemsPedido, OrdenaPedidos> PedidosArticulos;
         typedef map<Articulo*, Pedidos, OrdenaArticulos> ArticulosPedido;
 
-        void pedir(Pedido&, Articulo&, const double, unsigned = 1);
-        void pedir(Articulo&, Pedido&, const double, unsigned = 1);
+        void pedir(Pedido&, Articulo&, double, unsigned = 1);
+        void pedir(Articulo&, Pedido&, double, unsigned = 1);
 
         ItemsPedido detalle(Pedido&) const;
         Pedidos ventas(Articulo&) const;

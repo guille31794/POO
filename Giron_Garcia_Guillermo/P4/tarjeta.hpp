@@ -70,7 +70,7 @@ class Tarjeta
         const bool activa() const;
 
         //Setters
-        bool activa(const bool = true);
+        bool activa(bool = true);
         void anula_titular();
 
         //Destructor

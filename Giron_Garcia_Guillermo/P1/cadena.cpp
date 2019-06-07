@@ -2,21 +2,19 @@
 
 // Constructors
 
-Cadena::Cadena(const unsigned size, const char c): string_{new char[size + 1]}, size_{size}
+Cadena::Cadena(unsigned size, char c): string_{new char[size + 1]}, size_{size}
 {
-    memset(string_, '\0', size_+1);
     memset(string_, c, size_);
+    string_[size_] = 0;
 }
 
-Cadena::Cadena(const char* str): string_{new char[strlen(str) + 1]}, size_{(unsigned)strlen(str)}
+Cadena::Cadena(const char* str): string_{new char[(size_ = strlen(str)) + 1]}
 {
-    memset(string_, '\0', size_+1);
     strcpy(string_, str);
 }
 
 Cadena::Cadena(const Cadena& s): string_{new char[s.size_ + 1]}, size_{s.size_}
 {
-    memset(string_, '\0', size_+1);
     strcpy(string_, s.string_);
 }
 
@@ -82,7 +80,7 @@ char& Cadena::at(unsigned n)
     return string_[n];
 }
 
-Cadena Cadena::substr(const unsigned i, const int s) const
+Cadena Cadena::substr(unsigned i, int s) const
 {
     if(i < 0 || i > size_ || (i >= size_ && s > 0) || i+s > size_ || s < 0)
         throw out_of_range("Index out of range.");
@@ -168,14 +166,12 @@ ostream& operator <<(ostream& os, const Cadena& s)
 
 istream& operator >>(istream& is, Cadena& s)
 {
-    char* string = new char[33];
+    char string[33]{""}; 
 
     is.width(33);
     is >> string;
     
     s = Cadena{string};
-
-    delete[] string;
 
     return is;
 }

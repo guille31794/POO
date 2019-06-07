@@ -20,17 +20,17 @@ class Fecha
         static const unsigned AnnoMaximo;
 
         //Constructors
-        explicit Fecha(const unsigned day = 0, const unsigned month = 0, const unsigned year = 0);
+        explicit Fecha(unsigned day = 0, unsigned month = 0, unsigned year = 0);
         Fecha(const char* s);
 
         //Exception class
         class Invalida
         {
             public:
-                //Constructor
+                //ructor
                 Invalida(const char* s);
                 //Observer
-                const char* por_que() const;
+                 char* por_que() ;
             private:
                 char* error;
         };
@@ -39,12 +39,12 @@ class Fecha
         
         Fecha& operator =(const Fecha& f) = default;
         Fecha& operator ++();
-        Fecha operator ++(const int n);
+        Fecha operator ++(int n);
         Fecha& operator --();
-        Fecha operator --(const int n);
+        Fecha operator --(int n);
         Fecha& operator +=(int n);
         Fecha& operator -=(int n);
-        const char* cadena() const;
+         char* cadena() const;
 
         //Getters
         int dia() const;
@@ -57,10 +57,10 @@ class Fecha
 };
 
 //External Operators
-Fecha operator +(const Fecha& f, const unsigned n);
+Fecha operator +(const Fecha& f, unsigned n);
 Fecha operator +(unsigned n, const Fecha& f);
-Fecha operator -(const Fecha& f, const unsigned n);
-Fecha operator -(const unsigned n, const Fecha& f);
+Fecha operator -(const Fecha& f, unsigned n);
+Fecha operator -(unsigned n, const Fecha& f);
 bool operator <(const Fecha& f1, const Fecha& f2);
 bool operator >(const Fecha& f1, const Fecha& f2);
 bool operator <=(const Fecha& f1, const Fecha& f2);

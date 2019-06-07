@@ -93,8 +93,8 @@ ostream& operator <<(ostream& os, const Articulo& a)
 //#############################################################
 //Constructor
 ArticuloAlmacenable::ArticuloAlmacenable(const Autores& au, 
-const Cadena& ref, const Cadena& ti, const Fecha& d, const double pr,
-const unsigned s):
+const Cadena& ref, const Cadena& ti, const Fecha& d, double pr,
+unsigned s):
 Articulo{au, ref, ti, d, pr}, stock_{s}
 {}
 
@@ -114,7 +114,7 @@ unsigned& ArticuloAlmacenable::stock()
 //###############################################################
 //Constructor
 Libro::Libro(const Autores& au, const Cadena& ref, const Cadena& ti, 
-const Fecha& d, const double pr, const unsigned p,
+const Fecha& d, double pr, unsigned p,
 const unsigned s):
 ArticuloAlmacenable{au, ref, ti, d, pr, s}, pages{p}
 {}
@@ -136,8 +136,7 @@ void Libro::impresion_especifica(ostream& os) const
 //##############################################################
 //Constructor
 Cederron::Cederron(const Autores& au, const Cadena& ref, const Cadena& ti, 
-const Fecha& d, const double pr, const unsigned si,
-const unsigned s):
+const Fecha& d, double pr, unsigned si, unsigned s):
 ArticuloAlmacenable{au, ref, ti, d, pr, s}, size_{si}
 {}
 
@@ -157,7 +156,7 @@ void Cederron::impresion_especifica(ostream& os) const
 //##############################################################
 //Constructor
 LibroDigital::LibroDigital(const Autores& au, const Cadena& ref, 
-const Cadena& ti, const Fecha& d, const double pr, const Fecha& ex):
+const Cadena& ti, const Fecha& d, double pr, const Fecha& ex):
 Articulo{au, ref, ti, d, pr}, expiration{ex}
 {}
 
