@@ -30,7 +30,7 @@ class Fecha
                 //ructor
                 Invalida(const char* s);
                 //Observer
-                 char* por_que() ;
+                const char* por_que() const;
             private:
                 char* error;
         };
@@ -44,7 +44,7 @@ class Fecha
         Fecha operator --(int n);
         Fecha& operator +=(int n);
         Fecha& operator -=(int n);
-         char* cadena() const;
+        const char* cadena() const;
 
         //Getters
         int dia() const;
