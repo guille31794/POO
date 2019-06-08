@@ -94,6 +94,68 @@ card{c}, date{d}, totalPrize{0.0}
     buysQuantity++;
 }
 
+Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa,
+Usuario& u, const Tarjeta& c, const Fecha& d): num{buysQuantity + 1},
+card{&c}, date{d}, totalPrize{0.0}
+{
+    if(!u.n_articulos())
+        throw Vacio(u);
+
+    if(u.id() != c.titular() -> id())
+        throw Impostor(u);
+
+    for(auto it : u.compra())
+        if(ArticuloAlmacenable* art{dynamic_cast<ArticuloAlmacenable*>
+        (it.first)})
+            if(art -> stock() < it.second)
+            {
+                const_cast<Usuario::Articulos&> (u.compra()).clear();
+                throw SinStock(*it.first);
+            }
+
+    if(c.caducidad() <= date)
+        throw Tarjeta::Caducada(c.caducidad());
+
+    if(!c.activa())
+        throw Tarjeta::Desactivada{};   
+            
+    Usuario::Articulos shoppingKart{u.compra()};
+    unsigned availableStock{0}, expired{0}, n_ebooks{0};
+
+    for(auto kart : shoppingKart)
+    {
+        if(ArticuloAlmacenable* art{dynamic_cast<ArticuloAlmacenable*>
+        (kart.first)})
+        {
+            art -> stock() -= kart.second;
+            pa.pedir(*this, *kart.first, kart.first -> precio(), kart.second);
+            u.compra(*kart.first, 0);
+            availableStock++;
+        }
+        else if(LibroDigital *ebook{dynamic_cast<LibroDigital*>(kart.first)})
+        {
+            ++n_ebooks;
+            u.compra(*ebook, 0);
+            if (ebook -> f_expir() < d)
+            {
+                ++expired;
+                continue;
+            }
+            
+            pa.pedir(*this, *ebook, kart.first -> precio(), kart.second);
+        }
+
+        totalPrize += kart.first->precio() * kart.second;
+    }
+
+    if(!availableStock && expired > 0 && n_ebooks == expired)
+        throw Vacio(u);
+
+    up.asocia(u, *this);
+    
+    buysQuantity++;
+}
+
 //Getters
 double LineaPedido::precio_venta() const
 {
