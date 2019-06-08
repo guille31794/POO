@@ -63,7 +63,7 @@ class Pedido
         
     private:
         int num; 
-        const Tarjeta * card;
+        const Tarjeta * tarjeta_;
         Fecha date;
         double totalPrize;
         static int buysQuantity;

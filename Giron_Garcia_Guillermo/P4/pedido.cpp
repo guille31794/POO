@@ -30,7 +30,7 @@ Articulo& Pedido::SinStock::articulo() const
 //Constructor
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa,
 Usuario& u, const Tarjeta& c, const Fecha& d): num{buysQuantity + 1},
-card{&c}, date{d}, totalPrize{0.0}
+tarjeta_{&c}, date{d}, totalPrize{0.0}
 {
     if(!u.n_articulos())
         throw Vacio(u);
@@ -98,7 +98,7 @@ unsigned Pedido::numero() const
 
 const Tarjeta* Pedido::tarjeta() const
 {
-    return card;
+    return tarjeta_;
 }
 
 Fecha Pedido::fecha() const
