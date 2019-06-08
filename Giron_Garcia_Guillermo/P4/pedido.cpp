@@ -33,13 +33,13 @@ prize{p}, quantity{q}
 {}
 
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa,
-Usuario& u, const Tarjeta& c, const Fecha& d): num{buysQuantity + 1},
-card{&c}, date{d}, totalPrize{0.0}
+Usuario& u, const Tarjeta* c, const Fecha& d): num{buysQuantity + 1},
+card{c}, date{d}, totalPrize{0.0}
 {
     if(!u.n_articulos())
         throw Vacio(u);
 
-    if(u.id() != c.titular() -> id())
+    if(u.id() != c -> titular() -> id())
         throw Impostor(u);
 
     for(auto it : u.compra())
@@ -51,10 +51,10 @@ card{&c}, date{d}, totalPrize{0.0}
                 throw SinStock(*it.first);
             }
 
-    if(c.caducidad() <= date)
-        throw Tarjeta::Caducada(c.caducidad());
+    if(c -> caducidad() <= date)
+        throw Tarjeta::Caducada(c -> caducidad());
 
-    if(!c.activa())
+    if(!c -> activa())
         throw Tarjeta::Desactivada{};   
             
     Usuario::Articulos shoppingKart{u.compra()};

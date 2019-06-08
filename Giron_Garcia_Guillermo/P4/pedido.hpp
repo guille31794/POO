@@ -33,7 +33,7 @@ class Pedido
 {
     public:
         //Constructor
-        Pedido(Usuario_Pedido&, Pedido_Articulo&, Usuario&, const Tarjeta&, 
+        explicit Pedido(Usuario_Pedido&, Pedido_Articulo&, Usuario&, const Tarjeta*, 
         const Fecha& = Fecha{});
 
         //Getters
