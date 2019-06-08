@@ -126,8 +126,9 @@ class LibroDigital: public Articulo
 
         //Destructor
         ~LibroDigital() = default;
+
     private:
-        Fecha expiration;
+        const Fecha expiration;
 };
 
 #endif

@@ -68,7 +68,7 @@ double& Articulo::precio()
 //Operators
 ostream& operator <<(ostream& os, const Articulo& a)
 {
-    setlocale(LC_ALL, "es_ES.UTF-8")
+    setlocale(LC_ALL, "es_ES.UTF-8");
     unsigned cont{0};
     os << '[' << a.referencia() << "] \"" << a.titulo() << "\", de ";
 
@@ -129,8 +129,8 @@ unsigned Libro::n_pag() const
 void Libro::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES.UTF-8");
-    os << pages << " págs., " << stock_ << " unidades";
-    //stock_ == 1 ? os << " unidad." : os << " unidades.";
+    os << pages << " págs., " << stock_;
+    stock_ == 1 ? os << " unidad." : os << " unidades.";
 }
 
 //Class CD
@@ -150,7 +150,8 @@ unsigned Cederron::tam() const
 void Cederron::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES.UTF-8");
-    os << size_ << " MB, " << stock_ << " unidades.";
+    os << size_ << " MB, " << stock_;
+    stock_ == 1 ? os << " unidad." : os << " unidades.";
 }
 
 //Class LibroDigital
