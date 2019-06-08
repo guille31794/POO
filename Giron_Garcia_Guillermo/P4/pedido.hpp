@@ -15,19 +15,7 @@ using namespace std;
 
 class Usuario_Pedido;
 class Pedido_Articulo;
-
-class LineaPedido
-{
-    public:
-        //Constructor
-        explicit LineaPedido(double, unsigned = 1);
-        //Getters
-        double precio_venta() const;
-        unsigned cantidad() const;
-    private:
-        double prize;
-        unsigned quantity;
-};
+class LineaPedido;
 
 class Pedido
 {

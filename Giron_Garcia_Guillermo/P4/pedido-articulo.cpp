@@ -10,6 +10,20 @@ bool OrdenaArticulos::operator() (Articulo* a1, Articulo* a2) const
     return a1 > a2;
 }
 
+LineaPedido::LineaPedido(double p, unsigned q):
+prize{p}, quantity{q}
+{}
+
+double LineaPedido::precio_venta() const
+{
+    return prize;
+}
+
+unsigned LineaPedido::cantidad() const
+{
+    return quantity;
+}
+
 void Pedido_Articulo::pedir(Pedido& p, Articulo& a, double prize, unsigned q)
 {
     PedidosArticulos::iterator i = pedidosArticulos_.find(&p);

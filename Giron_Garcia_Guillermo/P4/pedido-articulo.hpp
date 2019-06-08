@@ -10,9 +10,20 @@
 
 using namespace std;
 
-class LineaPedido;
 class Pedido;
-class Pedido;
+
+class LineaPedido
+{
+    public:
+        //Constructor
+        explicit LineaPedido(double, unsigned = 1);
+        //Getters
+        double precio_venta() const;
+        unsigned cantidad() const;
+    private:
+        double prize;
+        unsigned quantity;
+};
 
 class OrdenaArticulos
 {

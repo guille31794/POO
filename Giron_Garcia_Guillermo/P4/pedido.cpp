@@ -28,10 +28,6 @@ Articulo& Pedido::SinStock::articulo() const
 }
 
 //Constructor
-LineaPedido::LineaPedido(double p, unsigned q):
-prize{p}, quantity{q}
-{}
-
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa,
 Usuario& u, const Tarjeta& c, const Fecha& d): num{buysQuantity + 1},
 card{&c}, date{d}, totalPrize{0.0}
@@ -95,16 +91,6 @@ card{&c}, date{d}, totalPrize{0.0}
 }
 
 //Getters
-double LineaPedido::precio_venta() const
-{
-    return prize;
-}
-
-unsigned LineaPedido::cantidad() const
-{
-    return quantity;
-}
-
 unsigned Pedido::numero() const
 {
     return num;
