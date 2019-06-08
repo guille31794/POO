@@ -243,7 +243,7 @@ const char* Fecha::cadena() const
 
     mktime(&time);
 
-    strftime(date, 100, "%A %d de %B de %Y", &time);
+    strftime(date, 100, "%A %e de %B de %Y", &time);
 
     Cadena str{date};
     delete[] date;

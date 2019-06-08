@@ -335,7 +335,7 @@ const char* Fecha::cadena() const noexcept
 
   mktime(&tiempo_descompuesto);
 
-  strftime(fecha, 100, "%A %d de %B de %Y", &tiempo_descompuesto);
+  strftime(fecha, 100, "%A %e de %B de %Y", &tiempo_descompuesto);
 
   return fecha;
 }
