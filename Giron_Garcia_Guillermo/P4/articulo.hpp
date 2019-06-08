@@ -110,7 +110,7 @@ class Cederron: public ArticuloAlmacenable
         //Destructor
         ~Cederron() = default;
     private:
-        unsigned size_;
+        const unsigned size_;
 };
 
 class LibroDigital: public Articulo
