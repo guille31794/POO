@@ -75,7 +75,7 @@ class Pedido
     private:
         //unsigned num;
         int num; 
-        const Tarjeta* card;
+        const Tarjeta* const card;
         Fecha date;
         double totalPrize;
         static int buysQuantity;
