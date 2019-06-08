@@ -126,11 +126,3 @@ ostream& operator <<(ostream& os, const Pedido& p)
 
     return os;
 }
-
-ostream& operator <<(ostream& os, const LineaPedido& lp)
-{
-    os << setiosflags(ios::fixed) << setprecision(2) <<
-    lp.precio_venta() << " €\t" << lp.cantidad();
-
-    return os;
-}

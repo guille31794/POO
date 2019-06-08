@@ -24,6 +24,15 @@ unsigned LineaPedido::cantidad() const
     return quantity;
 }
 
+
+ostream& operator <<(ostream& os, const LineaPedido& lp)
+{
+    os << setiosflags(ios::fixed) << setprecision(2) <<
+    lp.precio_venta() << " €\t" << lp.cantidad();
+
+    return os;
+}
+
 void Pedido_Articulo::pedir(Pedido& p, Articulo& a, double prize, unsigned q)
 {
     PedidosArticulos::iterator i = pedidosArticulos_.find(&p);

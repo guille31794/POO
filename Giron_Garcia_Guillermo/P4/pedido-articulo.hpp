@@ -25,6 +25,8 @@ class LineaPedido
         unsigned quantity;
 };
 
+ostream& operator <<(ostream&, const LineaPedido&);
+
 class OrdenaArticulos
 {
     public:

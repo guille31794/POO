@@ -71,6 +71,5 @@ class Pedido
 
 //Operators
 ostream& operator <<(ostream&, const Pedido&);
-ostream& operator <<(ostream&, const LineaPedido&);
 
 #endif
