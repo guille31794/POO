@@ -111,24 +111,9 @@ const Fecha& d): number{n}, user{&u}, date{d}, active{true}
     user->es_titular_de(*this);
 }
 
-const Tarjeta::Tipo Tarjeta::tipo() const
-{
-    return type;
-}
-
-const Numero Tarjeta::numero() const
-{
-    return number;
-}
-
 const Usuario* Tarjeta::titular() const
 {
     return user;
-}
-
-const Fecha Tarjeta::caducidad() const
-{
-    return date;
 }
 
 const Cadena Tarjeta::titular_facial() const
@@ -136,14 +121,9 @@ const Cadena Tarjeta::titular_facial() const
     return titular_facial_;
 }
 
-const bool Tarjeta::activa() const
-{
-    return active;
-}
-
 bool Tarjeta::activa(bool state)
 {
-    return active = state;
+    return (active = state);
 }
 
 void Tarjeta::anula_titular()

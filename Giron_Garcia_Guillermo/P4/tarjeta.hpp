@@ -62,12 +62,12 @@ class Tarjeta
         Tarjeta& operator =(const Tarjeta&) = delete;
 
         //Getters
-        const Tipo tipo() const;
-        const Numero numero() const;
+        inline const Tipo tipo() const {return type;}
+        inline const Numero numero() const {return number;}
         const Usuario* titular() const;
-        const Fecha caducidad() const;
+        inline const Fecha caducidad() const {return date;}
         const Cadena titular_facial() const;
-        const bool activa() const;
+        inline const bool activa() const {return active;}
 
         //Setters
         bool activa(bool = true);

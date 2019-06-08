@@ -89,21 +89,6 @@ surname{sn}, address{a}, password{k}
 }
 
 //Getters
-Cadena Usuario::id() const
-{
-    return identifier;
-}
-
-Cadena Usuario::nombre() const
-{
-    return name;
-}
-
-Cadena Usuario::apellidos() const
-{
-    return surname;
-}
-
 Cadena Usuario::direccion() const
 {
     return address;

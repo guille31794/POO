@@ -61,9 +61,9 @@ class Usuario
         ~Usuario();
 
         //Getters
-        Cadena id() const;
-        Cadena nombre() const;
-        Cadena apellidos() const;
+        inline Cadena id() const {return identifier;}
+        inline Cadena nombre() const {return name;}
+        inline Cadena apellidos() const {return surname;}
         Cadena direccion() const;
         const Tarjetas &tarjetas() const;
         unsigned n_articulos() const;
@@ -84,6 +84,9 @@ class Usuario
             private:
                 Cadena id;
         };
+
+        //Operator
+        friend ostream& operator <<(ostream& os, const Usuario& u);
     private:
         Cadena identifier, name, surname, address;
         Clave password;
@@ -92,7 +95,6 @@ class Usuario
 };
 
 //Operator
-ostream& operator <<(ostream& os, const Usuario& u);
 void mostrar_carro(ostream&, const Usuario&);
 
 #endif
