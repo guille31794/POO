@@ -129,8 +129,8 @@ unsigned Libro::n_pag() const
 void Libro::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES.UTF-8");
-    os << pages << " págs., " << stock_;
-    stock_ == 1 ? os << " unidad.\n" : os << " unidades.";
+    os << pages << " págs., " << stock_ << " unidades";
+    //stock_ == 1 ? os << " unidad." : os << " unidades.";
 }
 
 //Class CD
