@@ -76,7 +76,7 @@ class Pedido
         const Tarjeta* card;
         Fecha date;
         double totalPrize;
-        static unsigned buysQuantity;
+        static int buysQuantity;
 };
 
 //Operators

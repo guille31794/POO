@@ -1,6 +1,6 @@
 #include "pedido.hpp"
 
-unsigned Pedido::buysQuantity{0};
+int Pedido::buysQuantity{0};
 
 //Exceptio Stuff
 Pedido::Vacio::Vacio(const Usuario& u): uP{&u} 
