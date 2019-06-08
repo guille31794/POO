@@ -33,10 +33,10 @@ class Pedido
 {
     public:
         //Constructor
-        Pedido(Usuario_Pedido&, Pedido_Articulo&, Usuario&, const Tarjeta*, 
-        const Fecha& = Fecha{});
         Pedido(Usuario_Pedido&, Pedido_Articulo&, Usuario&, const Tarjeta&, 
         const Fecha& = Fecha{});
+        Pedido(const Pedido&) = delete;
+        Pedido(Pedido&&) = delete;
         //Getters
         unsigned numero() const;
         const Tarjeta* tarjeta() const;
@@ -73,9 +73,8 @@ class Pedido
         };
         
     private:
-        //unsigned num;
         int num; 
-        const Tarjeta const * card;
+        const Tarjeta * card;
         Fecha date;
         double totalPrize;
         static int buysQuantity;
