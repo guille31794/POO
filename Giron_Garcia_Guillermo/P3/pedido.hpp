@@ -73,10 +73,10 @@ class Pedido
         
     private:
         unsigned num; 
-        static unsigned buysQuantity;
-        double totalPrize;
         const Tarjeta* card;
         Fecha date;
+        double totalPrize;
+        static unsigned buysQuantity;
 };
 
 //Operators

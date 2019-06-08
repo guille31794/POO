@@ -34,7 +34,7 @@ prize{p}, quantity{q}
 
 Pedido::Pedido(Usuario_Pedido& up, Pedido_Articulo& pa,
 Usuario& u, const Tarjeta& c, const Fecha& d): num{buysQuantity + 1},
-totalPrize{0.0}, card{&c}, date{d}
+card{&c}, date{d}, totalPrize{0.0}
 {
     if(!u.n_articulos())
         throw Vacio(u);
