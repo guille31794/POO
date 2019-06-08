@@ -117,19 +117,19 @@ unsigned& ArticuloAlmacenable::stock()
 Libro::Libro(const Autores& au, const Cadena& ref, const Cadena& ti, 
 const Fecha& d, double pr, unsigned p,
 const unsigned s):
-ArticuloAlmacenable{au, ref, ti, d, pr, s}, pages{p}
+ArticuloAlmacenable{au, ref, ti, d, pr, s}, n_pag_{p}
 {}
 
 //Getters
 unsigned Libro::n_pag() const
 {
-    return pages;
+    return n_pag_;
 }
 
 void Libro::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES.UTF-8");
-    os << pages << " págs., " << stock_;
+    os << n_pag_ << " págs., " << stock_;
     stock_ == 1 ? os << " unidad." : os << " unidades.";
 }
 
@@ -138,19 +138,19 @@ void Libro::impresion_especifica(ostream& os) const
 //Constructor
 Cederron::Cederron(const Autores& au, const Cadena& ref, const Cadena& ti, 
 const Fecha& d, double pr, unsigned si, unsigned s):
-ArticuloAlmacenable{au, ref, ti, d, pr, s}, size_{si}
+ArticuloAlmacenable{au, ref, ti, d, pr, s}, tam_{si}
 {}
 
 //Getters
 unsigned Cederron::tam() const
 {
-    return size_;
+    return tam_;
 }
 
 void Cederron::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES.UTF-8");
-    os << size_ << " MB, " << stock_;
+    os << tam_ << " MB, " << stock_;
     stock_ == 1 ? os << " unidad." : os << " unidades.";
 }
 
@@ -159,18 +159,18 @@ void Cederron::impresion_especifica(ostream& os) const
 //Constructor
 LibroDigital::LibroDigital(const Autores& au, const Cadena& ref, 
 const Cadena& ti, const Fecha& d, double pr, const Fecha& ex):
-Articulo{au, ref, ti, d, pr}, expiration{ex}
+Articulo{au, ref, ti, d, pr}, f_expir_{ex}
 {}
 
 //Getters
 const Fecha& LibroDigital::f_expir() const
 {
-    return expiration;
+    return f_expir_;
 }
 
 void LibroDigital::impresion_especifica(ostream& os) const
 {
     setlocale(LC_ALL, "es_ES.UTF-8");
-    os << "A la venta hasta el " << expiration << ".";
+    os << "A la venta hasta el " << f_expir_ << ".";
 }
 

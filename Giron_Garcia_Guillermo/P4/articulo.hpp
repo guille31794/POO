@@ -93,7 +93,7 @@ class Libro: public ArticuloAlmacenable
         //Destructor
         ~Libro() = default;
     private:
-        unsigned pages;
+        const unsigned n_pag_;
 };
 
 class Cederron: public ArticuloAlmacenable
@@ -110,7 +110,7 @@ class Cederron: public ArticuloAlmacenable
         //Destructor
         ~Cederron() = default;
     private:
-        const unsigned size_;
+        const unsigned tam_;
 };
 
 class LibroDigital: public Articulo
@@ -128,7 +128,7 @@ class LibroDigital: public Articulo
         ~LibroDigital() = default;
 
     private:
-        const Fecha expiration;
+        const Fecha f_expir_;
 };
 
 #endif
