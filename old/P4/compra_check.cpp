@@ -28,7 +28,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>poo/catalogo_check.cpp at master · guilogar/poo</title>
+  <title>poo/compra_check.cpp at master · guilogar/poo</title>
     <meta name="description" content="Repositorio para la asignatura de Programación Orientada a Objetos de la Universidad. - guilogar/poo">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -38,10 +38,10 @@
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/15911778?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="guilogar/poo" /><meta property="og:url" content="https://github.com/guilogar/poo" /><meta property="og:description" content="Repositorio para la asignatura de Programación Orientada a Objetos de la Universidad. - guilogar/poo" />
 
   <link rel="assets" href="https://github.githubassets.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NDA1MDI0NDYyOmM1YmNiZjM3ZDg3ODkyMzM5YmNiNzZlZTQxYWU5NjA0MTU4MDk5MzllMTdlYTk4Y2Q4NzkxNGQ3MjhkYmNlNWM=--66a7119311f4afa70d7c80d7fedca984f494a867">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NDA1MDI0NDYyOmZhM2YyMmU1NjExODhlYjJmYWZkMjVhNDhiY2RhNGE3ZTZhZjdlODdjMjNkODkwOWZlODQ3ZDY3MmU2Y2QxZjM=--41581d9e878df8580d1119ee5bae2df06d25d222">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="DF26:89C4:47AB9A3:6D8EDD2:5CFBEABE" data-pjax-transient>
+  <meta name="request-id" content="DF26:89C4:47AC02F:6D91EDC:5CFBEAE9" data-pjax-transient>
 
 
   
@@ -52,7 +52,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="DF26:89C4:47AB9A3:6D8EDD2:5CFBEABE" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="26124768" /><meta name="octolytics-actor-login" content="guille31794" /><meta name="octolytics-actor-hash" content="17fd4e229d5e99d0045a06a62a3b35e28ac3a8d9fc047ccccd2cda2ce6042694" />
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="DF26:89C4:47AC02F:6D91EDC:5CFBEAE9" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-actor-id" content="26124768" /><meta name="octolytics-actor-login" content="guille31794" /><meta name="octolytics-actor-hash" content="17fd4e229d5e99d0045a06a62a3b35e28ac3a8d9fc047ccccd2cda2ce6042694" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -71,7 +71,7 @@
     <meta name="user-login" content="guille31794">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="NGJmOGQxYTE3N2JlZjk3MmJkM2QyODkwMTMwZmQ0YTA1ZmI2NDhjMDkxZWMyZmE1NjNhYTlhYjIyZThkNDFmYnx7InJlbW90ZV9hZGRyZXNzIjoiMTc2Ljg1LjM1LjEiLCJyZXF1ZXN0X2lkIjoiREYyNjo4OUM0OjQ3QUI5QTM6NkQ4RUREMjo1Q0ZCRUFCRSIsInRpbWVzdGFtcCI6MTU2MDAxMzU0NSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+    <meta name="js-proxy-site-detection-payload" content="MTNlMGNmZTQxNWVlZTFmOWVlMDQ0MjRlZjEzNzE4ODlkNmI3MDE3NWMwZTMwZDg0NTNiM2Y3MzI3YTQ3MGI5ZHx7InJlbW90ZV9hZGRyZXNzIjoiMTc2Ljg1LjM1LjEiLCJyZXF1ZXN0X2lkIjoiREYyNjo4OUM0OjQ3QUMwMkY6NkQ5MUVEQzo1Q0ZCRUFFOSIsInRpbWVzdGFtcCI6MTU2MDAxMzU1NCwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
 
     <meta name="enabled-features" content="UNIVERSE_BANNER,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,NOTIFY_ON_BLOCK,RELATED_ISSUES">
 
@@ -87,7 +87,7 @@
   <meta name="octolytics-dimension-user_id" content="15911778" /><meta name="octolytics-dimension-user_login" content="guilogar" /><meta name="octolytics-dimension-repository_id" content="128971189" /><meta name="octolytics-dimension-repository_nwo" content="guilogar/poo" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="128971189" /><meta name="octolytics-dimension-repository_network_root_nwo" content="guilogar/poo" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
 
 
-    <link rel="canonical" href="https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -157,7 +157,7 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search or jump to…"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=gsbDMMi2IE3LkMEkFKLt1Yak8rXmedKefdiCpg2p8JLkqPugmOv0ylPFdnYF68reD0ojmdTxDdzwvTphGFgJLA=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=0YA6HDeUCk/uLB99jr3IcQkqyye7UZB6dzE7YNmiIGC37gKMZ8neyHZ5qC+f9O96gMQaC4nZTzj6VIOnzFPZ3g=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -307,7 +307,7 @@
       <img class="avatar" src="https://avatars1.githubusercontent.com/u/26124768?s=40&amp;v=4" width="20" height="20" alt="@guille31794" />
       guille31794
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="oaIm6AFi6VTymHJI2/jlcASS/K6qGdyW/6zZbTVsT1HxODkQS7d0ssBHXX0Ru8Sb/uDftsiczaDOXXagdf3K9w==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="PvRWdJET6Qt4OTcHKZT5Ym/PTwaIdqZCSQ0Fw2rQSfdubkmM28Z07UrmGDLj19iJlb1sHurzt3R4/KoOKkHMUQ==" />
       <button type="submit" class="Header-link mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15 d-lg-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
         <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"/></svg>
         Sign out
@@ -401,7 +401,7 @@
     border
   " data-team-hovercards-enabled>
   <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
-    <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit " aria-haspopup="dialog" role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:15911778,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:26124768,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AB9A3:6D8EDD2:5CFBEABE&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;}}" data-hydro-click-hmac="ad7a70d772ea02159732d941510712d3010c10118ebd3f5f135da8114d5f45b0">
+    <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit " aria-haspopup="dialog" role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:15911778,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:26124768,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AC02F:6D91EDC:5CFBEAE9&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;}}" data-hydro-click-hmac="6a179b486b7cb7a640476c60e2b0f7062ad0b66efc9fb6cbfef20a6d663dbe33">
       <div class="d-flex">
         <div class="f6 lh-condensed user-status-header
           d-inline-block v-align-middle
@@ -427,7 +427,7 @@
         </div>
       </div>
 </summary>    <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="dmcbKdmMzlGLGMLkKNV9IEcdwkIjQr4CC9X/Eqf3hsRHrB2dhF/lFKv2m+bS4TDVVnX6zUGe0IM4PgnMf9fUaA==" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="puGoJhDm3KpIw6nJsHkVVZJdVkr81YMCVTa7sd5Ph/mXKq6STTX372gt8MtKTViggzVuxZ4J7YNm3U1vBm/VVQ==" />
         <div class="Box-header bg-gray border-bottom p-3">
           <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
             <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
@@ -547,17 +547,17 @@
       </li>
       <li class="dropdown-divider" role="none"></li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2019-06-08T19:35:45+02:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2019-06-08T19:35:54+02:00">
             in 30 minutes
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2019-06-08T20:05:45+02:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2019-06-08T20:05:54+02:00">
             in 1 hour
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2019-06-08T23:05:45+02:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2019-06-08T23:05:54+02:00">
             in 4 hours
           </button>
         </li>
@@ -605,7 +605,7 @@
     <div role="none" class="dropdown-divider"></div>
     <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
     <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="lJZBKGhz1M2dHAf902y6HYDTkNYAATeI4fwp8SHlmjDEDF7QIqZJK6/DKMgZL5v2eqGzzmKEJr7QDYY8YXQflg==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="bmOK0nDF8d/rIWOjMVAVeL+P1jwxr0tfm+xgxoK66Ts++ZUqOhBsOdn+TJb7EzSTRf31JFMqWmmqHc8LwitsnQ==" />
       
       <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
         Sign out
@@ -653,10 +653,10 @@
 
   <li>
     
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="s5p/jPySvoIEc1MwM2bWEgJtBh68z7XRPaFlyXzczrUSOlD7u/BLhHIJAysQp1IkEMuuwCtIYd2WjEV6EAbpQg==" />      <input type="hidden" name="repository_id" value="128971189">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="gk186KjWrBNRxs7afFF6ZkOEZU/OdB3dNnLL/H/kEQQj7VOf77RZFSe8nsFfkP5QUSLNkVnzydGdX+tPEz428w==" />      <input type="hidden" name="repository_id" value="128971189">
 
       <details class="details-reset details-overlay select-menu float-left">
-        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:128971189,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AB9A3:6D8EDD2:5CFBEABE&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;,&quot;user_id&quot;:26124768}}" data-hydro-click-hmac="cba9e10fed4985e7b13979eca71298368fdf1b8da9101239f4ffd636967f8afb" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
+        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:128971189,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AC02F:6D91EDC:5CFBEAE9&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;,&quot;user_id&quot;:26124768}}" data-hydro-click-hmac="1105eb5d20c7e4e6fec619a61c0c3f3059691e2e8e972fde28a0b8234d5ef228" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
               <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
               Unwatch
           </span>
@@ -727,18 +727,18 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container on">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/guilogar/poo/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="IYcpj+SZFKQM4g8jGmZ5ZjathTtFHUFmGO0IA9W5Yj4Uwx1i3medK/mvzTVp/cIaSS/VvHNhM0smN6UVSkUFEA==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="starred js-social-form" action="/guilogar/poo/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="mZV2wq/PNxFDQyXkgBEdNus9xG1SN2GpZZWooE23axSs0UIvlTG+nrYO5/LziqZKlL+U6mRLE4RbTwW20ksMOg==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar guilogar/poo" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:128971189,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AB9A3:6D8EDD2:5CFBEABE&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;,&quot;user_id&quot;:26124768}}" data-hydro-click-hmac="f6773a2871528ca35d97238fb839e85ec91e3223efc56b6a3889e3c3067dc589" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar guilogar/poo" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:128971189,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AC02F:6D91EDC:5CFBEAE9&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;,&quot;user_id&quot;:26124768}}" data-hydro-click-hmac="a88a78610120ddd8df703924f04e2c70b254571ae5cceebbbd310177eea8e2df" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Unstar
 </button>        <a class="social-count js-social-count" href="/guilogar/poo/stargazers"
            aria-label="1 user starred this repository">
           1
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/guilogar/poo/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="aCdI/EiyPPsYuWI8zNfGFaP0TfVpS0RKFSat8xr7iMzYeM1oMe0fLos/0E8Gvs9iGtfVpB23RmSd4hadwXSn4w==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="unstarred js-social-form" action="/guilogar/poo/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="nx+kjqXQJxBKKwjFI8/Y83Is9F1+w6FHsubekqwoRVEvQCEa3I8ExdmturbpptGEyw9sDAo/o2k6ImX8d6dqfg==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star guilogar/poo" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:128971189,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AB9A3:6D8EDD2:5CFBEABE&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;,&quot;user_id&quot;:26124768}}" data-hydro-click-hmac="3bf17669cc2080ee91e222a12eee44bc3538cef425e701ced3011ad0f1a0aef3" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star guilogar/poo" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:128971189,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AC02F:6D91EDC:5CFBEAE9&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;,&quot;user_id&quot;:26124768}}" data-hydro-click-hmac="273ce4c543d919627969dcf7a1d7e645e5c334b8eb9be10fcb39db8a56b60e65" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
         Star
 </button>        <a class="social-count js-social-count" href="/guilogar/poo/stargazers"
            aria-label="1 user starred this repository">
@@ -750,7 +750,7 @@
 
   <li>
           <details class="details-reset details-overlay details-overlay-dark d-inline-block float-left">
-            <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:128971189,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AB9A3:6D8EDD2:5CFBEABE&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;,&quot;user_id&quot;:26124768}}" data-hydro-click-hmac="9930a8c95e9eedb67a1fcfbe57ed2b4e1e9bce9592a4f6678b23e4d1cf095810" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" title="Fork your own copy of guilogar/poo to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+            <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:128971189,&quot;client_id&quot;:&quot;1765064666.1558038219&quot;,&quot;originating_request_id&quot;:&quot;DF26:89C4:47AC02F:6D91EDC:5CFBEAE9&quot;,&quot;originating_url&quot;:&quot;https://github.com/guilogar/poo/blob/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp&quot;,&quot;referrer&quot;:&quot;https://github.com/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4&quot;,&quot;user_id&quot;:26124768}}" data-hydro-click-hmac="957889555be5b2ba7eb4733edde364d29f32f23e682f08be348c75331188be61" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" title="Fork your own copy of guilogar/poo to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
               Fork
 </summary>            <details-dialog
               class="anim-fade-in fast Box Box--overlay d-flex flex-column"
@@ -907,9 +907,9 @@
 
 
   
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/guilogar/poo/blob/3b29da0278d3037acde6c8391a506cad35186e90/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/guilogar/poo/blob/3b29da0278d3037acde6c8391a506cad35186e90/Lopez_Garcia_Guillermo/P4/compra_check.cpp">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v21:612ccc327e14f976a6dcade8ef8fa5d0 -->
+    <!-- blob contrib key: blob_contributors:v21:e920bf49d6a1186b58f5c9d874d8b299 -->
       
 
     <div class="d-flex flex-items-start flex-shrink-0 mb-2 flex-column flex-md-row">
@@ -924,7 +924,7 @@
     <span class="css-truncate-target">master</span>
   </summary>
 
-  <details-menu class="select-menu-modal hx_rsm-modal position-absolute" style="z-index: 99;" src="/guilogar/poo/ref-list/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp?source_action=show&amp;source_controller=blob" preload>
+  <details-menu class="select-menu-modal hx_rsm-modal position-absolute" style="z-index: 99;" src="/guilogar/poo/ref-list/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp?source_action=show&amp;source_controller=blob" preload>
     <include-fragment class="select-menu-loading-overlay anim-pulse">
       <svg height="32" class="octicon octicon-octoface" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"/></svg>
     </include-fragment>
@@ -938,13 +938,13 @@
                 data-hotkey="t">
             Find file
           </a>
-          <clipboard-copy value="Lopez_Garcia_Guillermo/P4/catalogo_check.cpp" class="btn btn-sm BtnGroup-item">
+          <clipboard-copy value="Lopez_Garcia_Guillermo/P4/compra_check.cpp" class="btn btn-sm BtnGroup-item">
             Copy path
           </clipboard-copy>
         </div>
       </span>
       <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal flex-md-self-center ml-md-2 mr-md-3 my-2 my-md-0">
-        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/guilogar/poo"><span>poo</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/guilogar/poo/tree/master/Lopez_Garcia_Guillermo"><span>Lopez_Garcia_Guillermo</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4"><span>P4</span></a></span><span class="separator">/</span><strong class="final-path">catalogo_check.cpp</strong>
+        <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/guilogar/poo"><span>poo</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/guilogar/poo/tree/master/Lopez_Garcia_Guillermo"><span>Lopez_Garcia_Guillermo</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/guilogar/poo/tree/master/Lopez_Garcia_Guillermo/P4"><span>P4</span></a></span><span class="separator">/</span><strong class="final-path">compra_check.cpp</strong>
       </h2>
 
       <div class="BtnGroup flex-shrink-0 d-none d-md-inline-block">
@@ -954,7 +954,7 @@
               data-hotkey="t">
           Find file
         </a>
-        <clipboard-copy value="Lopez_Garcia_Guillermo/P4/catalogo_check.cpp" class="btn btn-sm BtnGroup-item">
+        <clipboard-copy value="Lopez_Garcia_Guillermo/P4/compra_check.cpp" class="btn btn-sm BtnGroup-item">
           Copy path
         </clipboard-copy>
       </div>
@@ -962,7 +962,7 @@
 
 
 
-    <include-fragment src="/guilogar/poo/contributors/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp" class="Box Box--condensed commit-loader">
+    <include-fragment src="/guilogar/poo/contributors/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp" class="Box Box--condensed commit-loader">
       <div class="Box-body bg-blue-light f6">
         Fetching contributors&hellip;
       </div>
@@ -981,29 +981,29 @@
 <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
 
   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
-      205 lines (127 sloc)
+      94 lines (60 sloc)
       <span class="file-info-divider"></span>
-    11.4 KB
+    4.3 KB
   </div>
 
   <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/guilogar/poo/raw/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/guilogar/poo/blame/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/guilogar/poo/commits/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/guilogar/poo/raw/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/guilogar/poo/blame/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/guilogar/poo/commits/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp">History</a>
     </div>
 
 
     <div>
 
-            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/guilogar/poo/edit/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="4y0lxPoPvgMW2WyEwY4vARh99D1DrMaecgxKI+oBTJtd17JFqiWw6BZZjnpIUWqTfncLYW9fatpxBMujOZfY6A==" />
+            <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/guilogar/poo/edit/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9S+3xUKsmkaG37ekOrWJlbTH2O2WCx80DkGVRtV1DAaum0OBYcT/2euVIa1thVoG1H7UZAOgtJtc1lSzDnXuaw==" />
               <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
                 aria-label="Edit the file in your fork of this project" data-hotkey="e" data-disable-with>
                 <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
               </button>
 </form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/guilogar/poo/delete/master/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="5DjjYyFyOIA5WDHCgVUIUi4vJ5PyAhzd5dLz5EwJb2wZXg89UY/ehqJNmIt+yuz+U9wmlabudFCDPXh3lItSGA==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/guilogar/poo/delete/master/Lopez_Garcia_Guillermo/P4/compra_check.cpp" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="QobxwaY1uJmSzfXvCh3Fp0VUfW8gqmCzvkRzpDu1+LuUIlhYIOovgLPZhnn1TXTzzcVsa0rqcyk6fwsMFBQAKw==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Delete the file in your fork of this project" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -1062,7 +1062,7 @@
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line">        checkCode <span class="pl-smi">c1</span>(argc, argv, <span class="pl-s"><span class="pl-pds">&quot;</span>articulo.cpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Orden: ./pedido_check articulo.cpp tarjeta.cpp usuario.cpp pedido.cpp pedido-articulo.cpp usuario-pedido.hpp -- -std=c++14 -I../P1<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">        checkCode <span class="pl-smi">c1</span>(argc, argv, <span class="pl-s"><span class="pl-pds">&quot;</span>articulo.cpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Orden: ./compra_check articulo.cpp tarjeta.cpp usuario.cpp -- -std=c++14 -I../P1<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
@@ -1084,118 +1084,120 @@
       </tr>
       <tr>
         <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="LC15" class="blob-code blob-code-inner js-file-line">        vector&lt;string&gt; functionNames = {<span class="pl-s"><span class="pl-pds">&quot;</span>strlen<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcat<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>memset<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcpy<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcmp<span class="pl-pds">&quot;</span></span>};</td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(c1.<span class="pl-c1">findClass</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Articulo<span class="pl-pds">&quot;</span></span>})){</td>
       </tr>
       <tr>
         <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="LC16" class="blob-code blob-code-inner js-file-line">        string headerName = <span class="pl-s"><span class="pl-pds">&quot;</span>cstring<span class="pl-pds">&quot;</span></span>;</td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="LC17" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line">		vector&lt;string&gt; functionNames = {<span class="pl-s"><span class="pl-pds">&quot;</span>strlen<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcat<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>memset<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcpy<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcmp<span class="pl-pds">&quot;</span></span>};</td>
       </tr>
       <tr>
         <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
-        <td id="LC18" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(c1.<span class="pl-c1">findClass</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Articulo<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>ArticuloAlmacenable<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>Autor<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>Libro<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>Cederron<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>LibroDigital<span class="pl-pds">&quot;</span></span>})){</td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line">                string headerName = <span class="pl-s"><span class="pl-pds">&quot;</span>cstring<span class="pl-pds">&quot;</span></span>;</td>
       </tr>
       <tr>
         <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
-        <td id="LC19" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC19" class="blob-code blob-code-inner js-file-line">		c1.<span class="pl-c1">invocationsFromHeaders</span>(functionNames, headerName, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa de dónde son tomadas las funciones de la biblioteca estándar como strlen, strcpy...<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
-        <td id="LC20" class="blob-code blob-code-inner js-file-line">	        <span class="pl-c1">llvm::outs</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>* articulo.cpp:<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
-        <td id="LC21" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line">		c1.<span class="pl-c1">allPrivateVariableMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Articulo<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el acceso a los atributos.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
-        <td id="LC22" class="blob-code blob-code-inner js-file-line">		c1.<span class="pl-c1">invocationsFromHeaders</span>(functionNames, headerName, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa de dónde son tomadas las funciones de la biblioteca estándar como strlen, strcpy...<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
-        <td id="LC23" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line">		c1.<span class="pl-c1">notFriendMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Articulo<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa por qué es necesario incluir &#39;friend&#39;.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
-        <td id="LC24" class="blob-code blob-code-inner js-file-line">		c1.<span class="pl-c1">allPrivateVariableMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Articulo<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el acceso a los atributos.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
-        <td id="LC25" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line">		c1.<span class="pl-c1">guardClauses</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>articulo.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Recuerda añadir las guardas de inclusión.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
-        <td id="LC26" class="blob-code blob-code-inner js-file-line">		c1.<span class="pl-c1">notFriendMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Articulo<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa por qué es necesario incluir &#39;friend&#39;.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
-        <td id="LC27" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line">                c1.<span class="pl-c1">check</span>();</td>
       </tr>
       <tr>
         <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
-        <td id="LC28" class="blob-code blob-code-inner js-file-line">		c1.<span class="pl-c1">guardClauses</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>articulo.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Recuerda añadir las guardas de inclusión.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
-        <td id="LC29" class="blob-code blob-code-inner js-file-line">
+        <td id="LC28" class="blob-code blob-code-inner js-file-line">
 </td>
       </tr>
       <tr>
+        <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="LC29" class="blob-code blob-code-inner js-file-line">        }<span class="pl-k">else</span>{</td>
+      </tr>
+      <tr>
         <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
-        <td id="LC30" class="blob-code blob-code-inner js-file-line">		<span class="pl-c"><span class="pl-c">//</span> Catalogo-check</span></td>
+        <td id="LC30" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">llvm::outs</span>()&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span>No se ha encontrado la clase &#39;Articulo&#39;<span class="pl-pds">&quot;</span></span>&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
       </tr>
       <tr>
         <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
-        <td id="LC31" class="blob-code blob-code-inner js-file-line">	        c1.<span class="pl-c1">memberVariable</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Articulo<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>stock_<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>?<span class="pl-pds">&quot;</span></span>}, {<span class="pl-c1">false</span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a los atributos que deben estar en cada clase.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC31" class="blob-code blob-code-inner js-file-line">        }</td>
       </tr>
       <tr>
         <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
-        <td id="LC32" class="blob-code blob-code-inner js-file-line">        	c1.<span class="pl-c1">memberVariable</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>ArticuloAlmacenable<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>stock_<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>}, {<span class="pl-c1">true</span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a los atributos que deben estar en cada clase.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC32" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
-        <td id="LC33" class="blob-code blob-code-inner js-file-line">	        c1.<span class="pl-c1">virtualMethod</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>~Articulo<span class="pl-pds">&quot;</span></span>},{{}},<span class="pl-s"><span class="pl-pds">&quot;</span>Articulo<span class="pl-pds">&quot;</span></span>,{<span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Contempla crear un destructor apropiado para esta clase.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC33" class="blob-code blob-code-inner js-file-line">        checkCode <span class="pl-smi">c2</span>(argc, argv, <span class="pl-s"><span class="pl-pds">&quot;</span>tarjeta.cpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
-        <td id="LC34" class="blob-code blob-code-inner js-file-line">        	c1.<span class="pl-c1">functionWithReferencedMethod</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>operator&lt;&lt;<span class="pl-pds">&quot;</span></span>},{{<span class="pl-s"><span class="pl-pds">&quot;</span>class std::basic_ostream&lt;char&gt; &amp;<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>const class Articulo &amp;<span class="pl-pds">&quot;</span></span>}},{<span class="pl-s"><span class="pl-pds">&quot;</span>impresion_especifica<span class="pl-pds">&quot;</span></span>},{{<span class="pl-s"><span class="pl-pds">&quot;</span>class std::basic_ostream&lt;char&gt; &amp;<span class="pl-pds">&quot;</span></span>}},<span class="pl-s"><span class="pl-pds">&quot;</span>Articulo<span class="pl-pds">&quot;</span></span>,{<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>},<span class="pl-s"><span class="pl-pds">&quot;</span>Incluya impresion_especifica en el operador de extracción<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC34" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
-        <td id="LC35" class="blob-code blob-code-inner js-file-line">	        c1.<span class="pl-c1">methodWithReferencedMemberVariable</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>impresion_especifica<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>class std::basic_ostream&lt;char&gt; &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Libro<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>n_pag_<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa qué debe imprimir la definición del método impresion_especifica en cada clase.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC35" class="blob-code blob-code-inner js-file-line">        c2.<span class="pl-c1">setCorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Verificación correcta de la clase Tarjeta.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
-        <td id="LC36" class="blob-code blob-code-inner js-file-line">        	c1.<span class="pl-c1">methodWithReferencedMemberVariable</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>impresion_especifica<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>class std::basic_ostream&lt;char&gt; &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Libro<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>stock_<span class="pl-pds">&quot;</span></span>},<span class="pl-s"><span class="pl-pds">&quot;</span>Revisa qué debe imprimir la definición del método impresion_especifica en cada clase.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC36" class="blob-code blob-code-inner js-file-line">        c2.<span class="pl-c1">setIncorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>REVISA LOS ERRORES DE TARJETA.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
-        <td id="LC37" class="blob-code blob-code-inner js-file-line">	        c1.<span class="pl-c1">methodWithReferencedMemberVariable</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>impresion_especifica<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>class std::basic_ostream&lt;char&gt; &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Cederron<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>tam_<span class="pl-pds">&quot;</span></span>},<span class="pl-s"><span class="pl-pds">&quot;</span>Revisa qué debe imprimir la definición del método impresion_especifica en cada clase.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC37" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
-        <td id="LC38" class="blob-code blob-code-inner js-file-line">        	c1.<span class="pl-c1">methodWithReferencedMemberVariable</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>impresion_especifica<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>class std::basic_ostream&lt;char&gt; &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Cederron<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>stock_<span class="pl-pds">&quot;</span></span>},<span class="pl-s"><span class="pl-pds">&quot;</span>Revisa qué debe imprimir la definición del método impresion_especifica en cada clase.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC38" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(c2.<span class="pl-c1">findClass</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>})){</td>
       </tr>
       <tr>
         <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
-        <td id="LC39" class="blob-code blob-code-inner js-file-line">	        c1.<span class="pl-c1">methodWithReferencedMemberVariable</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>impresion_especifica<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>class std::basic_ostream&lt;char&gt; &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>LibroDigital<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>f_expir_<span class="pl-pds">&quot;</span></span>},<span class="pl-s"><span class="pl-pds">&quot;</span>Revisa qué debe imprimir la definición del método impresion_especifica en cada clase.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC39" class="blob-code blob-code-inner js-file-line">                vector&lt;string&gt; functionNames = {<span class="pl-s"><span class="pl-pds">&quot;</span>strlen<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcat<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>memset<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcpy<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcmp<span class="pl-pds">&quot;</span></span>};</td>
       </tr>
       <tr>
         <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
-        <td id="LC40" class="blob-code blob-code-inner js-file-line">        	c1.<span class="pl-c1">method</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>nombre<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>apellidos<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>direccion<span class="pl-pds">&quot;</span></span>}, {{},{},{}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Autor<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el uso de métodos constantes.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC40" class="blob-code blob-code-inner js-file-line">                string headerName = <span class="pl-s"><span class="pl-pds">&quot;</span>cstring<span class="pl-pds">&quot;</span></span>;</td>
       </tr>
       <tr>
         <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
-        <td id="LC41" class="blob-code blob-code-inner js-file-line">        	c1.<span class="pl-c1">noExceptMethod</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>nombre<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>apellidos<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>direccion<span class="pl-pds">&quot;</span></span>},{{},{},{}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Autor<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a las excepciones.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC41" class="blob-code blob-code-inner js-file-line">                c2.<span class="pl-c1">invocationsFromHeaders</span>(functionNames, headerName, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa de dónde son tomadas las funciones de la biblioteca estándar como strlen, strcpy...<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
@@ -1203,7 +1205,7 @@
       </tr>
       <tr>
         <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
-        <td id="LC43" class="blob-code blob-code-inner js-file-line">		c1.<span class="pl-c1">check</span>();</td>
+        <td id="LC43" class="blob-code blob-code-inner js-file-line">		c2.<span class="pl-c1">allPrivateVariableMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el acceso a los atributos.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
@@ -1212,54 +1214,55 @@
       </tr>
       <tr>
         <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
-        <td id="LC45" class="blob-code blob-code-inner js-file-line">    	}<span class="pl-k">else</span>{</td>
+        <td id="LC45" class="blob-code blob-code-inner js-file-line">		c2.<span class="pl-c1">notFriendMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa por qué es necesario incluir &#39;friend&#39;.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
-        <td id="LC46" class="blob-code blob-code-inner js-file-line">        	<span class="pl-c1">llvm::outs</span>()&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span>No se han encontrado las clases &#39;Articulo&#39;, &#39;ArticuloAlmacenable&#39;, &#39;Autor&#39;, &#39;Libro&#39;, &#39;Cederron&#39; y/o &#39;LibroDigital&#39;<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
+        <td id="LC46" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
-        <td id="LC47" class="blob-code blob-code-inner js-file-line">	}</td>
+        <td id="LC47" class="blob-code blob-code-inner js-file-line">		<span class="pl-c"><span class="pl-c">//</span>Constructor copia y de asignación</span></td>
       </tr>
       <tr>
         <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
-        <td id="LC48" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC48" class="blob-code blob-code-inner js-file-line">		c2.<span class="pl-c1">deletedMethod</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>operator=<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>const class Tarjeta &amp;<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>const class Tarjeta &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a la copia de objetos.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
-        <td id="LC49" class="blob-code blob-code-inner js-file-line">        checkCode <span class="pl-smi">c2</span>(argc, argv, <span class="pl-s"><span class="pl-pds">&quot;</span>tarjeta.cpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC49" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
-        <td id="LC50" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC50" class="blob-code blob-code-inner js-file-line">		c2.<span class="pl-c1">guardClauses</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>tarjeta.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Recuerda añadir las guardas de inclusión.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
-        <td id="LC51" class="blob-code blob-code-inner js-file-line">        c2.<span class="pl-c1">setCorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Verificación correcta de la clase Tarjeta.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
-        <td id="LC52" class="blob-code blob-code-inner js-file-line">        c2.<span class="pl-c1">setIncorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>REVISA LOS ERRORES DE TARJETA.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
-        <td id="LC53" class="blob-code blob-code-inner js-file-line">
+        <td id="LC51" class="blob-code blob-code-inner js-file-line">
 </td>
       </tr>
       <tr>
+        <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="LC52" class="blob-code blob-code-inner js-file-line">                vector&lt;string&gt; methodNames = {<span class="pl-s"><span class="pl-pds">&quot;</span>tipo<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>numero<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>caducidad<span class="pl-pds">&quot;</span></span>};</td>
+      </tr>
+      <tr>
+        <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="LC53" class="blob-code blob-code-inner js-file-line">                vector&lt;vector&lt;string&gt; &gt; parametersMethods = {{},{},{}};</td>
+      </tr>
+      <tr>
         <td id="L54" class="blob-num js-line-number" data-line-number="54"></td>
-        <td id="LC54" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(c2.<span class="pl-c1">findClass</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>})){</td>
+        <td id="LC54" class="blob-code blob-code-inner js-file-line">                c2.<span class="pl-c1">inlineMethod</span>(methodNames, parametersMethods, <span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Sugerencia: incluir marca &#39;inline&#39; a aquellos métodos con pocas instrucciones, como &#39;tipo()&#39;, &#39;numero()&#39; o &#39;caducidad()&#39;.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L55" class="blob-num js-line-number" data-line-number="55"></td>
-        <td id="LC55" class="blob-code blob-code-inner js-file-line">                </td>
+        <td id="LC55" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L56" class="blob-num js-line-number" data-line-number="56"></td>
-        <td id="LC56" class="blob-code blob-code-inner js-file-line">		 <span class="pl-c1">llvm::outs</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>* tarjeta.cpp:<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
+        <td id="LC56" class="blob-code blob-code-inner js-file-line">                c2.<span class="pl-c1">check</span>();</td>
       </tr>
       <tr>
         <td id="L57" class="blob-num js-line-number" data-line-number="57"></td>
@@ -1268,15 +1271,15 @@
       </tr>
       <tr>
         <td id="L58" class="blob-num js-line-number" data-line-number="58"></td>
-        <td id="LC58" class="blob-code blob-code-inner js-file-line">		c2.<span class="pl-c1">invocationsFromHeaders</span>(functionNames, headerName, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa de dónde son tomadas las funciones de la biblioteca estándar como strlen, strcpy...<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC58" class="blob-code blob-code-inner js-file-line">        }<span class="pl-k">else</span>{</td>
       </tr>
       <tr>
         <td id="L59" class="blob-num js-line-number" data-line-number="59"></td>
-        <td id="LC59" class="blob-code blob-code-inner js-file-line">	</td>
+        <td id="LC59" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">llvm::outs</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>No se ha encontrado la clase &#39;Tarjeta&#39;<span class="pl-pds">&quot;</span></span>&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
       </tr>
       <tr>
         <td id="L60" class="blob-num js-line-number" data-line-number="60"></td>
-        <td id="LC60" class="blob-code blob-code-inner js-file-line">		c2.<span class="pl-c1">allPrivateVariableMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el acceso a los atributos.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC60" class="blob-code blob-code-inner js-file-line">        }</td>
       </tr>
       <tr>
         <td id="L61" class="blob-num js-line-number" data-line-number="61"></td>
@@ -1285,7 +1288,7 @@
       </tr>
       <tr>
         <td id="L62" class="blob-num js-line-number" data-line-number="62"></td>
-        <td id="LC62" class="blob-code blob-code-inner js-file-line">		c2.<span class="pl-c1">notFriendMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa por qué es necesario incluir &#39;friend&#39;.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC62" class="blob-code blob-code-inner js-file-line">        checkCode <span class="pl-smi">c3</span>(argc, argv,<span class="pl-s"><span class="pl-pds">&quot;</span>usuario.cpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L63" class="blob-num js-line-number" data-line-number="63"></td>
@@ -1294,11 +1297,11 @@
       </tr>
       <tr>
         <td id="L64" class="blob-num js-line-number" data-line-number="64"></td>
-        <td id="LC64" class="blob-code blob-code-inner js-file-line">		<span class="pl-c"><span class="pl-c">//</span>Constructor copia y de asignación</span></td>
+        <td id="LC64" class="blob-code blob-code-inner js-file-line">        c3.<span class="pl-c1">setCorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Verificación correcta de la clase Usuario.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L65" class="blob-num js-line-number" data-line-number="65"></td>
-        <td id="LC65" class="blob-code blob-code-inner js-file-line">		c2.<span class="pl-c1">deletedMethod</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>operator=<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>const class Tarjeta &amp;<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>const class Tarjeta &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a la copia de objetos.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC65" class="blob-code blob-code-inner js-file-line">        c3.<span class="pl-c1">setIncorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>REVISA LOS ERRORES DE USUARIO.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L66" class="blob-num js-line-number" data-line-number="66"></td>
@@ -1307,72 +1310,69 @@
       </tr>
       <tr>
         <td id="L67" class="blob-num js-line-number" data-line-number="67"></td>
-        <td id="LC67" class="blob-code blob-code-inner js-file-line">		c2.<span class="pl-c1">guardClauses</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>tarjeta.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Recuerda añadir las guardas de inclusión.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC67" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(c3.<span class="pl-c1">findClass</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>})){</td>
       </tr>
       <tr>
         <td id="L68" class="blob-num js-line-number" data-line-number="68"></td>
-        <td id="LC68" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC68" class="blob-code blob-code-inner js-file-line">                vector&lt;string&gt; functionNames = {<span class="pl-s"><span class="pl-pds">&quot;</span>strlen<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcat<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>memset<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcpy<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>strcmp<span class="pl-pds">&quot;</span></span>};</td>
       </tr>
       <tr>
         <td id="L69" class="blob-num js-line-number" data-line-number="69"></td>
-        <td id="LC69" class="blob-code blob-code-inner js-file-line">                vector&lt;string&gt; methodNames = {<span class="pl-s"><span class="pl-pds">&quot;</span>tipo<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>numero<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>caducidad<span class="pl-pds">&quot;</span></span>};</td>
+        <td id="LC69" class="blob-code blob-code-inner js-file-line">                string headerName = <span class="pl-s"><span class="pl-pds">&quot;</span>cstring<span class="pl-pds">&quot;</span></span>;</td>
       </tr>
       <tr>
         <td id="L70" class="blob-num js-line-number" data-line-number="70"></td>
-        <td id="LC70" class="blob-code blob-code-inner js-file-line">                vector&lt;vector&lt;string&gt; &gt; parametersMethods = {{},{},{}};</td>
+        <td id="LC70" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">invocationsFromHeaders</span>(functionNames, headerName, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa de dónde son tomadas las funciones de la biblioteca estándar como strlen, strcpy...<span class="pl-pds">&quot;</span></span>);                </td>
       </tr>
       <tr>
         <td id="L71" class="blob-num js-line-number" data-line-number="71"></td>
-        <td id="LC71" class="blob-code blob-code-inner js-file-line">                c2.<span class="pl-c1">inlineMethod</span>(methodNames, parametersMethods, <span class="pl-s"><span class="pl-pds">&quot;</span>Tarjeta<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Sugerencia: incluir marca &#39;inline&#39; a aquellos métodos con pocas instrucciones, como &#39;tipo()&#39;, &#39;numero()&#39; o &#39;caducidad()&#39;.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC71" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L72" class="blob-num js-line-number" data-line-number="72"></td>
-        <td id="LC72" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC72" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">allPrivateVariableMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el acceso a los atributos.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L73" class="blob-num js-line-number" data-line-number="73"></td>
-        <td id="LC73" class="blob-code blob-code-inner js-file-line">                c2.<span class="pl-c1">check</span>();</td>
+        <td id="LC73" class="blob-code blob-code-inner js-file-line">	</td>
       </tr>
       <tr>
         <td id="L74" class="blob-num js-line-number" data-line-number="74"></td>
-        <td id="LC74" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC74" class="blob-code blob-code-inner js-file-line">                <span class="pl-c"><span class="pl-c">//</span>Constructor copia y de asignación</span></td>
       </tr>
       <tr>
         <td id="L75" class="blob-num js-line-number" data-line-number="75"></td>
-        <td id="LC75" class="blob-code blob-code-inner js-file-line">        }<span class="pl-k">else</span>{</td>
+        <td id="LC75" class="blob-code blob-code-inner js-file-line">                c3.<span class="pl-c1">deletedMethod</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>operator=<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>const class Usuario &amp;<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>const class Usuario &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a la copia de objetos.<span class="pl-pds">&quot;</span></span>);	</td>
       </tr>
       <tr>
         <td id="L76" class="blob-num js-line-number" data-line-number="76"></td>
-        <td id="LC76" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">llvm::outs</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>No se ha encontrado la clase &#39;Tarjeta&#39;<span class="pl-pds">&quot;</span></span>&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
+        <td id="LC76" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L77" class="blob-num js-line-number" data-line-number="77"></td>
-        <td id="LC77" class="blob-code blob-code-inner js-file-line">        }</td>
+        <td id="LC77" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">numberOfConstructors</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, <span class="pl-c1">1</span>, <span class="pl-c1">false</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a los constructores en esta clase.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L78" class="blob-num js-line-number" data-line-number="78"></td>
-        <td id="LC78" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC78" class="blob-code blob-code-inner js-file-line">	</td>
       </tr>
       <tr>
         <td id="L79" class="blob-num js-line-number" data-line-number="79"></td>
-        <td id="LC79" class="blob-code blob-code-inner js-file-line">        checkCode <span class="pl-smi">c3</span>(argc, argv,<span class="pl-s"><span class="pl-pds">&quot;</span>usuario.cpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC79" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">friendFunction</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>operator&lt;&lt;<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>?<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa si existen funciones que deben ser marcadas como amigas de la clase.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L80" class="blob-num js-line-number" data-line-number="80"></td>
-        <td id="LC80" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC80" class="blob-code blob-code-inner js-file-line">		vector&lt;string&gt; methodNames = {<span class="pl-s"><span class="pl-pds">&quot;</span>id<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>nombre<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>apellidos<span class="pl-pds">&quot;</span></span>};</td>
       </tr>
       <tr>
         <td id="L81" class="blob-num js-line-number" data-line-number="81"></td>
-        <td id="LC81" class="blob-code blob-code-inner js-file-line">        c3.<span class="pl-c1">setCorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Verificación correcta de la clase Usuario.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC81" class="blob-code blob-code-inner js-file-line">		vector&lt;vector&lt;string&gt; &gt; parametersMethods = {{},{},{}};</td>
       </tr>
       <tr>
         <td id="L82" class="blob-num js-line-number" data-line-number="82"></td>
-        <td id="LC82" class="blob-code blob-code-inner js-file-line">        c3.<span class="pl-c1">setIncorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>REVISA LOS ERRORES DE USUARIO.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC82" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">inlineMethod</span>(methodNames, parametersMethods, <span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Sugerencia: incluir marca &#39;inline&#39; a aquellos métodos con pocas instrucciones, como &#39;id()&#39;, &#39;nombre()&#39; o &#39;apellidos()&#39;.<span class="pl-pds">&quot;</span></span>);</td>
       </tr>
       <tr>
         <td id="L83" class="blob-num js-line-number" data-line-number="83"></td>
@@ -1381,15 +1381,16 @@
       </tr>
       <tr>
         <td id="L84" class="blob-num js-line-number" data-line-number="84"></td>
-        <td id="LC84" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(c3.<span class="pl-c1">findClass</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>})){</td>
+        <td id="LC84" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">guardClauses</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>usuario.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Recuerda añadir las guardas de inclusión.<span class="pl-pds">&quot;</span></span>);	</td>
       </tr>
       <tr>
         <td id="L85" class="blob-num js-line-number" data-line-number="85"></td>
-        <td id="LC85" class="blob-code blob-code-inner js-file-line">	</td>
+        <td id="LC85" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L86" class="blob-num js-line-number" data-line-number="86"></td>
-        <td id="LC86" class="blob-code blob-code-inner js-file-line">	        <span class="pl-c1">llvm::outs</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>* usuario.cpp:<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
+        <td id="LC86" class="blob-code blob-code-inner js-file-line">                c3.<span class="pl-c1">check</span>();</td>
       </tr>
       <tr>
         <td id="L87" class="blob-num js-line-number" data-line-number="87"></td>
@@ -1398,512 +1399,28 @@
       </tr>
       <tr>
         <td id="L88" class="blob-num js-line-number" data-line-number="88"></td>
-        <td id="LC88" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">invocationsFromHeaders</span>(functionNames, headerName, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa de dónde son tomadas las funciones de la biblioteca estándar como strlen, strcpy...<span class="pl-pds">&quot;</span></span>);                </td>
+        <td id="LC88" class="blob-code blob-code-inner js-file-line">        }<span class="pl-k">else</span>{</td>
       </tr>
       <tr>
         <td id="L89" class="blob-num js-line-number" data-line-number="89"></td>
-        <td id="LC89" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC89" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">llvm::outs</span>()&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span>No se ha encontrado la clase &#39;Usuario&#39;<span class="pl-pds">&quot;</span></span>&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
       </tr>
       <tr>
         <td id="L90" class="blob-num js-line-number" data-line-number="90"></td>
-        <td id="LC90" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">allPrivateVariableMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el acceso a los atributos.<span class="pl-pds">&quot;</span></span>);</td>
+        <td id="LC90" class="blob-code blob-code-inner js-file-line">        }</td>
       </tr>
       <tr>
         <td id="L91" class="blob-num js-line-number" data-line-number="91"></td>
-        <td id="LC91" class="blob-code blob-code-inner js-file-line">	</td>
+        <td id="LC91" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L92" class="blob-num js-line-number" data-line-number="92"></td>
-        <td id="LC92" class="blob-code blob-code-inner js-file-line">                <span class="pl-c"><span class="pl-c">//</span>Constructor copia y de asignación</span></td>
+        <td id="LC92" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
       </tr>
       <tr>
         <td id="L93" class="blob-num js-line-number" data-line-number="93"></td>
-        <td id="LC93" class="blob-code blob-code-inner js-file-line">                c3.<span class="pl-c1">deletedMethod</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>operator=<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>const class Usuario &amp;<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>const class Usuario &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a la copia de objetos.<span class="pl-pds">&quot;</span></span>);	</td>
-      </tr>
-      <tr>
-        <td id="L94" class="blob-num js-line-number" data-line-number="94"></td>
-        <td id="LC94" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L95" class="blob-num js-line-number" data-line-number="95"></td>
-        <td id="LC95" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">numberOfConstructors</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, <span class="pl-c1">1</span>, <span class="pl-c1">false</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a los constructores en esta clase.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L96" class="blob-num js-line-number" data-line-number="96"></td>
-        <td id="LC96" class="blob-code blob-code-inner js-file-line">	</td>
-      </tr>
-      <tr>
-        <td id="L97" class="blob-num js-line-number" data-line-number="97"></td>
-        <td id="LC97" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">friendFunction</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>operator&lt;&lt;<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>?<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa si existen funciones que deben ser marcadas como amigas de la clase.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L98" class="blob-num js-line-number" data-line-number="98"></td>
-        <td id="LC98" class="blob-code blob-code-inner js-file-line">		vector&lt;string&gt; methodNames = {<span class="pl-s"><span class="pl-pds">&quot;</span>id<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>nombre<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>apellidos<span class="pl-pds">&quot;</span></span>};</td>
-      </tr>
-      <tr>
-        <td id="L99" class="blob-num js-line-number" data-line-number="99"></td>
-        <td id="LC99" class="blob-code blob-code-inner js-file-line">		vector&lt;vector&lt;string&gt; &gt; parametersMethods = {{},{},{}};</td>
-      </tr>
-      <tr>
-        <td id="L100" class="blob-num js-line-number" data-line-number="100"></td>
-        <td id="LC100" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">inlineMethod</span>(methodNames, parametersMethods, <span class="pl-s"><span class="pl-pds">&quot;</span>Usuario<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Sugerencia: incluir marca &#39;inline&#39; a aquellos métodos con pocas instrucciones, como &#39;id()&#39;, &#39;nombre()&#39; o &#39;apellidos()&#39;.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L101" class="blob-num js-line-number" data-line-number="101"></td>
-        <td id="LC101" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L102" class="blob-num js-line-number" data-line-number="102"></td>
-        <td id="LC102" class="blob-code blob-code-inner js-file-line">		c3.<span class="pl-c1">guardClauses</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>usuario.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Recuerda añadir las guardas de inclusión.<span class="pl-pds">&quot;</span></span>);	</td>
-      </tr>
-      <tr>
-        <td id="L103" class="blob-num js-line-number" data-line-number="103"></td>
-        <td id="LC103" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L104" class="blob-num js-line-number" data-line-number="104"></td>
-        <td id="LC104" class="blob-code blob-code-inner js-file-line">                c3.<span class="pl-c1">check</span>();</td>
-      </tr>
-      <tr>
-        <td id="L105" class="blob-num js-line-number" data-line-number="105"></td>
-        <td id="LC105" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L106" class="blob-num js-line-number" data-line-number="106"></td>
-        <td id="LC106" class="blob-code blob-code-inner js-file-line">        }<span class="pl-k">else</span>{</td>
-      </tr>
-      <tr>
-        <td id="L107" class="blob-num js-line-number" data-line-number="107"></td>
-        <td id="LC107" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">llvm::outs</span>()&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span>No se ha encontrado la clase &#39;Usuario&#39;<span class="pl-pds">&quot;</span></span>&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
-      </tr>
-      <tr>
-        <td id="L108" class="blob-num js-line-number" data-line-number="108"></td>
-        <td id="LC108" class="blob-code blob-code-inner js-file-line">        }</td>
-      </tr>
-      <tr>
-        <td id="L109" class="blob-num js-line-number" data-line-number="109"></td>
-        <td id="LC109" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L110" class="blob-num js-line-number" data-line-number="110"></td>
-        <td id="LC110" class="blob-code blob-code-inner js-file-line">        checkCode <span class="pl-smi">c4</span>(argc, argv,<span class="pl-s"><span class="pl-pds">&quot;</span>pedido.cpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L111" class="blob-num js-line-number" data-line-number="111"></td>
-        <td id="LC111" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L112" class="blob-num js-line-number" data-line-number="112"></td>
-        <td id="LC112" class="blob-code blob-code-inner js-file-line">        c4.<span class="pl-c1">setCorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Verificación correcta de la clase Pedido.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L113" class="blob-num js-line-number" data-line-number="113"></td>
-        <td id="LC113" class="blob-code blob-code-inner js-file-line">        c4.<span class="pl-c1">setIncorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>REVISA LOS ERRORES DE PEDIDO.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L114" class="blob-num js-line-number" data-line-number="114"></td>
-        <td id="LC114" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L115" class="blob-num js-line-number" data-line-number="115"></td>
-        <td id="LC115" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(c4.<span class="pl-c1">findClass</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>})){</td>
-      </tr>
-      <tr>
-        <td id="L116" class="blob-num js-line-number" data-line-number="116"></td>
-        <td id="LC116" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L117" class="blob-num js-line-number" data-line-number="117"></td>
-        <td id="LC117" class="blob-code blob-code-inner js-file-line">	        <span class="pl-c1">llvm::outs</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>* pedido.cpp:<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
-      </tr>
-      <tr>
-        <td id="L118" class="blob-num js-line-number" data-line-number="118"></td>
-        <td id="LC118" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L119" class="blob-num js-line-number" data-line-number="119"></td>
-        <td id="LC119" class="blob-code blob-code-inner js-file-line">		c4.<span class="pl-c1">invocationsFromHeaders</span>(functionNames, headerName, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa de dónde son tomadas las funciones de la biblioteca estándar como strlen, strcpy...<span class="pl-pds">&quot;</span></span>);        </td>
-      </tr>
-      <tr>
-        <td id="L120" class="blob-num js-line-number" data-line-number="120"></td>
-        <td id="LC120" class="blob-code blob-code-inner js-file-line"> </td>
-      </tr>
-      <tr>
-        <td id="L121" class="blob-num js-line-number" data-line-number="121"></td>
-        <td id="LC121" class="blob-code blob-code-inner js-file-line">		c4.<span class="pl-c1">allPrivateVariableMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el acceso a los atributos.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L122" class="blob-num js-line-number" data-line-number="122"></td>
-        <td id="LC122" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L123" class="blob-num js-line-number" data-line-number="123"></td>
-        <td id="LC123" class="blob-code blob-code-inner js-file-line">                c4.<span class="pl-c1">numberOfConstructors</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>, <span class="pl-c1">1</span>, <span class="pl-c1">false</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a la construcción de objetos.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L124" class="blob-num js-line-number" data-line-number="124"></td>
-        <td id="LC124" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L125" class="blob-num js-line-number" data-line-number="125"></td>
-        <td id="LC125" class="blob-code blob-code-inner js-file-line">                c4.<span class="pl-c1">defaultArgumentsInMethod</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>?<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>?<span class="pl-pds">&quot;</span></span>}, {<span class="pl-c1">1</span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>Fecha()<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a la construcción de objetos.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L126" class="blob-num js-line-number" data-line-number="126"></td>
-        <td id="LC126" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L127" class="blob-num js-line-number" data-line-number="127"></td>
-        <td id="LC127" class="blob-code blob-code-inner js-file-line">                c4.<span class="pl-c1">listInitializerConstructor</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>?<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>int<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const class Tarjeta *<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>class Fecha<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>double<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa la lista de inicialización del constructor.<span class="pl-pds">&quot;</span></span>); <span class="pl-c"><span class="pl-c">//</span>Ponemos ? como lista de parámetros porque solo debe haber un constructor. La regla funcionará cualquiera sea el orden en el que se pongan los inicializadores en el constructor</span></td>
-      </tr>
-      <tr>
-        <td id="L128" class="blob-num js-line-number" data-line-number="128"></td>
-        <td id="LC128" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L129" class="blob-num js-line-number" data-line-number="129"></td>
-        <td id="LC129" class="blob-code blob-code-inner js-file-line">		c4.<span class="pl-c1">function</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>operator&lt;&lt;<span class="pl-pds">&quot;</span></span>},{{<span class="pl-s"><span class="pl-pds">&quot;</span>class std::basic_ostream&lt;char&gt; &amp;<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const class Pedido &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto al operador de extracción.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L130" class="blob-num js-line-number" data-line-number="130"></td>
-        <td id="LC130" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L131" class="blob-num js-line-number" data-line-number="131"></td>
-        <td id="LC131" class="blob-code blob-code-inner js-file-line">                c4.<span class="pl-c1">memberVariable</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>tarjeta_<span class="pl-pds">&quot;</span></span>}, {<span class="pl-s"><span class="pl-pds">&quot;</span>const<span class="pl-pds">&quot;</span></span>}, {<span class="pl-c1">true</span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto al atributo de la tarjeta de pago.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L132" class="blob-num js-line-number" data-line-number="132"></td>
-        <td id="LC132" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L133" class="blob-num js-line-number" data-line-number="133"></td>
-        <td id="LC133" class="blob-code blob-code-inner js-file-line">                c4.<span class="pl-c1">guardClauses</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>pedido.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Recuerda añadir las guardas de inclusión<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L134" class="blob-num js-line-number" data-line-number="134"></td>
-        <td id="LC134" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L135" class="blob-num js-line-number" data-line-number="135"></td>
-        <td id="LC135" class="blob-code blob-code-inner js-file-line">		<span class="pl-c"><span class="pl-c">//</span>Catalogo-check</span></td>
-      </tr>
-      <tr>
-        <td id="L136" class="blob-num js-line-number" data-line-number="136"></td>
-        <td id="LC136" class="blob-code blob-code-inner js-file-line">		c4.<span class="pl-c1">methodWithDynamicCast</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>, {}, <span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>class Articulo *<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>class ArticuloAlmacenable *<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Es necesario que emplees el operador de molde apropiado en el constructor de la clase.<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L137" class="blob-num js-line-number" data-line-number="137"></td>
-        <td id="LC137" class="blob-code blob-code-inner js-file-line">                c4.<span class="pl-c1">methodWithDynamicCast</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>, {}, <span class="pl-s"><span class="pl-pds">&quot;</span>Pedido<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>class Articulo *<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>class LibroDigital *<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Es necesario que emplees el operador de molde apropiado en el constructor de la clase.<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L138" class="blob-num js-line-number" data-line-number="138"></td>
-        <td id="LC138" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L139" class="blob-num js-line-number" data-line-number="139"></td>
-        <td id="LC139" class="blob-code blob-code-inner js-file-line">                c4.<span class="pl-c1">check</span>();</td>
-      </tr>
-      <tr>
-        <td id="L140" class="blob-num js-line-number" data-line-number="140"></td>
-        <td id="LC140" class="blob-code blob-code-inner js-file-line">        }<span class="pl-k">else</span>{</td>
-      </tr>
-      <tr>
-        <td id="L141" class="blob-num js-line-number" data-line-number="141"></td>
-        <td id="LC141" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">llvm::outs</span>()&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span>No se ha encontrado la clase &#39;Pedido&#39;<span class="pl-pds">&quot;</span></span>&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
-      </tr>
-      <tr>
-        <td id="L142" class="blob-num js-line-number" data-line-number="142"></td>
-        <td id="LC142" class="blob-code blob-code-inner js-file-line">        }</td>
-      </tr>
-      <tr>
-        <td id="L143" class="blob-num js-line-number" data-line-number="143"></td>
-        <td id="LC143" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L144" class="blob-num js-line-number" data-line-number="144"></td>
-        <td id="LC144" class="blob-code blob-code-inner js-file-line">        checkCode <span class="pl-smi">c5</span>(argc, argv,<span class="pl-s"><span class="pl-pds">&quot;</span>pedido-articulo.cpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L145" class="blob-num js-line-number" data-line-number="145"></td>
-        <td id="LC145" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L146" class="blob-num js-line-number" data-line-number="146"></td>
-        <td id="LC146" class="blob-code blob-code-inner js-file-line">        c5.<span class="pl-c1">setCorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Verificación correcta de la clase Pedido_Articulo.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L147" class="blob-num js-line-number" data-line-number="147"></td>
-        <td id="LC147" class="blob-code blob-code-inner js-file-line">        c5.<span class="pl-c1">setIncorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>REVISA LOS ERRORES DE PEDIDO_ARTICULO.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L148" class="blob-num js-line-number" data-line-number="148"></td>
-        <td id="LC148" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L149" class="blob-num js-line-number" data-line-number="149"></td>
-        <td id="LC149" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(c5.<span class="pl-c1">findClass</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido_Articulo<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>LineaPedido<span class="pl-pds">&quot;</span></span>})){</td>
-      </tr>
-      <tr>
-        <td id="L150" class="blob-num js-line-number" data-line-number="150"></td>
-        <td id="LC150" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L151" class="blob-num js-line-number" data-line-number="151"></td>
-        <td id="LC151" class="blob-code blob-code-inner js-file-line">	        <span class="pl-c1">llvm::outs</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>* pedido-articulo.cpp:<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
-      </tr>
-      <tr>
-        <td id="L152" class="blob-num js-line-number" data-line-number="152"></td>
-        <td id="LC152" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L153" class="blob-num js-line-number" data-line-number="153"></td>
-        <td id="LC153" class="blob-code blob-code-inner js-file-line">                c5.<span class="pl-c1">numberOfConstructors</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Pedido_Articulo<span class="pl-pds">&quot;</span></span>, <span class="pl-c1">0</span>, <span class="pl-c1">false</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa la necesidad de definir constructores.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L154" class="blob-num js-line-number" data-line-number="154"></td>
-        <td id="LC154" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L155" class="blob-num js-line-number" data-line-number="155"></td>
-        <td id="LC155" class="blob-code blob-code-inner js-file-line">                c5.<span class="pl-c1">numberOfConstructors</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>LineaPedido<span class="pl-pds">&quot;</span></span>, <span class="pl-c1">1</span>, <span class="pl-c1">false</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a los construcción de objetos.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L156" class="blob-num js-line-number" data-line-number="156"></td>
-        <td id="LC156" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L157" class="blob-num js-line-number" data-line-number="157"></td>
-        <td id="LC157" class="blob-code blob-code-inner js-file-line">                vector&lt;string&gt; params = {<span class="pl-s"><span class="pl-pds">&quot;</span>double<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>unsigned int<span class="pl-pds">&quot;</span></span>};</td>
-      </tr>
-      <tr>
-        <td id="L158" class="blob-num js-line-number" data-line-number="158"></td>
-        <td id="LC158" class="blob-code blob-code-inner js-file-line">                vector&lt;vector&lt;string&gt; &gt; methodsParams;</td>
-      </tr>
-      <tr>
-        <td id="L159" class="blob-num js-line-number" data-line-number="159"></td>
-        <td id="LC159" class="blob-code blob-code-inner js-file-line">                methodsParams = {params};</td>
-      </tr>
-      <tr>
-        <td id="L160" class="blob-num js-line-number" data-line-number="160"></td>
-        <td id="LC160" class="blob-code blob-code-inner js-file-line">                </td>
-      </tr>
-      <tr>
-        <td id="L161" class="blob-num js-line-number" data-line-number="161"></td>
-        <td id="LC161" class="blob-code blob-code-inner js-file-line">		c5.<span class="pl-c1">defaultArgumentsInMethod</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>LineaPedido<span class="pl-pds">&quot;</span></span>}, methodsParams, <span class="pl-s"><span class="pl-pds">&quot;</span>LineaPedido<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>?<span class="pl-pds">&quot;</span></span>}, {<span class="pl-c1">1</span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>1.*<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a la construcción de objetos.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L162" class="blob-num js-line-number" data-line-number="162"></td>
-        <td id="LC162" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L163" class="blob-num js-line-number" data-line-number="163"></td>
-        <td id="LC163" class="blob-code blob-code-inner js-file-line">                c5.<span class="pl-c1">explicitSpecifiedConstructor</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>LineaPedido<span class="pl-pds">&quot;</span></span>, params, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el enunciado respecto a conversiones implícitas.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L164" class="blob-num js-line-number" data-line-number="164"></td>
-        <td id="LC164" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L165" class="blob-num js-line-number" data-line-number="165"></td>
-        <td id="LC165" class="blob-code blob-code-inner js-file-line">                c5.<span class="pl-c1">function</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>operator&lt;&lt;<span class="pl-pds">&quot;</span></span>}, {{<span class="pl-s"><span class="pl-pds">&quot;</span>class std::basic_ostream&lt;char&gt; &amp;<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>const class LineaPedido &amp;<span class="pl-pds">&quot;</span></span>}}, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el lugar de la declaración de los operadores.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L166" class="blob-num js-line-number" data-line-number="166"></td>
-        <td id="LC166" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L167" class="blob-num js-line-number" data-line-number="167"></td>
-        <td id="LC167" class="blob-code blob-code-inner js-file-line">                <span class="pl-c"><span class="pl-c">//</span>&#39;pedir&#39; sobrecargado puede hacerse mediante la busqueda de dos métodos con diferentes parametros.</span></td>
-      </tr>
-      <tr>
-        <td id="L168" class="blob-num js-line-number" data-line-number="168"></td>
-        <td id="LC168" class="blob-code blob-code-inner js-file-line">		c5.<span class="pl-c1">method</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>pedir<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>pedir<span class="pl-pds">&quot;</span></span>},{{<span class="pl-s"><span class="pl-pds">&quot;</span>class Pedido &amp;<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>class Articulo &amp;<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>double<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>unsigned int<span class="pl-pds">&quot;</span></span>}</td>
-      </tr>
-      <tr>
-        <td id="L169" class="blob-num js-line-number" data-line-number="169"></td>
-        <td id="LC169" class="blob-code blob-code-inner js-file-line">                                    ,{<span class="pl-s"><span class="pl-pds">&quot;</span>class Articulo &amp;<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>class Pedido &amp;<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>double<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>unsigned int<span class="pl-pds">&quot;</span></span>}},</td>
-      </tr>
-      <tr>
-        <td id="L170" class="blob-num js-line-number" data-line-number="170"></td>
-        <td id="LC170" class="blob-code blob-code-inner js-file-line">                                    <span class="pl-s"><span class="pl-pds">&quot;</span>Pedido_Articulo<span class="pl-pds">&quot;</span></span>, {<span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>noconst<span class="pl-pds">&quot;</span></span>}, <span class="pl-s"><span class="pl-pds">&quot;</span>Se sugiere la sobrecarga del método &#39;pedir&#39;<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L171" class="blob-num js-line-number" data-line-number="171"></td>
-        <td id="LC171" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L172" class="blob-num js-line-number" data-line-number="172"></td>
-        <td id="LC172" class="blob-code blob-code-inner js-file-line">                c5.<span class="pl-c1">guardClauses</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>pedido-articulo.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Recuerda añadir las guardas de inclusión<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L173" class="blob-num js-line-number" data-line-number="173"></td>
-        <td id="LC173" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L174" class="blob-num js-line-number" data-line-number="174"></td>
-        <td id="LC174" class="blob-code blob-code-inner js-file-line">                c5.<span class="pl-c1">check</span>();</td>
-      </tr>
-      <tr>
-        <td id="L175" class="blob-num js-line-number" data-line-number="175"></td>
-        <td id="LC175" class="blob-code blob-code-inner js-file-line">        }<span class="pl-k">else</span>{</td>
-      </tr>
-      <tr>
-        <td id="L176" class="blob-num js-line-number" data-line-number="176"></td>
-        <td id="LC176" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">llvm::outs</span>()&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span>No se ha encontrado la clase &#39;Pedido_Articulo&#39;<span class="pl-pds">&quot;</span></span>&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
-      </tr>
-      <tr>
-        <td id="L177" class="blob-num js-line-number" data-line-number="177"></td>
-        <td id="LC177" class="blob-code blob-code-inner js-file-line">        }</td>
-      </tr>
-      <tr>
-        <td id="L178" class="blob-num js-line-number" data-line-number="178"></td>
-        <td id="LC178" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L179" class="blob-num js-line-number" data-line-number="179"></td>
-        <td id="LC179" class="blob-code blob-code-inner js-file-line">        checkCode <span class="pl-smi">c6</span>(argc, argv,<span class="pl-s"><span class="pl-pds">&quot;</span>usuario-pedido.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L180" class="blob-num js-line-number" data-line-number="180"></td>
-        <td id="LC180" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L181" class="blob-num js-line-number" data-line-number="181"></td>
-        <td id="LC181" class="blob-code blob-code-inner js-file-line">        c6.<span class="pl-c1">setCorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Verificación correcta de la clase Usuario_Pedido.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L182" class="blob-num js-line-number" data-line-number="182"></td>
-        <td id="LC182" class="blob-code blob-code-inner js-file-line">        c6.<span class="pl-c1">setIncorrectMessage</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>REVISA LOS ERRORES DE USUARIO_PEDIDO.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L183" class="blob-num js-line-number" data-line-number="183"></td>
-        <td id="LC183" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L184" class="blob-num js-line-number" data-line-number="184"></td>
-        <td id="LC184" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">if</span>(c6.<span class="pl-c1">findClass</span>({<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario_Pedido<span class="pl-pds">&quot;</span></span>})){</td>
-      </tr>
-      <tr>
-        <td id="L185" class="blob-num js-line-number" data-line-number="185"></td>
-        <td id="LC185" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L186" class="blob-num js-line-number" data-line-number="186"></td>
-        <td id="LC186" class="blob-code blob-code-inner js-file-line">		<span class="pl-c1">llvm::outs</span>() &lt;&lt; <span class="pl-s"><span class="pl-pds">&quot;</span>* usuario-pedido.hpp:<span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
-      </tr>
-      <tr>
-        <td id="L187" class="blob-num js-line-number" data-line-number="187"></td>
-        <td id="LC187" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L188" class="blob-num js-line-number" data-line-number="188"></td>
-        <td id="LC188" class="blob-code blob-code-inner js-file-line">                c6.<span class="pl-c1">invocationsFromHeaders</span>(functionNames, headerName, <span class="pl-c1">true</span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa de dónde son tomadas las funciones de la biblioteca estándar como strlen, strcpy...<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L189" class="blob-num js-line-number" data-line-number="189"></td>
-        <td id="LC189" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L190" class="blob-num js-line-number" data-line-number="190"></td>
-        <td id="LC190" class="blob-code blob-code-inner js-file-line">		c6.<span class="pl-c1">allPrivateVariableMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario_Pedido<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Revisa el acceso a los atributos.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L191" class="blob-num js-line-number" data-line-number="191"></td>
-        <td id="LC191" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L192" class="blob-num js-line-number" data-line-number="192"></td>
-        <td id="LC192" class="blob-code blob-code-inner js-file-line">                c6.<span class="pl-c1">guardClauses</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>usuario-pedido.hpp<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>Recuerda añadir las guardas de inclusión<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L193" class="blob-num js-line-number" data-line-number="193"></td>
-        <td id="LC193" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L194" class="blob-num js-line-number" data-line-number="194"></td>
-        <td id="LC194" class="blob-code blob-code-inner js-file-line">		<span class="pl-c"><span class="pl-c">//</span>Catalogo-check</span></td>
-      </tr>
-      <tr>
-        <td id="L195" class="blob-num js-line-number" data-line-number="195"></td>
-        <td id="LC195" class="blob-code blob-code-inner js-file-line">		c6.<span class="pl-c1">notFriendMember</span>(<span class="pl-s"><span class="pl-pds">&quot;</span>Usuario_Pedido<span class="pl-pds">&quot;</span></span>,<span class="pl-s"><span class="pl-pds">&quot;</span>Revisa por qué no es necesario incluir friend.<span class="pl-pds">&quot;</span></span>);</td>
-      </tr>
-      <tr>
-        <td id="L196" class="blob-num js-line-number" data-line-number="196"></td>
-        <td id="LC196" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L197" class="blob-num js-line-number" data-line-number="197"></td>
-        <td id="LC197" class="blob-code blob-code-inner js-file-line">                c6.<span class="pl-c1">check</span>();</td>
-      </tr>
-      <tr>
-        <td id="L198" class="blob-num js-line-number" data-line-number="198"></td>
-        <td id="LC198" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L199" class="blob-num js-line-number" data-line-number="199"></td>
-        <td id="LC199" class="blob-code blob-code-inner js-file-line">        }<span class="pl-k">else</span>{</td>
-      </tr>
-      <tr>
-        <td id="L200" class="blob-num js-line-number" data-line-number="200"></td>
-        <td id="LC200" class="blob-code blob-code-inner js-file-line">                <span class="pl-c1">llvm::outs</span>()&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span>No se ha encontrado la clase &#39;Usuario_Pedido&#39;<span class="pl-pds">&quot;</span></span>&lt;&lt;<span class="pl-s"><span class="pl-pds">&quot;</span><span class="pl-cce">\n</span><span class="pl-pds">&quot;</span></span>;</td>
-      </tr>
-      <tr>
-        <td id="L201" class="blob-num js-line-number" data-line-number="201"></td>
-        <td id="LC201" class="blob-code blob-code-inner js-file-line">        }</td>
-      </tr>
-      <tr>
-        <td id="L202" class="blob-num js-line-number" data-line-number="202"></td>
-        <td id="LC202" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L203" class="blob-num js-line-number" data-line-number="203"></td>
-        <td id="LC203" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">return</span> <span class="pl-c1">0</span>;</td>
-      </tr>
-      <tr>
-        <td id="L204" class="blob-num js-line-number" data-line-number="204"></td>
-        <td id="LC204" class="blob-code blob-code-inner js-file-line">}</td>
+        <td id="LC93" class="blob-code blob-code-inner js-file-line">}</td>
       </tr>
 </table>
 
@@ -1915,7 +1432,7 @@
       <ul class="BlobToolbar-dropdown dropdown-menu dropdown-menu-se mt-2" style="width:185px">
         <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-lines" style="cursor:pointer;" data-original-text="Copy lines">Copy lines</clipboard-copy></li>
         <li><clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-permalink" style="cursor:pointer;" data-original-text="Copy permalink">Copy permalink</clipboard-copy></li>
-        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/guilogar/poo/blame/3b29da0278d3037acde6c8391a506cad35186e90/Lopez_Garcia_Guillermo/P4/catalogo_check.cpp">View git blame</a></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/guilogar/poo/blame/3b29da0278d3037acde6c8391a506cad35186e90/Lopez_Garcia_Guillermo/P4/compra_check.cpp">View git blame</a></li>
           <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/guilogar/poo/issues/new">Reference in new issue</a></li>
       </ul>
     </details-menu>
@@ -1952,7 +1469,7 @@
 <div class="footer container-lg width-full p-responsive" role="contentinfo">
   <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap col-12 col-lg-5 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
-      <li class="mr-3 mr-lg-0">&copy; 2019 <span title="0.47505s from unicorn-7d6d877985-qbss7">GitHub</span>, Inc.</li>
+      <li class="mr-3 mr-lg-0">&copy; 2019 <span title="0.44815s from unicorn-7d6d877985-pmgsf">GitHub</span>, Inc.</li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
