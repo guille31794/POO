@@ -8,17 +8,17 @@ name{n}, surname{sn}, address{ad}
 {}
 
 //Getters
-const Cadena& Autor::nombre() const
+const Cadena& Autor::nombre() const noexcept
 {
     return name;
 }
 
-const Cadena& Autor::apellidos() const
+const Cadena& Autor::apellidos() const noexcept
 {
     return surname;
 }
 
-const Cadena& Autor::direccion() const
+const Cadena& Autor::direccion() const noexcept
 {
     return address;
 }

@@ -16,9 +16,9 @@ class Autor
         Autor(const Cadena&, const Cadena&, const Cadena&);
 
         //Getters
-        const Cadena& nombre() const;
-        const Cadena& apellidos() const;
-        const Cadena& direccion() const;
+        const Cadena& nombre() const noexcept;
+        const Cadena& apellidos() const noexcept;
+        const Cadena& direccion() const noexcept;
     private:
         const Cadena name, surname, address;
 };
