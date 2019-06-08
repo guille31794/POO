@@ -23,9 +23,6 @@ class Pedido
         //Constructor
         explicit Pedido(Usuario_Pedido&, Pedido_Articulo&, Usuario&, const Tarjeta&, 
         const Fecha& = Fecha{});
-        Pedido(const Pedido&) = delete;
-        Pedido(Pedido&&) = delete;
-        Pedido() = delete;
         //Getters
         unsigned numero() const;
         const Tarjeta* tarjeta() const;
