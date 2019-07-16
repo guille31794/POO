@@ -22,7 +22,7 @@ class Pedido
     public:
         //Constructor
         explicit Pedido(Usuario_Pedido&, Pedido_Articulo&, Usuario&, const Tarjeta&, 
-        const Fecha& = Fecha{});
+        const Fecha& = Fecha{}); //Te va a dar error en el check por la inicialización uniforme.
         //Getters
         unsigned numero() const;
         const Tarjeta* tarjeta() const;

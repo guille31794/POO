@@ -38,6 +38,12 @@ tarjeta_{&c}, date{d}, totalPrize{0.0}
     if(u.id() != c.titular() -> id())
         throw Impostor(u);
 
+    if(c.caducidad() <= date)
+        throw Tarjeta::Caducada(c.caducidad());
+
+    if(!c.activa())
+        throw Tarjeta::Desactivada{};   
+
     for(auto it : u.compra())
         if(ArticuloAlmacenable* art{dynamic_cast<ArticuloAlmacenable*>
         (it.first)})
@@ -47,12 +53,6 @@ tarjeta_{&c}, date{d}, totalPrize{0.0}
                 throw SinStock(*it.first);
             }
 
-    if(c.caducidad() <= date)
-        throw Tarjeta::Caducada(c.caducidad());
-
-    if(!c.activa())
-        throw Tarjeta::Desactivada{};   
-            
     Usuario::Articulos shoppingKart{u.compra()};
     unsigned availableStock{0}, expired{0}, n_ebooks{0};
 
