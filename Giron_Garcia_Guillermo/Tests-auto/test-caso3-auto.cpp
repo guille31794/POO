@@ -147,7 +147,7 @@ FCTMF_FIXTURE_SUITE_BGN(test_p3_clases) {
   FCT_TEST_END();
   
   FCT_TEST_BGN(Pedido - tarjeta caducada) {
-    pU->compra(articulo1, 4);
+    pU->compra(articulo1, 4649);
     try {
       Pedido { *pAsocUsuarioPedido, *pAsocPedidoArticulo,
 	  *pU, *pTarjetaU, fHoy + 30 };
@@ -162,7 +162,7 @@ FCTMF_FIXTURE_SUITE_BGN(test_p3_clases) {
   FCT_TEST_END();
 
   FCT_TEST_BGN(Pedido - tarjeta desactivada) {
-    pU->compra(articulo1, 4);
+    pU->compra(articulo1, 4649);
     pTarjetaU->activa(false);
     fct_chk_ex(Tarjeta::Desactivada,
 	       Pedido(*pAsocUsuarioPedido, *pAsocPedidoArticulo,

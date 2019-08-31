@@ -158,7 +158,7 @@ ostream& Pedido_Articulo::mostrarVentasArticulos(ostream& os) const
     setlocale(LC_ALL, "es_ES");
 
     for(auto it : articulosPedido_)
-        os << "Ventas de " << *it.first << "\n" <<
+        os << "Ventas de " << it.first->titulo() << "\n" <<
         it.second << "\n\n";
 
     return os;
