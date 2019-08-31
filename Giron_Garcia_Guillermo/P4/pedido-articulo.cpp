@@ -7,7 +7,7 @@ bool OrdenaPedidos::operator() (Pedido* p1, Pedido* p2) const
 
 bool OrdenaArticulos::operator() (Articulo* a1, Articulo* a2) const
 {
-    return a1 > a2;
+    return a1 -> referencia() < a2 -> referencia();
 }
 
 LineaPedido::LineaPedido(double p, unsigned q):
