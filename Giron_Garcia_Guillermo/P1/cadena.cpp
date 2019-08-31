@@ -54,7 +54,7 @@ char Cadena::operator [](unsigned n) const
 
 const char Cadena::at(unsigned n) const
 {
-    if (n < 0 || n > size_ || (n >= size_ && size_ == 0))
+    if (n > size_ || (n >= size_ && size_ == 0))
         throw out_of_range("Position out of range.");
     
     return string_[n];
@@ -74,7 +74,7 @@ char& Cadena::operator[](unsigned n)
 
 char& Cadena::at(unsigned n)
 {
-    if (n < 0 || n > size_ || (n >= size_ && size_ == 0))
+    if (n > size_ || (n >= size_ && size_ == 0))
         throw out_of_range("Position out of range.");
     
     return string_[n];
@@ -82,7 +82,7 @@ char& Cadena::at(unsigned n)
 
 Cadena Cadena::substr(unsigned i, int s) const
 {
-    if(i < 0 || i > size_ || (i >= size_ && s > 0) || i+s > size_ || s < 0)
+    if(i > size_ || (i >= size_ && s > 0) || i+s > size_ || s < 0)
         throw out_of_range("Index out of range.");
 
     Cadena str{(unsigned)s};

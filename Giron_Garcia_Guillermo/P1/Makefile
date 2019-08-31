@@ -1,7 +1,7 @@
 # Makefile de P0
 DIR=../dsl-comprobaciones/
-CXX = clang++
-CXXFLAGS = -g -Wall -std=c++14 -pedantic
+CXX = g++#clang++
+CXXFLAGS = -g -Wall -std=c++17 -pedantic
 CPPFLAGS = -DP1 -I ../Tests-auto -I. -I${DIR} #$(shell llvm-config --cppflags)
 #LLVMLDFLAGS := $(shell llvm-config --libs) $(LDFLAGS)
 COMMONSRCS  := $(DIR)caclibrary.cpp $(DIR)execute.cpp $(DIR)matchers.cpp
@@ -48,6 +48,9 @@ checks: check_Fecha check_Cadena
 
 test-P0-auto: $(OBJETOS)
 	$(CXX) -o $@ $(LDFLAGS) $(OBJETOS)
+
+#test-P1-consola: $(OBJETOS)
+#	$(CXX) -o $@ $(LDFLAGS) $(OBJETOS)
 
 test-caso0-fecha-auto.o test-caso0-cadena-auto.o test-auto.o: \
 	test-caso0-fecha-auto.cpp test-caso0-cadena-auto.cpp \
